@@ -2,85 +2,65 @@
 
 ## Publication target
 
-This repository does **not** aim to publish a second analysis of the King Rail paper.
+This repository does **not** aim to publish a second analysis of the 2012 King Rail occupancy paper.
 
-Louisiana is a seed system for the cross-system **memory–propagation regime programme**:
+The primary ecological programme is **hydrological portfolio buffering**:
 
-> predictive memory can arise from local persistence, shared forcing, observation-process memory, or actual propagation; history-based forecast gain alone does not identify which source generated it.
+> temporally complementary microhabitats may let a resident bird track suitable states inside a familiar area instead of abandoning it when hydrology changes.
 
 See [general-principle programme](../docs/general_principle_program.md).
 
-## Phase 0 — seed-system diagnosis only
-
-Phase 0 asks why the EOG detection-source worlds failed. It is ordered so that an observation-process explanation is tested before any movement interpretation.
-
-### Phase 0A — classify the actual failure events
-
-Run:
+## Phase 0 — EOG seed diagnosis only
 
 ```bash
 python analysis/01_failure_event_classification.py
 ```
 
-This opens only the already-consumed King Rail response and classifies positive events into:
+This only explains the discovery route. It is not the paper endpoint.
 
-1. same-site continuation;
-2. same-site return after a detection gap;
-3. first detection near prior positives;
-4. first detection outside prior observed support.
+## Phase 1 — independent Lake Erie dataset
 
-This directly identifies which kinds of events falsified the six detection-source worlds.
-
-### Phase 0B — detection versus changing latent state
-
-Run:
+Audit the public Zenodo release:
 
 ```bash
-python analysis/run_detection_state_decomposition.py
+python analysis/02_fetch_public_comparative_data.py
 ```
 
-This compares two deliberately minimal alternatives with a chronological holdout:
+Download public files:
 
-- **M0:** static latent occupancy + quadratic seasonal detection;
-- **M1:** continuous-time dynamic occupancy + the same detection model.
+```bash
+python analysis/02_fetch_public_comparative_data.py --download
+```
 
-Both use the same low- versus high-salinity habitat term for initial occupancy and are fitted on the first 12 chronological occasions, then predict the final 8 without refitting.
+Then gate the dataset:
 
-The decision target is:
+```bash
+python analysis/03_hydrological_portfolio_gate.py \
+  --data-dir data/external/lake_erie_king_rail
+```
 
-> Can imperfect/seasonal detection of a persistent latent state explain the apparent turnover, or does a changing ecological state add held-out information?
+**Hard rule:** static habitat heterogeneity is not a hydrological portfolio. The full HPI hypothesis is eligible only when movement can be linked to time-varying hydrological state within the familiar area.
 
-Only if a changing latent state survives this gate should the project proceed to latent-neighbour propagation or broader regional/open-population terms.
+## Phase 2 — if the gate passes
 
-These same-data analyses are **not the paper endpoint**. Their role is to locate Louisiana on the general memory-source regime map and to identify what must be tested prospectively elsewhere.
+Estimate:
 
-## Phase 1 — known-truth regime benchmark
+- internal microhabitat switching;
+- retained suitable area through time;
+- lower-tail habitat retention (HPI);
+- broad relocation / familiar-area displacement.
 
-Build simulated detection histories with known latent states spanning:
+Primary test:
 
-- persistent occupancy + imperfect detection;
-- regional/common forcing;
-- true local propagation;
-- open-population influx;
-- mixed regimes.
+```text
+broad relocation ~ HPI
+                 + mean habitat quality
+                 + hydrological change
+                 + HPI × hydrological change
+```
 
-Vary detection probability and observation interval so that apparent turnover can be separated from latent turnover.
+The decisive result is whether temporal complementarity explains residency beyond mean habitat quality.
 
-## Phase 2 — independent cross-system panel
+## Phase 3 — independent replication
 
-Add independent passive-acoustic, camera or repeated-occupancy systems whose temporal sequences were not used to generate the hypothesis.
-
-For each system estimate:
-
-1. history-based forecast gain;
-2. latent persistence;
-3. shared temporal forcing;
-4. observation-process memory;
-5. residual directional propagation;
-6. re-binning response.
-
-## Phase 3 — comparative principle
-
-Test whether the proposed scale ratios predict memory source across systems better than species identity, taxonomic group or monitoring modality.
-
-King Rail is one anchor point, not the evidence base.
+Use another wetland bird system with dynamic water surfaces to test whether the buffering mechanism generalises beyond King Rail.
