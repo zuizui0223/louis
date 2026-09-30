@@ -65,11 +65,12 @@
     "post_initialization_cumulative_unsupported_by_scale": true,
     "cumulative_memory_rescue": "immediate_unsupported_minus_cumulative_unsupported",
     "prior_site_fraction": "fraction of post-initialization positives at previously detected sites",
-    "gap_return_fraction": "fraction of post-initialization positives that return at a previously detected site after at least one observed gap"
+    "gap_return_fraction": "fraction of post-initialization positives that return at a previously detected site after at least one observed gap",
+    "cumulative_memory_rescue_fraction": "(immediate_unsupported_minus_cumulative_unsupported) / post_initialization_positive_count"
   },
   "primary_cross_species_prediction": {
     "statement": "Species with more gap-return/persistent-site structure will show larger rescue when source memory is extended from the immediately previous occasion to cumulative site history.",
-    "test": "Spearman association across all analyzable species between gap_return_fraction and cumulative_memory_rescue at the broad 17.01-km scale; report all species and leave sparse species non-estimable rather than switching species.",
+    "test": "Primary: Spearman association across all estimable non-King-Rail species between gap_return_fraction and cumulative_memory_rescue_fraction at the broad 17.01-km scale. Secondary: the same association using the unnormalized rescue count. Report all species and leave species with no post-initialization positives non-estimable rather than switching species.",
     "direction": "positive"
   },
   "secondary_prediction": {
