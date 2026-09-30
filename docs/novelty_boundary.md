@@ -9,50 +9,77 @@ This project does not claim novelty for:
 - site fidelity;
 - flexible habitat use inside home ranges;
 - resource tracking;
-- the general idea that heterogeneous landscapes can buffer organisms.
+- ecological niche tracking;
+- the general idea that animals move to remain within suitable environmental conditions.
 
-Site-fidelity theory already shows that resource predictability and landscape configuration can generate or modify place fidelity. Habitat deterioration can also favour switching to alternative sites.
+The niche-tracking literature already shows that migratory birds can maintain similar climatic/environmental niches across distant seasonal ranges.
 
-## Novelty candidate
+There is also a very close wetland precedent: tracked Shoebills moved between geographically distinct wetland areas while the mean NDWI of newly selected areas did not differ from the areas used immediately before departure. In other words, movement to a similar surface-water state has already been demonstrated.
 
-The stronger empirical proposition is:
+A 2025 little-bustard study likewise showed that access to microclimate refugia predicted migration distance and that long-distance migrants maintained more similar microclimatic niches across seasons.
 
-> **Movement can stabilise the environmental state experienced by an animal even when geographic location changes.**
+Therefore the phrase "move in space to stay in state" is **not itself a novelty claim**.
 
-The test is explicitly temporal and availability-relative.
+## Sharper novelty candidate
 
-At each real homing event, Lake Erie King Rail data provide one used plot and two nearby random plots sampled within the same time window.
+The candidate new contribution is a **fine-scale, resident, availability-relative version of niche tracking**:
 
-The new estimand asks whether:
+> **within a stable home range, does an individual's realised movement make the sequence of environmental states it experiences more stable than the environmental states locally available at the same times?**
+
+This differs from most seasonal niche-tracking analyses in three ways:
+
+1. **scale** — within-home-range rather than breeding-versus-wintering ranges;
+2. **behavioural regime** — resident fine-scale movement rather than migration;
+3. **counterfactual** — time-matched local availability at each movement event rather than broad seasonal background environments.
+
+## Primary operational test
+
+For each individual King Rail:
 
 ~~~text
-temporal variation in used environmental state
+temporal variance of used water depth
 <
-temporal variation in matched available state
+temporal variance of matched local-availability pseudo-trajectories
 ~~~
 
-and, if coordinates are available, whether birds can:
+This is quantified by the State Retention Index (SRI).
+
+If coordinates are available, the stronger signature is:
 
 ~~~text
-move farther in geographic space
-while moving less in environmental-state space
-than matched pseudo-trajectories
+geographic displacement > 0
+while
+environmental-state displacement < matched-availability null
 ~~~
 
 ## Difference from ordinary habitat selection
 
-Habitat selection:
+Habitat selection asks:
+
 > which states are used more than available?
 
-Environmental-state fidelity:
-> does movement make the sequence of states experienced through time more stable than local availability?
+Seasonal niche tracking asks:
 
-The latter is the novelty candidate.
+> are environmental niches similar across distant seasonal ranges?
+
+The present test asks:
+
+> **does routine movement within a resident home range actively damp the temporal environmental variation experienced by the individual relative to what was locally available?**
+
+That fine-scale dampening test is the novelty candidate.
+
+## Evidence standard
+
+Because the Lake Erie dataset contains only 10 birds with stabilized home ranges:
+
+- individual bird is the replication unit;
+- point-level n=607 is not biological replication;
+- positive SRI should be consistent across individuals;
+- one-bird dominance fails the claim;
+- an external wetland species/population is required for generalization.
 
 ## Naming boundary
 
-"Environmental-state fidelity" is a provisional descriptive term.
+"Environmental-state fidelity" and "within-home-range micro-niche tracking" are descriptive working terms.
 
-A literature search found extensive work on site fidelity, habitat predictability, habitat switching and null expectations for site fidelity, but did not identify a standard framework with this exact operational definition.
-
-Do **not** claim novelty from the phrase itself. Claim novelty only if the temporal matched-availability result is supported and generalises.
+Do not claim novelty from either phrase. Claim novelty only from a supported, availability-relative temporal dampening result and its independent replication.
