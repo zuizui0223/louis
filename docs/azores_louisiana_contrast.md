@@ -1,57 +1,73 @@
-# Two ecological routes to spatial persistence
+# Stay in place versus stay in state
 
-Azores and Louisiana should not be treated as two copies of one generic memory process.
+Azores and Louisiana point to two biologically different routes to persistence.
 
-They suggest two different behavioural solutions to environmental variability.
+## Azores — stay in place, therefore stay in state
 
-## Route 1 — Anchoring
+Yellow eels occupy a strongly compartmentalised stream.
 
-**Azores yellow eel**
+When a local refuge remains profitable:
 
-- habitat is strongly channelled and compartmentalised;
-- individuals can remain associated with a local refuge;
-- relocation among refuges is costly or unnecessary;
-- persistence is produced by **staying**.
+~~~text
+stable place
+   -> stable refuge state
+   -> little movement required
+~~~
 
-Ecological prediction:
+The key mechanism is **mobility gating**:
+internal migratory readiness and landscape opportunity determine when suppressed mobility is released.
 
-> when profitable refuges are predictable and alternatives are costly/uncertain, mobility is suppressed.
+## Louisiana — move in space, therefore stay in state
 
-## Route 2 — Tracking within a familiar area
+A wetland home range can change hydrologically through time.
 
-**Louisiana marsh birds**
+A resident bird can maintain similar experienced conditions by changing its fine-scale location:
 
-- habitat is a changing hydrological mosaic;
-- water depth and vegetation structure change the value of local microhabitats;
-- birds can retain home-range fidelity while reallocating activity internally;
-- persistence is produced by **flexibility within place**.
+~~~text
+changing habitat mosaic
+   -> best microhabitat shifts
+   -> bird shifts location
+   -> experienced state remains comparatively stable
+~~~
 
-Ecological prediction:
+The key mechanism is **environmental-state fidelity**.
 
-> when habitat quality changes within a heterogeneous home range, flexible microhabitat switching can preserve broad-scale residency.
+## Common ecological object
 
-## The common ecological axis
+The deeper commonality is not generic memory.
 
-The key contrast is not mobility versus sedentism.
+It is the distinction between:
 
-It is the interaction of:
+- fidelity to geographic coordinates;
+- fidelity to environmental state.
 
-1. temporal predictability of local resources/refugia;
-2. within-home-range habitat heterogeneity;
-3. cost of relocating beyond the familiar area;
-4. rate of environmental change.
+These can coincide or decouple.
 
-This yields a concrete behavioural map:
+### Stable landscapes
 
-- **stable + profitable + costly relocation** -> anchoring;
-- **dynamic + internally heterogeneous** -> within-range tracking;
-- **dynamic + homogeneous / exhausted** -> broad relocation;
-- **disturbance + newly connected landscape** -> episodic dispersal.
+Place fidelity can automatically produce state fidelity.
 
-## General hypothesis
+### Dynamic heterogeneous landscapes
 
-> **Spatial persistence is an emergent behavioural response to environmental predictability and habitat heterogeneity, not a synonym for immobility.**
+State fidelity may require movement.
 
-This is already partly anticipated in site-fidelity theory, so novelty should not be claimed from the slogan alone.
+### Dynamic homogeneous landscapes
 
-The stronger test is whether the same environmental axes predict which route to persistence appears across very different taxa and ecosystems.
+Neither anchoring nor internal tracking can preserve state; broad relocation becomes more likely.
+
+## General behavioural map
+
+| Environmental dynamics | Internal heterogeneity | Expected strategy |
+|---|---|---|
+| low | any | anchoring |
+| high | high | within-area state tracking |
+| high | low | broad relocation / emigration |
+| episodic connectivity | any | pulsed movement |
+
+## Testable synthesis
+
+A general comparative prediction is:
+
+> **Animals should minimise change in experienced ecological state, but the amount of geographic movement required to do so depends on how habitat states are distributed through space and time.**
+
+This is a biological hypothesis about movement and habitat dynamics, not a statement about monitoring design.
