@@ -43,6 +43,7 @@ import urllib.request
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
+from statistics import mean
 
 import numpy as np
 from scipy.optimize import minimize
