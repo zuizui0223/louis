@@ -6,6 +6,7 @@ on:
       - "analysis/02_fetch_public_comparative_data.py"
       - "analysis/03_hydrological_portfolio_gate.py"
       - "analysis/04_release_structure_probe.py"
+      - "analysis/05_validate_homing_random_join.py"
       - ".github/workflows/independent-data-audit.yml"
   workflow_dispatch:
 
@@ -21,7 +22,11 @@ jobs:
         run: python analysis/02_fetch_public_comparative_data.py --download
       - name: Probe release structure and join semantics
         run: python analysis/04_release_structure_probe.py
-      - name: Run conservative hydrological portfolio gate
+      - name: Validate Homing/Random temporal joins
+        run: |
+          python analysis/05_validate_homing_random_join.py \
+            --data-dir data/external/lake_erie_king_rail
+      - name: Run conservative full-portfolio gate
         run: |
           python analysis/03_hydrological_portfolio_gate.py \
             --data-dir data/external/lake_erie_king_rail
@@ -32,4 +37,5 @@ jobs:
           path: |
             data/external/lake_erie_king_rail/zenodo_metadata_audit.json
             analysis/results/lake_erie_release_structure.json
+            analysis/results/lake_erie_homing_random_join.json
             analysis/results/kingrail_portfolio_gate.json
