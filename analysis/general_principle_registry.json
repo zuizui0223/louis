@@ -1,32 +1,25 @@
 {
-  "schema": "louis.hydrological_portfolio_program.v1",
-  "publication_endpoint": "independent comparative test of temporal microhabitat complementarity as a buffer of broad-scale residency",
-  "seed_system": "King Rail / Gulf Coast marsh",
-  "core_hypothesis": "temporally complementary hydrological microhabitats allow animals to track suitable states internally and retain broad-scale residency",
+  "schema": "louis.environmental_state_fidelity_program.v2",
+  "publication_endpoint": "independent temporal test of whether movement stabilises experienced microhabitat state relative to event-matched local availability",
+  "seed_system": "King Rail / Gulf Coast marsh EOG anomaly",
+  "first_independent_system": "western Lake Erie King Rail telemetry and paired microhabitat surveys",
+  "core_hypothesis": "resident birds can maintain fidelity to environmental state by moving within familiar geographic space as hydrological conditions change",
   "primary_estimands": {
-    "A_ht": "fraction of familiar area currently within usable hydrological/microhabitat state",
-    "HPI": "lower-tail retained-suitability statistic, initially Q10(A_ht)",
-    "Async": "asynchrony among microhabitat suitability time series",
-    "broad_relocation": "movement or home-range displacement beyond the familiar area"
+    "SRI": "1 - temporal variance of used water depth / median matched-random pseudo-trajectory variance",
+    "environmental_displacement": "change in environmental state between consecutive used locations",
+    "geographic_displacement": "distance between consecutive used locations"
   },
   "primary_predictions": [
-    "fine-scale microhabitat use tracks current hydrological state while broad home-range position remains stable",
-    "higher HPI reduces broad relocation at equal mean habitat quality",
-    "relocation rises nonlinearly when retained suitable area falls below a threshold",
-    "hydrological specialists gain more from high HPI than broad-niche species",
-    "temporal complementarity predicts residency better than static heterogeneity"
+    "used water-depth state varies less through time than event-matched local availability",
+    "real geographic movement can occur while environmental-state displacement remains lower than matched pseudo-trajectories",
+    "individual state-fidelity signal is not driven by one bird"
   ],
+  "later_extension": "full hydrological-portfolio/HPI buffering only if repeated spatial habitat surfaces can be reconstructed",
   "falsification": [
-    "mean habitat quality performs as well as temporal complementarity",
-    "internal microhabitat switching does not increase with hydrological change",
-    "heterogeneous portfolios do not reduce broad relocation",
-    "niche breadth does not modify portfolio benefit"
-  ],
-  "priority_independent_systems": [
-    "southwest Louisiana/southeast Texas King Rail telemetry",
-    "mid-Atlantic King Rail telemetry",
-    "northern Gulf Coast multi-species wetland-bird data",
-    "independent dynamic-wetland waterbird telemetry"
+    "used-state variance is not lower than matched availability",
+    "environmental displacement is indistinguishable from pseudo-trajectories",
+    "state fidelity appears only after post-hoc tuning of a preferred water-depth window",
+    "one individual drives the aggregate result"
   ],
   "eog_role": "discovery clue that geographic propagation was a poor ecological representation"
 }
