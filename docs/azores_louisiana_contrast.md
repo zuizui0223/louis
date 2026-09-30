@@ -1,47 +1,57 @@
-# Why Azores and Louisiana are biologically different
+# Two ecological routes to spatial persistence
 
-The two seed systems should not be treated as two replicates of one generic "memory" phenomenon.
+Azores and Louisiana should not be treated as two copies of one generic memory process.
 
-They occupy opposite **observability regimes**.
+They suggest two different behavioural solutions to environmental variability.
 
-| Axis | Azores yellow eel | Louisiana King Rail |
-|---|---|---|
-| Biological unit | marked individual | species-level local use/occupancy |
-| Identity through time | known tag identity | unknown |
-| Observation node | receiver near a pool/release compartment | ARU point in continuous marsh |
-| Landscape | short, channelled, physically constrained stream | open 2-D wetland matrix |
-| Source identity | release locations and tagged individuals known | latent sources largely unknown |
-| Nondetection | same known individual may be silent/missed | occupancy and individual identity both hidden |
-| Movement evidence | direct receiver transition would be visible; none observed | movement cannot be reconstructed from species detections |
-| EOG anomaly | prediction improves despite zero observed propagation | local propagation worlds fail despite temporal history signal |
-| Main ecological question | why is potential mobility compressed into local persistence/activity states? | when does monitoring geometry manufacture apparent turnover/colonisation? |
-| General principle | landscape compression of realised mobility | monitoring-network topology != population-process topology |
+## Route 1 — Anchoring
 
-## Higher-order synthesis
+**Azores yellow eel**
 
-The common question is not merely "what causes memory?"
+- habitat is strongly channelled and compartmentalised;
+- individuals can remain associated with a local refuge;
+- relocation among refuges is costly or unnecessary;
+- persistence is produced by **staying**.
 
-It is:
+Ecological prediction:
 
-> **When can a sequence of spatial observations be interpreted as a biological transition process?**
+> when profitable refuges are predictable and alternatives are costly/uncertain, mobility is suppressed.
 
-Azores shows a case where identity and local state are unusually well resolved and the answer is clear: the animals did not transition among monitored compartments.
+## Route 2 — Tracking within a familiar area
 
-Louisiana shows the opposite regime: identity and intermediate states are hidden, so an apparent transition in the observation network is not uniquely a biological transition.
+**Louisiana marsh birds**
 
-This suggests a more concrete cross-system framework based on **propagation identifiability**.
+- habitat is a changing hydrological mosaic;
+- water depth and vegetation structure change the value of local microhabitats;
+- birds can retain home-range fidelity while reallocating activity internally;
+- persistence is produced by **flexibility within place**.
 
-### Three necessary conditions for strong propagation interpretation
+Ecological prediction:
 
-1. **Identity continuity**  
-   Can observations be linked to the same biological entity or state through time?
+> when habitat quality changes within a heterogeneous home range, flexible microhabitat switching can preserve broad-scale residency.
 
-2. **Spatial-state closure/alignment**  
-   Do monitored nodes represent the relevant ecological states and intermediate/source habitat?
+## The common ecological axis
 
-3. **Observation resolution**  
-   Is nondetection sufficiently modelled that disappearance/reappearance is not automatically treated as extinction/colonisation?
+The key contrast is not mobility versus sedentism.
 
-When these conditions weaken, a spatial lag may remain predictive but its biological interpretation as propagation weakens.
+It is the interaction of:
 
-Azores and Louisiana are valuable because they sit at very different points on these axes, not because both contain "memory."
+1. temporal predictability of local resources/refugia;
+2. within-home-range habitat heterogeneity;
+3. cost of relocating beyond the familiar area;
+4. rate of environmental change.
+
+This yields a concrete behavioural map:
+
+- **stable + profitable + costly relocation** -> anchoring;
+- **dynamic + internally heterogeneous** -> within-range tracking;
+- **dynamic + homogeneous / exhausted** -> broad relocation;
+- **disturbance + newly connected landscape** -> episodic dispersal.
+
+## General hypothesis
+
+> **Spatial persistence is an emergent behavioural response to environmental predictability and habitat heterogeneity, not a synonym for immobility.**
+
+This is already partly anticipated in site-fidelity theory, so novelty should not be claimed from the slogan alone.
+
+The stronger test is whether the same environmental axes predict which route to persistence appears across very different taxa and ecosystems.
