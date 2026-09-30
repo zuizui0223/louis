@@ -1,249 +1,115 @@
-# General-principle programme: memory is not propagation
+# General ecological programme: hydrological portfolio buffering
 
-## Why this project must go beyond re-analysis
+## Publication target
 
-The originating datasets were already published and the EOG responses have already been opened. Re-fitting those same data with another ecological model can diagnose mechanisms, but **that is not the publication endpoint**.
+This project is not a re-analysis of the 2012 King Rail occupancy study and is not primarily about monitoring error.
 
-The single-system analyses in this repository have only two roles:
+The target is a wetland- and movement-ecology question:
 
-1. identify which kind of temporal/spatial memory the seed system plausibly represents;
-2. generate quantitative predictions for a genuinely cross-system test.
-
-The target is a general ecological principle that can be tested across taxa, ecosystems and monitoring designs.
-
-## Candidate general principle
-
-> **Predictive memory is not spatial propagation.**
-
-More precisely:
-
-> When recent ecological observations improve prediction beyond current environment and static habitat, the gain shows that the measured present state is incomplete. It does not identify why the system has memory.
-
-At least four sources can produce the same forecast pattern:
-
-1. **local persistence / endogenous state memory** — the same organism, population or local state persists;
-2. **shared exogenous forcing** — spatially separated sites respond coherently to weather, hydrology, resources or disturbance;
-3. **observation-process memory** — detectability, sensor operation, activity or sampling creates temporally correlated observations;
-4. **spatial propagation** — movement, colonisation or other transmission carries state among sites.
-
-Only (4) is spatial propagation.
-
-The general problem is therefore not to ask whether "history helps", but:
-
-> **Under what spatial and temporal regimes does predictive history represent persistence, forcing, observation, or propagation?**
+> **Can temporal complementarity among microhabitats allow resident wetland birds to remain in a familiar area while tracking changing hydrological conditions internally?**
 
 ## Literature boundary
 
-Existing work already establishes important pieces of this problem:
+Several relevant ideas already exist:
 
-- ecological-memory frameworks separate antecedent endogenous and exogenous effects;
-- dynamic occupancy separates persistence, colonisation and imperfect detection;
-- synchrony theory separates dispersal from correlated environmental forcing (Moran effect);
-- passive-monitoring work shows that autocorrelated detections can bias occupancy inference;
-- movement and occupancy studies show that sampling interval can change inferred ecological states;
-- dimensionless scaling has successfully united very different patchy ecological systems.
+- King Rails select fine-scale vegetation and open-water features within home ranges;
+- water depth can predict marsh-bird distribution better than broad marsh class;
+- resident King Rails can change seasonal home-range use;
+- flexible fine-scale habitat use can coexist with broad-scale site fidelity in other birds;
+- animal movement can decline in heterogeneous landscapes;
+- habitat portfolios/spatial insurance can stabilise populations and ecosystem functions.
 
-Therefore none of those pieces alone is claimed as new.
+Therefore the novelty claim cannot simply be "heterogeneity matters" or "fidelity and flexibility coexist."
 
-The novelty candidate to test is their **cross-system unification as a predictive-memory source regime map**, including the observation process as a first-class source of apparent memory.
+The sharper hypothesis is:
 
-## Scale formulation
+> **temporal complementarity among hydrological microhabitats creates an individual-scale habitat portfolio that stabilises broad-scale residency.**
 
-Let the observation interval be (Delta t), and let typical inter-patch/site spacing be (d).
+## Core mechanism
 
-Define provisional scale ratios:
+A wetland home range contains cells or patches that differ in elevation, water depth, hydroperiod, vegetation structure, open-water edge, and prey/refuge conditions.
 
-### Persistence number
+If those patches do not become suitable/unsuitable at exactly the same time, environmental change can shift **which internal patch is best** without eliminating all suitable habitat.
 
-[
-Pi_P = 	au_P / Delta t
-]
+regional water-level change -> different microhabitats respond differently -> best patch shifts inside familiar area -> individual changes fine-scale use -> broad home-range residency is retained
 
-where (	au_P) is the characteristic persistence/dwell time of a local ecological state.
+## Hydrological portfolio quantities
 
-### Propagation number
+For individual/home range h and time t, let A_ht be the fraction of the home range currently inside the species' usable hydrological/microhabitat state.
 
-[
-Pi_G = ell_G(Delta t) / d
-]
+Define suitability retention as a lower-tail statistic:
 
-where (ell_G(Delta t)) is the characteristic movement/colonisation distance possible during one observation interval.
+HPI_h = Q10(A_ht).
 
-### Forcing coherence numbers
+A high HPI means that even during poor periods, some substantial fraction of the familiar area remains usable.
 
-[
-Pi_F^t = 	au_F / Delta t
-]
+A second quantity is microhabitat response asynchrony:
 
-and
+Async_h = 1 - mean correlation among microhabitat suitability time series.
 
-[
-Pi_F^s = ell_F / d
-]
+Exact estimators can change after data audit, but the biological meaning is fixed: **a good portfolio retains suitable habitat because its components respond differently through time.**
 
-where (	au_F) and (ell_F) are the temporal persistence and spatial coherence scales of the dominant external forcing.
+## Falsifiable predictions
 
-### Observation-memory number
+### L1 — internal tracking
 
-[
-Pi_O = 	au_O / Delta t
-]
+Fine-scale locations should shift toward currently suitable water-depth/vegetation states while the broad home-range centroid/territory remains comparatively stable.
 
-where (	au_O) is the characteristic persistence of observation state (activity/detectability/sensor condition). Detection probability (p) remains an additional observation-quality axis rather than being forced into the same ratio.
+### L2 — portfolio buffering
 
-These definitions are provisional and must be stress-tested in known-truth simulations before being treated as estimands.
+At the same mean habitat quality, individuals/home ranges with higher HPI or hydrological asynchrony should move shorter distances outside the familiar area, show smaller broad-scale home-range displacement, and maintain occupancy/use through larger water-level fluctuations.
 
-## Regime predictions
+### L3 — threshold failure
 
-### Regime P — persistence-dominated memory
+Broad relocation should rise sharply when A_ht falls below a critical retained-suitability threshold. Movement outside the familiar area is predicted to be a **portfolio failure event**, not a smooth response to every water-level change.
 
-If:
+### L4 — niche breadth interaction
 
-[
-Pi_P gg 1,quad Pi_G ll 1
-]
+Hydrological specialists should gain more from a diverse/asynchronous habitat portfolio than broad-niche species.
 
-then recent state should predict the future strongly even though little or no propagation occurs.
+### L5 — temporal complementarity beats static heterogeneity
 
-Expected signature:
-
-- high same-site/state memory;
-- weak directional neighbour-lag effect after same-site persistence;
-- forecast gain from history without spatial spread.
-
-### Regime F — forcing-dominated synchrony
-
-If both forcing coherence ratios are large:
-
-[
-Pi_F^t gg 1,quad Pi_F^s gg 1
-]
-
-then multiple sites may change together without exchange among them.
-
-Expected signature:
-
-- cross-site synchrony;
-- synchrony attenuates after common forcing is included;
-- no directional propagation lag is required.
-
-### Regime O — observation-dominated memory
-
-If observation state persists and detection is imperfect:
-
-[
-Pi_O gg 1
-]
-
-especially with low/intermediate (p), then detections and nondetections can cluster even when latent ecological state is unchanged.
-
-Expected signature:
-
-- large difference between observed turnover and latent-state turnover;
-- apparent unsupported appearances disappear after observation modelling;
-- strong sensitivity to detection-window / sampling-interval choice.
-
-### Regime G — propagation-dominated memory
-
-Propagation is plausible only when movement/colonisation operates on the sampled scale:
-
-[
-Pi_G gtrsim 1
-]
-
-and a directional lagged neighbour signal remains after persistence, shared forcing and observation processes are controlled.
-
-Expected signature:
-
-- source-to-target temporal ordering;
-- distance/connectivity-dependent lag;
-- residual neighbour effect after local persistence;
-- external forcing cannot reproduce the directional sequence.
-
-## Strongest comparative prediction
-
-The same ecological system can move among apparent regimes when (Delta t) changes.
-
-Therefore a powerful test is **temporal re-binning** of high-frequency observations.
-
-If the framework is correct:
-
-- very short intervals relative to (	au_P) exaggerate persistence;
-- intervals near movement/colonisation timescales expose propagation if it exists;
-- coarse intervals erase short memory and can merge distinct processes;
-- observation-induced memory changes predictably with the detection window.
-
-The goal is not to choose the interval producing the strongest result. The interval series is itself the experiment.
-
-## Cross-system study design
-
-A publishable general-principle test should include independent systems spanning the regime space, rather than treating any one published dataset as the evidence base.
-
-Minimum system classes:
-
-- high-residence telemetry / biologging;
-- passive acoustic or camera monitoring with imperfect detection;
-- genuinely dispersive or recolonising patch system;
-- spatially coherent externally forced system;
-- ideally a non-animal system to test taxonomic generality.
-
-For each system, estimate the same objects:
-
-1. forecast gain from lagged history beyond contemporaneous environment;
-2. same-site persistence contribution;
-3. shared-forcing contribution;
-4. observation-process contribution;
-5. residual directional propagation contribution;
-6. how all five change under temporal re-binning.
-
-## Primary falsifiable claims
-
-### G1 — predictive memory without propagation exists
-
-Systems with high persistence and low movement can show strong history-based forecast gain.
-
-### G2 — propagation requires directional residual information
-
-A history signal is not classified as propagation unless directional neighbour information remains after persistence, forcing and observation are controlled.
-
-### G3 — apparent memory source changes with scale
-
-Changing (Delta t) shifts systems across predicted regimes in accordance with process timescales.
-
-### G4 — cross-taxon similarity follows scale ratios better than taxonomy
-
-Systems that are taxonomically unrelated but occupy similar ((Pi_P,Pi_G,Pi_F,Pi_O)) regions should show similar memory decompositions.
-
-This is the strongest general-ecology target.
+A static diversity index should be weaker than a metric based on **how habitat components retain suitability through time**.
 
 ## What would falsify the programme
 
-The framework fails as a useful general principle if:
+The hydrological-portfolio interpretation is weakened if:
 
-- decomposition is unstable to reasonable model families;
-- scale ratios do not predict which source dominates;
-- re-binning changes inferred regimes idiosyncratically rather than systematically;
-- taxonomy/system identity explains the decomposition substantially better than the scale ratios;
-- propagation cannot be distinguished even in known-truth systems designed to contain it.
+- mean water depth or mean habitat quality predicts residency as well as temporal complementarity;
+- internal microhabitat switching does not increase during water-level change;
+- high-heterogeneity home ranges show equal or greater broad relocation;
+- no retained-suitability threshold precedes relocation;
+- niche breadth does not modify the benefit of habitat portfolios across species.
 
-## Publication boundary
+## Why King Rail matters
 
-A single re-analysis of the seed dataset is **not sufficient for the main claim**.
+King Rail is a strong anchor because existing studies show strong within-home-range microhabitat selection, association with vegetation richness and open-water proximity, home-range size related to open-water availability, ecological consequences during drought, and shallow-water/fine-scale hydrological relationships in Gulf Coast marshes.
 
-The seed dataset can appear as:
+The EOG failure of simple geographic propagation provided the clue that **geographic distance from prior use may not be the relevant state variable**.
 
-- motivation;
-- one anchor point in a cross-system regime map;
-- a mechanism-diagnostic example.
+## Independent empirical route
 
-The paper-level result must come from known-truth falsification plus independent cross-system comparison.
+Priority systems:
 
-## Role of Louisiana in the general programme
+1. **King Rail telemetry in southwest Louisiana / southeast Texas** — 34 radio-tagged birds with direct microhabitat measurements; ideal if raw movement/habitat data can be obtained.
+2. **Mid-Atlantic King Rail telemetry** — resident segment with seasonal changes in home-range size and habitat use; useful for within-individual flexibility.
+3. **Northern Gulf Coast multi-species wetland-bird surveys** — strong water-depth information across multiple species; useful for estimating hydrological niche breadth, not sufficient alone for individual tracking.
+4. **Dynamic wetland movement systems outside rails** — shorebird/waterbird telemetry under changing surface-water distributions provides a taxonomically independent test of whether retained local habitat reduces regional movement.
 
-Louisiana is the **imperfect-detection / local-propagation-failure anchor**.
+## Main paper-level model
 
-The six detection-source local worlds all failed, while a small history-dependent predictive signal remained. This makes the system useful for testing whether apparent spatial turnover can arise from latent persistence plus observation error rather than movement.
+For individual h and time t:
 
-Its role is to anchor the observation/persistence corner of the general regime map, not to become a second analysis of the original King Rail paper.
+broad_relocation_ht ~ HPI_ht + mean_habitat_quality_ht + water_level_change_t + HPI * water_level_change + species_niche_breadth + HPI * niche_breadth + individual/system random effects
 
-The strongest next independent test is across additional monitoring systems or species whose temporal response sequences were not used to generate the hypothesis.
+Fine-scale tracking model:
+
+microhabitat_choice ~ current_water_depth + vegetation_state + open_water_edge + familiarity
+
+The key test is whether internal habitat switching **mediates** the relationship between environmental change and broad-scale residency.
+
+## Strong ecological conclusion if supported
+
+> **Spatial heterogeneity stabilises residency when its components are temporally complementary: animals can remain faithful to a familiar area by moving among internal habitat states rather than abandoning the area when conditions change.**
+
+This is the ecological endpoint. King Rail is the motivating anchor, not the evidence base.
