@@ -39,6 +39,12 @@ jobs:
       - name: Show state-decomposition result
         run: cat results/king_rail_detection_state_decomposition.json
 
+      - name: Run robust-design occupancy decomposition
+        run: python analysis/03_robust_design_occupancy.py
+
+      - name: Show robust-design result
+        run: cat results/king_rail_robust_design_occupancy.json
+
       - uses: actions/upload-artifact@v4
         with:
           name: king-rail-mechanism-diagnosis
@@ -47,3 +53,4 @@ jobs:
             analysis/results/king_rail_failure_events/positive_event_classification.csv
             results/king_rail_initialization_memory_diagnostic.json
             results/king_rail_detection_state_decomposition.json
+            results/king_rail_robust_design_occupancy.json
