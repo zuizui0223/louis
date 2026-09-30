@@ -24,6 +24,12 @@ jobs:
       - name: Show failure-event summary
         run: cat analysis/results/king_rail_failure_events/summary.json
 
+      - name: Diagnose source initialization and memory duration
+        run: python analysis/02_initialization_memory_diagnostic.py
+
+      - name: Show initialization-memory result
+        run: cat results/king_rail_initialization_memory_diagnostic.json
+
       - name: Install state-model dependencies
         run: python -m pip install -r requirements.txt
 
@@ -39,4 +45,5 @@ jobs:
           path: |
             analysis/results/king_rail_failure_events/summary.json
             analysis/results/king_rail_failure_events/positive_event_classification.csv
+            results/king_rail_initialization_memory_diagnostic.json
             results/king_rail_detection_state_decomposition.json
