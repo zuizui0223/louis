@@ -1,8 +1,16 @@
-# Analysis order
+# Analysis programme
 
-The King Rail response has already been opened in EOG, so same-King-Rail work is post-hoc mechanism diagnosis.
+## Publication target
 
-## Stage 1 — identify why the six local worlds failed
+This repository does **not** aim to publish a second analysis of the King Rail paper.
+
+Louisiana is a seed system for the cross-system **memory–propagation regime programme**:
+
+> predictive memory can arise from local persistence, shared forcing, observation-process memory, or actual propagation; history-based forecast gain alone does not identify which source generated it.
+
+See [general-principle programme](../docs/general_principle_program.md).
+
+## Phase 0 — seed-system diagnosis only
 
 Run:
 
@@ -10,23 +18,37 @@ Run:
 python analysis/01_failure_event_classification.py
 ```
 
-The script opens only the already-consumed `KIRA.csv` response and classifies every positive event as:
+The script opens only the already-consumed King Rail response and identifies why detection-source propagation worlds failed.
 
-1. same-site continuation;
-2. same-site return after a detection gap;
-3. first detection near prior positives;
-4. first detection outside prior observed-source support.
+This is not the publication endpoint. Its role is to estimate whether Louisiana sits primarily in the persistence/observation corner or whether residual propagation remains plausible.
 
-It also reports which frozen immediate/cumulative local worlds fail on each event.
+## Phase 1 — known-truth regime benchmark
 
-This directly determines whether the first explanation to test is imperfect detection/persistence or an open spatial process.
+Build simulated detection histories with known latent states spanning:
 
-## Stage 2 — occupancy/detection decomposition
+- persistent occupancy + imperfect detection;
+- regional/common forcing;
+- true local propagation;
+- open-population influx;
+- mixed regimes.
 
-Use the model order in `hypothesis_registry.json`:
+Vary detection probability and observation interval so that apparent turnover can be separated from latent turnover.
 
-`M0 detection/habitat -> M1 same-site persistence -> M2 latent-neighbour -> M3 regional synchrony -> M4 open source`.
+## Phase 2 — independent cross-system panel
 
-## Stage 3 — multi-species extension
+Add independent passive-acoustic, camera or repeated-occupancy systems whose temporal sequences were not used to generate the hypothesis.
 
-Do not inspect the detailed temporal sequences of the remaining ten species until temporal endpoints and comparison rules are frozen. Published habitat associations are already known and are not blind.
+For each system estimate:
+
+1. history-based forecast gain;
+2. latent persistence;
+3. shared temporal forcing;
+4. observation-process memory;
+5. residual directional propagation;
+6. re-binning response.
+
+## Phase 3 — comparative principle
+
+Test whether the proposed scale ratios predict memory source across systems better than species identity, taxonomic group or monitoring modality.
+
+King Rail is one anchor point, not the evidence base.
