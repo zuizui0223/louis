@@ -1,26 +1,31 @@
 # louis
 
-## Main target: a general ecological principle, not a re-analysis paper
+## Main ecological question
 
-Louisiana is now a **seed / anchor system** for a broader programme on the source of ecological predictive memory.
+> **When wetland habitat quality shifts through time, do resident marsh birds spread geographically from previously used places, or do they reorganize space use to track transient habitat states within a familiar landscape?**
 
-Candidate principle:
+This project uses King Rail and Gulf Coast marsh systems as anchors for a broader behavioural- and wetland-ecology question.
 
-> **Predictive memory is not spatial propagation.**
+The source literature already shows that King Rails respond strongly to fine-scale wetland structure, including water depth, vegetation and open-water access. The goal is **not** to repeat occupancy or detection modelling.
 
-Recent spatial state can improve forecasts because of local persistence, shared environmental forcing, observation-process memory, or actual propagation. Only the last is movement/connectivity.
+The working ecological hypothesis is:
 
-Louisiana supplies a complementary extreme: all six simple local detection-source propagation worlds were falsified, yet a small history-dependent predictive signal remained. With imperfect acoustic detection, this is exactly the kind of system where **persistent latent state can masquerade as turnover or apparent spatial appearance**.
+> **in dynamic wetlands, spatial change can be driven by tracking of suitable hydrological/microhabitat states rather than by a geographic colonisation front.**
 
-The same King Rail analysis is mechanism diagnosis only. It is not the final paper.
+Louisiana represents the **within-range tracking** route to spatial persistence.
+
+A stronger comparative prediction is that **within-home-range habitat heterogeneity buffers broad-scale residency**: birds can remain in a familiar area if that area contains enough alternative water-depth and vegetation states to track changing conditions.
+
+The main publication target is independent and comparative across marsh systems with contrasting hydrological variability and habitat heterogeneity.
 
 See:
 
-- [general-principle programme](docs/general_principle_program.md)
+- [Louisiana-specific ecological principle](docs/specific_general_principle.md)
+- [two ecological routes to spatial persistence](docs/azores_louisiana_contrast.md)
 - [EOG result -> ecological tests](docs/eog_result_to_ecological_tests.md)
-- [analysis order](analysis/README.md)
-- [general-principle registry](analysis/general_principle_registry.json)
 
-## Publication boundary
+## Role of EOG
 
-The publishable main claim must be supported by known-truth simulations plus independent monitoring systems spanning persistence-, observation-, forcing- and propagation-dominated regimes. King Rail alone is motivation and one anchor point.
+EOG is only the discovery route. Its failure of simple local propagation suggested that geographic distance from previous detections may not be the relevant ecological axis.
+
+Same-King-Rail analyses are mechanism diagnosis only and are not the final paper.
