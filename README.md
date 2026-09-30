@@ -35,6 +35,18 @@ See:
 - [analysis programme](analysis/README.md)
 - [candidate systems and precedents](analysis/candidate_independent_systems.csv)
 
+## Independent replication boundary
+
+A 2026 South Carolina King Rail telemetry study supplies a complementary regime:
+
+- 9 birds had both breeding and non-breeding telemetry;
+- 5/9 shifted seasonal home ranges;
+- mean shift about **2.9 km** (0.7–7.5 km);
+- flooding and vegetation management altered habitat availability;
+- birds used adjacent tidal marsh/flooded forest when local impoundments changed.
+
+Lake Erie therefore tests **within-home-range micro-niche tracking**, while South Carolina represents the **broad-relocation boundary** when local compensation fails.
+
 ## Evidence boundary
 
 The Lake Erie data archive is public, but this environment has not yet resolved its physical file list. The design is therefore frozen from the published methods before file-level schema inspection.
