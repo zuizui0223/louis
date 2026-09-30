@@ -1,0 +1,30 @@
+name: independent-data-audit
+
+on:
+  push:
+    paths:
+      - "analysis/02_fetch_public_comparative_data.py"
+      - "analysis/03_hydrological_portfolio_gate.py"
+      - ".github/workflows/independent-data-audit.yml"
+  workflow_dispatch:
+
+jobs:
+  lake-erie-portfolio-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Download public Lake Erie King Rail release
+        run: python analysis/02_fetch_public_comparative_data.py --download
+      - name: Run hydrological portfolio gate
+        run: |
+          python analysis/03_hydrological_portfolio_gate.py             --data-dir data/external/lake_erie_king_rail
+      - name: Upload audit outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: louis-independent-data-audit
+          path: |
+            data/external/lake_erie_king_rail/zenodo_metadata_audit.json
+            analysis/results/kingrail_portfolio_gate.json
