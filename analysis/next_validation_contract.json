@@ -8,7 +8,7 @@
     "robust_design_dynamic_model": "nonidentifiable"
   },
   "stop_rule": "Do not further tune King Rail latent-state models on the same response. Move the generated prediction to response-frozen replication.",
-  "primary_general_hypothesis": "Observed-positive source models exaggerate ecological turnover when true site use is persistent but detection is intermittent; cumulative site history should rescue apparent one-step propagation failures more often than increasing spatial reach alone.",
+  "primary_general_hypothesis": "Habitat/salinity niche breadth predicts temporal site-use memory: habitat specialists should repeatedly use a narrower set of sites and therefore show stronger prior-site persistence than habitat-flexible species.",
   "prospective_panel": {
     "source": "USGS ScienceBase 5ecf119d82ce30fd980854bd",
     "unopened_for_this_programme_at_freeze": [
@@ -69,8 +69,10 @@
     "cumulative_memory_rescue_fraction": "(immediate_unsupported_minus_cumulative_unsupported) / post_initialization_positive_count"
   },
   "primary_cross_species_prediction": {
-    "statement": "Species with more gap-return/persistent-site structure will show larger rescue when source memory is extended from the immediately previous occasion to cumulative site history.",
-    "test": "Primary: Spearman association across all estimable non-King-Rail species between gap_return_fraction and cumulative_memory_rescue_fraction at the broad 17.01-km scale. Secondary: the same association using the unnormalized rescue count. Report all species and leave species with no post-initialization positives non-estimable rather than switching species.",
+    "statement": "Among the ten non-King-Rail species, habitat specialists (low- or high-salinity associated) have higher post-initialization prior-site fractions than habitat-flexible species.",
+    "response": "prior_site_fraction = post-initialization positives at sites detected previously / all post-initialization positives",
+    "contrast": "mean specialist prior_site_fraction - mean flexible prior_site_fraction",
+    "test": "Exact label-permutation test over the fixed 6 specialist and 4 flexible non-King-Rail species; one-sided alternative > 0.",
     "direction": "positive"
   },
   "secondary_prediction": {
@@ -78,10 +80,43 @@
     "output": "species-wise paired table of immediate versus cumulative unsupported positive counts at each fixed scale"
   },
   "claim_boundary": [
-    "This panel tests detection-history geometry, not true movement routes.",
+    "This panel tests temporal site-use/detection geometry, not true movement routes.",
     "Raw non-detection is not absence.",
-    "Same-site gap return is compatible with persistence plus imperfect detection but does not prove occupancy.",
-    "No alpha-code may be dropped because its result is inconvenient; sparse data are reported as non-estimable.",
-    "King Rail is the hypothesis-generating seed and is excluded from prospective cross-species confirmation."
+    "Published habitat classes are fixed before temporal sequence access.",
+    "No alpha-code may be dropped because its result is inconvenient; sparse species are reported as non-estimable.",
+    "King Rail is the hypothesis-generating seed and is excluded from the primary prospective specialist-versus-flexible test.",
+    "Memory-rescue versus gap-return correlation is descriptive because the two metrics share underlying events."
+  ],
+  "published_habitat_classification": {
+    "source": "Waddle et al. 2022, Wetlands 42:26, DOI 10.1007/s13157-022-01548-4",
+    "low_salinity_specialists": [
+      "KIRA",
+      "AMBI",
+      "COGA",
+      "PIGR"
+    ],
+    "high_salinity_specialists": [
+      "CLRA",
+      "SESP",
+      "SORA"
+    ],
+    "flexible_both_salinity_regimes": [
+      "AMCO",
+      "PUGA",
+      "LEBI",
+      "MAWR"
+    ],
+    "rule": "Classification is frozen from the published occupancy interpretation, not derived from the temporal sequences opened by this programme."
+  },
+  "secondary_cross_species_predictions": [
+    {
+      "statement": "Specialists have higher same-site gap-return fractions than flexible species.",
+      "response": "gap_return_fraction",
+      "direction": "positive"
+    },
+    {
+      "statement": "Extending source memory from immediate-previous to cumulative history reduces unsupported positives, especially in species with strong site persistence.",
+      "role": "mechanistic diagnostic only; not used as an independent test of persistence because the quantities share events"
+    }
   ]
 }
