@@ -12,15 +12,47 @@ See [general-principle programme](../docs/general_principle_program.md).
 
 ## Phase 0 — seed-system diagnosis only
 
+Phase 0 asks why the EOG detection-source worlds failed. It is ordered so that an observation-process explanation is tested before any movement interpretation.
+
+### Phase 0A — classify the actual failure events
+
 Run:
 
 ```bash
 python analysis/01_failure_event_classification.py
 ```
 
-The script opens only the already-consumed King Rail response and identifies why detection-source propagation worlds failed.
+This opens only the already-consumed King Rail response and classifies positive events into:
 
-This is not the publication endpoint. Its role is to estimate whether Louisiana sits primarily in the persistence/observation corner or whether residual propagation remains plausible.
+1. same-site continuation;
+2. same-site return after a detection gap;
+3. first detection near prior positives;
+4. first detection outside prior observed support.
+
+This directly identifies which kinds of events falsified the six detection-source worlds.
+
+### Phase 0B — detection versus changing latent state
+
+Run:
+
+```bash
+python analysis/run_detection_state_decomposition.py
+```
+
+This compares two deliberately minimal alternatives with a chronological holdout:
+
+- **M0:** static latent occupancy + quadratic seasonal detection;
+- **M1:** continuous-time dynamic occupancy + the same detection model.
+
+Both use the same low- versus high-salinity habitat term for initial occupancy and are fitted on the first 12 chronological occasions, then predict the final 8 without refitting.
+
+The decision target is:
+
+> Can imperfect/seasonal detection of a persistent latent state explain the apparent turnover, or does a changing ecological state add held-out information?
+
+Only if a changing latent state survives this gate should the project proceed to latent-neighbour propagation or broader regional/open-population terms.
+
+These same-data analyses are **not the paper endpoint**. Their role is to locate Louisiana on the general memory-source regime map and to identify what must be tested prospectively elsewhere.
 
 ## Phase 1 — known-truth regime benchmark
 
