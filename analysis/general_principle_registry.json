@@ -21,5 +21,14 @@
     "state fidelity appears only after post-hoc tuning of a preferred water-depth window",
     "one individual drives the aggregate result"
   ],
-  "eog_role": "discovery clue that geographic propagation was a poor ecological representation"
+  "eog_role": "discovery clue that geographic propagation was a poor ecological representation",
+  "replication_unit": "individual bird; n=10 stabilized-home-range individuals in Lake Erie seed",
+  "published_design_audit": {
+    "used_homing_surveys": 206,
+    "random_surveys": 401,
+    "homing_points_per_individual": "14-36",
+    "intended_matching": "1 used + 2 random-direction points 75 m away within 72 h",
+    "primary_inference": "within-individual matched pseudo-trajectories, then individual-level synthesis",
+    "pseudoreplication_rule": "do not use 607 point records as independent biological replicates"
+  }
 }
