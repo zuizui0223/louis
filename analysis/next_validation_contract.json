@@ -1,0 +1,86 @@
+{
+  "schema": "louis.next_validation_contract.v1",
+  "frozen_after": {
+    "king_rail_eog_result": true,
+    "king_rail_failure_event_diagnosis": true,
+    "king_rail_initialization_memory_diagnosis": true,
+    "visit_level_dynamic_model": "nonidentifiable",
+    "robust_design_dynamic_model": "nonidentifiable"
+  },
+  "stop_rule": "Do not further tune King Rail latent-state models on the same response. Move the generated prediction to response-frozen replication.",
+  "primary_general_hypothesis": "Observed-positive source models exaggerate ecological turnover when true site use is persistent but detection is intermittent; cumulative site history should rescue apparent one-step propagation failures more often than increasing spatial reach alone.",
+  "prospective_panel": {
+    "source": "USGS ScienceBase 5ecf119d82ce30fd980854bd",
+    "unopened_for_this_programme_at_freeze": [
+      "AMBI.csv",
+      "AMCO.csv",
+      "CLRA.csv",
+      "COGA.csv",
+      "LEBI.csv",
+      "MAWR.csv",
+      "PIGR.csv",
+      "PUGA.csv",
+      "SESP.csv",
+      "SORA.csv"
+    ],
+    "fixed_sites": 33,
+    "fixed_occasions": 20,
+    "chronological_order": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      17,
+      13,
+      18,
+      14,
+      19,
+      15,
+      20,
+      16
+    ],
+    "spatial_thresholds_km": [
+      2.728021756372908,
+      2.976793133666009,
+      17.008648432743254
+    ],
+    "no_species_selection_after_values_open": true
+  },
+  "per_species_endpoints": {
+    "positive_event_types": [
+      "same_site_continuation",
+      "same_site_return_after_detection_gap",
+      "first_detection_near_prior_positive",
+      "first_detection_outside_prior_observed_support"
+    ],
+    "post_initialization_immediate_unsupported_by_scale": true,
+    "post_initialization_cumulative_unsupported_by_scale": true,
+    "cumulative_memory_rescue": "immediate_unsupported_minus_cumulative_unsupported",
+    "prior_site_fraction": "fraction of post-initialization positives at previously detected sites",
+    "gap_return_fraction": "fraction of post-initialization positives that return at a previously detected site after at least one observed gap"
+  },
+  "primary_cross_species_prediction": {
+    "statement": "Species with more gap-return/persistent-site structure will show larger rescue when source memory is extended from the immediately previous occasion to cumulative site history.",
+    "test": "Spearman association across all analyzable species between gap_return_fraction and cumulative_memory_rescue at the broad 17.01-km scale; report all species and leave sparse species non-estimable rather than switching species.",
+    "direction": "positive"
+  },
+  "secondary_prediction": {
+    "statement": "After first-positive initialization is removed, broad cumulative history should reduce unsupported positives more consistently than merely interpreting every unsupported detection as long-distance movement.",
+    "output": "species-wise paired table of immediate versus cumulative unsupported positive counts at each fixed scale"
+  },
+  "claim_boundary": [
+    "This panel tests detection-history geometry, not true movement routes.",
+    "Raw non-detection is not absence.",
+    "Same-site gap return is compatible with persistence plus imperfect detection but does not prove occupancy.",
+    "No alpha-code may be dropped because its result is inconvenient; sparse data are reported as non-estimable.",
+    "King Rail is the hypothesis-generating seed and is excluded from prospective cross-species confirmation."
+  ]
+}
