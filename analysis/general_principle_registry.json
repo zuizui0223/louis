@@ -1,27 +1,32 @@
 {
-  "schema": "memory_propagation_regime_program.v1",
-  "repository_role": "imperfect_detection_local_propagation_failure_anchor",
-  "seed_system": "Southwest Louisiana King Rail passive-acoustic monitoring",
-  "publication_endpoint": "known-truth plus independent cross-system test; not single-dataset reanalysis",
-  "general_claims": [
-    "predictive memory can exist without propagation",
-    "observed-state propagation can fail when latent persistence is hidden by imperfect detection",
-    "propagation requires directional residual information after persistence, forcing and observation are controlled",
-    "memory-source regime changes systematically with observation interval"
-  ],
-  "provisional_dimensionless_axes": {
-    "Pi_P": "local-state persistence time / observation interval",
-    "Pi_G": "movement or colonisation distance per observation interval / site spacing",
-    "Pi_F_t": "external-forcing persistence time / observation interval",
-    "Pi_F_s": "external-forcing coherence length / site spacing",
-    "Pi_O": "observation-state persistence time / observation interval",
-    "p": "detection probability or observation quality"
+  "schema": "louis.hydrological_portfolio_program.v1",
+  "publication_endpoint": "independent comparative test of temporal microhabitat complementarity as a buffer of broad-scale residency",
+  "seed_system": "King Rail / Gulf Coast marsh",
+  "core_hypothesis": "temporally complementary hydrological microhabitats allow animals to track suitable states internally and retain broad-scale residency",
+  "primary_estimands": {
+    "A_ht": "fraction of familiar area currently within usable hydrological/microhabitat state",
+    "HPI": "lower-tail retained-suitability statistic, initially Q10(A_ht)",
+    "Async": "asynchrony among microhabitat suitability time series",
+    "broad_relocation": "movement or home-range displacement beyond the familiar area"
   },
-  "seed_prediction": "After latent occupancy/detection separation, much of King Rail apparent turnover should shift from propagation to persistence/observation or regional forcing.",
-  "required_independent_extension": [
-    "additional acoustic or camera systems with replicate detection",
-    "a genuinely dispersive/recolonising patch system",
-    "a high-residence system",
-    "known-truth simulation spanning all regimes"
-  ]
+  "primary_predictions": [
+    "fine-scale microhabitat use tracks current hydrological state while broad home-range position remains stable",
+    "higher HPI reduces broad relocation at equal mean habitat quality",
+    "relocation rises nonlinearly when retained suitable area falls below a threshold",
+    "hydrological specialists gain more from high HPI than broad-niche species",
+    "temporal complementarity predicts residency better than static heterogeneity"
+  ],
+  "falsification": [
+    "mean habitat quality performs as well as temporal complementarity",
+    "internal microhabitat switching does not increase with hydrological change",
+    "heterogeneous portfolios do not reduce broad relocation",
+    "niche breadth does not modify portfolio benefit"
+  ],
+  "priority_independent_systems": [
+    "southwest Louisiana/southeast Texas King Rail telemetry",
+    "mid-Atlantic King Rail telemetry",
+    "northern Gulf Coast multi-species wetland-bird data",
+    "independent dynamic-wetland waterbird telemetry"
+  ],
+  "eog_role": "discovery clue that geographic propagation was a poor ecological representation"
 }
