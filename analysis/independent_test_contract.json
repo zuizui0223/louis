@@ -1,0 +1,36 @@
+{
+  "schema": "louis.independent_test_contract.v1",
+  "scientific_question": "Does temporal complementarity among hydrological microhabitats buffer broad-scale residency by permitting within-area habitat-state tracking?",
+  "priority_design": "individual-resolved movement with repeated hydrological surfaces within and beyond familiar home ranges",
+  "eligibility": {
+    "taxa": "wetland birds; rails preferred for primary biological continuity but taxonomic replication encouraged",
+    "required": [
+      "individual-resolved repeated locations",
+      "repeated water-depth or equivalent hydrological state through time",
+      "enough spatial resolution to distinguish within-home-range shifts from broad relocation",
+      "baseline familiar area/home range definable without future movement outcomes",
+      "at least one period of meaningful hydrological change"
+    ],
+    "preferred": [
+      "vegetation/open-water structure",
+      "multiple individuals per system",
+      "contrasting hydrological variability",
+      "multiple species or populations with different hydrological niche breadth"
+    ],
+    "reject_if": [
+      "only site-level detection histories are available for the primary test",
+      "hydrological state is measured only once",
+      "home range is defined using the same future relocation event used as response",
+      "temporal complementarity cannot be distinguished from mean habitat quality"
+    ]
+  },
+  "primary_estimand": "effect of lower-tail retained suitable area (HPI) on broad relocation after controlling mean habitat quality",
+  "mechanism_estimand": "increase in within-home-range microhabitat switching during hydrological change",
+  "interaction_estimand": "HPI x hydrological niche breadth",
+  "interpretation": {
+    "hpi_effect_and_internal_tracking": "supports hydrological portfolio buffering",
+    "mean_quality_only": "generic habitat quality explanation; portfolio hypothesis not supported",
+    "heterogeneity_increases_relocation": "opposite ecological response; reject buffering prediction"
+  },
+  "no_rescue": "do not redefine suitable-depth window or familiar area after inspecting relocation outcomes"
+}
