@@ -149,3 +149,52 @@ The source dataset is independent of the original Louisiana EOG endpoint, but th
 ## Strong ecological conclusion if supported
 
 > **Site fidelity can be achieved by environmental homeostasis rather than immobility: animals may move within a familiar landscape to remain faithful to a preferred habitat state.**
+
+
+## Sampling-unit correction from the published design
+
+The independent Lake Erie study contributes:
+
+- 10 individuals with stabilized home ranges;
+- 206 used/homing microhabitat surveys;
+- 401 random microhabitat surveys;
+- 14–36 homing locations per individual.
+
+The source paper had 607 point-level records for habitat-selection CART, but **607 is not the biological replication level for the present temporal hypothesis**.
+
+Primary replication is the **individual bird (n = 10)**.
+
+### Required inference hierarchy
+
+1. build the used-state time series separately for each bird;
+2. generate matched-availability pseudo-trajectories separately within that same bird;
+3. estimate SRI per bird;
+4. report the distribution/sign consistency of the 10 individual SRI values;
+5. use individual-level bootstrap/randomization or a hierarchical model for population inference.
+
+Do not treat the 206 homing events as 206 independent birds.
+
+### Event matching
+
+The published design measured one used plot plus two plots 75 m away in random directions within 72 h of each homing event. In practice the final data contain 401 random surveys for 206 homing surveys rather than exactly 412, so the standardizer must allow events with one available random point while reporting missing-pair frequency.
+
+### Temporal autocorrelation is now biology, not a nuisance to erase
+
+The source paper checked point-to-point autocorrelation because its goal was habitat selection and reported representative autocorrelation values including water depth around r = 0.43.
+
+Our question is explicitly temporal.
+
+Therefore:
+
+- do not mechanically thin the time series until autocorrelation disappears;
+- quantify the persistence timescale of used environmental state;
+- compare that persistence with matched availability trajectories;
+- distinguish biological state retention from simple low variance caused by seasonally static water levels.
+
+### Strong result criterion
+
+The strongest Lake Erie result would be:
+
+> most individual birds show positive SRI, and the used-state sequence is more environmentally stable than event-matched local availability even though birds changed geographic positions.
+
+A single pooled point-level p-value is insufficient.
