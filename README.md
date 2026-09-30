@@ -61,3 +61,6 @@ Louisiana is one of three independent ecological projects:
 These are not intended as one umbrella analysis or one shared endpoint.
 
 See [three independent ecology programmes](docs/three_ecology_programs.md).
+
+
+- [three-programme current status](docs/three_ecology_programs_status.md)
