@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 jobs:
-  king-rail-state-decomposition:
+  king-rail-mechanism-diagnosis:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -17,13 +17,26 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Install analysis dependencies
+
+      - name: Classify EOG failure events
+        run: python analysis/01_failure_event_classification.py
+
+      - name: Show failure-event summary
+        run: cat analysis/results/king_rail_failure_events/summary.json
+
+      - name: Install state-model dependencies
         run: python -m pip install -r requirements.txt
+
       - name: Run detection versus latent-state decomposition
         run: python analysis/run_detection_state_decomposition.py
-      - name: Show result
+
+      - name: Show state-decomposition result
         run: cat results/king_rail_detection_state_decomposition.json
+
       - uses: actions/upload-artifact@v4
         with:
-          name: king-rail-detection-state-result
-          path: results/king_rail_detection_state_decomposition.json
+          name: king-rail-mechanism-diagnosis
+          path: |
+            analysis/results/king_rail_failure_events/summary.json
+            analysis/results/king_rail_failure_events/positive_event_classification.csv
+            results/king_rail_detection_state_decomposition.json
