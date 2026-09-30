@@ -1,172 +1,81 @@
-# Specific general principle for Louisiana: monitoring networks are not ecological state networks
+# Ecological mainline for Louisiana: animals track habitat states, not geographic fronts
 
-## Why Louisiana is not just another occupancy reanalysis
+## Biological puzzle
 
-The published Louisiana study already estimated occupancy and detection for 11 secretive marsh-bird species and documented marsh/salinity associations.
+King Rails and other Gulf Coast marsh birds occupy landscapes whose usable habitat changes with water depth, hydroperiod, vegetation structure and access to open water.
 
-Repeating that model is not the new question.
+The original Louisiana work already shows broad salinity/marsh associations. Independent telemetry and habitat studies also show that King Rails respond strongly to fine-scale microhabitat structure within home ranges.
 
-The EOG anomaly was different:
+The ecological question is therefore not simply whether birds persist at the same site.
 
-- detections contained weak temporal-history information;
-- all six simple local propagation worlds built from **detected sites as sources** were eventually falsified;
-- the only always-compatible world was an intentionally open external-source world.
+It is:
 
-The key ecological issue is therefore the mapping between **what the monitoring network sees** and **where the biological population can actually persist or move**.
+> **When wetland habitat quality shifts through time, do resident birds spread geographically from previously used places, or do they reorganize space use to follow transient habitat states within a familiar landscape?**
 
-## The biological contrast that matters
+## Candidate mechanism: within-range habitat-state tracking
 
-An ARU site is not a habitat patch.
+The working hypothesis is that coastal marsh birds can remain resident at the home-range/territory scale while flexibly reallocating activity among microhabitats as hydrology changes.
 
-The 33 recording stations are points sampling a continuous marsh landscape. Birds can:
+A bird can therefore be spatially persistent at a broad scale but highly dynamic at a fine scale.
 
-- remain near a station but go undetected;
-- occupy marsh between stations;
-- move through unsampled habitat;
-- be replaced by another individual of the same species;
-- call at one occasion and remain silent at another.
+The relevant state variables are biological:
 
-Because individuals are not identified, the observation sequence cannot directly distinguish:
+- water depth;
+- hydroperiod;
+- emergent vegetation structure;
+- plant diversity;
+- open-water edge;
+- prey/refuge availability.
 
-```text
-same individual persists
-different individual arrives
-site remains occupied but is missed
-local extinction + recolonisation
-regional movement through unsampled habitat
-```
+The EOG local-propagation failure is useful only as the clue that simple geographic diffusion from previous detections is probably the wrong ecological model.
 
-This is fundamentally different from individual telemetry.
+## General principle candidate
 
-## Candidate general principle
+> **In dynamic wetlands, distributional change can be driven by movement of suitable habitat states through the landscape rather than by a geographic colonisation front.**
 
-> **When observation nodes are sparse proxies for a continuous latent ecological state space, treating detections as occupied source nodes can convert persistence and nondetection into apparent spatial turnover or long-distance colonisation.**
+Call this provisionally **habitat-state tracking**.
 
-Provisionally:
+## Key predictions
 
-> **monitoring-network topology is not population-process topology.**
+1. **Hydrological state should beat geographic distance.**  
+   Changes in local use should track water depth/hydroperiod and microhabitat state more strongly than distance from previously used sites.
 
-This is the central general principle for `louis`.
+2. **Broad residency can coexist with fine-scale movement.**  
+   Individuals should retain home-range fidelity while shifting microhabitat use as water levels change.
 
-## Why King Rail is an informative anchor
+3. **Within-home-range heterogeneity buffers residency.**  
+   Home ranges containing a wider portfolio of water depths and vegetation states should allow birds to remain resident through environmental fluctuation.
 
-The system combines:
+4. **Homogeneous home ranges should force relocation.**  
+   If all local microhabitats cross outside the usable hydrological range at once, movement beyond the familiar area should become more likely.
 
-- imperfect acoustic detection;
-- no individual identity;
-- repeated observations;
-- a continuous wetland matrix;
-- strong habitat/salinity structure;
-- sampling sites rather than discrete habitat patches;
-- an explicitly open population relative to the 33-point monitoring network.
+5. **Species should differ by hydrological niche width.**  
+   Narrow microhabitat specialists should track shifting habitat states more sharply than broad-niche species.
 
-Therefore a failed detected-source propagation model is not surprising in the same way that a failed marked-individual movement model would be.
+## Comparative design
 
-Its failure is informative about **observability and spatial closure**.
+The main paper should not be a second analysis of the 2012 King Rail data.
 
-## Three ways a false propagation signal is generated
+Use independent telemetry/survey systems with dynamic water-level data across:
 
-### 1. False disappearance -> apparent reappearance
+- King Rail populations;
+- other rails/bitterns;
+- managed versus unmanaged marshes;
+- tidal versus impounded wetlands;
+- wetlands with contrasting within-site hydrological heterogeneity.
 
-True state:
+Estimate:
 
-```text
-occupied -> occupied -> occupied
-```
+- home-range fidelity;
+- fine-scale habitat switching;
+- water-depth/hydroperiod variability;
+- within-home-range habitat diversity;
+- frequency of broad-scale relocation.
 
-Observed state:
+The strongest test is whether **internal habitat heterogeneity buffers large-scale residency**.
 
-```text
-1 -> 0 -> 1
-```
+## Ecological meaning
 
-A detection-source model sees the final 1 as a new arrival even though no colonisation occurred.
+The broader target is not an observation problem but a behavioural-ecology principle:
 
-### 2. Hidden source in unsampled marsh
-
-True process:
-
-```text
-sampled site A <- unsampled occupied marsh -> sampled site B
-```
-
-Observed network:
-
-```text
-A        B
-```
-
-B can appear unsupported because the true source is not a node.
-
-### 3. Identity replacement
-
-Observed:
-
-```text
-site i: 1 -> 1
-```
-
-could represent one persistent bird or turnover among individuals.
-
-The same detection history can therefore correspond to very different demographic processes.
-
-## The general variables are not just detection probability
-
-For a monitoring network define:
-
-- (p): detection probability;
-- (C_S): **spatial closure** — fraction of biologically relevant source/intermediate habitat represented by monitored nodes;
-- (I): **identity resolution** — whether observations can be linked to the same biological entity through time;
-- (N_A): **node-state alignment** — how closely a monitoring node corresponds to a real ecological state unit/patch;
-- (d_S): spacing among sensors relative to movement/use scale;
-- (Delta t): observation interval relative to persistence/turnover timescale.
-
-The Louisiana case has low identity resolution and incomplete spatial closure. Its ARU sites are observation points, not closed population states.
-
-## Testable general predictions
-
-### L1 — propagation inference degrades with low closure
-
-At fixed biological movement, detected-source propagation models should generate more unsupported appearances as (C_S) declines.
-
-### L2 — imperfect detection interacts with closure
-
-The error is not additive:
-
-low (p) + low (C_S) should generate substantially more apparent colonisation than either alone.
-
-### L3 — identity resolution changes what can be inferred
-
-When individuals are marked/identified, persistence and movement can be separated directly. When identity is collapsed to species-level detection, the same spatial sequence becomes partially unidentified.
-
-### L4 — node-state alignment matters
-
-Propagation inference should work better in systems where nodes are true discrete habitat patches than in systems where sensors sample a continuous matrix.
-
-This gives a concrete reason why metapopulation-style network logic transfers poorly to some passive-monitoring datasets.
-
-## Strong empirical design
-
-The publication target should compare systems across a factorial observability gradient:
-
-| System type | Identity | Spatial closure | Node = ecological patch? |
-|---|---|---|---|
-| telemetry of marked individuals | high | variable | often moderate/high |
-| nest/territory resighting | high | moderate | high |
-| discrete pond/island occupancy | low | high | high |
-| camera/ARU in continuous habitat | low | low/moderate | low |
-| eDNA/grid surveillance | none | low | low |
-
-Known-truth simulations can manipulate (p, C_S, I, N_A, d_S, Delta t) independently.
-
-The empirical question becomes:
-
-> **Under which observation geometries can sequential detections legitimately identify propagation, and under which geometries are persistence and hidden sources fundamentally confounded with it?**
-
-## Role of EOG
-
-EOG exposed the problem by failing all six local detected-source worlds.
-
-That failure is not the final result. It is the clue that the **source graph was an observation graph, not necessarily the biological graph**.
-
-The general paper must test this observability principle across independent monitoring systems and known-truth simulations.
+> **site fidelity can be maintained either by staying in one persistently profitable patch or by flexibly tracking changing microhabitats within a familiar area.**
