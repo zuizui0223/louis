@@ -438,10 +438,11 @@ def main(output: Path) -> None:
         np.asarray([0.0, 1.0, -1.0, 0.0, 0.0]),
         np.asarray([-1.0, 2.0, -1.0, 0.5, -0.5]),
     ]
+    static_bounds = [(-8, 8)] * 5
     static_fit = fit_model(
         lambda th: static_nll(th, data, cal_idx),
         static_starts,
-        [(-8, 8)] * 5,
+        static_bounds,
     )
 
     dynamic_starts = [
@@ -449,18 +450,47 @@ def main(output: Path) -> None:
         np.asarray([0.0, 1.0, math.log(0.03), math.log(0.003), -1.0, 0.0, 0.0]),
         np.asarray([-1.0, 2.0, math.log(0.003), math.log(0.03), -1.0, 0.5, -0.5]),
     ]
+    dynamic_bounds = [(-8, 8), (-8, 8), (-9, 0), (-9, 0), (-8, 8), (-8, 8), (-8, 8)]
     dynamic_fit = fit_model(
         lambda th: dynamic_filter(th, data, cal_idx),
         dynamic_starts,
-        [(-8, 8), (-8, 8), (-9, 0), (-9, 0), (-8, 8), (-8, 8), (-8, 8)],
+        dynamic_bounds,
     )
 
     pred0 = predict_static(static_fit.x, data, cal_idx, test_idx)
     pred1 = predict_dynamic(dynamic_fit.x, data, cal_idx, test_idx)
     comparison = summarize_predictions(pred0, pred1, data)
 
+    def boundary_hits(values: np.ndarray, bounds: list[tuple[float, float]], names: list[str]) -> list[str]:
+        hits = []
+        for value, (lower, upper), name in zip(values, bounds, names):
+            if abs(float(value) - lower) <= 1e-6 or abs(float(value) - upper) <= 1e-6:
+                hits.append(name)
+        return hits
+
+    static_parameter_names = [
+        "initial_occupancy_intercept",
+        "low_salinity_effect",
+        "detection_intercept",
+        "detection_date_linear",
+        "detection_date_quadratic",
+    ]
+    dynamic_parameter_names = [
+        "initial_occupancy_intercept",
+        "low_salinity_effect",
+        "log_colonization_rate",
+        "log_loss_rate",
+        "detection_intercept",
+        "detection_date_linear",
+        "detection_date_quadratic",
+    ]
+    static_hits = boundary_hits(static_fit.x, static_bounds, static_parameter_names)
+    dynamic_hits = boundary_hits(dynamic_fit.x, dynamic_bounds, dynamic_parameter_names)
+
     ci = comparison["site_bootstrap_95pct_ci_conditional_on_fitted_parameters"]
-    if ci[1] < 0:
+    if dynamic_hits:
+        status = "dynamic_model_boundary_nonidentifiable"
+    elif ci[1] < 0:
         status = "dynamic_state_predictive_gain"
     elif ci[0] > 0:
         status = "static_detection_model_equal_or_better"
@@ -483,6 +513,11 @@ def main(output: Path) -> None:
             "calibration_periods": [data.period_ids[t] for t in cal_idx],
             "heldout_periods": [data.period_ids[t] for t in test_idx],
             "raw_transition_counts_when_both_adjacent_tokens_observed": raw_transition_counts(data),
+        },
+        "fit_diagnostics": {
+            "static_boundary_hits": static_hits,
+            "dynamic_boundary_hits": dynamic_hits,
+            "dynamic_numeric_gain_is_interpretable": not bool(dynamic_hits),
         },
         "models": {
             "M0": {
@@ -513,6 +548,12 @@ def main(output: Path) -> None:
         "heldout": comparison,
         "status": status,
         "interpretation_rules": {
+            "dynamic_model_boundary_nonidentifiable": (
+                "The dynamic model produced a numerical heldout gain but one or more fitted "
+                "parameters hit optimizer bounds. Treat the gain as diagnostic only and replace "
+                "the visit-level state/detection decomposition with a robust-design formulation "
+                "before making an ecological-state claim."
+            ),
             "dynamic_state_predictive_gain": (
                 "The static observation-only explanation is insufficient as a predictive account; "
                 "proceed to same-site versus neighbour/regional latent-state tests."
@@ -531,6 +572,7 @@ def main(output: Path) -> None:
             "A dynamic-state gain would not identify movement distance or source.",
             "A static-model result would not prove literal site permanence.",
             "The site bootstrap is conditional on fitted parameters and is not full parameter uncertainty.",
+            "A numerical dynamic-state gain is not interpreted if optimizer-boundary diagnostics fail.",
             "Neighbour and regional processes are not tested until this observation-versus-state gate is resolved.",
         ],
     }
