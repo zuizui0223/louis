@@ -198,3 +198,32 @@ The strongest Lake Erie result would be:
 > most individual birds show positive SRI, and the used-state sequence is more environmentally stable than event-matched local availability even though birds changed geographic positions.
 
 A single pooled point-level p-value is insufficient.
+
+
+## South Carolina replication boundary
+
+A 2026 King Rail telemetry study in the South Carolina Lowcountry provides an important independent boundary case.
+
+Key published facts:
+
+- 13 tracked individuals contributed 660 telemetry locations plus 14 additional camera/direct-observation locations;
+- 9 individuals had both breeding and non-breeding telemetry;
+- 5/9 shifted seasonal home ranges;
+- mean shift was about 2.9 km, range 0.7-7.5 km;
+- winter flooding of impoundments and vegetation management changed habitat availability;
+- birds used adjacent tidal marsh or flooded forest when impoundment conditions changed.
+
+This system is biologically useful because it contains the predicted **portfolio-failure / broad-relocation regime**:
+
+> when suitable microhabitat cannot be retained inside the familiar breeding area, movement expands beyond that area.
+
+It therefore complements the Lake Erie micro-scale SRI test.
+
+### Role
+
+- Lake Erie: test whether routine within-home-range movement stabilizes experienced microhabitat;
+- South Carolina: test/illustrate when habitat-state change exceeds local buffering capacity and triggers km-scale relocation.
+
+The South Carolina paper states that raw data will be made available by the authors without undue reservation, but no open archive was located in the present audit.
+
+Do not count this as executed quantitative replication until individual data are obtained.
