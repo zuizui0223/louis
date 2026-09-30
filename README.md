@@ -2,41 +2,48 @@
 
 ## Main ecological question
 
-> **Can a resident wetland bird move within familiar space so that the environmental state it experiences remains more stable than the habitat available around it?**
+> **Do resident wetland birds perform micro-niche tracking inside a familiar home range—moving through space so that the environment they actually experience varies less than the environment available around them?**
 
-This project uses King Rail as the anchor for **environmental-state fidelity**.
+This project uses King Rail as the anchor for a fine-scale niche-tracking question.
 
-The goal is not to repeat occupancy modelling or ask again which water depths are selected. The published Lake Erie study already measured used microhabitat and paired local availability.
+The goal is not to repeat occupancy modelling or ask again which water depths are selected. It is also not enough to show that animals can move to similar environmental conditions: that broader phenomenon is already established in the niche-tracking literature and has a close wetland precedent in Shoebills.
 
-The new temporal question is:
+The new temporal test is:
 
-> **Does the sequence of environmental states actually experienced by a bird vary less through time than matched available states?**
+> **within a resident home range, is the used environmental trajectory more stable than time-matched local availability?**
 
-The independent Lake Erie design is especially useful because each homing event has:
+The independent Lake Erie design is especially useful because the published study has:
 
-- one used point;
-- two random points 75 m away;
-- measurements taken within 72 h;
-- water depth and vegetation/structure data.
+- 10 birds with stabilized home ranges;
+- 206 used/homing microhabitat surveys;
+- 401 nearby random surveys;
+- intended event matching of one used point and two random-direction points 75 m away, surveyed within 72 h;
+- repeated water-depth and vegetation measurements.
 
-The first metric is the State Retention Index (SRI), comparing temporal variance of used water depth with matched random pseudo-trajectories.
+The first metric is the State Retention Index (SRI), calculated separately for each bird.
 
 If coordinates are available, the stronger test is:
 
-> **move in space to stay in state** — substantial geographic movement while environmental-state displacement remains lower than the matched availability null.
+> **move in space to stay in state** — geographic movement accompanied by less environmental-state displacement than matched local-availability pseudo-trajectories.
 
 See:
 
-- [Louisiana-specific ecological principle](docs/specific_general_principle.md)
-- [stay in place versus stay in state](docs/azores_louisiana_contrast.md)
 - [independent test protocol](docs/independent_test_protocol.md)
 - [novelty boundary](docs/novelty_boundary.md)
+- [stay in place versus stay in state](docs/azores_louisiana_contrast.md)
+- [state-mismatch synthesis](docs/state_mismatch_synthesis.md)
 - [analysis programme](analysis/README.md)
-- [candidate independent systems](analysis/candidate_independent_systems.csv)
+- [candidate systems and precedents](analysis/candidate_independent_systems.csv)
+
+## Evidence boundary
+
+The Lake Erie data archive is public, but this environment has not yet resolved its physical file list. The design is therefore frozen from the published methods before file-level schema inspection.
+
+Individual bird—not the 607 point records—is the biological replication unit.
 
 ## Later extension
 
-The hydrological-portfolio/HPI idea remains a stronger second stage, but it requires a full repeated habitat surface. Static heterogeneity alone is not enough.
+The hydrological-portfolio/HPI idea remains a stronger second stage and requires a repeated spatial habitat surface. Static heterogeneity alone is not enough.
 
 ## Role of EOG
 
