@@ -23,6 +23,9 @@ See:
 - [Louisiana-specific ecological principle](docs/specific_general_principle.md)
 - [two ecological routes to spatial persistence](docs/azores_louisiana_contrast.md)
 - [EOG result -> ecological tests](docs/eog_result_to_ecological_tests.md)
+- [independent test contract](analysis/independent_test_contract.json)
+- [comparative data schema](analysis/comparative_schema.csv)
+- [candidate independent systems](analysis/candidate_independent_systems.csv)
 
 ## Role of EOG
 
