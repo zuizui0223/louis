@@ -1,0 +1,27 @@
+{
+  "schema": "memory_propagation_regime_program.v1",
+  "repository_role": "imperfect_detection_local_propagation_failure_anchor",
+  "seed_system": "Southwest Louisiana King Rail passive-acoustic monitoring",
+  "publication_endpoint": "known-truth plus independent cross-system test; not single-dataset reanalysis",
+  "general_claims": [
+    "predictive memory can exist without propagation",
+    "observed-state propagation can fail when latent persistence is hidden by imperfect detection",
+    "propagation requires directional residual information after persistence, forcing and observation are controlled",
+    "memory-source regime changes systematically with observation interval"
+  ],
+  "provisional_dimensionless_axes": {
+    "Pi_P": "local-state persistence time / observation interval",
+    "Pi_G": "movement or colonisation distance per observation interval / site spacing",
+    "Pi_F_t": "external-forcing persistence time / observation interval",
+    "Pi_F_s": "external-forcing coherence length / site spacing",
+    "Pi_O": "observation-state persistence time / observation interval",
+    "p": "detection probability or observation quality"
+  },
+  "seed_prediction": "After latent occupancy/detection separation, much of King Rail apparent turnover should shift from propagation to persistence/observation or regional forcing.",
+  "required_independent_extension": [
+    "additional acoustic or camera systems with replicate detection",
+    "a genuinely dispersive/recolonising patch system",
+    "a high-residence system",
+    "known-truth simulation spanning all regimes"
+  ]
+}
