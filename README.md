@@ -2,33 +2,41 @@
 
 ## Main ecological question
 
-> **When wetland habitat quality shifts through time, do resident marsh birds spread geographically from previously used places, or do they reorganize space use to track transient habitat states within a familiar landscape?**
+> **Can a resident wetland bird move within familiar space so that the environmental state it experiences remains more stable than the habitat available around it?**
 
-This project uses King Rail and Gulf Coast marsh systems as anchors for a broader behavioural- and wetland-ecology question.
+This project uses King Rail as the anchor for **environmental-state fidelity**.
 
-The source literature already shows that King Rails respond strongly to fine-scale wetland structure, including water depth, vegetation and open-water access. The goal is **not** to repeat occupancy or detection modelling.
+The goal is not to repeat occupancy modelling or ask again which water depths are selected. The published Lake Erie study already measured used microhabitat and paired local availability.
 
-The working ecological hypothesis is:
+The new temporal question is:
 
-> **in dynamic wetlands, spatial change can be driven by tracking of suitable hydrological/microhabitat states rather than by a geographic colonisation front.**
+> **Does the sequence of environmental states actually experienced by a bird vary less through time than matched available states?**
 
-Louisiana represents the **within-range tracking** route to spatial persistence.
+The independent Lake Erie design is especially useful because each homing event has:
 
-A stronger comparative prediction is that **within-home-range habitat heterogeneity buffers broad-scale residency**: birds can remain in a familiar area if that area contains enough alternative water-depth and vegetation states to track changing conditions.
+- one used point;
+- two random points 75 m away;
+- measurements taken within 72 h;
+- water depth and vegetation/structure data. citeturn352672search0
 
-The main publication target is independent and comparative across marsh systems with contrasting hydrological variability and habitat heterogeneity.
+The first metric is the State Retention Index (SRI), comparing temporal variance of used water depth with matched random pseudo-trajectories.
+
+If coordinates are available, the stronger test is:
+
+> **move in space to stay in state** — substantial geographic movement while environmental-state displacement remains lower than the matched availability null.
 
 See:
 
 - [Louisiana-specific ecological principle](docs/specific_general_principle.md)
-- [two ecological routes to spatial persistence](docs/azores_louisiana_contrast.md)
-- [EOG result -> ecological tests](docs/eog_result_to_ecological_tests.md)
-- [independent test contract](analysis/independent_test_contract.json)
-- [comparative data schema](analysis/comparative_schema.csv)
+- [stay in place versus stay in state](docs/azores_louisiana_contrast.md)
+- [independent test protocol](docs/independent_test_protocol.md)
+- [analysis programme](analysis/README.md)
 - [candidate independent systems](analysis/candidate_independent_systems.csv)
+
+## Later extension
+
+The hydrological-portfolio/HPI idea remains a stronger second stage, but it requires a full repeated habitat surface. Static heterogeneity alone is not enough.
 
 ## Role of EOG
 
-EOG is only the discovery route. Its failure of simple local propagation suggested that geographic distance from previous detections may not be the relevant ecological axis.
-
-Same-King-Rail analyses are mechanism diagnosis only and are not the final paper.
+EOG is only the discovery route. Its failure of simple local propagation suggested that geographic distance from previous detections may not be the biologically relevant state variable.
