@@ -17,7 +17,7 @@ The independent Lake Erie design is especially useful because each homing event 
 - one used point;
 - two random points 75 m away;
 - measurements taken within 72 h;
-- water depth and vegetation/structure data. citeturn352672search0
+- water depth and vegetation/structure data.
 
 The first metric is the State Retention Index (SRI), comparing temporal variance of used water depth with matched random pseudo-trajectories.
 
@@ -30,6 +30,7 @@ See:
 - [Louisiana-specific ecological principle](docs/specific_general_principle.md)
 - [stay in place versus stay in state](docs/azores_louisiana_contrast.md)
 - [independent test protocol](docs/independent_test_protocol.md)
+- [novelty boundary](docs/novelty_boundary.md)
 - [analysis programme](analysis/README.md)
 - [candidate independent systems](analysis/candidate_independent_systems.csv)
 
