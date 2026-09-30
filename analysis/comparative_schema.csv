@@ -1,0 +1,18 @@
+field,level,required,meaning
+study_id,system,yes,independent wetland movement system
+individual_id,individual,yes,marked bird identifier
+species,individual,yes,species
+timestamp,time,yes,location time
+x_y_or_lon_lat,time,yes,individual position
+baseline_home_range,individual,yes,familiar area defined from pre-response/baseline period
+water_depth,space_time,yes,time-varying hydrological state
+hydroperiod,space_time,preferred,duration/frequency inundation
+vegetation_state,space_time,preferred,emergent vegetation or structural state
+open_water_edge,space_time,preferred,distance/access to open water
+suitability,time_space,derived,species/individual hydrological-microhabitat suitability
+A_ht,individual_time,derived,fraction of familiar area currently suitable
+HPI,individual,derived,lower-tail retained suitable fraction
+asynchrony,individual,derived,temporal complementarity among internal habitat units
+broad_relocation,individual_time,derived,movement beyond familiar area
+within_area_switching,individual_time,derived,fine-scale redistribution inside familiar area
+niche_breadth,species,preferred,usable hydrological-state width
