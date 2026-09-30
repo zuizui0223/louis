@@ -86,3 +86,31 @@ This is a useful taxonomically independent contrast for the idea that **water av
 4. if not, keep Lake Erie as the microhabitat/state-tracking anchor and find a dynamic wetland dataset with repeated habitat surfaces before testing HPI.
 
 Use `analysis/02_fetch_public_comparative_data.py` to audit/download the Zenodo record.
+
+
+## Published-design audit completed
+
+The paper provides enough structural information to predeclare the first analysis before opening the archived files:
+
+- 10 birds contributed stabilized home ranges;
+- individuals contributed 14–36 homing points;
+- 206 homing microhabitat surveys were analysed;
+- 401 random microhabitat surveys were analysed;
+- each intended event design was one used plot plus two random-direction plots 75 m away;
+- all three microhabitat surveys were conducted within 72 h of the homing location;
+- water depth and vegetation/structure variables were measured at every plot.
+
+This is sufficient to justify the **matched-event environmental-state fidelity** design.
+
+### Remaining file-level gate
+
+The archived data still need to expose or allow reconstruction of:
+
+- bird identity;
+- homing-event/date identity;
+- used versus random plot identity;
+- water depth;
+- preferably coordinates.
+
+If date/event pairing was discarded in the public table, SRI cannot be computed honestly from that table and the Lake Erie dataset is demoted to a biological anchor rather than the primary quantitative test.
+
