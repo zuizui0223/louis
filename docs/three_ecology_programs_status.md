@@ -37,7 +37,9 @@
 - individual bird fixed as the biological replication unit;
 - SRI/state-retention metric implemented;
 - schema gate implemented;
-- South Carolina 2026 telemetry added as broad-relocation boundary/replication candidate.
+- South Carolina 2026 telemetry added as broad-relocation boundary/replication candidate;
+- Senegal Delta Godwit Dryad fetcher and seasonal geography-vs-habitat-state analysis implemented;
+- Godwit external-generality contract frozen.
 
 **Current hypothesis**
 > resident birds may move geographically inside a familiar home range so that experienced microhabitat varies less than local time-matched availability.
@@ -47,8 +49,8 @@
 - therefore no SRI result is yet claimed.
 
 **Next decisive input**
-- actual Lake Erie archive files containing individual/event/used-random/water-depth linkage;
-- then run analysis/04_state_fidelity_gate.py and analysis/05_state_retention_index.py.
+- primary: actual Lake Erie archive files containing individual/event/used-random/water-depth linkage, then run analysis/04_state_fidelity_gate.py and analysis/05_state_retention_index.py;
+- parallel generality: Dryad Godwit small files, then run analysis/07_godwit_seasonal_state_displacement.py.
 
 **Independent boundary**
 - South Carolina King Rail telemetry shows broad seasonal relocation when habitat conditions/management change; raw data are currently by request rather than an open archive.
