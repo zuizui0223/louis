@@ -47,6 +47,22 @@ A 2026 South Carolina King Rail telemetry study supplies a complementary regime:
 
 Lake Erie therefore tests **within-home-range micro-niche tracking**, while South Carolina represents the **broad-relocation boundary** when local compensation fails.
 
+## Open cross-taxon generality test
+
+A fully open Senegal Delta Black-tailed Godwit dataset provides a parallel falsification/generalization route:
+
+- 22 GPS-tagged birds;
+- June 2022–March 2023 tracking;
+- raw individual GPS fixes;
+- wet/dry-season individual habitat-composition tables.
+
+This does **not** replace Lake Erie SRI because it lacks event-matched local availability. It tests whether large seasonal geographic shifts preserve or replace broad habitat state.
+
+Implemented:
+- `analysis/06_fetch_godwit_generality_data.py`
+- `analysis/07_godwit_seasonal_state_displacement.py`
+- [Godwit test contract](docs/godwit_generality_test_contract.md)
+
 ## Evidence boundary
 
 The Lake Erie data archive is public, but this environment has not yet resolved its physical file list. The design is therefore frozen from the published methods before file-level schema inspection.
