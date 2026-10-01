@@ -77,3 +77,35 @@ If coordinates are available, test whether real geographic movements preserve en
 Only if a repeated spatial hydrological surface can be reconstructed should HPI/retained-suitable-area buffering be tested.
 
 Static habitat heterogeneity is not sufficient.
+
+
+## Parallel external-generality test — Godwit
+
+Lake Erie remains the primary King Rail SRI design. While its Zenodo physical file list is unresolved in this execution environment, the fully public Senegal Delta Godwit dataset can be used as an external generality/falsification system.
+
+Fetch the small Dryad files:
+
+~~~bash
+python analysis/06_fetch_godwit_generality_data.py
+~~~
+
+Then run:
+
+~~~bash
+python analysis/07_godwit_seasonal_state_displacement.py
+~~~
+
+The test estimates, for birds represented in both wet and dry seasons:
+
+- seasonal GPS-centroid displacement;
+- seasonal land-cover-composition Bray-Curtis dissimilarity;
+- whether each bird's own wet-to-dry habitat composition is more similar than cross-individual seasonal pairings.
+
+This is **not SRI** because the Godwit data do not provide the same event-matched local random availability design as Lake Erie.
+
+Interpretation is deliberately two-sided:
+
+- large geographic shift + low habitat dissimilarity -> compatible with broad environmental-state continuity;
+- large geographic shift + high habitat dissimilarity -> seasonal resource tracking with habitat-state replacement.
+
+See [Godwit test contract](../docs/godwit_generality_test_contract.md).
