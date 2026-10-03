@@ -128,3 +128,18 @@ Therefore the supported result is quantitative within flooded habitat:
 > **birds constrain the water-depth trajectory they experience, not merely the binary fact of being in wet habitat.**
 
 This strengthens the ecological distinction from ordinary wet-versus-dry selection, while remaining a post-hoc sensitivity rather than a new confirmatory endpoint.
+
+
+## Experienced-environment theory boundary
+
+The deeper concept is not new.
+
+Chesson & Yang (2019; DOI 10.3389/fevo.2019.00363) formalized the **experienced environment** of populations moving across changing landscapes and showed theoretically how movement can make experienced conditions more stationary than local environments.
+
+Clark et al. (2020; DOI 10.1086/706196) likewise treats habitat choice as environmental regulation and tests the prediction that organism-regulated environmental sources have reduced temporal/spatial variation.
+
+Therefore the Lake Erie contribution is empirical and scale-specific:
+
+> **an individual-level, event-matched local-availability test of how much temporal environmental variation is damped by repeated realised habitat use in a resident wetland bird.**
+
+See [theory position](experienced_environment_theory_position.md).
