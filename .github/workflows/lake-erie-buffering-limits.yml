@@ -1,0 +1,31 @@
+name: Lake Erie buffering-limit audit
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "analysis/13_lake_erie_buffering_limits.py"
+      - ".github/workflows/lake-erie-buffering-limits.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  buffering-limits:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run buffering-limit analysis
+        run: |
+          python analysis/13_lake_erie_buffering_limits.py
+          cat results/lake_erie_buffering_limits_v1.json
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: lake-erie-buffering-limits
+          path: results/lake_erie_buffering_limits_v1.json
+          retention-days: 30
