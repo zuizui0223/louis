@@ -1,0 +1,49 @@
+{
+  "schema": "louis.lake_erie_flooded_availability_sensitivity_v1.canonical_summary",
+  "role": "post-hoc robustness against wet-versus-dry explanation",
+  "conditional_flooded": {
+    "events": 182,
+    "variance": {
+      "positive_birds": "10/10",
+      "median_retention": 0.8634181430878622,
+      "range": [
+        0.17954937461031573,
+        0.9760123722989924
+      ],
+      "sign_p": 0.0009765625
+    },
+    "temporal": {
+      "positive_birds": "10/10",
+      "median_retention": 0.6218957148691527,
+      "range": [
+        0.313325330132053,
+        0.859451862262825
+      ],
+      "sign_p": 0.0009765625,
+      "individual_p_lt_0_05": "10/10"
+    }
+  },
+  "all_points_flooded": {
+    "events": 131,
+    "variance": {
+      "positive_birds": "10/10",
+      "median_retention": 0.787999820498337,
+      "range": [
+        0.2322163044979373,
+        0.9759898057275714
+      ],
+      "sign_p": 0.0009765625
+    },
+    "temporal": {
+      "positive_birds": "10/10",
+      "median_retention": 0.5284466197054248,
+      "range": [
+        0.20833333333333337,
+        0.8622250970245795
+      ],
+      "sign_p": 0.0009765625
+    }
+  },
+  "interpretation": "State retention remains in flooded habitat and is not reducible to selection of wet over dry random points.",
+  "boundary": "Post-hoc sensitivity; geographic movement remains unlinked at event level."
+}
