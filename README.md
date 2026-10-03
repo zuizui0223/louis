@@ -35,6 +35,40 @@ See:
 - [analysis programme](analysis/README.md)
 - [candidate systems and precedents](analysis/candidate_independent_systems.csv)
 
+## Independent Lake Erie result
+
+The open Zenodo archive has now been resolved and analysed directly.
+
+After source-defined QC:
+
+- 607 source rows;
+- 17 `Missing = Yes` rows excluded;
+- 2 malformed IDs excluded without repair;
+- **190 valid matched used/random events** from **10 birds**.
+
+Primary State Retention Index:
+
+- **10/10 birds SRI > 0**
+- median SRI **0.886**
+- sign test **p = 0.00098**
+- strict two-random-point subset: **10/10 positive**, median **0.882**
+
+A stronger time-ordered test compared successive changes in used water depth with matched-random pseudo-trajectories:
+
+- **10/10 birds showed lower successive state change**
+- median temporal retention **0.658**
+- strict subset median **0.667**
+- sign test **p = 0.00098**
+- all 10 birds individually passed the temporal randomization test in both primary and strict analyses.
+
+Supported statement:
+
+> **King Rails repeatedly occupied a temporally smoother water-depth trajectory than was locally available at the same observation times.**
+
+See [independent Lake Erie result](docs/lake_erie_state_fidelity_result.md).
+
+The coordinate files are also public, but they lack explicit event IDs. Therefore geographic displacement is not silently joined by row order, and the stronger movement-mediated mechanism remains unresolved.
+
 ## Independent replication boundary
 
 A 2026 South Carolina King Rail telemetry study supplies a complementary regime:
@@ -65,9 +99,7 @@ Implemented:
 
 ## Evidence boundary
 
-The Lake Erie data archive is public, but this environment has not yet resolved its physical file list. The design is therefore frozen from the published methods before file-level schema inspection.
-
-Individual bird—not the 607 point records—is the biological replication unit.
+The Lake Erie archive and matched-event schema are now resolved. Individual bird—not the 607 point records—is the biological replication unit. The stronger geographic-movement mechanism remains pending because event IDs are not embedded in the separate coordinate files.
 
 ## Later extension
 
