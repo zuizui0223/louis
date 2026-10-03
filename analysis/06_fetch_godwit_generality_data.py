@@ -23,6 +23,7 @@ import json
 from pathlib import Path
 import urllib.parse
 import urllib.request
+import urllib.error
 
 DOI = "10.5061/dryad.4tmpg4fm3"
 API = "https://datadryad.org/api/v2"
@@ -35,7 +36,14 @@ DIRECT_FILES = {
 DEFAULT_KEEP = set(DIRECT_FILES)
 
 
+def absolute_url(url: str) -> str:
+    if url.startswith("/"):
+        return "https://datadryad.org" + url
+    return url
+
+
 def get_json(url: str) -> dict:
+    url = absolute_url(url)
     req = urllib.request.Request(url, headers={"User-Agent": "louis-godwit-generality/1.0"})
     with urllib.request.urlopen(req, timeout=120) as response:
         return json.load(response)
@@ -75,20 +83,25 @@ def discover_via_api() -> dict:
     encoded = urllib.parse.quote(f"doi:{DOI}", safe="")
     dataset = get_json(f"{API}/datasets/{encoded}")
 
-    versions_url = (dataset.get("_links") or {}).get("stash:versions", {}).get("href")
-    if not versions_url:
-        versions_url = f"{API}/datasets/{encoded}/versions"
+    current_url = (dataset.get("_links") or {}).get("stash:version", {}).get("href")
+    version_id = None
+    if current_url:
+        current = get_json(current_url)
+        version_id = current.get("id")
 
-    versions = get_json(versions_url)
-    embedded = versions.get("_embedded") or {}
-    version_rows = embedded.get("stash:versions") or embedded.get("versions") or []
-    if not version_rows:
-        raise RuntimeError("Dryad returned no dataset versions")
-
-    version = version_rows[-1]
-    version_id = version.get("id")
     if version_id is None:
-        raise RuntimeError("Dryad version has no id")
+        versions_url = (dataset.get("_links") or {}).get("stash:versions", {}).get("href")
+        if not versions_url:
+            versions_url = f"{API}/datasets/{encoded}/versions"
+        versions = get_json(versions_url)
+        embedded = versions.get("_embedded") or {}
+        version_rows = embedded.get("stash:versions") or embedded.get("versions") or []
+        if not version_rows:
+            raise RuntimeError("Dryad returned no dataset versions")
+        version_id = version_rows[-1].get("id")
+
+    if version_id is None:
+        raise RuntimeError("Dryad current version has no id")
 
     files_meta = get_json(f"{API}/versions/{version_id}/files")
     fembed = files_meta.get("_embedded") or {}
@@ -120,13 +133,22 @@ def api_download(out: Path) -> tuple[list[dict[str, object]], dict[str, object]]
                 url = item["href"]
                 break
 
+        if url:
+            url = absolute_url(str(url))
         if not url and file_id is not None:
             url = f"https://datadryad.org/downloads/file_stream/{file_id}"
         if not url:
             raise RuntimeError(f"no download link for {name}")
 
         dest = out / name
-        download(str(url), dest)
+        try:
+            download(str(url), dest)
+        except urllib.error.HTTPError:
+            if file_id is None:
+                raise
+            fallback = f"https://datadryad.org/downloads/file_stream/{file_id}"
+            download(fallback, dest)
+            url = fallback
         validate_nonempty(dest)
         downloaded.append({
             "file": name,
