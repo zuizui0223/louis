@@ -34,9 +34,21 @@ Then run:
 python analysis/09_lake_erie_state_fidelity.py
 ~~~
 
-Canonical result:
+Canonical state-fidelity result:
 - [Lake Erie state-fidelity result](../results/lake_erie_state_fidelity_v1.json)
 - [ecological interpretation](../docs/lake_erie_state_fidelity_result.md)
+
+Then run the hydrological availability-coupling decomposition:
+
+~~~bash
+python analysis/12_lake_erie_availability_coupling.py
+~~~
+
+Canonical coupling result:
+- [availability-coupling result](../results/lake_erie_availability_coupling_v1.json)
+- [ecological interpretation](../docs/lake_erie_availability_coupling.md)
+
+This asks how much local water-depth variation is transmitted into used water depth rather than only whether used-state variance is low.
 
 The older generic fetch/schema scripts are retained for provenance and broader archive inspection.
 
@@ -89,7 +101,7 @@ Static habitat heterogeneity is not sufficient.
 
 ## Parallel external-generality test — Godwit
 
-Lake Erie remains the primary King Rail SRI design. While its Zenodo physical file list is unresolved in this execution environment, the fully public Senegal Delta Godwit dataset can be used as an external generality/falsification system.
+Lake Erie remains the primary King Rail matched-availability design. Its Zenodo microhabitat archive is resolved and analysed. The fully public Senegal Delta Godwit dataset is now a separate external generality/falsification system.
 
 Fetch the small Dryad files:
 
