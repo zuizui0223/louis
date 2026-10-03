@@ -113,6 +113,30 @@ This is consistent with **within-home-range micro-niche tracking / environmental
 
 The result is especially striking because the comparison does not use a post-hoc preferred water-depth interval. It compares the complete observed water-depth trajectory directly with event-matched availability.
 
+## Hydrological coupling decomposition
+
+A second mechanistic decomposition asks how strongly temporal change in nearby available water depth is transmitted into the water depth actually used by a bird.
+
+For each event:
+
+~~~text
+A_t = mean water depth of event-matched random plots
+U_t = used/homing water depth
+~~~
+
+Within-bird slope of U_t on A_t:
+
+- observed pooled slope: **0.162**
+- pseudo-used null median: **1.001**
+- coupling reduction: **83.8%**
+- **10/10 birds** below their individual null median
+
+Flooded-habitat sensitivities retain **82–85% coupling reduction**.
+
+This means the SRI pattern is not only a low-variance summary. As nearby hydrology changes, only a small fraction of that local depth change is expressed in the microhabitat actually used.
+
+See [availability-coupling analysis](lake_erie_availability_coupling.md).
+
 ## What is not yet established
 
 The stronger statement:
