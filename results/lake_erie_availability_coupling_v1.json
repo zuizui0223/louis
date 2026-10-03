@@ -1,0 +1,48 @@
+{
+  "schema": "louis.lake_erie_availability_coupling_v1.canonical_summary",
+  "source": {
+    "paper_doi": "10.1002/ece3.10043",
+    "data_doi": "10.5281/zenodo.6604660",
+    "table": "CARTdataset_12.31.21_All_D.csv"
+  },
+  "qc": {
+    "source_rows": 607,
+    "missing_excluded": 17,
+    "malformed_excluded": 2,
+    "birds": 10,
+    "valid_events": 190
+  },
+  "primary": {
+    "events": 190,
+    "pooled_used_on_availability_slope": 0.161897834676697,
+    "pseudo_null_median_slope": 1.0007033011165365,
+    "coupling_reduction": 0.8382159482275524,
+    "monte_carlo_p_lower": 0.00004999750012499375,
+    "median_individual_used_slope": 0.12164354281150686,
+    "median_individual_coupling_reduction": 0.8783903785487526,
+    "birds_below_own_null_median": "10/10",
+    "birds_p_lt_0_05": "10/10"
+  },
+  "conditional_flooded": {
+    "events": 182,
+    "pooled_used_on_availability_slope": 0.14533748429947022,
+    "pseudo_null_median_slope": 0.9997290296719239,
+    "coupling_reduction": 0.854623122880442,
+    "median_individual_used_slope": 0.0690563819806386,
+    "median_individual_coupling_reduction": 0.9310006589490287,
+    "birds_below_own_null_median": "10/10",
+    "birds_p_lt_0_05": "8/10"
+  },
+  "all_points_flooded": {
+    "events": 131,
+    "pooled_used_on_availability_slope": 0.17979756224209556,
+    "pseudo_null_median_slope": 1.0005307196130544,
+    "coupling_reduction": 0.8202978092350522,
+    "median_individual_used_slope": 0.13562481356702888,
+    "median_individual_coupling_reduction": 0.8668927909536341,
+    "birds_below_own_null_median": "10/10",
+    "birds_p_lt_0_05": "9/10"
+  },
+  "interpretation": "Local available water depth can vary substantially while used water depth changes only weakly. Realised microhabitat use dampens hydrological variation relative to event-matched local availability.",
+  "boundary": "No verified coordinate-to-event join; do not state that geographic displacement itself causes this buffering."
+}
