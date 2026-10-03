@@ -1,0 +1,49 @@
+name: Godwit external generality
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/godwit-generality.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  godwit-generality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch public Dryad data
+        run: |
+          python analysis/06_fetch_godwit_generality_data.py
+          python - <<'PY'
+          import csv
+          from pathlib import Path
+          root=Path("data/external/godwit_senegal")
+          for name in ("location_data.csv","habitat_use_df.csv"):
+              p=root/name
+              with p.open("r",encoding="utf-8-sig",newline="") as f:
+                  r=csv.reader(f)
+                  print(name, next(r))
+          PY
+
+      - name: Run frozen generality analysis
+        run: |
+          python analysis/07_godwit_seasonal_state_displacement.py
+          cat analysis/results/godwit_seasonal_state_displacement.json
+
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: godwit-generality-result
+          path: |
+            analysis/results/godwit_seasonal_state_displacement.json
+            data/external/godwit_senegal/dryad_metadata_audit.json
+          retention-days: 30
