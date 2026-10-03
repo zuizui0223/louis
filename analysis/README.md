@@ -20,17 +20,25 @@ This explains the discovery route only.
 
 ## Phase 1 — independent Lake Erie release
 
-Audit:
+The Zenodo record is now resolved. For the canonical matched water-depth analysis run:
 
 ~~~bash
-python analysis/02_fetch_public_comparative_data.py
+python analysis/08_lake_erie_standardize.py
 ~~~
 
-Download the public files:
+This downloads and standardizes the public CART microhabitat table using source-defined `Missing` exclusions and strict point-ID parsing.
+
+Then run:
 
 ~~~bash
-python analysis/02_fetch_public_comparative_data.py --download
+python analysis/09_lake_erie_state_fidelity.py
 ~~~
+
+Canonical result:
+- [Lake Erie state-fidelity result](../results/lake_erie_state_fidelity_v1.json)
+- [ecological interpretation](../docs/lake_erie_state_fidelity_result.md)
+
+The older generic fetch/schema scripts are retained for provenance and broader archive inspection.
 
 ## Phase 2 — state-fidelity schema gate
 
