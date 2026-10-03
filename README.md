@@ -92,6 +92,35 @@ Thus the result is not reducible to selecting wet habitat instead of dry ground.
 
 See [flooded-availability sensitivity](docs/lake_erie_flooded_availability_sensitivity.md).
 
+## Hydrological availability coupling
+
+The Lake Erie result is stronger than low temporal variance alone.
+
+For each matched event, define local availability as the mean water depth of the nearby random plots and estimate, within birds, how strongly used water depth responds to that available water depth.
+
+Result:
+
+- pooled used-on-availability slope: **0.162**
+- matched pseudo-used null slope: **1.001**
+- hydrological coupling reduction: **83.8%**
+- **10/10 birds** have slopes below their own matched null
+- **10/10 birds** have individual Monte Carlo p < 0.05
+
+The same pattern survives when availability is restricted to flooded habitat:
+
+- flooded-random-only slope **0.145**, coupling reduction **85.5%**
+- all-points-flooded slope **0.180**, coupling reduction **82.0%**
+
+Thus the result is not simply shallow-water selection or avoidance of dry random plots.
+
+Supported statement:
+
+> **King Rails strongly buffer the hydrological state they experience against temporal changes in nearby available habitat.**
+
+The unresolved coordinate-event join still prevents the stronger causal statement that a measured geographic displacement itself produces this buffering.
+
+See [hydrological availability coupling](docs/lake_erie_availability_coupling.md).
+
 ## Independent replication boundary
 
 A 2026 South Carolina King Rail telemetry study supplies a complementary regime:
