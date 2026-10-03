@@ -1,4 +1,4 @@
-# fetcher-v2-trigger
+# dryad-api-v3-trigger
 name: Godwit external generality
 
 on:
@@ -6,6 +6,8 @@ on:
   push:
     paths:
       - ".github/workflows/godwit-generality.yml"
+      - "analysis/06_fetch_godwit_generality_data.py"
+      - "analysis/07_godwit_seasonal_state_displacement.py"
 
 permissions:
   contents: read
@@ -32,7 +34,7 @@ jobs:
               p=root/name
               with p.open("r",encoding="utf-8-sig",newline="") as f:
                   r=csv.reader(f)
-                  print(name, next(r))
+                  print(name, p.stat().st_size, next(r))
           PY
 
       - name: Run frozen generality analysis
