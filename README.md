@@ -69,6 +69,29 @@ See [independent Lake Erie result](docs/lake_erie_state_fidelity_result.md).
 
 The coordinate files are also public, but they lack explicit event IDs. Therefore geographic displacement is not silently joined by row order, and the stronger movement-mediated mechanism remains unresolved.
 
+## Flooded-habitat robustness
+
+The Lake Erie result is not driven only by random plots that were dry.
+
+Conditioning random availability on `WaterDepth > 0`:
+
+- 182 events;
+- **10/10 birds positive** temporal state retention;
+- median temporal retention **0.622**;
+- sign test **p = 0.00098**;
+- 10/10 individual temporal randomization tests p < 0.05.
+
+Requiring the used point and all retained random points to be flooded:
+
+- 131 events;
+- **10/10 birds positive**;
+- median temporal retention **0.528**;
+- sign test **p = 0.00098**.
+
+Thus the result is not reducible to selecting wet habitat instead of dry ground.
+
+See [flooded-availability sensitivity](docs/lake_erie_flooded_availability_sensitivity.md).
+
 ## Independent replication boundary
 
 A 2026 South Carolina King Rail telemetry study supplies a complementary regime:
