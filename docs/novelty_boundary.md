@@ -107,3 +107,24 @@ Thus the novelty candidate is no longer merely hypothetical:
 The remaining novelty boundary is important. This does not yet prove that geographic displacement itself causes the dampening, because the public coordinate files lack explicit event IDs for a verified join to the matched microhabitat table.
 
 Generalization beyond this Lake Erie King Rail population remains required.
+
+
+## Wet-versus-dry alternative rejected as sufficient
+
+A post-hoc robustness analysis asked whether the result was trivial because local random points sometimes had zero water depth.
+
+It was not sufficient.
+
+After conditioning availability on flooded random points only:
+- 10/10 birds retained a positive time-ordered state-retention effect;
+- median temporal retention = 0.622.
+
+When used and random points were all required to be flooded:
+- 10/10 remained positive;
+- median temporal retention = 0.528.
+
+Therefore the supported result is quantitative within flooded habitat:
+
+> **birds constrain the water-depth trajectory they experience, not merely the binary fact of being in wet habitat.**
+
+This strengthens the ecological distinction from ordinary wet-versus-dry selection, while remaining a post-hoc sensitivity rather than a new confirmatory endpoint.
