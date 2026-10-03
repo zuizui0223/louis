@@ -241,8 +241,8 @@ def score_condition(birds, condition, individual_reps, pooled_reps):
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--individual-reps", type=int, default=100000)
-    ap.add_argument("--pooled-reps", type=int, default=100000)
+    ap.add_argument("--individual-reps", type=int, default=20000)
+    ap.add_argument("--pooled-reps", type=int, default=20000)
     ap.add_argument(
         "--out",
         default="results/lake_erie_availability_coupling_v1.json",
