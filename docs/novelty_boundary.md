@@ -83,3 +83,27 @@ Because the Lake Erie dataset contains only 10 birds with stabilized home ranges
 "Environmental-state fidelity" and "within-home-range micro-niche tracking" are descriptive working terms.
 
 Do not claim novelty from either phrase. Claim novelty only from a supported, availability-relative temporal dampening result and its independent replication.
+
+
+## Result now obtained
+
+The independent Lake Erie test supports the availability-relative temporal dampening prediction.
+
+Primary:
+- 10/10 birds positive SRI;
+- median SRI 0.886;
+- exact sign-test p = 0.00098.
+
+Time-ordered successive-state test:
+- 10/10 birds show lower used water-depth change than matched availability;
+- median retention 0.658;
+- exact sign-test p = 0.00098;
+- all 10 individual randomization tests pass p < 0.05.
+
+Thus the novelty candidate is no longer merely hypothetical:
+
+> **resident individuals repeatedly experience a temporally smoother microhabitat state than is available in nearby time-matched habitat.**
+
+The remaining novelty boundary is important. This does not yet prove that geographic displacement itself causes the dampening, because the public coordinate files lack explicit event IDs for a verified join to the matched microhabitat table.
+
+Generalization beyond this Lake Erie King Rail population remains required.
