@@ -44,5 +44,11 @@
     "birds_p_lt_0_05": "9/10"
   },
   "interpretation": "Local available water depth can vary substantially while used water depth changes only weakly. Realised microhabitat use dampens hydrological variation relative to event-matched local availability.",
-  "boundary": "No verified coordinate-to-event join; do not state that geographic displacement itself causes this buffering."
+  "boundary": "No verified coordinate-to-event join; do not state that geographic displacement itself causes this buffering.",
+  "monte_carlo": {
+    "base_seed": 20261003,
+    "individual_replicates": 20000,
+    "pooled_replicates": 20000,
+    "add_one_p_values": true
+  }
 }
