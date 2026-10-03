@@ -90,3 +90,43 @@ Do not use:
 
 Use:
 > **We provide an individual-level, time-matched availability test showing that repeated space use can substantially damp temporal variation in the environment experienced by resident wetland birds.**
+
+
+## Stronger decomposition — availability coupling
+
+The variance and successive-change analyses show that experienced water depth is temporally smoother than matched local availability.
+
+A more mechanistic quantity asks:
+
+> **how much of a change in local available water depth is transmitted into the water depth actually used?**
+
+For each event:
+
+~~~text
+A_t = mean local random water depth
+U_t = used water depth
+~~~
+
+Within birds, the observed slope is:
+
+~~~text
+U_t ~ A_t
+~~~
+
+while a pseudo-used trajectory drawn from the same random points has an expected slope near 1.
+
+Lake Erie result:
+
+- observed pooled within-bird slope: **0.162**
+- matched pseudo-used null: **1.001**
+- coupling reduction: **83.8%**
+
+Flooded-habitat sensitivities retain **82–85%** reduction.
+
+Thus the empirical contribution can be stated more directly:
+
+> **resident King Rails transmit only a small fraction of nearby hydrological variation into the environmental state they actually experience.**
+
+This is closer to environmental regulation than a simple statement about low used-state variance.
+
+It still does not identify the geographic movement distance that produced that regulation because the coordinate/event join remains unresolved.
