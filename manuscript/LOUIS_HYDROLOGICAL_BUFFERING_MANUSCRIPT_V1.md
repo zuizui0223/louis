@@ -74,9 +74,9 @@ For individual (i), let (U_{it}) denote used water depth at event (t). At the sa
 
 We first quantified whether the temporal distribution of used water depths was narrower than expected from local availability. The observed statistic was:
 
-[
-V_{i,mathrm{used}} = operatorname{Var}_t(U_{it}).
-]
+\[
+V_{i,\mathrm{used}} = \operatorname{Var}_t(U_{it}).
+\]
 
 For each Monte Carlo pseudo-trajectory, one random depth was selected from (R_{it}) at every real event, preserving the actual temporal sequence and local availability structure. We repeated this procedure 100,000 times per individual.
 
@@ -140,9 +140,9 @@ SRI asks whether used states vary less than available states. We next asked how 
 
 For event (t), we defined:
 
-[
-A_{it} = operatorname{mean}(R_{it}),
-]
+\[
+A_{it} = \operatorname{mean}(R_{it}),
+\]
 
 and retained (U_{it}) as the observed used water depth.
 
