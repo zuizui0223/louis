@@ -1,0 +1,83 @@
+name: manuscript-figure-data
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "analysis/08_lake_erie_standardize.py"
+      - "analysis/09_lake_erie_state_fidelity.py"
+      - "analysis/12_lake_erie_availability_coupling.py"
+      - "analysis/13_lake_erie_buffering_limits.py"
+      - "analysis/14_build_manuscript_figure_data.py"
+      - "manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V1.json"
+      - ".github/workflows/manuscript-figure-data.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build-figure-data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Standardize public Lake Erie microhabitat table
+        run: |
+          python analysis/08_lake_erie_standardize.py
+          cat analysis/results/lake_erie_standardization_audit.json
+
+      - name: Recompute individual state-retention results
+        run: |
+          python analysis/09_lake_erie_state_fidelity.py
+          python - <<'PY'
+          import json
+          p="results/lake_erie_state_fidelity_v1.json"
+          x=json.load(open(p))
+          print(x["primary_sri"]["summary"])
+          print(x["primary_temporal_state_retention"]["summary"])
+          PY
+
+      - name: Recompute individual availability-coupling results
+        run: |
+          python analysis/12_lake_erie_availability_coupling.py
+          python - <<'PY'
+          import json
+          x=json.load(open("results/lake_erie_availability_coupling_v1.json"))
+          print(x["primary"]["pooled_within_bird"])
+          print(x["primary"]["individual_summary"])
+          PY
+
+      - name: Recompute buffering-limit decomposition
+        run: |
+          python analysis/13_lake_erie_buffering_limits.py
+          python - <<'PY'
+          import json
+          x=json.load(open("results/lake_erie_buffering_limits_v1.json"))
+          print(x["summary"])
+          PY
+
+      - name: Build fail-closed manuscript figure data
+        run: |
+          python analysis/14_build_manuscript_figure_data.py
+          find manuscript/figure_data -maxdepth 1 -type f -print -exec head -n 5 {} \;
+
+      - name: Run manuscript QC
+        run: python validation/validate_manuscript_v1.py
+
+      - name: Upload figure-data audit bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: louis-manuscript-figure-data
+          retention-days: 30
+          path: |
+            analysis/results/lake_erie_standardization_audit.json
+            results/lake_erie_state_fidelity_v1.json
+            results/lake_erie_availability_coupling_v1.json
+            results/lake_erie_buffering_limits_v1.json
+            manuscript/figure_data/
+            manuscript/MANUSCRIPT_QC_V1.json
