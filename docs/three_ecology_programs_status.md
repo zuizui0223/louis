@@ -125,6 +125,14 @@ Unresolved:
 
 **Paper spine now frozen.**
 
+**Submission preparation**
+- manuscript V1 complete;
+- LaTeX/control-character corruption repaired;
+- fail-closed manuscript QC implemented;
+- manuscript QC: **PASS**;
+- numeric contract: frozen;
+- individual-level figure-data regeneration: CI currently materializes from the public Zenodo source and checks against the numeric contract.
+
 Canonical:
 - `docs/PAPER_SPINE_HYDROLOGICAL_BUFFERING_V1.md`
 - `docs/CLAIM_EVIDENCE_MAP_HYDROLOGICAL_BUFFERING_V1.md`
