@@ -1,0 +1,134 @@
+{
+  "schema": "louis.manuscript_numeric_contract.v1",
+  "source": {
+    "paper_doi": "10.1002/ece3.10043",
+    "data_doi": "10.5281/zenodo.6604660",
+    "table": "CARTdataset_12.31.21_All_D.csv"
+  },
+  "qc": {
+    "source_rows": 607,
+    "missing_yes_excluded": 17,
+    "malformed_ids_excluded": 2,
+    "valid_matched_events": 190,
+    "birds": 10,
+    "strict_two_random_events": 173
+  },
+  "primary_sri": {
+    "positive_birds": "10/10",
+    "median": 0.8857070432632621,
+    "mean": 0.7639135901887848,
+    "range": [
+      0.4015553882983831,
+      0.9760211873790514
+    ],
+    "sign_test_p": 0.0009765625,
+    "individual_p_lt_0_05": "9/10",
+    "monte_carlo_replicates_per_bird": 100000
+  },
+  "strict_two_random_sri": {
+    "positive_birds": "10/10",
+    "median": 0.8817352528002491,
+    "mean": 0.7599406237937333,
+    "range": [
+      0.36946730707715214,
+      0.9759861928767136
+    ],
+    "sign_test_p": 0.0009765625,
+    "individual_p_lt_0_05": "8/10"
+  },
+  "temporal_state_retention": {
+    "positive_birds": "10/10",
+    "median": 0.6577749876440899,
+    "range": [
+      0.38844847112117786,
+      0.8786138234730998
+    ],
+    "sign_test_p": 0.0009765625,
+    "individual_p_lt_0_05": "10/10"
+  },
+  "strict_two_random_temporal_retention": {
+    "positive_birds": "10/10",
+    "median": 0.6671468347321126,
+    "range": [
+      0.32858340318524726,
+      0.8790470372632865
+    ],
+    "sign_test_p": 0.0009765625,
+    "individual_p_lt_0_05": "10/10"
+  },
+  "flooded_sensitivity": {
+    "conditional_flooded": {
+      "events": 182,
+      "variance_median_retention": 0.8634181430878622,
+      "temporal_median_retention": 0.6218957148691527,
+      "temporal_positive_birds": "10/10",
+      "temporal_individual_p_lt_0_05": "10/10"
+    },
+    "all_points_flooded": {
+      "events": 131,
+      "variance_median_retention": 0.787999820498337,
+      "temporal_median_retention": 0.5284466197054248,
+      "temporal_positive_birds": "10/10"
+    }
+  },
+  "availability_coupling": {
+    "primary": {
+      "events": 190,
+      "observed_slope": 0.161897834676697,
+      "pseudo_null_median_slope": 1.0007033011165365,
+      "coupling_reduction": 0.8382159482275524,
+      "monte_carlo_p_lower": 0.00004999750012499375,
+      "median_individual_used_slope": 0.12164354281150686,
+      "median_individual_coupling_reduction": 0.8783903785487526,
+      "birds_below_own_null_median": "10/10",
+      "birds_p_lt_0_05": "10/10"
+    },
+    "conditional_flooded": {
+      "events": 182,
+      "observed_slope": 0.14533748429947022,
+      "pseudo_null_median_slope": 0.9997290296719239,
+      "coupling_reduction": 0.854623122880442
+    },
+    "all_points_flooded": {
+      "events": 131,
+      "observed_slope": 0.17979756224209556,
+      "pseudo_null_median_slope": 1.0005307196130544,
+      "coupling_reduction": 0.8202978092350522
+    }
+  },
+  "buffering_limits": {
+    "pooled_abs_deviation_slope": 0.11453227437353061,
+    "pseudo_null_median_slope": 0.7408653879361041,
+    "coupling_reduction": 0.8454074434593394,
+    "monte_carlo_p_lower": 0.00001999960000799984,
+    "birds_slope_below_null_median": "10/10",
+    "birds_positive_extreme_retention": "9/10",
+    "median_extreme_retention": 0.628938857567414,
+    "birds_extreme_p_lt_0_05": "7/10"
+  },
+  "source_study_context": {
+    "tagged_birds": 14,
+    "stabilized_home_ranges": 10,
+    "mean_home_range_ha": 8.8,
+    "source_recommended_water_depth_cm": [
+      6,
+      17
+    ]
+  },
+  "south_carolina_context": {
+    "tracked_for_analysis": 13,
+    "birds_with_both_seasons": 9,
+    "birds_with_seasonal_shift": "5/9",
+    "mean_shift_km": 2.9,
+    "shift_range_km": [
+      0.7,
+      7.5
+    ],
+    "paper_doi": "10.3389/fcosc.2026.1894344"
+  },
+  "claim_boundary": {
+    "geographic_event_join": "unresolved",
+    "primary_allowed": "experienced water depth is temporally buffered relative to event-matched local availability",
+    "prohibited": "measured geographic displacement caused the buffering"
+  }
+}
