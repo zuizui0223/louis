@@ -82,13 +82,13 @@ For each Monte Carlo pseudo-trajectory, one random depth was selected from (R_{i
 
 We defined the State Retention Index:
 
-[
-mathrm{SRI}_i
+\[
+\mathrm{SRI}_i
 =
 1 -
-rac{V_{i,mathrm{used}}}
-{operatorname{median}_b(V_{i,mathrm{null}}^{(b)})}.
-]
+\frac{V_{i,\mathrm{used}}}
+{\operatorname{median}_b(V_{i,\mathrm{null}}^{(b)})}.
+\]
 
 Positive SRI means that the water-depth states used by a bird varied less through time than event-matched local availability. SRI of zero indicates equal temporal variance, and negative values indicate greater variation in used than pseudo-used states.
 
@@ -102,25 +102,25 @@ Variance ignores event order. A trajectory that alternates between two extreme s
 
 We therefore repeated the matched-pseudo-trajectory analysis using mean absolute successive change:
 
-[
-Delta_{i,mathrm{used}}
+\[
+\Delta_{i,\mathrm{used}}
 =
-rac{1}{T_i-1}
-sum_{t=2}^{T_i}
+\frac{1}{T_i-1}
+\sum_{t=2}^{T_i}
 |U_{it}-U_{i,t-1}|.
-]
+\]
 
 Events were ordered within individual by year, Julian date and event number. For every null trajectory, we calculated the same statistic after drawing one event-matched random plot at each observation.
 
 Temporal retention was defined analogously to SRI:
 
-[
-mathrm{TR}_i
+\[
+\mathrm{TR}_i
 =
 1 -
-rac{Delta_{i,mathrm{used}}}
-{operatorname{median}_b(Delta_{i,mathrm{null}}^{(b)})}.
-]
+\frac{\Delta_{i,\mathrm{used}}}
+{\operatorname{median}_b(\Delta_{i,\mathrm{null}}^{(b)})}.
+\]
 
 Positive values indicate smaller successive changes in used water depth than expected from matched availability.
 
@@ -128,9 +128,9 @@ Positive values indicate smaller successive changes in used water depth than exp
 
 A trivial explanation for state retention would be that random plots sometimes represented dry ground whereas birds preferentially used flooded habitat. We therefore ran two post-hoc robustness analyses.
 
-In the **conditional-flooded** analysis, random plots with water depth (le 0) were removed before generating pseudo-trajectories. Events were retained if at least one flooded random point remained.
+In the **conditional-flooded** analysis, random plots with water depth \(\le 0\) were removed before generating pseudo-trajectories. Events were retained if at least one flooded random point remained.
 
-In the **all-points-flooded** analysis, an event was retained only if the used point and all retained random points had water depth (>0).
+In the **all-points-flooded** analysis, an event was retained only if the used point and all retained random points had water depth \(>0\).
 
 For each filtered dataset, we recalculated variance retention and time-ordered retention under the same individual-level matched-pseudo-trajectory logic.
 
@@ -154,11 +154,11 @@ A pseudo-used trajectory sampled from the same local availability set should, by
 
 We expressed the magnitude descriptively as:
 
-[
+\[
 1 -
-rac{eta_{mathrm{used}}}
-{operatorname{median}(eta_{mathrm{null}})}.
-]
+\frac{\beta_{\mathrm{used}}}
+{\operatorname{median}(\beta_{\mathrm{null}})}.
+\]
 
 We repeated this analysis under the flooded-random and all-points-flooded filters.
 
@@ -168,19 +168,19 @@ After establishing the primary independent state-retention result, we conducted 
 
 For each bird, we calculated its median available depth and defined event-level availability mismatch:
 
-[
+\[
 X_{it}
 =
-|A_{it} - operatorname{median}_t(A_{it})|.
-]
+|A_{it} - \operatorname{median}_t(A_{it})|.
+\]
 
 We similarly defined experienced-state deviation:
 
-[
+\[
 Y_{it}
 =
-|U_{it} - operatorname{median}_t(U_{it})|.
-]
+|U_{it} - \operatorname{median}_t(U_{it})|.
+\]
 
 We estimated the within-bird pooled slope of (Y) on (X), and compared it with a pseudo-used null generated from event-matched random plots.
 
