@@ -129,3 +129,19 @@ Interpretation is deliberately two-sided:
 - large geographic shift + high habitat dissimilarity -> seasonal resource tracking with habitat-state replacement.
 
 See [Godwit test contract](../docs/godwit_generality_test_contract.md).
+
+
+## Second Lake Erie movement-data route
+
+The 2025 bagged-movement paper states that its King Rail example data are included in the Supporting Information archive `ECE3-15-e72060-s001.zip`.
+
+After obtaining that ZIP:
+
+~~~bash
+python analysis/08_scan_bagged_movement_supplement.py \
+  --zip <ECE3-15-e72060-s001.zip>
+~~~
+
+This can recover/verify movement trajectories even if the 2023 Zenodo route remains inaccessible.
+
+**Boundary:** trajectory data alone do not replace the event-matched habitat availability needed for SRI.
