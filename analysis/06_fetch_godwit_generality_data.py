@@ -2,264 +2,152 @@
 """Fetch the open Black-tailed Godwit generality dataset from Dryad.
 
 Dataset:
+  Craft et al. 2024/2025
   DOI 10.5061/dryad.4tmpg4fm3
 
-Dryad deprecated automated use of the legacy /downloads/file_stream/{id}
-route. Use the public v2 file API instead:
+Only small CSV/README/script files are downloaded by default.
+The multi-GB AKDE Rdata files are intentionally skipped.
 
-  GET /api/v2/files/{id}/download
+The Dryad page currently exposes stable file-stream IDs for the two primary
+small CSVs. These are used as a fallback if the API metadata route fails.
 
-Known current file IDs:
-  habitat_use_df.csv  -> 3568950
-  location_data.csv   -> 3568952
-
-If these IDs change, the script rediscovers the current version/files through
-the Dryad v2 API. Multi-GB AKDE files are intentionally skipped.
+Resolved on 2026-10-04:
+  habitat_use_df.csv -> file_stream/3568950
+  location_data.csv  -> file_stream/3568952
 """
 from __future__ import annotations
 
 import argparse
 import json
 from pathlib import Path
-import re
-import urllib.error
 import urllib.parse
 import urllib.request
 
 DOI = "10.5061/dryad.4tmpg4fm3"
 API = "https://datadryad.org/api/v2"
 
-KNOWN_FILE_IDS = {
-    "habitat_use_df.csv": 3568950,
-    "location_data.csv": 3568952,
+DIRECT_FALLBACKS = {
+    "habitat_use_df.csv": "https://datadryad.org/downloads/file_stream/3568950",
+    "location_data.csv": "https://datadryad.org/downloads/file_stream/3568952",
 }
-DEFAULT_KEEP = set(KNOWN_FILE_IDS)
 
-
-def absolute_url(url: str) -> str:
-    if url.startswith("/"):
-        return "https://datadryad.org" + url
-    return url
-
-
-def request(url: str) -> urllib.request.Request:
-    return urllib.request.Request(
-        absolute_url(url),
-        headers={
-            "User-Agent": "louis-godwit-generality/3.0",
-            "Accept": "*/*",
-        },
-    )
+DEFAULT_KEEP = {
+    "location_data.csv",
+    "habitat_use_df.csv",
+    "README.md",
+    "scripts.zip",
+}
 
 
 def get_json(url: str) -> dict:
-    with urllib.request.urlopen(request(url), timeout=120) as response:
-        return json.load(response)
+    req = urllib.request.Request(url, headers={"User-Agent": "louis-godwit-generality/1.0"})
+    with urllib.request.urlopen(req, timeout=120) as r:
+        return json.load(r)
 
 
-def download_file_id(file_id: int, dest: Path) -> str:
-    url = f"{API}/files/{file_id}/download"
-    with urllib.request.urlopen(request(url), timeout=300) as response, dest.open("wb") as out:
+def download(url: str, dest: Path) -> None:
+    req = urllib.request.Request(url, headers={"User-Agent": "louis-godwit-generality/1.0"})
+    with urllib.request.urlopen(req, timeout=300) as r, dest.open("wb") as f:
         while True:
-            block = response.read(1024 * 1024)
+            block = r.read(1024 * 1024)
             if not block:
                 break
-            out.write(block)
-    if not dest.exists() or dest.stat().st_size == 0:
-        raise RuntimeError(f"Dryad API returned empty file {file_id}")
-    return url
+            f.write(block)
 
 
-def numeric_id_from_href(href: str | None, resource: str) -> int | None:
-    if not href:
-        return None
-    m = re.search(rf"/{re.escape(resource)}/(\d+)(?:/|$)", str(href))
-    return int(m.group(1)) if m else None
-
-
-def link_href(obj: dict, key: str) -> str | None:
-    item = (obj.get("_links") or {}).get(key)
-    if isinstance(item, dict):
-        href = item.get("href")
-        return str(href) if href else None
-    return None
-
-
-def version_id_from_obj(obj: dict, fallback_href: str | None = None) -> int | None:
-    raw = obj.get("id")
-    if isinstance(raw, int):
-        return raw
-    if isinstance(raw, str) and raw.isdigit():
-        return int(raw)
-    for href in (
-        link_href(obj, "self"),
-        link_href(obj, "stash:version"),
-        fallback_href,
-    ):
-        found = numeric_id_from_href(href, "versions")
-        if found is not None:
-            return found
-    return None
-
-
-def file_id_from_obj(obj: dict) -> int | None:
-    raw = obj.get("id")
-    if isinstance(raw, int):
-        return raw
-    if isinstance(raw, str) and raw.isdigit():
-        return int(raw)
-    for href in (
-        link_href(obj, "self"),
-        link_href(obj, "stash:download"),
-    ):
-        found = numeric_id_from_href(href, "files")
-        if found is not None:
-            return found
-        # Legacy links may still expose the numeric file_stream id.
-        if href:
-            m = re.search(r"/file_stream/(\d+)", href)
-            if m:
-                return int(m.group(1))
-    return None
-
-
-def discover_via_api() -> dict:
+def try_api_inventory() -> tuple[dict, list[dict]]:
     encoded = urllib.parse.quote(f"doi:{DOI}", safe="")
     dataset = get_json(f"{API}/datasets/{encoded}")
+    versions_url = (dataset.get("_links") or {}).get("stash:versions", {}).get("href")
+    if not versions_url:
+        versions_url = f"{API}/datasets/{encoded}/versions"
 
-    current_href = link_href(dataset, "stash:version")
-    version_id = numeric_id_from_href(current_href, "versions")
+    versions = get_json(versions_url)
+    embedded = versions.get("_embedded") or {}
+    version_rows = embedded.get("stash:versions") or embedded.get("versions") or []
+    if not version_rows:
+        raise RuntimeError("Dryad returned no dataset versions")
 
-    if version_id is None and current_href:
-        current = get_json(current_href)
-        version_id = version_id_from_obj(current, current_href)
-
+    version = version_rows[-1]
+    version_id = version.get("id")
     if version_id is None:
-        versions_href = link_href(dataset, "stash:versions")
-        if not versions_href:
-            versions_href = f"{API}/datasets/{encoded}/versions"
-        versions = get_json(versions_href)
-        embedded = versions.get("_embedded") or {}
-        version_rows = embedded.get("stash:versions") or embedded.get("versions") or []
-        candidates = [
-            version_id_from_obj(row)
-            for row in version_rows
-            if isinstance(row, dict)
-        ]
-        candidates = [x for x in candidates if x is not None]
-        if not candidates:
-            raise RuntimeError(
-                "Dryad API exposed versions but no numeric version id/self link"
-            )
-        version_id = candidates[-1]
+        raise RuntimeError("Dryad version has no id")
 
     files_meta = get_json(f"{API}/versions/{version_id}/files")
-    embedded = files_meta.get("_embedded") or {}
-    files = embedded.get("stash:files") or embedded.get("files") or []
-
-    discovered = {}
-    audit_files = []
-    for row in files:
-        path = str(row.get("path") or "")
-        name = Path(path).name
-        file_id = file_id_from_obj(row)
-        audit_files.append({
-            "id": file_id,
-            "path": path,
-            "size": row.get("size"),
-            "digest": row.get("digest"),
-        })
-        if name in DEFAULT_KEEP and file_id is not None:
-            discovered[name] = file_id
-
-    missing = DEFAULT_KEEP - set(discovered)
-    if missing:
-        raise RuntimeError(
-            f"Dryad API did not resolve required files: {sorted(missing)}"
-        )
-
-    return {
-        "version_id": version_id,
-        "resolved_ids": discovered,
-        "available_files": audit_files,
-    }
-
-
-def fetch_known(out: Path) -> tuple[list[dict], dict]:
-    downloaded = []
-    errors = {}
-    for name, file_id in KNOWN_FILE_IDS.items():
-        dest = out / name
-        try:
-            url = download_file_id(file_id, dest)
-        except Exception as exc:
-            errors[name] = repr(exc)
-            break
-        downloaded.append({
-            "file": name,
-            "file_id": file_id,
-            "bytes": dest.stat().st_size,
-            "source": url,
-            "mode": "known_v2_file_api",
-        })
-    if errors:
-        # Avoid accidentally mixing a partially downloaded known-ID set with
-        # a rediscovered version.
-        for name in KNOWN_FILE_IDS:
-            (out / name).unlink(missing_ok=True)
-        raise RuntimeError(json.dumps(errors))
-    return downloaded, {"resolved_ids": KNOWN_FILE_IDS}
-
-
-def fetch_discovered(out: Path) -> tuple[list[dict], dict]:
-    audit = discover_via_api()
-    downloaded = []
-    for name in sorted(DEFAULT_KEEP):
-        file_id = int(audit["resolved_ids"][name])
-        dest = out / name
-        url = download_file_id(file_id, dest)
-        downloaded.append({
-            "file": name,
-            "file_id": file_id,
-            "bytes": dest.stat().st_size,
-            "source": url,
-            "mode": "rediscovered_v2_file_api",
-        })
-    return downloaded, audit
+    fembed = files_meta.get("_embedded") or {}
+    files = fembed.get("stash:files") or fembed.get("files") or []
+    return {"version_id": version_id}, files
 
 
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out-dir", default="data/external/godwit_senegal")
-    ap.add_argument(
-        "--rediscover",
-        action="store_true",
-        help="Skip known IDs and resolve the current version/files via Dryad API.",
-    )
+    ap.add_argument("--metadata-only", action="store_true")
     args = ap.parse_args()
 
     out = Path(args.out_dir)
     out.mkdir(parents=True, exist_ok=True)
 
-    audit: dict[str, object] = {
-        "schema": "louis.godwit_dryad_fetch.v3",
+    api_error = None
+    version_meta = {}
+    files = []
+    try:
+        version_meta, files = try_api_inventory()
+    except Exception as exc:
+        api_error = f"{type(exc).__name__}: {exc}"
+
+    inventory = {}
+    for row in files:
+        path = str(row.get("path") or "")
+        name = Path(path).name
+        links = row.get("_links") or {}
+        url = None
+        for key in ("stash:download", "download"):
+            item = links.get(key)
+            if isinstance(item, dict) and item.get("href"):
+                url = item["href"]
+                break
+        if not url and row.get("id") is not None:
+            url = f"https://datadryad.org/downloads/file_stream/{row['id']}"
+        inventory[name] = {
+            "id": row.get("id"),
+            "path": path,
+            "size": row.get("size"),
+            "digest": row.get("digest"),
+            "download_url": url,
+        }
+
+    for name, url in DIRECT_FALLBACKS.items():
+        inventory.setdefault(name, {
+            "id": url.rsplit("/", 1)[-1],
+            "path": name,
+            "size": None,
+            "digest": None,
+            "download_url": url,
+            "source": "resolved Dryad page fallback",
+        })
+
+    audit = {
+        "schema": "louis.godwit_dryad_fetch.v2",
         "doi": DOI,
-        "required_files": sorted(DEFAULT_KEEP),
-        "known_file_ids": KNOWN_FILE_IDS,
-        "download_endpoint": f"{API}/files/{{id}}/download",
+        **version_meta,
+        "api_error": api_error,
+        "inventory": inventory,
+        "requested_files": sorted(DEFAULT_KEEP),
+        "resolved_primary_csv_fallbacks": DIRECT_FALLBACKS,
     }
 
-    if args.rediscover:
-        downloaded, discovery = fetch_discovered(out)
-    else:
-        try:
-            downloaded, discovery = fetch_known(out)
-        except Exception as known_error:
-            audit["known_id_error"] = repr(known_error)
-            downloaded, discovery = fetch_discovered(out)
+    if not args.metadata_only:
+        downloaded = []
+        for name in sorted(DEFAULT_KEEP):
+            row = inventory.get(name)
+            if not row or not row.get("download_url"):
+                continue
+            dest = out / name
+            download(str(row["download_url"]), dest)
+            downloaded.append({"file": name, "bytes": dest.stat().st_size})
+        audit["downloaded"] = downloaded
 
-    audit["discovery"] = discovery
-    audit["downloaded"] = downloaded
     (out / "dryad_metadata_audit.json").write_text(
         json.dumps(audit, indent=2), encoding="utf-8"
     )
