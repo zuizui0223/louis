@@ -145,7 +145,7 @@ buffering.
 **Scientific analysis closed for drafting.**
 
 Canonical source:
-- `manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V1.json`
+- `manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V2.json`
 - `manuscript/LOUIS_HYDROLOGICAL_BUFFERING_MANUSCRIPT_V1.md`
 
 ---
