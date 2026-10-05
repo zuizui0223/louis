@@ -176,3 +176,24 @@ See [three independent ecology programmes](docs/three_ecology_programs.md).
 
 
 - [three-programme current status](docs/three_ecology_programs_status.md)
+
+
+## Submission figures
+
+Canonical V2 figure data are now materialized in:
+
+- `manuscript/figure_data/`
+- `manuscript/FIGURE_DATA_CONTRACT_V2.json`
+
+Reference vector renders:
+
+- `manuscript/rendered_figures/Figure1.svg`
+- `manuscript/rendered_figures/Figure2.svg`
+- `manuscript/rendered_figures/Figure3.svg`
+- `manuscript/rendered_figures/Figure4.svg`
+- `manuscript/rendered_figures/Figure5.svg`
+
+Render QC:
+- `manuscript/RENDERED_FIGURE_QC_V1.json` — **PASS_REFERENCE_RENDER**
+
+All primary individual displays use **bird (n=10)** as the biological replicate; the 190 matched events are never drawn as 190 independent animals.
