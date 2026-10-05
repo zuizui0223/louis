@@ -15,19 +15,19 @@
   "primary": {
     "events": 190,
     "pooled_used_on_availability_slope": 0.161897834676697,
-    "pseudo_null_median_slope": 1.0007033011165365,
-    "coupling_reduction": 0.8382159482275524,
+    "pseudo_null_median_slope": 0.9998595980370271,
+    "coupling_reduction": 0.8380794313576199,
     "monte_carlo_p_lower": 0.00004999750012499375,
-    "median_individual_used_slope": 0.12164354281150686,
-    "median_individual_coupling_reduction": 0.8783903785487526,
+    "median_individual_used_slope": 0.12164354281150683,
+    "median_individual_coupling_reduction": 0.8784788896673894,
     "birds_below_own_null_median": "10/10",
     "birds_p_lt_0_05": "10/10"
   },
   "conditional_flooded": {
     "events": 182,
     "pooled_used_on_availability_slope": 0.14533748429947022,
-    "pseudo_null_median_slope": 0.9997290296719239,
-    "coupling_reduction": 0.854623122880442,
+    "pseudo_null_median_slope": 0.9993194115962973,
+    "coupling_reduction": 0.8545635333278372,
     "median_individual_used_slope": 0.0690563819806386,
     "median_individual_coupling_reduction": 0.9310006589490287,
     "birds_below_own_null_median": "10/10",
@@ -36,8 +36,8 @@
   "all_points_flooded": {
     "events": 131,
     "pooled_used_on_availability_slope": 0.17979756224209556,
-    "pseudo_null_median_slope": 1.0005307196130544,
-    "coupling_reduction": 0.8202978092350522,
+    "pseudo_null_median_slope": 1.0010433649653814,
+    "coupling_reduction": 0.820389836709708,
     "median_individual_used_slope": 0.13562481356702888,
     "median_individual_coupling_reduction": 0.8668927909536341,
     "birds_below_own_null_median": "10/10",
@@ -50,5 +50,7 @@
     "individual_replicates": 20000,
     "pooled_replicates": 20000,
     "add_one_p_values": true
-  }
+  },
+  "canonical_numeric_contract": "manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V2.json",
+  "reproducibility_note": "Monte Carlo null summaries synchronized to portable xorshift32 full rerun; observed slopes and biological interpretation unchanged."
 }
