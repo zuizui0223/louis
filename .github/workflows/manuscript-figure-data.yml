@@ -10,7 +10,7 @@ on:
       - "analysis/12_lake_erie_availability_coupling.py"
       - "analysis/13_lake_erie_buffering_limits.py"
       - "analysis/14_build_manuscript_figure_data.py"
-      - "manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V1.json"
+      - "manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V2.json"
       - ".github/workflows/manuscript-figure-data.yml"
 
 permissions:
