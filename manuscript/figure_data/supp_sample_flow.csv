@@ -1,0 +1,7 @@
+stage,n
+source_rows,607
+source_missing_excluded,17
+malformed_id_excluded,2
+valid_matched_events,190
+strict_two_random_events,173
+individual_birds,10
