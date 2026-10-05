@@ -39,11 +39,20 @@ This contrast makes the ecological question sharper:
 
 > **When does movement stabilize an experienced environmental state, and when does it track a changing resource state instead?**
 
-## Open individual-level test
+## Individual-level test status
 
-The preregistered Dryad analysis in `analysis/07_godwit_seasonal_state_displacement.py` remains useful because it compares each bird's own wet-to-dry habitat composition with cross-individual seasonal pairings.
+The frozen individual-level Dryad analysis in `analysis/07_godwit_seasonal_state_displacement.py` remains scientifically valid: it compares each bird's own wet-to-dry habitat composition with cross-individual seasonal pairings.
 
-That individual permutation result is not inferred from the published group-level result and should not be fabricated if the raw CSVs are unavailable to the execution environment.
+However, repeated GitHub Actions retrieval attempts on 2026-10-05 returned HTTP 403 for the Dryad file-stream downloads. Current Dryad tooling/documentation indicates that binary file/archive downloads can require an authenticated session even when public metadata remain anonymously queryable.
+
+Therefore:
+
+- the individual permutation result is **not available** from the current anonymous execution route;
+- it is not inferred from the published group-level result;
+- the repository does not keep rerunning or redesigning the Godwit analysis to rescue this optional external panel;
+- the published habitat-replacement result remains a legitimate ecological boundary, not an SRI replication.
+
+If the two CSVs later become available through an authenticated or author-provided public mirror, the already-frozen analysis may be run without changing its estimand.
 
 ## Claim boundary
 
