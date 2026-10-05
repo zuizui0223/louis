@@ -115,7 +115,7 @@ Canonical manuscript:
 - `manuscript/LOUIS_HYDROLOGICAL_BUFFERING_MANUSCRIPT_V1.md`
 
 Numeric contract:
-- `manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V1.json`
+- `manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V2.json`
 
 Submission QC:
 - logical equivalent of `validation/validate_manuscript_v1.py`: **PASS**
