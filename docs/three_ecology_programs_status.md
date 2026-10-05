@@ -63,17 +63,16 @@ Older V1 completion-centred figure specifications and simplified initiation scri
 
 Canonical inputs:
 - `manuscript/FIGURE_DATA_CONTRACT_V2.json`
-- `manuscript/figure_data/`
+- `manuscript/figure_data_v2/`
 
 Rendered figures:
-- `manuscript/rendered_figures/Figure1.svg` through `Figure5.svg`
-- `manuscript/RENDERED_FIGURE_QC_V1.json` — **PASS_REFERENCE_RENDER**
+- `manuscript/rendered_figures_v2/Figure1.svg` through `Figure4.svg`
+- `manuscript/RENDERED_FIGURE_QC_V2.json` — **PASS_REFERENCE_RENDER**
 
 ### Remaining non-scientific submission inputs
 
 - author/affiliation/contribution fields;
 - target-journal formatting;
-- final graphical rendering from the V2 plotting tables;
 - source-study ethics wording check;
 - release/archive.
 
