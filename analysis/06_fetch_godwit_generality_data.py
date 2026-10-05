@@ -72,7 +72,16 @@ def try_api_inventory() -> tuple[dict, list[dict]]:
     version = version_rows[-1]
     version_id = version.get("id")
     if version_id is None:
-        raise RuntimeError("Dryad version has no id")
+        self_href = ((version.get("_links") or {}).get("self") or {}).get("href")
+        if self_href:
+            tail = str(self_href).rstrip("/").rsplit("/", 1)[-1]
+            if tail.isdigit():
+                version_id = int(tail)
+    if version_id is None:
+        raise RuntimeError(
+            "Dryad version has no direct id and no numeric self-link; "
+            f"version keys={sorted(version.keys())}"
+        )
 
     files_meta = get_json(f"{API}/versions/{version_id}/files")
     fembed = files_meta.get("_embedded") or {}
