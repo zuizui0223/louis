@@ -1,0 +1,24 @@
+{
+  "schema": "louis.rendered_figure_qc.v1",
+  "source_contract": "manuscript/FIGURE_DATA_CONTRACT_V2.json",
+  "numeric_contract": "manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V2.json",
+  "status": "PASS_REFERENCE_RENDER",
+  "rendered": [
+    "manuscript/rendered_figures/Figure1.svg",
+    "manuscript/rendered_figures/Figure2.svg",
+    "manuscript/rendered_figures/Figure3.svg",
+    "manuscript/rendered_figures/Figure4.svg",
+    "manuscript/rendered_figures/Figure5.svg"
+  ],
+  "checks": {
+    "biological_replication_is_individual_bird": true,
+    "figure2_all_10_birds_shown": true,
+    "figure3_all_10_birds_shown": true,
+    "primary_sri_median_matches_v2": true,
+    "temporal_retention_median_matches_v2": true,
+    "coupling_values_match_v2": true,
+    "buffering_limit_values_match_v2": true,
+    "coordinate_causation_not_claimed": true,
+    "south_carolina_labeled_external_context": true
+  }
+}
