@@ -59,6 +59,16 @@ Figures:
 
 Older V1 completion-centred figure specifications and simplified initiation scripts are explicitly superseded/fail-closed.
 
+### Figure status
+
+Canonical inputs:
+- `manuscript/FIGURE_DATA_CONTRACT_V2.json`
+- `manuscript/figure_data/`
+
+Rendered figures:
+- `manuscript/rendered_figures/Figure1.svg` through `Figure5.svg`
+- `manuscript/RENDERED_FIGURE_QC_V1.json` — **PASS_REFERENCE_RENDER**
+
 ### Remaining non-scientific submission inputs
 
 - author/affiliation/contribution fields;
@@ -75,7 +85,7 @@ Older V1 completion-centred figure specifications and simplified initiation scri
 
 ### Scientific status
 
-**Analysis closed for drafting.**
+**Analysis closed for drafting. Canonical figure data materialized. Reference Figure 1–5 SVG render QC PASS.**
 
 Primary independent Lake Erie result:
 - **190** valid matched events;
@@ -126,7 +136,6 @@ Submission QC:
 
 - author/affiliation/contribution fields;
 - target-journal formatting;
-- final figure rendering from canonical outputs;
 - source ethics wording verification;
 - submission release/archive.
 
