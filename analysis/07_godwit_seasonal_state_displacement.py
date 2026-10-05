@@ -242,6 +242,11 @@ def main() -> None:
     result = {
         "schema": "louis.godwit_seasonal_state_displacement.v1",
         "source_doi": "10.5061/dryad.4tmpg4fm3",
+        "source_season_definition": {
+            "wet": "July-November",
+            "dry": "December-March",
+        },
+        "external_role": "generality/falsification only; not a replication of Lake Erie SRI",
         "n_paired_birds": len(rows),
         "individual_results": rows,
         "spearman_centroid_shift_vs_habitat_dissimilarity": rho,
