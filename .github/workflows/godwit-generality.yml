@@ -1,5 +1,4 @@
-# rerun-marker: 2026-10-05 canonical-revalidation
-# dryad-api-v3-trigger
+# external-source-fail-soft-v1
 name: Godwit external generality
 
 on:
@@ -24,9 +23,26 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Fetch public Dryad data
+      - name: Fetch public Dryad data and audit availability
+        id: fetch
         run: |
           python analysis/06_fetch_godwit_generality_data.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("data/external/godwit_senegal/dryad_metadata_audit.json")
+          x=json.load(open(p))
+          ready=bool(x.get("primary_csv_ready"))
+          print("Dryad status:", x.get("status"))
+          print("API error:", x.get("api_error"))
+          print("Download errors:", x.get("download_errors", []))
+          with open(__import__("os").environ["GITHUB_OUTPUT"],"a") as f:
+              f.write(f"ready={'true' if ready else 'false'}\n")
+          PY
+
+      - name: Inspect fetched CSVs
+        if: steps.fetch.outputs.ready == 'true'
+        run: |
           python - <<'PY'
           import csv
           from pathlib import Path
@@ -39,15 +55,24 @@ jobs:
           PY
 
       - name: Run frozen generality analysis
+        if: steps.fetch.outputs.ready == 'true'
         run: |
           python analysis/07_godwit_seasonal_state_displacement.py
           cat analysis/results/godwit_seasonal_state_displacement.json
 
-      - name: Upload result
+      - name: Record external-source skip
+        if: steps.fetch.outputs.ready != 'true'
+        run: |
+          echo "Godwit generality analysis skipped: Dryad primary CSVs unavailable from runner."
+          echo "This optional external-source check is not part of the Lake Erie primary evidence."
+
+      - name: Upload availability/result audit
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: godwit-generality-result
+          name: godwit-generality-audit
           path: |
             analysis/results/godwit_seasonal_state_displacement.json
             data/external/godwit_senegal/dryad_metadata_audit.json
+          if-no-files-found: warn
           retention-days: 30
