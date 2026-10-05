@@ -148,10 +148,14 @@ The open individual-level test asks a narrower question:
 
 This does **not** replace Lake Erie SRI because it lacks event-matched local availability. It tests whether large seasonal geographic shifts preserve or replace broad habitat state.
 
-Implemented:
+Implemented / frozen external routes:
 - `analysis/06_fetch_godwit_generality_data.py`
 - `analysis/07_godwit_seasonal_state_displacement.py`
 - [Godwit test contract](docs/godwit_generality_test_contract.md)
+- [published Godwit habitat-replacement boundary](docs/godwit_published_generality_boundary.md)
+- [California four-species hourly step-state preflight](docs/california_waterfowl_step_state_preflight.md)
+
+The Godwit individual permutation analysis remains unavailable through the current anonymous Dryad download route; no result is inferred from inaccessible raw files. The California USGS route is now the cleaner open candidate because each observed moving step already has 100 movement-matched random alternatives.
 
 ## Evidence boundary
 
