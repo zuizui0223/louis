@@ -159,7 +159,7 @@ S6. Individual buffering-limit diagnostics.
 
 All figure numbers must come from:
 
-- `manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V1.json`
+- `manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V2.json`
 
 or a generated figure-data contract derived from the canonical result JSONs.
 
