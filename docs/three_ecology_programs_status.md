@@ -8,7 +8,7 @@ These are three separate ecological papers. EOG is provenance/discovery only.
 
 ### Scientific status
 
-**Scientific analysis and endpoint audit closed. Manuscript V3 QC PASS. Figure contract V2 QC PASS.**
+**Activation/onset and pooled post-activation speed analyses reproduce exactly. The project-specific speed audit is complete and shows no detectable between-project heterogeneity in the Durif-speed coefficient.**
 
 Primary evidence:
 
@@ -76,7 +76,7 @@ Rendered figures:
 - source-study ethics wording check;
 - release/archive.
 
-**No new exploratory Azores analysis is required.**
+**PASS_SPEED_REPRODUCTION / HETEROGENEITY_AUDIT_COMPLETE:** pooled speed n=418 and ratio 0.983 reproduce exactly from the pinned upstream blobs; project-specific speed effects show no detectable heterogeneity (Q=2.47, df=5, p=0.781, I²=0%). Do not generalize this to every route-specific progression endpoint.
 
 ---
 
@@ -140,6 +140,10 @@ Submission QC:
 
 **No further Lake Erie post-hoc metric is required unless authoritative coordinate-event linkage appears.**
 
+### Published Godwit boundary
+
+The Senegal Delta Black-tailed Godwit system is retained as an opposite-scale ecological boundary rather than an SRI replication: seasonal movement is associated with habitat-state replacement/resource tracking rather than strict state retention. Louisiana therefore asks the broader question **when local movement buffers experienced environmental variation and when animals must switch or relocate to a different resource state**.
+
 ---
 
 ## 3. Tampa — buffered persistence under quantitative degradation
@@ -156,7 +160,7 @@ Mechanism remains prospective.
 
 ### Decisive prospective test
 
-**Four-bay rhizome TNC first.**
+**Four-bay rhizome TNC sampling first; within-meadow state augmentation is the decisive primary inference.**
 
 Planning frame:
 - Old Tampa Bay: 8 recent positive nodes
@@ -173,7 +177,9 @@ Confirmatory gate:
 - paired baseline within +/-14 days;
 - one frozen HPLC workflow.
 
-Primary model is already frozen.
+The paper-level TNC hierarchy is frozen before outcome access: the within-node anchor test is decisive; the four-bay cross-node TNC model is supportive/generalization only and cannot rescue an unsupported within-node result.
+
+A second, independent high-novelty branch is also frozen for **history-linked functional insurance**. A response-independent preflight identified 18 Old+Middle Tampa Bay meadows containing both a current alternative-seagrass point with documented prior Thalassia loss and a nearby >=3-year persistent-Thalassia comparator; all 18 pairs are within 100 m (median 25 m, maximum 75 m). The future primary compares synchronized measured hydrodynamic attenuation within each matched meadow. A null/overlapping interval is not treated as functional equivalence.
 
 ### Software/readiness status
 
