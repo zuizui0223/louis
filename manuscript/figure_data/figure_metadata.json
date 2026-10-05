@@ -1,0 +1,23 @@
+{
+  "schema": "louis.figure_data.v1",
+  "source_results": {
+    "state_fidelity": "results/lake_erie_state_fidelity_v1.json",
+    "availability_coupling": "results/lake_erie_availability_coupling_v1.json",
+    "buffering_limits": "results/lake_erie_buffering_limits_v1.json",
+    "numeric_contract": "manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V2.json"
+  },
+  "monte_carlo": {
+    "state_base_seed": 20261001,
+    "state_replicates_per_bird": 100000,
+    "coupling": {
+      "base_seed": 20261003,
+      "individual_replicates": 20000,
+      "pooled_replicates": 20000
+    }
+  },
+  "reporting_boundary": [
+    "Individual bird is the biological replication unit.",
+    "Do not infer that measured geographic displacement caused buffering.",
+    "Lake Erie SRI is the primary independent result; buffering-limit analyses are post-hoc decomposition."
+  ]
+}
