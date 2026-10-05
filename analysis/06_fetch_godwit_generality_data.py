@@ -139,14 +139,34 @@ def main() -> None:
 
     if not args.metadata_only:
         downloaded = []
+        download_errors = []
         for name in sorted(DEFAULT_KEEP):
             row = inventory.get(name)
             if not row or not row.get("download_url"):
                 continue
             dest = out / name
-            download(str(row["download_url"]), dest)
-            downloaded.append({"file": name, "bytes": dest.stat().st_size})
+            try:
+                download(str(row["download_url"]), dest)
+                downloaded.append({"file": name, "bytes": dest.stat().st_size})
+            except Exception as exc:
+                dest.unlink(missing_ok=True)
+                download_errors.append({
+                    "file": name,
+                    "url": str(row["download_url"]),
+                    "error": f"{type(exc).__name__}: {exc}",
+                })
         audit["downloaded"] = downloaded
+        audit["download_errors"] = download_errors
+
+    primary_ready = all((out / name).exists() for name in (
+        "location_data.csv", "habitat_use_df.csv"
+    ))
+    audit["primary_csv_ready"] = primary_ready
+    audit["status"] = (
+        "READY_FOR_ANALYSIS"
+        if primary_ready
+        else "EXTERNAL_SOURCE_UNAVAILABLE"
+    )
 
     (out / "dryad_metadata_audit.json").write_text(
         json.dumps(audit, indent=2), encoding="utf-8"
