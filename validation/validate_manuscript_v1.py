@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MANUSCRIPT = ROOT / "manuscript" / "LOUIS_HYDROLOGICAL_BUFFERING_MANUSCRIPT_V1.md"
-CONTRACT = ROOT / "manuscript" / "MANUSCRIPT_NUMERIC_CONTRACT_V1.json"
+CONTRACT = ROOT / "manuscript" / "MANUSCRIPT_NUMERIC_CONTRACT_V2.json"
 OUT = ROOT / "manuscript" / "MANUSCRIPT_QC_V1.json"
 
 FORBIDDEN_AFFIRMATIVE = [
