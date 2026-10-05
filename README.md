@@ -135,7 +135,11 @@ Lake Erie therefore tests **within-home-range micro-niche tracking**, while Sout
 
 ## Open cross-taxon generality test
 
-A fully open Senegal Delta Black-tailed Godwit dataset provides a parallel falsification/generalization route:
+A fully open Senegal Delta Black-tailed Godwit dataset provides a parallel falsification/generalization route. The published source already establishes a useful opposite boundary: birds shift broad habitat composition seasonally as rice fields mature/dry and natural wetlands become more important, so strict "stay in the same habitat state" is not universal.
+
+See [Godwit published-generality boundary](docs/godwit_published_generality_boundary.md).
+
+The open individual-level test asks a narrower question:
 
 - 22 GPS-tagged birds;
 - June 2022–March 2023 tracking;
