@@ -61,6 +61,7 @@ def try_api_inventory() -> tuple[dict, list[dict]]:
     versions_url = (dataset.get("_links") or {}).get("stash:versions", {}).get("href")
     if not versions_url:
         versions_url = f"{API}/datasets/{encoded}/versions"
+    versions_url = urllib.parse.urljoin("https://datadryad.org", versions_url)
 
     versions = get_json(versions_url)
     embedded = versions.get("_embedded") or {}
@@ -105,7 +106,7 @@ def main() -> None:
         for key in ("stash:download", "download"):
             item = links.get(key)
             if isinstance(item, dict) and item.get("href"):
-                url = item["href"]
+                url = urllib.parse.urljoin("https://datadryad.org", item["href"])
                 break
         if not url and row.get("id") is not None:
             url = f"https://datadryad.org/downloads/file_stream/{row['id']}"
