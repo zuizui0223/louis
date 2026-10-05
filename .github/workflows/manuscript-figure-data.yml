@@ -1,4 +1,4 @@
-# rerun-marker: 2026-10-05 figure-contract-v2-materialization
+# rerun-marker: 2026-10-05 rebase-safe-figure-materialization
 name: manuscript-figure-data
 
 on:
@@ -80,6 +80,7 @@ jobs:
             echo "No figure-data changes to commit"
           else
             git commit -m "Materialize canonical Louisiana figure data"
+            git pull --rebase origin main
             git push
           fi
 
