@@ -16,9 +16,9 @@
   "primary_sri": {
     "positive_birds": "10/10",
     "median": 0.8857070432632621,
-    "mean": 0.7639135901887848,
+    "mean": 0.7639713013388989,
     "range": [
-      0.4015553882983831,
+      0.4021324997995238,
       0.9760211873790514
     ],
     "sign_test_p": 0.0009765625,
@@ -27,9 +27,9 @@
   "strict_two_random_sri": {
     "positive_birds": "10/10",
     "median": 0.8817352528002491,
-    "mean": 0.7599406237937333,
+    "mean": 0.759860284381722,
     "range": [
-      0.36946730707715214,
+      0.36866391295703904,
       0.9759861928767136
     ],
     "sign_test_p": 0.0009765625,
@@ -38,7 +38,7 @@
   "temporal_state_retention": {
     "primary": {
       "positive_birds": "10/10",
-      "median": 0.6577749876440899,
+      "median": 0.6577749876440898,
       "range": [
         0.38844847112117786,
         0.8786138234730998
@@ -58,5 +58,7 @@
     }
   },
   "interpretation": "Repeated King Rail used microhabitats show less temporal water-depth variation and smaller successive water-depth changes than event-matched local availability.",
-  "boundary": "Coordinate CSVs lack explicit event/date IDs; do not claim geographic movement causes the state retention until coordinate-to-event linkage is independently verified."
+  "boundary": "Coordinate CSVs lack explicit event/date IDs; do not claim geographic movement causes the state retention until coordinate-to-event linkage is independently verified.",
+  "canonical_numeric_contract": "manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V2.json",
+  "reproducibility_note": "Monte Carlo-dependent summary values synchronized to portable xorshift32 full rerun; substantive conclusions unchanged."
 }
