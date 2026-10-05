@@ -1,0 +1,66 @@
+{
+  "schema": "louis.hydrological_buffering_figure_data.v2",
+  "sources": {
+    "numeric_contract": "manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V2.json",
+    "state_fidelity_full_rerun": "results/lake_erie_state_fidelity_v1.json",
+    "availability_coupling_full_rerun": "results/lake_erie_availability_coupling_v1.json",
+    "buffering_limits": "results/lake_erie_buffering_limits_v1.json",
+    "generator": "analysis/14_build_manuscript_figure_data.py",
+    "workflow": ".github/workflows/manuscript-figure-data.yml"
+  },
+  "figure1": {
+    "type": "conceptual_source_design",
+    "source_rows": 607,
+    "valid_matched_events": 190,
+    "birds": 10,
+    "boundary": "schematic only; do not imply verified geographic movement-event linkage"
+  },
+  "figure2": {
+    "file": "manuscript/figure_data/fig2_individual_state_retention.csv",
+    "expected": {
+      "birds": 10,
+      "sri_positive": "10/10",
+      "sri_median": 0.8857070432632621,
+      "temporal_positive": "10/10",
+      "temporal_median": 0.6577749876440898,
+      "strict_events": 173
+    },
+    "unit": "individual bird"
+  },
+  "figure3": {
+    "summary_file": "manuscript/figure_data/fig3_coupling_summary.csv",
+    "individual_file": "manuscript/figure_data/fig3_individual_coupling.csv",
+    "expected": {
+      "primary_events": 190,
+      "primary_observed_slope": 0.161897834676697,
+      "primary_null_median_slope": 0.9998595980370271,
+      "primary_coupling_reduction": 0.8380794313576199,
+      "conditional_flooded_reduction": 0.8545635333278372,
+      "all_points_flooded_reduction": 0.820389836709708
+    }
+  },
+  "figure4": {
+    "file": "manuscript/figure_data/fig4_individual_buffering_limits.csv",
+    "expected": {
+      "birds_positive_extreme_retention": "9/10",
+      "median_extreme_retention": 0.628938857567414,
+      "pooled_coupling_reduction": 0.8454074434593394
+    },
+    "boundary": "post-hoc mechanism decomposition; do not infer universal relocation threshold"
+  },
+  "supplementary": {
+    "sample_flow_file": "manuscript/figure_data/supp_sample_flow.csv"
+  },
+  "materialization_status": {
+    "canonical_aggregate_values": "available on main",
+    "individual_figure_tables": "require full public-data rerun",
+    "rule": "Do not reconstruct individual SRI/coupling rows from summary minima/ranges. Run the public Zenodo workflow and commit only derived figure tables."
+  },
+  "reporting_boundary": [
+    "Individual bird is the biological replication unit.",
+    "Do not plot 190 matched events as 190 independent biological replicates.",
+    "Do not state that measured geographic displacement caused hydrological buffering.",
+    "South Carolina and Godwit systems are external context, not SRI replication.",
+    "Figure values must match MANUSCRIPT_NUMERIC_CONTRACT_V2.json; FIGURE_DATA_CONTRACT_V1.json is superseded."
+  ]
+}
