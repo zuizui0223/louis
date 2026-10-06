@@ -121,6 +121,28 @@ The unresolved coordinate-event join still prevents the stronger causal statemen
 
 See [hydrological availability coupling](docs/lake_erie_availability_coupling.md).
 
+## Local hydrological heterogeneity as buffering opportunity
+
+A post-hoc mechanism decomposition now asks whether local hydrological heterogeneity itself supplies the alternatives needed for buffering.
+
+Using the **173** events with both intended random plots retained, local heterogeneity was defined as the within-event random-depth range. After controlling within birds for how far mean local availability was from each bird's typical available state:
+
+- observed heterogeneity coefficient: **-0.0431**;
+- matched pseudo-used null median: **+0.2617**;
+- 50,000-replicate lower-tail Monte Carlo **p = 0.000020**.
+
+Thus, at the same degree of mean hydrological mismatch, broader local water-depth availability was associated with **less** displacement of the state actually used than expected from pseudo-use of the same local plots.
+
+Supported interpretation:
+
+> **fine-scale hydrological heterogeneity is compatible with acting as a local state portfolio that gives resident birds behaviorally accessible alternatives for buffering the environment they experience.**
+
+The stronger mismatch x heterogeneity interaction was not supported (p = **0.753**), so the data do not show that heterogeneity becomes disproportionately more valuable under extreme mismatch.
+
+This is a post-hoc mechanism decomposition of the same Lake Erie dataset, not an independent replication. Two random plots are also only a sparse proxy for the full local state distribution, and the unresolved coordinate-event join still prevents a geographic movement-causation claim.
+
+See [local heterogeneity mechanism result](docs/lake_erie_local_heterogeneity_insurance_result.md).
+
 ## Independent replication boundary
 
 A 2026 South Carolina King Rail telemetry study supplies a complementary regime:
@@ -163,7 +185,7 @@ The Lake Erie archive and matched-event schema are now resolved. Individual bird
 
 ## Later extension
 
-The hydrological-portfolio/HPI idea remains a stronger second stage and requires a repeated spatial habitat surface. Static heterogeneity alone is not enough.
+The matched-event heterogeneity result supplies direct evidence that local state diversity is associated with buffering opportunity, but it samples that diversity with only two random plots per event. A stronger hydrological-portfolio test still requires a repeated spatial habitat surface that can quantify how much suitable state remains reachable through time and when the local portfolio fails.
 
 ## Role of EOG
 
