@@ -188,6 +188,34 @@ For an extreme-condition sensitivity, we defined extreme events as the top quart
 
 This analysis was explicitly post-hoc and was not treated as a second independent validation.
 
+### Local hydrological heterogeneity mechanism decomposition
+
+We next asked whether fine-scale heterogeneity in local water depth provided a measurable opportunity for buffering. This analysis was also post-hoc and used only the 173 matched events for which both intended random plots survived source-defined quality control.
+
+For each event, we defined local mean availability as the mean of the two random-plot water depths and local hydrological heterogeneity as their range:
+
+\[
+H_{it}=\max(R_{it})-\min(R_{it}).
+\]
+
+As in the buffering-limit analysis, local mean-state mismatch was:
+
+\[
+X_{it}=|A_{it}-\operatorname{median}_t(A_{it})|,
+\]
+
+and experienced-state deviation was:
+
+\[
+Y_{it}=|U_{it}-\operatorname{median}_t(U_{it})|.
+\]
+
+We fit a pooled within-bird regression of \(Y\) on \(X\) and \(H\). The focal quantity was the heterogeneity coefficient after bird-level centring.
+
+To construct a matched null, we selected one of the two real random plots as pseudo-used at every event, recomputed each bird's pseudo-used median and refit the identical model. We repeated this procedure 50,000 times. This preserves the observed local mismatch and heterogeneity sequence while removing the realised used-state choice.
+
+A secondary model added an \(X\times H\) interaction to test whether heterogeneity became disproportionately more useful during unusually mismatched hydrological conditions. Neither analysis identifies geographic movement because the event-level coordinate join remains unresolved.
+
 ### Coordinate-linkage audit
 
 The public archive also contains individual UTM coordinate files used for home-range estimation. Those files do not include an explicit event/date key matching rows to the homing-event identifiers in the microhabitat table.
@@ -256,6 +284,14 @@ During the top quartile of local mismatch events within each bird, nine of ten i
 
 One individual showed slightly negative extreme retention and several showed substantially weaker buffering than the strongest individuals. Thus, hydrological buffering was widespread but not unlimited.
 
+### Local hydrological heterogeneity was associated with buffering opportunity
+
+Among the 173 events with two retained random plots, the within-bird coefficient relating local random-depth range to experienced-state deviation, after representing mean-state mismatch, was **-0.0431**. Under 50,000 matched pseudo-used trajectories generated from the same local random plots, the median heterogeneity coefficient was **+0.2617**. The observed value lay in the extreme lower tail of the matched null (**p = 0.000020**).
+
+Thus, broader simultaneous local water-depth availability was associated with less displacement of the state actually used than expected if used states were drawn from the same local availability set.
+
+The stronger mismatch-by-heterogeneity prediction was not supported. Its observed interaction coefficient was **-0.00490**, compared with a matched-null median of **-0.00940** (**p = 0.753**). We therefore do not infer that heterogeneity becomes disproportionately more protective under extreme hydrological mismatch.
+
 ---
 
 ## Discussion
@@ -303,6 +339,16 @@ The flooded-only analyses reject that explanation as sufficient. Strong state re
 Thus, the relevant signal is quantitative within wet habitat. Birds repeatedly used particular water-depth states rather than merely selecting the binary presence of water.
 
 This distinction matters for management. Maintaining wetland area or inundation alone may not retain the environmental states used by a hydrological specialist. The distribution of shallow-water conditions through space and time can be equally important.
+
+### Local heterogeneity provides a candidate state portfolio
+
+The post-hoc heterogeneity analysis adds a mechanism-level clue to the primary buffering result. When two nearby random plots spanned a wider range of water depths, the water depth actually used by the bird was less displaced from its typical state than expected from matched pseudo-use, after the shift in mean local availability was represented.
+
+This pattern is consistent with a **local state portfolio** interpretation. Fine-scale environmental heterogeneity can provide simultaneous alternatives rather than merely increasing habitat variance. If an animal can select among those alternatives, geographic space may contain a broader range of states while the environmental state actually experienced remains comparatively narrow.
+
+The comparison with matched pseudo-use is important. Broader random-plot depth ranges by themselves tended to generate greater pseudo-used state displacement; the realised used-state relationship differed strongly from that expectation. The result therefore goes beyond the statement that heterogeneous wetlands contain more variable habitat.
+
+However, two random plots provide only a sparse sample of the local hydrological distribution, and the analysis was developed after the primary buffering result. It does not establish how much heterogeneity is required, whether the birds physically visited the sampled alternatives, or whether heterogeneity prevents emigration. A complete dynamic habitat surface linked to event-level movement would be needed to identify failure of the local state portfolio directly.
 
 ### Buffering is strong but finite
 
@@ -360,7 +406,7 @@ The source King Rail data and code are publicly archived by Brewer et al. (2023)
 
 The present analysis code, contracts and derived canonical summaries are maintained in this repository. The primary manuscript values are frozen in:
 
-- `manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V1.json`.
+- `manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V2.json`.
 
 Key analysis scripts:
 
@@ -369,6 +415,7 @@ Key analysis scripts:
 - `analysis/11_lake_erie_flooded_availability_sensitivity.py`
 - `analysis/12_lake_erie_availability_coupling.py`
 - `analysis/13_lake_erie_buffering_limits.py`
+- `analysis/15_lake_erie_local_heterogeneity_insurance.py`
 
 The coordinate-to-event linkage is intentionally not reconstructed by undocumented row order.
 
