@@ -1,0 +1,28 @@
+name: Lake Erie local heterogeneity bird robustness
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "analysis/16_lake_erie_local_heterogeneity_robustness.py"
+      - "analysis/15_lake_erie_local_heterogeneity_insurance.py"
+      - ".github/workflows/lake-erie-local-heterogeneity-robustness.yml"
+
+jobs:
+  bird-robustness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run bird-level robustness audit
+        run: |
+          python analysis/16_lake_erie_local_heterogeneity_robustness.py
+          cat results/lake_erie_local_heterogeneity_bird_robustness_v1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lake-erie-local-heterogeneity-bird-robustness
+          path: results/lake_erie_local_heterogeneity_bird_robustness_v1.json
+          retention-days: 30
