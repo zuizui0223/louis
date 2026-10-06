@@ -9,7 +9,8 @@
 | L5 | Buffering is finite and heterogeneous | extreme-condition analysis: 9/10 positive, median extreme retention 0.629; one negative | “buffering weakened or failed for some individuals/events” | “a universal threshold for relocation was identified” |
 | L6 | Geographic movement-mediated mechanism is not yet identified | coordinate linkage audit fails event/date join | “realised habitat use buffers state” | “measured displacement caused state retention” |
 | L7 | Result differs from source habitat-selection analysis | source study asks used vs random characteristics; new analysis tests temporal used trajectory vs event-matched temporal availability | “temporal availability-relative extension” | “source study missed/incorrectly analysed the ecology” |
-| L8 | Result motivates hydrological-portfolio conservation prediction | biological inference from L1–L5 plus source wetland ecology | “maintaining multiple suitable shallow-water states may buffer residency” | “habitat heterogeneity was directly shown to prevent emigration” |
+| L8 | Local hydrological heterogeneity is associated with buffering opportunity relative to matched pseudo-use | 173 two-random events; observed within-bird heterogeneity coefficient -0.043 vs pseudo-used null median +0.262; Monte Carlo p=0.000020 | “fine-scale hydrological heterogeneity is compatible with providing a local state portfolio for buffering” | “heterogeneity causally prevented emigration or measured geographic movement” |
+| L9 | Result motivates a scale-transition conservation prediction | L1–L8 plus South Carolina boundary context | “maintaining multiple suitable shallow-water states may support local compensation; broader movement is predicted when the local portfolio fails” | “a relocation threshold or causal emigration-prevention effect was demonstrated” |
 
 ## Primary headline claim
 
