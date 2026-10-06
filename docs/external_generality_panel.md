@@ -127,3 +127,26 @@ This gives a continuous ecological hypothesis:
 Resource tracking and niche tracking are established.
 
 The potentially new contribution is to connect movement scale to **the spatial displacement of suitable state itself**, and to test that idea from individual matched availability through population-scale dynamic wetland systems.
+
+
+## Source-level Godwit boundary
+
+The Senegal Delta Black-tailed Godwit source study provides an informative **opposite-scale regime** even before the repository-specific permutation analysis is run.
+
+The published study reports a marked seasonal shift in broad habitat use:
+
+- during the wet season, natural wetlands and rice fields are important;
+- as rice becomes too dense, birds move toward more recently sown fields;
+- later, as floodwaters recede and rice fields dry, birds shift toward natural wetlands in protected areas.
+
+Therefore this system should not be cited as evidence that broad geographic relocation necessarily preserves the same habitat-composition state.
+
+Its current source-level role is:
+
+> **large-scale movement can involve habitat-state replacement when seasonal resource distributions themselves change.**
+
+Together with Lake Erie, this motivates a scale-dependent hypothesis:
+
+> **when acceptable hydrological states remain available within a familiar local landscape, fine-scale habitat choice can buffer experienced environmental variation; when the resource landscape itself changes, maintaining performance may require broader relocation and can involve switching habitat state rather than preserving it.**
+
+The implemented Bray–Curtis individual-pairing analysis remains a separate quantitative test. Until its Dryad CSVs are executed successfully, do not report a repository-derived Godwit effect size or permutation p-value.
