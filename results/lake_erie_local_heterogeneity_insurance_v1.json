@@ -1,0 +1,57 @@
+{
+  "schema": "louis.lake_erie_local_heterogeneity_insurance_v1",
+  "evidence_class": "posthoc_mechanism_decomposition",
+  "source": {
+    "paper_doi": "10.1002/ece3.10043",
+    "data_doi": "10.5281/zenodo.6604660",
+    "table": "CARTdataset_12.31.21_All_D.csv"
+  },
+  "qc": {
+    "source_rows": 607,
+    "missing_excluded": 17,
+    "malformed_excluded": 2,
+    "eligible_two_random_events": 173,
+    "birds": 10
+  },
+  "definitions": {
+    "mismatch_X": "abs(mean matched-random depth - bird median matched-random mean depth)",
+    "local_heterogeneity_H": "max matched-random depth - min matched-random depth at the same event",
+    "experienced_deviation_Y": "abs(used depth - bird median used depth)"
+  },
+  "primary": {
+    "n_events": 173,
+    "beta_mismatch": 0.10630399246291503,
+    "beta_heterogeneity": -0.04309790738832315,
+    "pseudo_null_median_beta_heterogeneity": 0.26172337863130785,
+    "monte_carlo_add_one_p_lower": 0.00001999960000799984,
+    "prediction": "beta_heterogeneity below pseudo-used null"
+  },
+  "secondary_interaction": {
+    "n_events": 173,
+    "beta_mismatch": 0.18379725746707556,
+    "beta_heterogeneity": 0.05129473666553157,
+    "beta_mismatch_x_heterogeneity": -0.004904488584343497,
+    "pseudo_null_median_interaction": -0.009402046676301712,
+    "monte_carlo_add_one_p_lower": 0.7530649387012259,
+    "prediction": "negative mismatch x heterogeneity interaction"
+  },
+  "monte_carlo": {
+    "replicates": 50000,
+    "seed": 20261008,
+    "portable_rng": "xorshift32"
+  },
+  "interpretation": "At the same degree of mean local hydrological mismatch, greater within-event local water-depth heterogeneity is associated with less displacement of the water-depth state actually used than expected under matched pseudo-use. This is compatible with local environmental heterogeneity providing behaviorally accessible buffering opportunity.",
+  "claim_boundary": [
+    "Post-hoc mechanism decomposition of the Lake Erie dataset, not an independent confirmation.",
+    "Two matched random plots provide only a sparse proxy for local hydrological heterogeneity.",
+    "Random plots are availability samples, not locations proven to have been visited by the bird.",
+    "No coordinate-event join is used; geographic movement is not inferred.",
+    "The mismatch x heterogeneity interaction was not supported; do not claim that heterogeneity becomes disproportionately more valuable under extreme mismatch."
+  ],
+  "workflow_provenance": {
+    "run_id": 37480842118,
+    "job_id": 112328234319,
+    "conclusion": "success",
+    "artifact_id": 11424832713
+  }
+}
