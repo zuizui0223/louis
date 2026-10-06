@@ -1,0 +1,31 @@
+name: Lake Erie local heterogeneity insurance
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "analysis/15_lake_erie_local_heterogeneity_insurance.py"
+      - ".github/workflows/lake-erie-local-heterogeneity.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  heterogeneity-insurance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run local-heterogeneity mechanism test
+        run: |
+          python analysis/15_lake_erie_local_heterogeneity_insurance.py
+          cat results/lake_erie_local_heterogeneity_insurance_v1.json
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: lake-erie-local-heterogeneity-insurance
+          path: results/lake_erie_local_heterogeneity_insurance_v1.json
+          retention-days: 30
