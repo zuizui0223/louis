@@ -94,6 +94,26 @@ def main() -> None:
     checks["extreme_9_of_10"] = "9/10" in text or "nine of ten" in low
     checks["extreme_median_0_629"] = contains_num(text, b["median_extreme_retention"])
 
+    # Post-hoc local heterogeneity mechanism.
+    h = c["local_heterogeneity_mechanism"]
+    checks["heterogeneity_events_173"] = contains_num(text, h["events"])
+    checks["heterogeneity_beta_neg_0_043"] = (
+        "-0.0431" in text or "-0.043" in text
+    )
+    checks["heterogeneity_null_pos_0_262"] = (
+        "+0.2617" in text or "0.2617" in text or "0.262" in text
+    )
+    checks["heterogeneity_mc_p"] = (
+        "0.000020" in text or "0.00002" in text
+    )
+    checks["heterogeneity_interaction_not_supported"] = (
+        "0.753" in text
+        and (
+            "not supported" in low
+            or "do not infer that heterogeneity becomes disproportionately" in low
+        )
+    )
+
     # Boundaries.
     checks["coordinate_join_boundary"] = (
         "cannot be unambiguously linked" in low
