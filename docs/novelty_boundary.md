@@ -143,3 +143,36 @@ Therefore the Lake Erie contribution is empirical and scale-specific:
 > **an individual-level, event-matched local-availability test of how much temporal environmental variation is damped by repeated realised habitat use in a resident wetland bird.**
 
 See [theory position](experienced_environment_theory_position.md).
+
+
+## 2025 variance-reduction precedent
+
+Knight et al. (2025, *Acta Oecologica*, DOI 10.1016/j.actao.2025.104103) explicitly proposed **habitat selection as a reduction in habitat variance**. In GPS-collared white-tailed deer, used habitat showed lower variance in canopy closure than the surrounding environment, and the authors argued that selection for diminished environmental variance can be a fundamental property of habitat selection.
+
+This closes an important novelty claim.
+
+Louisiana must **not** claim that it is the first study to show that habitat choice can reduce environmental variance.
+
+The Lake Erie contribution is narrower and more temporal:
+
+1. availability is event-matched and local to the same observation time;
+2. the analysis follows repeated individuals rather than comparing only aggregate used-versus-available distributions;
+3. it tests temporal trajectory smoothness as well as variance;
+4. the used-on-available slope quantifies how much contemporaneous local hydrological change is transmitted into the environment actually experienced by each bird.
+
+Thus the strongest distinction is:
+
+> **not whether habitat use has lower variance, but whether a resident individual's experienced environmental trajectory is dynamically decoupled from time-matched local environmental change.**
+
+The pooled slope of 0.162 versus a matched pseudo-used expectation near 1 operationalizes this as an **environmental transmission / buffering coefficient**.
+
+### Remaining novelty ceiling
+
+Even this framing does not establish that geographic movement caused the buffering because the coordinate-event join remains unresolved.
+
+The stronger future contribution would identify the boundary between:
+
+- local within-home-range environmental buffering, and
+- broader relocation or habitat-state replacement when acceptable local states are no longer reachable.
+
+That boundary, rather than variance reduction alone, is the route to a more general movement-ecology principle.
