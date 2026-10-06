@@ -28,6 +28,7 @@ Canonical result sources:
 - `results/lake_erie_availability_coupling_v1.json`
 - `results/lake_erie_flooded_availability_sensitivity_v1.json`
 - `results/lake_erie_buffering_limits_v1.json`
+- `results/lake_erie_local_heterogeneity_insurance_v1.json`
 
 Do not copy numbers from exploratory notes.
 
@@ -62,6 +63,7 @@ analysis/08_lake_erie_standardize.py
  -> analysis/09_lake_erie_state_fidelity.py
  -> analysis/12_lake_erie_availability_coupling.py
  -> analysis/13_lake_erie_buffering_limits.py
+ -> analysis/15_lake_erie_local_heterogeneity_insurance.py
  -> analysis/14_build_manuscript_figure_data.py
 ~~~
 
@@ -85,7 +87,7 @@ Do not submit if the manuscript says or implies:
    83.8% is a reduction in the used-on-available water-depth slope relative to the matched pseudo-used null.
 
 4. **habitat heterogeneity was demonstrated to prevent emigration**  
-   The portfolio/emigration interpretation is a prediction, not the primary measured result.
+   The new matched mechanism decomposition supports heterogeneity as a local buffering opportunity relative to pseudo-use, but it does not measure emigration prevention or geographic movement causation.
 
 5. **a universal relocation threshold was identified**  
    Extreme-condition analysis shows finite/heterogeneous buffering only.
@@ -104,7 +106,8 @@ Keep the evidence hierarchy explicit:
 ### Mechanistic decomposition / robustness on the same data
 - availability coupling;
 - flooded-only sensitivities;
-- buffering-limit analysis.
+- buffering-limit analysis;
+- local hydrological heterogeneity / state-portfolio decomposition (**post-hoc; not independent replication**).
 
 ### External context
 - South Carolina King Rail relocation;
