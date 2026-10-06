@@ -166,3 +166,23 @@ Therefore the current executable status remains:
 > **PREFLIGHT_ONLY — SOURCE DESIGN VERIFIED; RAW ORIGIN-STATE SCHEMA NOT YET OPENED**
 
 Do not infer a California state-retention result from the published used-versus-available habitat proportions alone. The proposed endpoint requires origin -> destination state continuity for each observed step and its own 100 random alternatives.
+
+
+## Access-boundary update — 2026-10-06
+
+The public USGS landing page and supporting paper were rechecked without opening any ecological state-retention outcome.
+
+Confirmed:
+
+- the final wintering dataset contains **169,716 hourly/sub-hourly filtered locations** after restricting to continuous hourly sequences;
+- the step-selection design generates **100 random movements from the origin of each observed moving step**;
+- habitat is represented by seven aggregated categories;
+- published Table 3 reports species-level used and available habitat proportions.
+
+However, the catalog/landing interfaces currently exposed here do not reveal the downloadable raw-file column schema needed to verify an explicit origin-habitat field or an unambiguous origin-coordinate/step-key reconstruction. Species-level Table 3 proportions cannot substitute for origin -> destination continuity at the step level.
+
+Therefore the gate remains:
+
+> **PREFLIGHT_ONLY — DESIGN VERIFIED; RAW ORIGIN-STATE SCHEMA NOT YET VERIFIED.**
+
+No California state-retention effect is inferred from the publication. The next valid step is direct access to the released raw step table or its data dictionary; if origin state cannot be recovered without undocumented row-order assumptions, stop under `STOP_ORIGIN_STATE_NOT_IDENTIFIABLE`.
