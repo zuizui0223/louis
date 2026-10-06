@@ -136,5 +136,23 @@
     "reason": "Synchronize Monte Carlo-dependent canonical values to the portable deterministic xorshift32 full rerun used by the analysis scripts and figure-data workflow.",
     "scientific_effect": "No claim, direction, inferential unit, event count, median primary SRI, temporal-retention median, observed coupling slope, or buffering-limit result changed. Differences are Monte Carlo null approximations only.",
     "full_rerun_head_context": "2026-10-05 canonical revalidation"
+  },
+  "local_heterogeneity_mechanism": {
+    "evidence_class": "posthoc_mechanism_decomposition",
+    "events": 173,
+    "birds": 10,
+    "observed_beta_mismatch": 0.10630399246291503,
+    "observed_beta_heterogeneity": -0.04309790738832315,
+    "pseudo_null_median_beta_heterogeneity": 0.26172337863130785,
+    "monte_carlo_p_lower": 0.00001999960000799984,
+    "replicates": 50000,
+    "secondary_mismatch_x_heterogeneity": {
+      "beta": -0.004904488584343497,
+      "pseudo_null_median": -0.009402046676301712,
+      "monte_carlo_p_lower": 0.7530649387012259,
+      "supported": false
+    },
+    "allowed": "fine-scale hydrological heterogeneity is compatible with providing a local state portfolio for buffering",
+    "prohibited": "heterogeneity causally prevented emigration or measured geographic movement"
   }
 }
