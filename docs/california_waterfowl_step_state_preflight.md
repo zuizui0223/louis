@@ -141,3 +141,28 @@ No moderator should be selected because it happens to separate positive from neg
 **PREFLIGHT_ONLY — DATA SCHEMA NOT YET OPENED**
 
 The source is public/CC0 and the design is promising, but no ecological result is claimed until the release schema passes the gate.
+
+
+## Source-level verification — 2026-10-06
+
+The public USGS release and its supporting 2023 paper were rechecked before any ecological result was computed.
+
+Verified from the public source description:
+
+- four wintering waterfowl species;
+- GPS locations at hourly or hourly-subset resolution;
+- a two-mixture movement model separating inactive from moving steps;
+- only the larger moving component retained for step-selection analysis;
+- **100 random available movements generated from the origin of every observed moving step**;
+- habitat endpoints classified into seven aggregated habitat categories;
+- analyses stratified by individual, day/night and early/late winter in the source study.
+
+This confirms that the release is conceptually suitable for a movement-matched state-continuity test.
+
+What is **not yet verified** from the downloadable raw-file schema is whether the released rows carry an explicit origin habitat class, or the coordinates/step key needed to recover it without undocumented row-order assumptions.
+
+Therefore the current executable status remains:
+
+> **PREFLIGHT_ONLY — SOURCE DESIGN VERIFIED; RAW ORIGIN-STATE SCHEMA NOT YET OPENED**
+
+Do not infer a California state-retention result from the published used-versus-available habitat proportions alone. The proposed endpoint requires origin -> destination state continuity for each observed step and its own 100 random alternatives.
