@@ -153,6 +153,19 @@
       "supported": false
     },
     "allowed": "fine-scale hydrological heterogeneity is compatible with providing a local state portfolio for buffering",
-    "prohibited": "heterogeneity causally prevented emigration or measured geographic movement"
+    "prohibited": "heterogeneity causally prevented emigration or measured geographic movement",
+    "bird_level_robustness": {
+      "source": "results/lake_erie_local_heterogeneity_bird_robustness_v1.json",
+      "leave_one_bird_out_beta_range": [
+        -0.07420436925824193,
+        -0.005583404633030899
+      ],
+      "all_leave_one_bird_out_negative": true,
+      "bird_specific_negative": "7/10",
+      "equal_bird_weight_median_beta": -0.05793858419006959,
+      "equal_bird_weight_pseudo_null_median": 0.2844511280230044,
+      "monte_carlo_p_lower": 0.00003999920001599968,
+      "boundary": "Robustness to bird weighting/deletion does not convert the post-hoc mechanism decomposition into independent replication or universal individual-level support."
+    }
   }
 }
