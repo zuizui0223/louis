@@ -113,6 +113,7 @@ Post-hoc local-heterogeneity mechanism:
 - matched pseudo-used null median **+0.2617**;
 - 50,000-replicate lower-tail Monte Carlo **p = 0.000020**;
 - mismatch x heterogeneity interaction unsupported (**p = 0.753**).
+- bird-level robustness: all 10 leave-one-bird-out pooled coefficients remain negative (**-0.0742 to -0.00558**); 7/10 separate bird fits are negative; equal-bird-weight median beta_H **-0.0579** versus pseudo-used null median **+0.2845**, Monte Carlo **p = 0.000040**.
 
 Interpretation:
 > repeated realised microhabitat use strongly dampens temporal hydrological variation experienced by resident King Rails relative to local time-matched availability, and fine-scale hydrological heterogeneity is compatible with providing a local portfolio of alternative states that enables this buffering.
@@ -145,7 +146,7 @@ Submission QC:
 - source ethics wording verification;
 - submission release/archive.
 
-**The local-heterogeneity mechanism decomposition is complete. Do not continue mining additional Lake Erie post-hoc metrics unless an authoritative coordinate-event linkage or a genuinely new response dimension becomes available.**
+**The local-heterogeneity mechanism decomposition and bird-level weighting/deletion robustness audit are complete. The pooled state-portfolio signal is not driven by one bird, but only 7/10 separate bird coefficients are negative; do not claim universal individual-level support. Do not continue mining additional Lake Erie post-hoc metrics unless an authoritative coordinate-event linkage or a genuinely new response dimension becomes available.**
 
 ### Published Godwit boundary
 
