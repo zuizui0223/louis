@@ -1,0 +1,27 @@
+{
+  "schema": "louis.lake_erie_standardization.v1",
+  "source_rows": 607,
+  "missing_yes_excluded": 17,
+  "malformed_id_excluded": 2,
+  "malformed_ids": [
+    "164.881H_20",
+    "164856H11_20"
+  ],
+  "bad_water_depth_excluded": 0,
+  "standardized_rows": 588,
+  "reconstructed_events": 210,
+  "valid_matched_events": 190,
+  "individuals_with_valid_events": [
+    "020_21",
+    "332_20",
+    "332_21",
+    "361_21",
+    "368_21",
+    "390_21",
+    "506_20",
+    "856_20",
+    "871_21",
+    "881_20"
+  ],
+  "claim_boundary": "Malformed source IDs are excluded rather than repaired. Only source-valid used/random matches enter the state-fidelity analysis."
+}

@@ -1,5 +1,5 @@
 {
-  "schema": "louis.lake_erie_availability_coupling_v1.canonical_summary",
+  "schema": "louis.lake_erie_availability_coupling_v1",
   "source": {
     "paper_doi": "10.1002/ece3.10043",
     "data_doi": "10.5281/zenodo.6604660",
@@ -9,48 +9,308 @@
     "source_rows": 607,
     "missing_excluded": 17,
     "malformed_excluded": 2,
-    "birds": 10,
-    "valid_events": 190
+    "valid_events": 190,
+    "birds": 10
   },
+  "metric": "within-bird slope of used water depth on mean event-matched local random water depth",
+  "null": "choose one local random plot as pseudo-used at each real event and recompute the same within-bird slope",
   "primary": {
+    "condition": "primary",
+    "birds": 10,
     "events": 190,
-    "pooled_used_on_availability_slope": 0.161897834676697,
-    "pseudo_null_median_slope": 0.9998595980370271,
-    "coupling_reduction": 0.8380794313576199,
-    "monte_carlo_p_lower": 0.00004999750012499375,
-    "median_individual_used_slope": 0.12164354281150683,
-    "median_individual_coupling_reduction": 0.8784788896673894,
-    "birds_below_own_null_median": "10/10",
-    "birds_p_lt_0_05": "10/10"
+    "pooled_within_bird": {
+      "observed_slope": 0.161897834676697,
+      "pseudo_null_median_slope": 0.9998595980370271,
+      "coupling_reduction": 0.8380794313576199,
+      "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+    },
+    "individual_summary": {
+      "median_observed_slope": 0.12164354281150683,
+      "median_coupling_reduction": 0.8784788896673894,
+      "birds_below_own_null_median": 10,
+      "birds_p_lt_0_05": 10
+    },
+    "individuals": [
+      {
+        "individual_id": "020_21",
+        "n_events": 34,
+        "observed_used_on_availability_slope": 0.11317122924411063,
+        "pseudo_null_median_slope": 1.0003153199542485,
+        "coupling_reduction": 0.8868644446540249,
+        "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+      },
+      {
+        "individual_id": "332_20",
+        "n_events": 25,
+        "observed_used_on_availability_slope": 0.4461192732891221,
+        "pseudo_null_median_slope": 0.9993243700216283,
+        "coupling_reduction": 0.5535791113755519,
+        "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+      },
+      {
+        "individual_id": "332_21",
+        "n_events": 15,
+        "observed_used_on_availability_slope": 0.057371131507760624,
+        "pseudo_null_median_slope": 0.9997400029647621,
+        "coupling_reduction": 0.9426139482889305,
+        "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+      },
+      {
+        "individual_id": "361_21",
+        "n_events": 18,
+        "observed_used_on_availability_slope": 0.13625938137995067,
+        "pseudo_null_median_slope": 1.0014841003559969,
+        "coupling_reduction": 0.863942541542582,
+        "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+      },
+      {
+        "individual_id": "368_21",
+        "n_events": 14,
+        "observed_used_on_availability_slope": -0.18703704017099373,
+        "pseudo_null_median_slope": 1.001928135490724,
+        "coupling_reduction": 1.186677101426428,
+        "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+      },
+      {
+        "individual_id": "390_21",
+        "n_events": 16,
+        "observed_used_on_availability_slope": -0.261846366233175,
+        "pseudo_null_median_slope": 0.9968002144205139,
+        "coupling_reduction": 1.262686908013356,
+        "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+      },
+      {
+        "individual_id": "506_20",
+        "n_events": 23,
+        "observed_used_on_availability_slope": 0.6432499135986062,
+        "pseudo_null_median_slope": 1.0006328262207176,
+        "coupling_reduction": 0.3571568943744412,
+        "monte_carlo_add_one_p_lower": 0.005649717514124294
+      },
+      {
+        "individual_id": "856_20",
+        "n_events": 15,
+        "observed_used_on_availability_slope": 0.13011585637890302,
+        "pseudo_null_median_slope": 1.0016103181398959,
+        "coupling_reduction": 0.870093334680754,
+        "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+      },
+      {
+        "individual_id": "871_21",
+        "n_events": 15,
+        "observed_used_on_availability_slope": 0.02750951554318652,
+        "pseudo_null_median_slope": 1.000097996095379,
+        "coupling_reduction": 0.9724931800177681,
+        "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+      },
+      {
+        "individual_id": "881_20",
+        "n_events": 15,
+        "observed_used_on_availability_slope": 0.6183603909897709,
+        "pseudo_null_median_slope": 0.9999170341124735,
+        "coupling_reduction": 0.3815883019348423,
+        "monte_carlo_add_one_p_lower": 0.02384880755962202
+      }
+    ]
   },
   "conditional_flooded": {
+    "condition": "conditional_flooded",
+    "birds": 10,
     "events": 182,
-    "pooled_used_on_availability_slope": 0.14533748429947022,
-    "pseudo_null_median_slope": 0.9993194115962973,
-    "coupling_reduction": 0.8545635333278372,
-    "median_individual_used_slope": 0.0690563819806386,
-    "median_individual_coupling_reduction": 0.9310006589490287,
-    "birds_below_own_null_median": "10/10",
-    "birds_p_lt_0_05": "8/10"
+    "pooled_within_bird": {
+      "observed_slope": 0.14533748429947022,
+      "pseudo_null_median_slope": 0.9993194115962973,
+      "coupling_reduction": 0.8545635333278372,
+      "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+    },
+    "individual_summary": {
+      "median_observed_slope": 0.0690563819806386,
+      "median_coupling_reduction": 0.9309499087677571,
+      "birds_below_own_null_median": 10,
+      "birds_p_lt_0_05": 8
+    },
+    "individuals": [
+      {
+        "individual_id": "020_21",
+        "n_events": 32,
+        "observed_used_on_availability_slope": 0.08074163245351657,
+        "pseudo_null_median_slope": 1.0003407296819449,
+        "coupling_reduction": 0.9192858692465835,
+        "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+      },
+      {
+        "individual_id": "332_20",
+        "n_events": 24,
+        "observed_used_on_availability_slope": 0.54848388878274,
+        "pseudo_null_median_slope": 1.0005915254813997,
+        "coupling_reduction": 0.45184036161124175,
+        "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+      },
+      {
+        "individual_id": "332_21",
+        "n_events": 15,
+        "observed_used_on_availability_slope": 0.057371131507760624,
+        "pseudo_null_median_slope": 0.9997400029647621,
+        "coupling_reduction": 0.9426139482889305,
+        "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+      },
+      {
+        "individual_id": "361_21",
+        "n_events": 18,
+        "observed_used_on_availability_slope": 0.04262108894950067,
+        "pseudo_null_median_slope": 1.0699731963648687,
+        "coupling_reduction": 0.9601662087477502,
+        "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+      },
+      {
+        "individual_id": "368_21",
+        "n_events": 13,
+        "observed_used_on_availability_slope": -0.19176869368716865,
+        "pseudo_null_median_slope": 0.9955708781180287,
+        "coupling_reduction": 1.192621839290516,
+        "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+      },
+      {
+        "individual_id": "390_21",
+        "n_events": 16,
+        "observed_used_on_availability_slope": -0.13381892835225348,
+        "pseudo_null_median_slope": 0.998111096601935,
+        "coupling_reduction": 1.1340721777443807,
+        "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+      },
+      {
+        "individual_id": "506_20",
+        "n_events": 22,
+        "observed_used_on_availability_slope": 0.7324930866046505,
+        "pseudo_null_median_slope": 0.99908238622271,
+        "coupling_reduction": 0.26683415031063595,
+        "monte_carlo_add_one_p_lower": 0.058997050147492625
+      },
+      {
+        "individual_id": "856_20",
+        "n_events": 14,
+        "observed_used_on_availability_slope": 0.12150492375383908,
+        "pseudo_null_median_slope": 1.0007347934068624,
+        "coupling_reduction": 0.8785842917081034,
+        "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+      },
+      {
+        "individual_id": "871_21",
+        "n_events": 15,
+        "observed_used_on_availability_slope": 0.02592774291570873,
+        "pseudo_null_median_slope": 0.9941231706940644,
+        "coupling_reduction": 0.9739189834016173,
+        "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+      },
+      {
+        "individual_id": "881_20",
+        "n_events": 13,
+        "observed_used_on_availability_slope": 0.6408867736819182,
+        "pseudo_null_median_slope": 0.9995728692806449,
+        "coupling_reduction": 0.3588393669156503,
+        "monte_carlo_add_one_p_lower": 0.15669216539173042
+      }
+    ]
   },
   "all_points_flooded": {
+    "condition": "all_points_flooded",
+    "birds": 10,
     "events": 131,
-    "pooled_used_on_availability_slope": 0.17979756224209556,
-    "pseudo_null_median_slope": 1.0010433649653814,
-    "coupling_reduction": 0.820389836709708,
-    "median_individual_used_slope": 0.13562481356702888,
-    "median_individual_coupling_reduction": 0.8668927909536341,
-    "birds_below_own_null_median": "10/10",
-    "birds_p_lt_0_05": "9/10"
+    "pooled_within_bird": {
+      "observed_slope": 0.1797975622420955,
+      "pseudo_null_median_slope": 1.0010433649653814,
+      "coupling_reduction": 0.820389836709708,
+      "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+    },
+    "individual_summary": {
+      "median_observed_slope": 0.13562481356702888,
+      "median_coupling_reduction": 0.8617450671804432,
+      "birds_below_own_null_median": 10,
+      "birds_p_lt_0_05": 9
+    },
+    "individuals": [
+      {
+        "individual_id": "020_21",
+        "n_events": 21,
+        "observed_used_on_availability_slope": 0.04406144332972901,
+        "pseudo_null_median_slope": 0.9983447444667701,
+        "coupling_reduction": 0.9558655027995737,
+        "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+      },
+      {
+        "individual_id": "332_20",
+        "n_events": 20,
+        "observed_used_on_availability_slope": 0.45345582799118295,
+        "pseudo_null_median_slope": 1.0001627703165197,
+        "coupling_reduction": 0.5466179691454836,
+        "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+      },
+      {
+        "individual_id": "332_21",
+        "n_events": 15,
+        "observed_used_on_availability_slope": 0.057371131507760624,
+        "pseudo_null_median_slope": 0.9997400029647621,
+        "coupling_reduction": 0.9426139482889305,
+        "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+      },
+      {
+        "individual_id": "361_21",
+        "n_events": 14,
+        "observed_used_on_availability_slope": 0.185392887435132,
+        "pseudo_null_median_slope": 0.8564099617416837,
+        "coupling_reduction": 0.7835232006665385,
+        "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+      },
+      {
+        "individual_id": "368_21",
+        "n_events": 6,
+        "observed_used_on_availability_slope": -0.3730150753768845,
+        "pseudo_null_median_slope": 1.0033165829145727,
+        "coupling_reduction": 1.371782029450065,
+        "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+      },
+      {
+        "individual_id": "390_21",
+        "n_events": 14,
+        "observed_used_on_availability_slope": -0.2011539871975194,
+        "pseudo_null_median_slope": 1.001211547299085,
+        "coupling_reduction": 1.2009105745335855,
+        "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+      },
+      {
+        "individual_id": "506_20",
+        "n_events": 14,
+        "observed_used_on_availability_slope": 0.7635082646650795,
+        "pseudo_null_median_slope": 0.9980149660586256,
+        "coupling_reduction": 0.23497313103395956,
+        "monte_carlo_add_one_p_lower": 0.11454427278636069
+      },
+      {
+        "individual_id": "856_20",
+        "n_events": 11,
+        "observed_used_on_availability_slope": 0.13135303060859713,
+        "pseudo_null_median_slope": 1.0009360987183618,
+        "coupling_reduction": 0.8687698138005145,
+        "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+      },
+      {
+        "individual_id": "871_21",
+        "n_events": 8,
+        "observed_used_on_availability_slope": 0.13989659652546063,
+        "pseudo_null_median_slope": 0.9629467594165183,
+        "coupling_reduction": 0.8547203205603717,
+        "monte_carlo_add_one_p_lower": 4.999750012499375e-05
+      },
+      {
+        "individual_id": "881_20",
+        "n_events": 8,
+        "observed_used_on_availability_slope": 0.6712927558948986,
+        "pseudo_null_median_slope": 0.8284278024171863,
+        "coupling_reduction": 0.18967862505797017,
+        "monte_carlo_add_one_p_lower": 0.00439978001099945
+      }
+    ]
   },
-  "interpretation": "Local available water depth can vary substantially while used water depth changes only weakly. Realised microhabitat use dampens hydrological variation relative to event-matched local availability.",
-  "boundary": "No verified coordinate-to-event join; do not state that geographic displacement itself causes this buffering.",
-  "monte_carlo": {
-    "base_seed": 20261003,
-    "individual_replicates": 20000,
-    "pooled_replicates": 20000,
-    "add_one_p_values": true
-  },
-  "canonical_numeric_contract": "manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V2.json",
-  "reproducibility_note": "Monte Carlo null summaries synchronized to portable xorshift32 full rerun; observed slopes and biological interpretation unchanged."
+  "interpretation": "Observed slopes far below the pseudo-used null indicate that experienced water depth changes much less than nearby available water depth.",
+  "claim_boundary": "This supports hydrological state buffering through realised habitat use. It does not prove that geographic displacement causes the buffering because coordinate-to-event linkage remains unresolved."
 }

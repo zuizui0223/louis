@@ -22,7 +22,7 @@
     "pooled_within_bird_abs_deviation_slope": 0.11453227437353061,
     "pseudo_null_median_slope": 0.7408653879361041,
     "coupling_reduction": 0.8454074434593394,
-    "monte_carlo_add_one_p_lower": 0.00001999960000799984
+    "monte_carlo_add_one_p_lower": 1.999960000799984e-05
   },
   "individuals": [
     {
@@ -35,11 +35,11 @@
       "observed_abs_deviation_slope": 0.07987594372452764,
       "null_median_abs_deviation_slope": 0.720245480914286,
       "slope_buffering": 0.8890990004919817,
-      "slope_lower_tail_p": 0.00001999960000799984,
+      "slope_lower_tail_p": 1.999960000799984e-05,
       "observed_extreme_mean_used_deviation": 7.200000000000001,
       "null_median_extreme_mean_deviation": 35.422222222222224,
       "extreme_retention": 0.7967377666248432,
-      "extreme_lower_tail_p": 0.00001999960000799984
+      "extreme_lower_tail_p": 1.999960000799984e-05
     },
     {
       "individual_id": "332_20",
@@ -51,11 +51,11 @@
       "observed_abs_deviation_slope": 0.10409280220270987,
       "null_median_abs_deviation_slope": 0.713032111620225,
       "slope_buffering": 0.8540138648648242,
-      "slope_lower_tail_p": 0.00001999960000799984,
+      "slope_lower_tail_p": 1.999960000799984e-05,
       "observed_extreme_mean_used_deviation": 9.857142857142858,
       "null_median_extreme_mean_deviation": 20.457142857142856,
       "extreme_retention": 0.5181564245810055,
-      "extreme_lower_tail_p": 0.00001999960000799984
+      "extreme_lower_tail_p": 1.999960000799984e-05
     },
     {
       "individual_id": "332_21",
@@ -67,11 +67,11 @@
       "observed_abs_deviation_slope": -0.009582239963607592,
       "null_median_abs_deviation_slope": 0.9753942902989603,
       "slope_buffering": 1.009823965609508,
-      "slope_lower_tail_p": 0.00001999960000799984,
+      "slope_lower_tail_p": 1.999960000799984e-05,
       "observed_extreme_mean_used_deviation": 3.5000000000000004,
       "null_median_extreme_mean_deviation": 38.25,
       "extreme_retention": 0.9084967320261438,
-      "extreme_lower_tail_p": 0.00001999960000799984
+      "extreme_lower_tail_p": 1.999960000799984e-05
     },
     {
       "individual_id": "361_21",
@@ -83,11 +83,11 @@
       "observed_abs_deviation_slope": 0.07285007998630688,
       "null_median_abs_deviation_slope": 0.8533408821096198,
       "slope_buffering": 0.9146295677218608,
-      "slope_lower_tail_p": 0.00001999960000799984,
+      "slope_lower_tail_p": 1.999960000799984e-05,
       "observed_extreme_mean_used_deviation": 2.7800000000000002,
       "null_median_extreme_mean_deviation": 13.780000000000001,
       "extreme_retention": 0.7982583454281568,
-      "extreme_lower_tail_p": 0.00001999960000799984
+      "extreme_lower_tail_p": 1.999960000799984e-05
     },
     {
       "individual_id": "368_21",
@@ -103,7 +103,7 @@
       "observed_extreme_mean_used_deviation": 5.300000000000001,
       "null_median_extreme_mean_deviation": 13.149999999999999,
       "extreme_retention": 0.5969581749049429,
-      "extreme_lower_tail_p": 0.00001999960000799984
+      "extreme_lower_tail_p": 1.999960000799984e-05
     },
     {
       "individual_id": "390_21",
@@ -151,7 +151,7 @@
       "observed_extreme_mean_used_deviation": 10.325,
       "null_median_extreme_mean_deviation": 30.45,
       "extreme_retention": 0.6609195402298851,
-      "extreme_lower_tail_p": 0.00001999960000799984
+      "extreme_lower_tail_p": 1.999960000799984e-05
     },
     {
       "individual_id": "871_21",
@@ -163,11 +163,11 @@
       "observed_abs_deviation_slope": -0.00648050204132429,
       "null_median_abs_deviation_slope": 0.6394937535878733,
       "slope_buffering": 1.0101338003771976,
-      "slope_lower_tail_p": 0.00001999960000799984,
+      "slope_lower_tail_p": 1.999960000799984e-05,
       "observed_extreme_mean_used_deviation": 5.949999999999999,
       "null_median_extreme_mean_deviation": 54.4,
       "extreme_retention": 0.890625,
-      "extreme_lower_tail_p": 0.00001999960000799984
+      "extreme_lower_tail_p": 1.999960000799984e-05
     },
     {
       "individual_id": "881_20",
