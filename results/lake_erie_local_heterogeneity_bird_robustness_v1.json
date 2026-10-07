@@ -1,0 +1,45 @@
+{
+  "schema": "louis.lake_erie_local_heterogeneity_bird_robustness_v1",
+  "evidence_class": "posthoc_robustness_audit_of_mechanism_decomposition",
+  "source_result": "results/lake_erie_local_heterogeneity_insurance_v1.json",
+  "qc": {
+    "source_rows": 607,
+    "missing_excluded": 17,
+    "malformed_excluded": 2,
+    "eligible_two_random_events": 173,
+    "birds": 10
+  },
+  "full_pooled_beta_heterogeneity": -0.04309790738832315,
+  "leave_one_bird_out": {
+    "beta_range": [-0.07420436925824193, -0.005583404633030899],
+    "all_same_negative_direction": true
+  },
+  "bird_specific": {
+    "estimable_birds": 10,
+    "negative_birds": 7,
+    "median_beta_heterogeneity": -0.05793858419006959,
+    "mean_beta_heterogeneity": -0.06289699484196412
+  },
+  "equal_bird_weight_null": {
+    "statistic": "median of separately estimated bird-specific beta_H values",
+    "replicates": 50000,
+    "seed": 20261009,
+    "pseudo_null_median": 0.2844511280230044,
+    "observed": -0.05793858419006959,
+    "monte_carlo_add_one_p_lower": 3.999920001599968e-05
+  },
+  "workflow_provenance": {
+    "run_id": 37546372388,
+    "artifact_id": 11450303290,
+    "head_sha": "28c73666cbe5de41e68c460c7ef80e2daab70bbf",
+    "conclusion": "success",
+    "note": "Full per-bird and leave-one-bird-out fits are preserved in the GitHub Actions artifact and job log; this committed summary records the inferential quantities used by the manuscript/status layer."
+  },
+  "interpretation": "The pooled negative local-heterogeneity coefficient retains its direction under every leave-one-bird-out deletion, and the equal-bird-weight observed median is far below the matched pseudo-used null. The state-portfolio mechanism result is therefore not driven by one high-weight bird, while individual responses remain heterogeneous.",
+  "boundary": [
+    "This is a robustness audit of a post-hoc mechanism result, not independent replication.",
+    "Bird-specific two-predictor coefficients can be noisy with small event counts and are descriptive.",
+    "Seven of ten separately fitted birds have negative beta_H; do not claim universal individual-level support.",
+    "No geographic movement causation or emigration prevention is inferred."
+  ]
+}
