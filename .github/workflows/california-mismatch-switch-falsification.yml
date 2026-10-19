@@ -1,0 +1,39 @@
+name: California availability-mismatch switch falsification
+
+on:
+  push:
+    paths:
+      - "analysis/contracts/california_mismatch_switch_falsification_v1.json"
+      - "analysis/65_california_opportunity_switch_falsification.py"
+      - "analysis/tests/test_california_opportunity_switch_falsification.py"
+      - ".github/workflows/california-mismatch-switch-falsification.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install frozen numerical dependency
+        run: python -m pip install numpy==2.2.6
+      - name: Run known-truth source pairing and model tests
+        run: |
+          python -m py_compile analysis/65_california_opportunity_switch_falsification.py
+          python analysis/tests/test_california_opportunity_switch_falsification.py
+      - name: Run frozen opportunity mismatch mechanism-boundary test
+        run: python analysis/65_california_opportunity_switch_falsification.py
+      - name: Retain only aggregate comparative diagnostic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: louis-california-mismatch-switch-posthoc-audit
+          retention-days: 90
+          if-no-files-found: warn
+          path: analysis/results/california_mismatch_switch_falsification_v1.json
