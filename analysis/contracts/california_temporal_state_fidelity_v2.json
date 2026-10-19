@@ -1,0 +1,91 @@
+{
+  "schema": "louis.california_temporal_state_fidelity_v2.source_corrected_protocol",
+  "registered_on": "2026-10-19",
+  "status": "PRE_EFFECT_SOURCE_SCHEMA_CORRECTION_AFTER_V1_STOP",
+  "scientific_question": "Across four wintering waterfowl species, does the habitat category at successive used moving-step endpoints remain more stable than independently sampled destinations from source-matched available habitat, and does the contrast survive a bird-year fixed marginal habitat-preference null?",
+  "relation_to_original_protocol": "New explicitly distinct endpoint-only temporal-state program. Does not replace or retroactively pass the previous origin-to-destination retention gate. Neither source habitat category continuity nor static selection is proof of active niche-tracking.",
+  "source": {
+    "doi": "10.5066/P9ELSUHN",
+    "sciencebase_item": "652edfe8d34edd15305a9ab0",
+    "filename": "Data Release P9ELSUHN.csv",
+    "bytes": 27997528,
+    "md5": "78eb6064eca992225d6907d6e46f5bef"
+  },
+  "schema_required": [
+    "birdyear",
+    "timestamp",
+    "species",
+    "case",
+    "season",
+    "photoperiod",
+    "Corn",
+    "Field",
+    "Other",
+    "Protected",
+    "Rice",
+    "Urban",
+    "Wetland"
+  ],
+  "habitat_states": [
+    "Corn",
+    "Field",
+    "Other",
+    "Protected",
+    "Rice",
+    "Urban",
+    "Wetland"
+  ],
+  "species_in_scope": [
+    "GWFG",
+    "LSGO",
+    "MALL",
+    "NOPI"
+  ],
+  "event_key": [
+    "birdyear",
+    "species",
+    "timestamp"
+  ],
+  "fixed_case_rules": "One source case=TRUE observed endpoint and >=1 case=FALSE random/availability row at each event key. Used row must have exactly one positive exclusive class with total 1; the summed seven-class counts in all matched random rows must lie between 20 and 100. An event is excluded from both arms if either half fails. No generated rows, guessed origin, or row-order join.",
+  "primary_temporal_pair": "Within one birdyear, successive qualified moving-step event timestamps must differ by 55 to 65 minutes. No links over longer gaps; no invented origin coordinates. Each pair contributes the indicator that its two observed endpoint habitat categories are the same.",
+  "individual_eligibility": "At least 30 qualified exact-hour pairs per birdyear, and at least 31 paired source events. No filtering by direction or habitat class.",
+  "random_availability_reference": "For each adjacent pair, expected same-state probability = sum over seven classes of q_previous,c * q_current,c, where q are source-matched random destination category counts divided by their actual total. Individual-level contrast equals mean observed same-state minus mean expected same-state.",
+  "preference_control": "Second, within each birdyear, construct a fixed categorical preference vector fitted exclusively to the individual's overall observed marginal endpoint-state frequencies. Draw one category per event from q_event,c multiplied by static category weights with a preregistered Dirichlet 0.5 pseudocount per state (both numerator target and event availability); solve seven moment-matching equations by iterative proportional fitting until max absolute target-share error <0.001. The expected same-state probability is computed analytically for each adjacent pair from those fitted probabilities. This null removes fixed individual marginal habitat preference but not spatial or temporal autocorrelation.",
+  "primary_evidence_gate": "A general temporal environmental-state stability claim requires a positive effect relative to BOTH raw availability and preference-controlled references, and birdyear-cluster bootstrapped 95% CI for mean preference-controlled residual above zero in at least two of four species; report all four species even if not supportive. This is developmental natural-data evidence, not independently preregistered experimental confirmation.",
+  "uncertainty": "Within each species, birdyear is the replication unit. Report number of birdyears and step-pairs, equal-birdyear mean and median, 10,000 seeded birdyear-cluster bootstrap confidence intervals for both contrasts, plus directional sign counts. Do not treat steps or 100 random alternatives as independent animals. Report effect sizes even when CI overlaps zero.",
+  "sensitivity": [
+    "Stricter paired random total >=50",
+    "Minimum 60 exact-hour pairs per birdyear"
+  ],
+  "must_not_claim": [
+    "Movement caused environmental buffering",
+    "Static habitat selection has been fully eliminated as a mechanism",
+    "Four species are equivalent evidence of one universal sign",
+    "Direct replication of continuous King Rail water-depth SRI",
+    "Unvisited origin habitat class was observed",
+    "Missing or inaccessible source outcome is negative ecological evidence",
+    "That inclusion of source-defined protected habitat is post-hoc ecological significance tuning",
+    "The first six-state preflight succeeded"
+  ],
+  "stop_conditions": [
+    "Published MD5 or byte size mismatch",
+    "Official expected attributes absent",
+    "Observed/random event-level association cannot be demonstrated",
+    "Too few eligible birdyears for uncertainty",
+    "Habitat counts not interpretable as exclusive classes without a source-definition reconciliation fixed before ecological outcomes"
+  ],
+  "analysis_priority": "First run source-integrity and event-pairing preflight without ecological effect signs; only if source-compatible, run the frozen primary and report negative or mixed results without endpoint reinterpretation.",
+  "source_classification_version": "7 source-defined mutually exclusive habitat classes; author publication DOI 10.3389/fevo.2023.1232704, Methods and Table 3; class Protected has source precedence in final seven-class habitat map.",
+  "source_correction": {
+    "v1_preflight_run": "https://github.com/zuizui0223/louis/actions/runs/39212896919",
+    "v1_validated_rows": 380578,
+    "v1_MD5": "PASS",
+    "v1_stop_reason": "Six-class one-hot exclusion erroneously rejected protected-habitat used events; the original paper explicitly defines seven final habitat classes. Timestamp ISO parser also rejected 146577 otherwise shape-qualified events; source time format will be diagnosed without inspecting temporal effects.",
+    "v1_quality_summary": {
+      "non_onehot_six_states": 41804,
+      "random_sum_outside_20_100": 1908,
+      "timestamp_parse_failure": 146577
+    },
+    "not_an_outcome_rescue": "This repairs source metadata semantics before any used-state continuity or static-preference residual effect is calculated. The original preflight failure is retained as provenance; v2 is developmental, not untouched preregistered confirmation."
+  }
+}
