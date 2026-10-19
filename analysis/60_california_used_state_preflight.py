@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Response-blind source-integrity and event-pairing preflight for USGS P9ELSUHN.
+"""Pre-effect source-integrity and event-pairing preflight for USGS P9ELSUHN.
 
-No used habitat outcomes, effects or target-class distributions are reported.
-The source schema and temporal adjacency must pass before the locked ecology
-analysis is allowed to read/use outcome categories.
+The source habitat counts are necessarily read to validate the one-hot and
+availability data schema. This test reports no habitat-specific effects or
+target-class distributions. The scientific protocol was frozen before access.
 """
 from __future__ import annotations
 
@@ -138,7 +138,7 @@ def audit_rows(rows: list[dict], expected: set[str]) -> dict:
             sp_summary[species]["qualified_birdyears"] += 1
     qualifying_species = sum(v["qualified_birdyears"] >= 5 for v in sp_summary.values())
     return {
-        "status": "PASS_RESPONSE_BLIND_PAIRING" if qualifying_species >= 2 else "STOP_INSUFFICIENT_INDIVIDUAL_REPLICATION",
+        "status": "PASS_SOURCE_PAIRING_NO_EFFECT_ESTIMATE" if qualifying_species >= 2 else "STOP_INSUFFICIENT_INDIVIDUAL_REPLICATION",
         "source_rows": len(rows),
         "unique_event_keys": len(groups),
         "qualified_event_keys": qualified,
@@ -148,7 +148,7 @@ def audit_rows(rows: list[dict], expected: set[str]) -> dict:
         "total_exact_hour_pairs": total_pairs,
         "by_species": dict(sp_summary),
         "species_with_at_least_5_birdyears": qualifying_species,
-        "ecological_outcome_accessed": False,
+        "source_habitat_values_read_for_schema_validation": True,
         "primary_effect_estimated": False
     }
 
@@ -165,13 +165,13 @@ def main() -> int:
         result = audit_rows(rows, set(frozen["schema_required"]))
         result["source_integrity"] = "PINNED_BYTES_AND_MD5_PASS"
     except Exception as exc:
-        result = {"status": "STOP_ACCESS_OR_SCHEMA", "error": str(exc), "ecological_outcome_accessed": False}
+        result = {"status": "STOP_ACCESS_OR_SCHEMA", "error": str(exc), "source_habitat_values_read_for_schema_validation": "unknown_or_false"}
     result["schema"] = "louis.california_used_state_preflight_v1"
     result["source_doi"] = frozen["source"]["doi"]
     a.output.parent.mkdir(parents=True, exist_ok=True)
     a.output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(json.dumps(result, indent=2, sort_keys=True))
-    return 0 if result["status"] == "PASS_RESPONSE_BLIND_PAIRING" else 2
+    return 0 if result["status"] == "PASS_SOURCE_PAIRING_NO_EFFECT_ESTIMATE" else 2
 
 
 if __name__ == "__main__":
