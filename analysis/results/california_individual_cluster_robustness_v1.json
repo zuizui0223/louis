@@ -1,0 +1,259 @@
+{
+  "by_species": {
+    "GWFG": {
+      "agricultural_year_descriptive": {
+        "2017": {
+          "equal_birdyear_mean_delta_preference": 0.25979247959973695,
+          "n_birdyears": 4
+        },
+        "2018": {
+          "equal_birdyear_mean_delta_preference": 0.13328883651137374,
+          "n_birdyears": 21
+        },
+        "2019": {
+          "equal_birdyear_mean_delta_preference": 0.12449386894234644,
+          "n_birdyears": 19
+        },
+        "2020": {
+          "equal_birdyear_mean_delta_preference": 0.10061499379705062,
+          "n_birdyears": 13
+        },
+        "2021": {
+          "equal_birdyear_mean_delta_preference": 0.13939770245859764,
+          "n_birdyears": 7
+        },
+        "2022": {
+          "equal_birdyear_mean_delta_preference": 0.14382301208470258,
+          "n_birdyears": 35
+        }
+      },
+      "cluster_robustness": {
+        "birdyears_belonging_to_repeated_individuals": 48,
+        "delta_availability": {
+          "all_individuals_positive": true,
+          "equal_individual_cluster_ci95": [
+            0.22298534865049988,
+            0.25704940191643044
+          ],
+          "equal_individual_effect": 0.24009732774361836,
+          "independent_individuals_positive": 67,
+          "original_equal_birdyear_effect": 0.24618111211632257,
+          "original_equal_birdyear_effect_individual_block_ci95": [
+            0.2298153329946344,
+            0.2614139139097638
+          ]
+        },
+        "delta_preference": {
+          "all_individuals_positive": true,
+          "equal_individual_cluster_ci95": [
+            0.12524433219583547,
+            0.15400850341168743
+          ],
+          "equal_individual_effect": 0.1394649802905778,
+          "independent_individuals_positive": 67,
+          "original_equal_birdyear_effect": 0.13657781065231123,
+          "original_equal_birdyear_effect_individual_block_ci95": [
+            0.12348738729547236,
+            0.14981571316107134
+          ]
+        },
+        "independent_individual_id_groups": 67,
+        "maximum_birdyears_per_individual": 5,
+        "original_birdyear_units": 99,
+        "repeated_individuals": 16
+      }
+    },
+    "LSGO": {
+      "agricultural_year_descriptive": {
+        "2017": {
+          "equal_birdyear_mean_delta_preference": 0.22231026381020128,
+          "n_birdyears": 6
+        },
+        "2018": {
+          "equal_birdyear_mean_delta_preference": 0.16327070578743996,
+          "n_birdyears": 25
+        },
+        "2019": {
+          "equal_birdyear_mean_delta_preference": 0.1412665030803112,
+          "n_birdyears": 55
+        },
+        "2020": {
+          "equal_birdyear_mean_delta_preference": 0.15457481452169441,
+          "n_birdyears": 25
+        },
+        "2021": {
+          "equal_birdyear_mean_delta_preference": 0.15794137825428323,
+          "n_birdyears": 8
+        },
+        "2022": {
+          "equal_birdyear_mean_delta_preference": 0.17892107824942485,
+          "n_birdyears": 36
+        }
+      },
+      "cluster_robustness": {
+        "birdyears_belonging_to_repeated_individuals": 73,
+        "delta_availability": {
+          "all_individuals_positive": true,
+          "equal_individual_cluster_ci95": [
+            0.2675015892635973,
+            0.28748040679853776
+          ],
+          "equal_individual_effect": 0.2777667879964615,
+          "independent_individuals_positive": 112,
+          "original_equal_birdyear_effect": 0.27974397018173564,
+          "original_equal_birdyear_effect_individual_block_ci95": [
+            0.27004556379750744,
+            0.2890112712868392
+          ]
+        },
+        "delta_preference": {
+          "all_individuals_positive": true,
+          "equal_individual_cluster_ci95": [
+            0.14879157920042607,
+            0.16869375957257296
+          ],
+          "equal_individual_effect": 0.15866749585746254,
+          "independent_individuals_positive": 112,
+          "original_equal_birdyear_effect": 0.15970546518077577,
+          "original_equal_birdyear_effect_individual_block_ci95": [
+            0.15033318077130073,
+            0.1689658261059342
+          ]
+        },
+        "independent_individual_id_groups": 112,
+        "maximum_birdyears_per_individual": 4,
+        "original_birdyear_units": 155,
+        "repeated_individuals": 30
+      }
+    },
+    "MALL": {
+      "agricultural_year_descriptive": {
+        "2017": {
+          "equal_birdyear_mean_delta_preference": -0.03637356175467804,
+          "n_birdyears": 1
+        },
+        "2022": {
+          "equal_birdyear_mean_delta_preference": 0.07336799197951224,
+          "n_birdyears": 13
+        }
+      },
+      "cluster_robustness": {
+        "birdyears_belonging_to_repeated_individuals": 0,
+        "delta_availability": {
+          "all_individuals_positive": true,
+          "equal_individual_cluster_ci95": [
+            0.0963238830278788,
+            0.18493429721140317
+          ],
+          "equal_individual_effect": 0.1410113362926629,
+          "independent_individuals_positive": 14,
+          "original_equal_birdyear_effect": 0.1410113362926629,
+          "original_equal_birdyear_effect_individual_block_ci95": [
+            0.0963238830278788,
+            0.18493429721140317
+          ]
+        },
+        "delta_preference": {
+          "all_individuals_positive": false,
+          "equal_individual_cluster_ci95": [
+            0.022221478646953296,
+            0.10660947050408716
+          ],
+          "equal_individual_effect": 0.06552930956992722,
+          "independent_individuals_positive": 11,
+          "original_equal_birdyear_effect": 0.06552930956992722,
+          "original_equal_birdyear_effect_individual_block_ci95": [
+            0.022221478646953296,
+            0.10660947050408716
+          ]
+        },
+        "independent_individual_id_groups": 14,
+        "maximum_birdyears_per_individual": 1,
+        "original_birdyear_units": 14,
+        "repeated_individuals": 0
+      }
+    },
+    "NOPI": {
+      "agricultural_year_descriptive": {
+        "2015": {
+          "equal_birdyear_mean_delta_preference": 0.10021578479649612,
+          "n_birdyears": 18
+        },
+        "2016": {
+          "equal_birdyear_mean_delta_preference": 0.2743469863259105,
+          "n_birdyears": 1
+        },
+        "2017": {
+          "equal_birdyear_mean_delta_preference": 0.054114104676200536,
+          "n_birdyears": 1
+        },
+        "2018": {
+          "equal_birdyear_mean_delta_preference": 0.18860697300580626,
+          "n_birdyears": 4
+        },
+        "2019": {
+          "equal_birdyear_mean_delta_preference": 0.22184060518613755,
+          "n_birdyears": 2
+        },
+        "2022": {
+          "equal_birdyear_mean_delta_preference": 0.1119508236831712,
+          "n_birdyears": 35
+        }
+      },
+      "cluster_robustness": {
+        "birdyears_belonging_to_repeated_individuals": 0,
+        "delta_availability": {
+          "all_individuals_positive": true,
+          "equal_individual_cluster_ci95": [
+            0.25978175310850554,
+            0.2991738189284144
+          ],
+          "equal_individual_effect": 0.2793848798557723,
+          "independent_individuals_positive": 61,
+          "original_equal_birdyear_effect": 0.2793848798557723,
+          "original_equal_birdyear_effect_individual_block_ci95": [
+            0.25978175310850554,
+            0.2991738189284144
+          ]
+        },
+        "delta_preference": {
+          "all_individuals_positive": false,
+          "equal_individual_cluster_ci95": [
+            0.10174757868626566,
+            0.13641749298169611
+          ],
+          "equal_individual_effect": 0.1188316909614022,
+          "independent_individuals_positive": 57,
+          "original_equal_birdyear_effect": 0.1188316909614022,
+          "original_equal_birdyear_effect_individual_block_ci95": [
+            0.10174757868626566,
+            0.13641749298169611
+          ]
+        },
+        "independent_individual_id_groups": 61,
+        "maximum_birdyears_per_individual": 1,
+        "original_birdyear_units": 61,
+        "repeated_individuals": 0
+      }
+    }
+  },
+  "claim_boundary": [
+    "This is a *post-result* identity robustness audit, not new independent confirmation.",
+    "Bootstrap clusters candidate source individual identifiers, not independent study landscapes or projects.",
+    "PREFIX_YYYY is supported by the published birdyear composite definition and 100 percent matching format, but no telemetry custodian independently authenticated prefixes here.",
+    "Retain original equal-birdyear estimand and report both individual-cluster uncertainty and equally weighted independent-individual sensitivity.",
+    "Positive time-autocorrelation beyond a categorical preference is not causal environmental buffering or proven mobility mediation."
+  ],
+  "evidence_class": "post_result_individual_identity_robustness_to_protect_coverage",
+  "n_candidate_independent_individuals": 254,
+  "n_original_birdyears": 329,
+  "original_result": "analysis/results/california_temporal_state_fidelity_v2.json",
+  "replicates": 10000,
+  "schema": "louis.california_individual_cluster_robustness_v1",
+  "seed_base": 20261119,
+  "source": "same frozen 7-class USGS CSV and 55–65-min state-continuity estimand",
+  "source_identity_interpretation": "birdyear source definition = one marked individual plus agricultural year; all 329 eligible names match PREFIX_YYYY, and prefix is used as candidate stable individual key within species. No actual animal identities emitted.",
+  "source_year_suffix_check": {
+    "calendar_suffix_consistent": 329
+  }
+}
