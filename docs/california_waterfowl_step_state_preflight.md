@@ -186,3 +186,21 @@ Therefore the gate remains:
 > **PREFLIGHT_ONLY — DESIGN VERIFIED; RAW ORIGIN-STATE SCHEMA NOT YET VERIFIED.**
 
 No California state-retention effect is inferred from the publication. The next valid step is direct access to the released raw step table or its data dictionary; if origin state cannot be recovered without undocumented row-order assumptions, stop under `STOP_ORIGIN_STATE_NOT_IDENTIFIABLE`.
+
+
+## 2026-10-19 — authoritative FGDC entity/attribute gate (no outcome opened)
+
+The USGS ScienceBase item behind DOI `10.5066/P9ELSUHN` has been resolved to item `652edfe8d34edd15305a9ab0`. Its official file inventory identifies `Data Release P9ELSUHN.csv` (27,997,528 bytes, source-reported MD5 `78eb6064eca992225d6907d6e46f5bef`) and the accompanying FGDC XML. The metadata's human-readable [Entity and Attribute Information](https://www.sciencebase.gov/catalog/file/get/652edfe8d34edd15305a9ab0?f=__disk__16%2F06%2F16%2F160616dd4f45f305e34bfd566fc38179e1c0a4cb&transform=1) has been inspected **without downloading/opening the raw CSV**.
+
+The official metadata documents precisely these 13 attributes:
+
+```
+birdyear, timestamp, species, case, season, photoperiod,
+Corn, Field, Other, Protected, Rice, Urban, Wetland
+```
+
+`case` distinguishes observed (`TRUE`) from random (`FALSE`) records. The seven named habitat fields are documented as counts among up to 100 generated random movements or occurrences at observed destinations. Importantly, `Protected` is a land-protection category rather than an explicitly exclusive habitat type. The FGDC definitions do **not** document an origin habitat state, origin or destination coordinates, or a unique step-stratum identifier. They also do not establish that the seven habitat/protection indicators form a mutually exclusive categorical state.
+
+**Source-metadata gate: `STOP_ORIGIN_STATE_NOT_IDENTIFIABLE_FROM_SOURCE_METADATA`.** Under the pre-existing strict contract, it is not valid to compare observed origin-to-destination state retention against matched random endpoints by inferring unobserved origin state from row order or published aggregate habitat proportions. This is a **metadata-supported insufficiency finding, not proof that the raw CSV or another public source can never supply a documented join**. Reopen only if a source-defined exact predecessor/step ID or external origin-state crosswalk can be independently verified before inspecting state-retention outcomes.
+
+Machine-readable provenance and all 13 verbatim field definitions: [`results/california_waterfowl_fgdc_schema_gate_20261019.json`](../results/california_waterfowl_fgdc_schema_gate_20261019.json). No ecological effect size has been estimated for California.
