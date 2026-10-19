@@ -23,10 +23,10 @@ jobs:
           python-version: "3.12"
       - name: Validate source gate implementation
         run: |
-          python -m py_compile analysis/60_california_used_state_preflight.py
-          python analysis/tests/test_california_used_state_preflight.py
+          python -m py_compile analysis/61_california_used_state_preflight_v2.py
+          python analysis/tests/test_california_used_state_preflight_v2.py
       - name: Verify pinned USGS CSV and exact-hour event pairing
-        run: python analysis/60_california_used_state_preflight.py
+        run: python analysis/61_california_used_state_preflight_v2.py
       - name: Upload pre-effect pairing audit (no raw CSV)
         if: always()
         uses: actions/upload-artifact@v4
