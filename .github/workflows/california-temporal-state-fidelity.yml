@@ -1,0 +1,42 @@
+name: California four-species temporal state fidelity
+
+on:
+  push:
+    paths:
+      - "analysis/contracts/california_temporal_state_fidelity_v2.json"
+      - "analysis/61_california_used_state_preflight_v2.py"
+      - "analysis/62_california_temporal_state_fidelity_v2.py"
+      - "analysis/tests/test_california_temporal_state_fidelity_v2.py"
+      - ".github/workflows/california-temporal-state-fidelity.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  temporal-state:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install numerical dependency
+        run: python -m pip install numpy==2.2.6
+      - name: Validate source and synthetic ecology tests
+        run: |
+          python -m py_compile analysis/61_california_used_state_preflight_v2.py analysis/62_california_temporal_state_fidelity_v2.py
+          python analysis/tests/test_california_used_state_preflight_v2.py
+          python analysis/tests/test_california_temporal_state_fidelity_v2.py
+      - name: Compute source-linked four-species state-fidelity contrasts
+        run: |
+          python analysis/62_california_temporal_state_fidelity_v2.py
+      - name: Upload only aggregate ecological evidence (no animal location table)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: louis-california-temporal-state-fidelity-v2
+          retention-days: 90
+          if-no-files-found: warn
+          path: analysis/results/california_temporal_state_fidelity_v2.json
