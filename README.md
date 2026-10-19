@@ -179,6 +179,19 @@ Implemented / frozen external routes:
 
 The Godwit individual permutation analysis remains unavailable through the current anonymous Dryad download route; no result is inferred from inaccessible raw files. The California USGS source was taken to an official FGDC metadata gate on 2026-10-19: 13 columns are documented (`birdyear`, `timestamp`, `species`, `case`, `season`, `photoperiod`, and seven habitat-count fields), but **no explicit step-origin habitat, origin coordinates or step identifier** is documented. It therefore remains `STOP_ORIGIN_STATE_NOT_IDENTIFIABLE_FROM_SOURCE_METADATA` for the exact origin-to-destination retention test; 100 random alternatives in the source design alone do not validate this endpoint. See [metadata audit](results/california_waterfowl_fgdc_schema_gate_20261019.json).
 
+### California four-species result (draft external extension, 2026-10-19)
+
+A **separate endpoint-to-endpoint temporal continuity question**, not the blocked origin-to-destination metric, has now been tested using the USGS source. The official source's seven final habitat categories and US-style timestamps were corrected in a versioned developmental contract before any continuity effect was inspected. Source-integrity + paired-event CI and ecological CI both passed.
+
+Across 329 eligible species × birdyear groups, all four waterfowl species used the same categorical habitat at successive approximately hourly moving-step destinations more than expected from time-matched randomly available destinations **even after a birdyear-constant habitat preference was fitted**. The equal-birdyear excess above the fixed-preference null was +16.0 percentage points for lesser snow goose (155 birdyears), +13.7 for greater white-fronted goose (99), +11.9 for northern pintail (61), and +6.6 for mallard (14); all four birdyear bootstrap 95% confidence intervals were positive.
+
+**Mechanism boundary:** continuity can follow ordinary geographic habitat autocorrelation and within-patch movement even without active environmental buffering. The categorical endpoint comparison does not replicate the King's Rail water-depth SRI, estimate step-origin habitat retention, or identify causal behavioral compensation. These four species come from one shared California sampling context. Treat this as developmental generality evidence, not an independent confirmed law.
+
+- [Verified CI](https://github.com/zuizui0223/louis/actions/runs/39216459095)
+- [Original category-corrected preflight](https://github.com/zuizui0223/louis/actions/runs/39215755680)
+- [Exact aggregate results](analysis/results/california_temporal_state_fidelity_v2.json)
+- [Reviewer-facing ecological interpretation and limitations](docs/CALIFORNIA_FOUR_SPECIES_TEMPORAL_STATE_RESULT_20261019.md)
+
 ## Evidence boundary
 
 The Lake Erie archive and matched-event schema are now resolved. Individual bird—not the 607 point records—is the biological replication unit. The stronger geographic-movement mechanism remains pending because event IDs are not embedded in the separate coordinate files.
