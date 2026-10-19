@@ -63,8 +63,13 @@ def to_count(value: str) -> int:
 
 
 def timestamp(value: str) -> dt.datetime:
-    s = value.strip().replace("Z", "+00:00")
-    return dt.datetime.fromisoformat(s)
+    # The source's own timestamp column uses US month/day/year 24-hour text,
+    # e.g. "3/6/2018 0:23"; this is not an outcome-dependent change.
+    s = value.strip()
+    try:
+        return dt.datetime.strptime(s, "%m/%d/%Y %H:%M")
+    except ValueError:
+        return dt.datetime.fromisoformat(s.replace("Z", "+00:00"))
 
 
 def audit_rows(rows: list[dict], expected: set[str]) -> dict:
