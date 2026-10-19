@@ -27,6 +27,8 @@ for sp in ("MALL", "NOPI"):
                 random[category] = "10"
             rows.extend([use, random])
 required = set(rows[0])
+assert mod.timestamp("3/6/2018 0:23") == dt.datetime(2018, 3, 6, 0, 23)
+assert mod.timestamp("3/6/2018 1:22") == dt.datetime(2018, 3, 6, 1, 22)
 good = mod.audit_rows(rows, required)
 assert good["status"] == "PASS_SOURCE_PAIRING_NO_EFFECT_ESTIMATE", good
 assert good["total_exact_hour_pairs"] == 2 * 5 * 39
