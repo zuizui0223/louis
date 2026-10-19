@@ -159,13 +159,14 @@ def describe(individuals,bootstrap=BOOT,seed=SEED):
                     "equal_birdyear_median":statistics.median(arr)}
         if key.startswith("delta_"):
             stats[key]["positive_birdyears"]=sum(v>0 for v in arr)
-            draws=[]
-            n=len(arr)
-            for _ in range(bootstrap):
-                draws.append(sum(arr[rng.randrange(n)] for _ in range(n))/n)
-            draws.sort()
-            stats[key]["ci95_cluster_bootstrap_mean"]=[
-                percentile_sorted(draws,0.025),percentile_sorted(draws,0.975)]
+            if bootstrap>0:
+                draws=[]
+                n=len(arr)
+                for _ in range(bootstrap):
+                    draws.append(sum(arr[rng.randrange(n)] for _ in range(n))/n)
+                draws.sort()
+                stats[key]["ci95_cluster_bootstrap_mean"]=[
+                    percentile_sorted(draws,0.025),percentile_sorted(draws,0.975)]
     stats["ipf_all_converged"]=all(x["ipf_max_abs_marginal_error"]<0.001 for x in individuals)
     stats["ipf_max_marginal_error"]=max(x["ipf_max_abs_marginal_error"] for x in individuals)
     return stats
