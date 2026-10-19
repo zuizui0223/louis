@@ -54,3 +54,22 @@ The two frozen sensitivities remain directionally positive: restricting availabl
 To distinguish *active environmental-state tracking* from **location/home-range or habitat-patch inertia**, future data must pair each movement origin/destination with source-defined spatial coordinates, habitat at origin, actual available transitions under physical movement constraints, and repeated temporal environmental fields. Under those data, compare observed destination-state persistence to both static-place and dynamically constrained movement null models without changing this completed California result.
 
 **Reporting status:** manuscript interpretation and species contrasts remain developmental. No causal or cross-phylum generality claim and no submission approval are warranted by the current computational PASS.
+
+## 2026-10-19 correction: source individual identity across agricultural years
+
+After the four-species numerical result was opened, a **separate source-format audit** found that all 329 eligible `birdyear` keys match a prefix plus terminal `_YYYY` agricultural-year suffix, and all 329 suffixes agree with the corresponding May–April survey year. The source defines `birdyear` as marked individual plus agricultural year. Candidate stable individual prefixes form **254 distinct individual clusters**. In 46 clusters, a total of 121 bird-years belong to repeated tracked individuals across years. Thus bird-year cluster-bootstrap intervals are conditional on a nesting structure that can underestimate independent-animal uncertainty.
+
+A post-result [individual-cluster bootstrap](../analysis/results/california_individual_cluster_robustness_v1.json) therefore retained all original observed response/availability pairings, all fitted fixed-preference effects and all selection rules, but resampled the candidate individual ID as the independent cluster. Two summaries were reported: the originally frozen equal-birdyear effect with whole-individual block uncertainty, and a sensitivity where **each candidate individual contributes one equally weighted mean across its bird-years**.
+
+| Species | Distinct ID prefixes | Individual-level equal-weight effect | 95% cluster-bootstrap interval | Positive independent individuals |
+|---|---:|---:|---:|---:|
+| GWFG | 67 | **+13.95 percentage points** | [12.52, 15.40] | 67/67 |
+| LSGO | 112 | **+15.87 points** | [14.88, 16.87] | 112/112 |
+| MALL | 14 | **+6.55 points** | [2.22, 10.66] | 11/14 |
+| NOPI | 61 | **+11.88 points** | [10.17, 13.64] | 57/61 |
+
+**Result:** all four source-study species still have positive individual-level effect intervals. This strengthens robustness to repeated years, not to *independent studies* or to movement-path autocorrelation. The authoritative [CI execution](https://github.com/zuizui0223/louis/actions/runs/39218474623) passed synthetic group-resampling tests. The original ecological result was separately rerun on CI with all numerical source fields matching to tolerance 1e−12; the four prior JSON differences were only approximately 1e−16 rounding variation.
+
+**Still unresolved:** the source-provided `birdyear` semantics and 100% key-year agreement support separating the suffix as agricultural year, but the data custodian has not separately authenticated each stripped prefix as a unique biological bird across years. Absolute observed state continuity may also arise from remaining in the same habitat patch or route constraints. Neither individual clustering nor a source-dependent fixed-preference null proves active adaptive environmental regulation.
+
+**Updated primary-reporting preference:** present the more conservative individual-ID block interval alongside the original bird-year results; retain the independent continuous King Rail water-depth result as a different estimand. For a substantive higher-level claim, obtain origin/destination spatial links and source-level movement constraints before attributing the pattern to mobility-mediated buffering.
