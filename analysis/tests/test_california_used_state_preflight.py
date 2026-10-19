@@ -28,7 +28,7 @@ for sp in ("MALL", "NOPI"):
             rows.extend([use, random])
 required = set(rows[0])
 good = mod.audit_rows(rows, required)
-assert good["status"] == "PASS_RESPONSE_BLIND_PAIRING", good
+assert good["status"] == "PASS_SOURCE_PAIRING_NO_EFFECT_ESTIMATE", good
 assert good["total_exact_hour_pairs"] == 2 * 5 * 39
 assert good["species_with_at_least_5_birdyears"] == 2
 
@@ -36,7 +36,7 @@ bad = [dict(x) for x in rows]
 bad[0]["Wetland"] = "2"
 invalid = mod.audit_rows(bad, required)
 assert invalid["excluded_reason_counts"]["non_onehot_observed_six_states"] == 1
-assert invalid["status"] == "PASS_RESPONSE_BLIND_PAIRING"
+assert invalid["status"] == "PASS_SOURCE_PAIRING_NO_EFFECT_ESTIMATE"
 
 bad = [dict(x) for x in rows]
 bad[1]["Corn"] = "0"
