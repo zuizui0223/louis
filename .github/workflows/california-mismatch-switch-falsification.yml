@@ -6,6 +6,9 @@ on:
       - "analysis/contracts/california_mismatch_switch_falsification_v1.json"
       - "analysis/65_california_opportunity_switch_falsification.py"
       - "analysis/tests/test_california_opportunity_switch_falsification.py"
+      - "analysis/results/california_mismatch_switch_falsification_v1.json"
+      - "manuscript/waterfowl_extension/Figure2_opportunity_switch.svg"
+      - "validation/verify_california_mismatch_switch_figure.py"
       - ".github/workflows/california-mismatch-switch-falsification.yml"
   workflow_dispatch:
 
@@ -29,6 +32,8 @@ jobs:
           python analysis/tests/test_california_opportunity_switch_falsification.py
       - name: Run frozen opportunity mismatch mechanism-boundary test
         run: python analysis/65_california_opportunity_switch_falsification.py
+      - name: Verify source-matched biological comparison figure
+        run: python validation/verify_california_mismatch_switch_figure.py
       - name: Retain only aggregate comparative diagnostic
         if: always()
         uses: actions/upload-artifact@v4
