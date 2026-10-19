@@ -6,6 +6,7 @@ on:
       - "analysis/contracts/california_temporal_state_fidelity_v2.json"
       - "analysis/61_california_used_state_preflight_v2.py"
       - "analysis/62_california_temporal_state_fidelity_v2.py"
+      - "analysis/63_california_individual_year_identity_audit.py"
       - "analysis/tests/test_california_temporal_state_fidelity_v2.py"
       - ".github/workflows/california-temporal-state-fidelity.yml"
   workflow_dispatch:
@@ -29,9 +30,19 @@ jobs:
           python -m py_compile analysis/61_california_used_state_preflight_v2.py analysis/62_california_temporal_state_fidelity_v2.py
           python analysis/tests/test_california_used_state_preflight_v2.py
           python analysis/tests/test_california_temporal_state_fidelity_v2.py
-      - name: Compute source-linked four-species state-fidelity contrasts
+      - name: Reproduce locked source-linked four-species state-fidelity result
         run: |
+          cp analysis/results/california_temporal_state_fidelity_v2.json /tmp/california_frozen_result.json
           python analysis/62_california_temporal_state_fidelity_v2.py
+          python - <<'PY'
+          import json
+          a=json.load(open('/tmp/california_frozen_result.json'))
+          b=json.load(open('analysis/results/california_temporal_state_fidelity_v2.json'))
+          assert a==b, 'STOP_FROZEN_CALIFORNIA_RESULT_NONREPRODUCIBLE'
+          print('PASS_CI_RESULT_EXACT_REPLAY')
+          PY
+      - name: Audit source birdyear identity hierarchy without effect estimation
+        run: python analysis/63_california_individual_year_identity_audit.py
       - name: Upload only aggregate ecological evidence (no animal location table)
         if: always()
         uses: actions/upload-artifact@v4
@@ -39,4 +50,6 @@ jobs:
           name: louis-california-temporal-state-fidelity-v2
           retention-days: 90
           if-no-files-found: warn
-          path: analysis/results/california_temporal_state_fidelity_v2.json
+          path: |
+            analysis/results/california_temporal_state_fidelity_v2.json
+            analysis/results/california_individual_year_identity_audit_v1.json
