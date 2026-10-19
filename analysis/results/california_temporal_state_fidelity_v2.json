@@ -1,0 +1,440 @@
+{
+  "availability_definition": "time-matched source-generated destination habitat counts; seven exclusive categories",
+  "bootstrap": {
+    "interval": "percentile 95%",
+    "replicates": 10000,
+    "seed_base": 20261019,
+    "unit": "birdyear"
+  },
+  "claim_boundary": [
+    "Different species may have opposing signs; do not pool fish/birdyear records across species as independent",
+    "A positive preference-residual does not distinguish active state tracking, site fidelity, available-state autocorrelation, or movement constraints",
+    "The source does not document the origin habitat for each step; therefore this is not movement-mediated origin-state preservation",
+    "The null removes time-invariant categorical preference in marginal use, not unmeasured time-specific preference, space or behavioral state",
+    "The 7-category/timestamp source correction is explicitly developmental and occurred before continuity effect estimation",
+    "Effects are independent of the Lake Erie archive but not prospectively preregistered",
+    "No ecological effect is inferred from individual source rows until validated schema, replication, and original definitions are secured."
+  ],
+  "ecological_question": "Across four wintering waterfowl species, does the habitat category at successive used moving-step endpoints remain more stable than independently sampled destinations from source-matched available habitat, and does the contrast survive a bird-year fixed marginal habitat-preference null?",
+  "evidence_class": "developmental_single_public_panel_after_source_semantic_correction",
+  "exploratory_species_gate_pass_count": 4,
+  "individual_replication_unit": "species x birdyear; exact-hour step pairs are repeated measures",
+  "main_status": "MULTISPECIES_TEMPORAL_STATE_CONTINUITY_COMPATIBLE_DEVELOPMENTAL",
+  "observed_pairs_rule": "consecutive eligible event timestamps differing by 55 to 65 minutes",
+  "schema": "louis.california_temporal_state_fidelity_v2",
+  "source_event_exclusions": {
+    "available_total_outside_range": 110,
+    "not_exclusive_one_hot": 328
+  },
+  "source_provenance": {
+    "doi": "10.5066/P9ELSUHN",
+    "md5": "78eb6064eca992225d6907d6e46f5bef",
+    "preflight_run_id": 39215732103,
+    "qualified_matched_events": 189851,
+    "source_file": "Data Release P9ELSUHN.csv",
+    "source_n_rows": 380578
+  },
+  "species": {
+    "GWFG": {
+      "passes_exploratory_species_gate": true,
+      "primary": {
+        "birdyears": 99,
+        "delta_availability": {
+          "ci95_cluster_bootstrap_mean": [
+            0.2318844570252871,
+            0.2601854591016117
+          ],
+          "equal_birdyear_mean": 0.24618111211632257,
+          "equal_birdyear_median": 0.24511012658227838,
+          "positive_birdyears": 99
+        },
+        "delta_preference": {
+          "ci95_cluster_bootstrap_mean": [
+            0.12473476168362851,
+            0.14859024894348496
+          ],
+          "equal_birdyear_mean": 0.13657781065231123,
+          "equal_birdyear_median": 0.13330429535592025,
+          "positive_birdyears": 99
+        },
+        "expected_raw_availability": {
+          "equal_birdyear_mean": 0.42338102797884,
+          "equal_birdyear_median": 0.41948011363636356
+        },
+        "expected_static_preference": {
+          "equal_birdyear_mean": 0.5329843294428512,
+          "equal_birdyear_median": 0.5249738683243774
+        },
+        "ipf_all_converged": true,
+        "ipf_max_marginal_error": 0.000994190980353471,
+        "mean_pairs_per_birdyear": 145.3939393939394,
+        "observed_retention": {
+          "equal_birdyear_mean": 0.6695621400951626,
+          "equal_birdyear_median": 0.6756756756756757
+        },
+        "total_pairs": 14394
+      },
+      "sensitivities": {
+        "min_60_exact_hour_pairs": {
+          "birdyears": 88,
+          "delta_availability": {
+            "equal_birdyear_mean": 0.2481425074414999,
+            "equal_birdyear_median": 0.24691506329113921,
+            "positive_birdyears": 88
+          },
+          "delta_preference": {
+            "equal_birdyear_mean": 0.1394323892853622,
+            "equal_birdyear_median": 0.13858274104380625,
+            "positive_birdyears": 88
+          },
+          "expected_raw_availability": {
+            "equal_birdyear_mean": 0.42974519234713954,
+            "equal_birdyear_median": 0.4233632936880665
+          },
+          "expected_static_preference": {
+            "equal_birdyear_mean": 0.5384553105032772,
+            "equal_birdyear_median": 0.5262703559990684
+          },
+          "ipf_all_converged": true,
+          "ipf_max_marginal_error": 0.000994190980353471,
+          "mean_pairs_per_birdyear": 157.375,
+          "observed_retention": {
+            "equal_birdyear_mean": 0.6778876997886394,
+            "equal_birdyear_median": 0.6858552631578947
+          },
+          "total_pairs": 13849
+        },
+        "random_total_ge50": {
+          "birdyears": 99,
+          "delta_availability": {
+            "equal_birdyear_mean": 0.24618111211632257,
+            "equal_birdyear_median": 0.24511012658227838,
+            "positive_birdyears": 99
+          },
+          "delta_preference": {
+            "equal_birdyear_mean": 0.13657781065231123,
+            "equal_birdyear_median": 0.13330429535592025,
+            "positive_birdyears": 99
+          },
+          "expected_raw_availability": {
+            "equal_birdyear_mean": 0.42338102797884,
+            "equal_birdyear_median": 0.41948011363636356
+          },
+          "expected_static_preference": {
+            "equal_birdyear_mean": 0.5329843294428512,
+            "equal_birdyear_median": 0.5249738683243774
+          },
+          "ipf_all_converged": true,
+          "ipf_max_marginal_error": 0.000994190980353471,
+          "mean_pairs_per_birdyear": 145.3939393939394,
+          "observed_retention": {
+            "equal_birdyear_mean": 0.6695621400951626,
+            "equal_birdyear_median": 0.6756756756756757
+          },
+          "total_pairs": 14394
+        }
+      }
+    },
+    "LSGO": {
+      "passes_exploratory_species_gate": true,
+      "primary": {
+        "birdyears": 155,
+        "delta_availability": {
+          "ci95_cluster_bootstrap_mean": [
+            0.270434127078266,
+            0.28903745393200914
+          ],
+          "equal_birdyear_mean": 0.27974397018173564,
+          "equal_birdyear_median": 0.2761642201834863,
+          "positive_birdyears": 155
+        },
+        "delta_preference": {
+          "ci95_cluster_bootstrap_mean": [
+            0.15075905452885566,
+            0.16873254898359566
+          ],
+          "equal_birdyear_mean": 0.15970546518077577,
+          "equal_birdyear_median": 0.1624312493072757,
+          "positive_birdyears": 155
+        },
+        "expected_raw_availability": {
+          "equal_birdyear_mean": 0.4786976569406287,
+          "equal_birdyear_median": 0.4819882352941177
+        },
+        "expected_static_preference": {
+          "equal_birdyear_mean": 0.5987361619415886,
+          "equal_birdyear_median": 0.6003409387478841
+        },
+        "ipf_all_converged": true,
+        "ipf_max_marginal_error": 0.0009957875015619844,
+        "mean_pairs_per_birdyear": 235.55483870967743,
+        "observed_retention": {
+          "equal_birdyear_mean": 0.7584416271223643,
+          "equal_birdyear_median": 0.7622080679405521
+        },
+        "total_pairs": 36511
+      },
+      "sensitivities": {
+        "min_60_exact_hour_pairs": {
+          "birdyears": 135,
+          "delta_availability": {
+            "equal_birdyear_mean": 0.27458317537745286,
+            "equal_birdyear_median": 0.2729424999999999,
+            "positive_birdyears": 135
+          },
+          "delta_preference": {
+            "equal_birdyear_mean": 0.15815165982765875,
+            "equal_birdyear_median": 0.15819200646183362,
+            "positive_birdyears": 135
+          },
+          "expected_raw_availability": {
+            "equal_birdyear_mean": 0.48008529653301274,
+            "equal_birdyear_median": 0.48498176470588233
+          },
+          "expected_static_preference": {
+            "equal_birdyear_mean": 0.5965168120828068,
+            "equal_birdyear_median": 0.5913904506124754
+          },
+          "ipf_all_converged": true,
+          "ipf_max_marginal_error": 0.0009957875015619844,
+          "mean_pairs_per_birdyear": 263.8074074074074,
+          "observed_retention": {
+            "equal_birdyear_mean": 0.7546684719104656,
+            "equal_birdyear_median": 0.76
+          },
+          "total_pairs": 35614
+        },
+        "random_total_ge50": {
+          "birdyears": 155,
+          "delta_availability": {
+            "equal_birdyear_mean": 0.27974397018173564,
+            "equal_birdyear_median": 0.2761642201834863,
+            "positive_birdyears": 155
+          },
+          "delta_preference": {
+            "equal_birdyear_mean": 0.15970546518077577,
+            "equal_birdyear_median": 0.1624312493072757,
+            "positive_birdyears": 155
+          },
+          "expected_raw_availability": {
+            "equal_birdyear_mean": 0.4786976569406287,
+            "equal_birdyear_median": 0.4819882352941177
+          },
+          "expected_static_preference": {
+            "equal_birdyear_mean": 0.5987361619415886,
+            "equal_birdyear_median": 0.6003409387478841
+          },
+          "ipf_all_converged": true,
+          "ipf_max_marginal_error": 0.0009957875015619844,
+          "mean_pairs_per_birdyear": 235.55483870967743,
+          "observed_retention": {
+            "equal_birdyear_mean": 0.7584416271223643,
+            "equal_birdyear_median": 0.7622080679405521
+          },
+          "total_pairs": 36511
+        }
+      }
+    },
+    "MALL": {
+      "passes_exploratory_species_gate": true,
+      "primary": {
+        "birdyears": 14,
+        "delta_availability": {
+          "ci95_cluster_bootstrap_mean": [
+            0.09659722206202741,
+            0.18492467821782366
+          ],
+          "equal_birdyear_mean": 0.1410113362926629,
+          "equal_birdyear_median": 0.12815080818965513,
+          "positive_birdyears": 14
+        },
+        "delta_preference": {
+          "ci95_cluster_bootstrap_mean": [
+            0.023312226540690394,
+            0.10665354772843545
+          ],
+          "equal_birdyear_mean": 0.06552930956992722,
+          "equal_birdyear_median": 0.07202151178895155,
+          "positive_birdyears": 11
+        },
+        "expected_raw_availability": {
+          "equal_birdyear_mean": 0.338991072914697,
+          "equal_birdyear_median": 0.337142088607595
+        },
+        "expected_static_preference": {
+          "equal_birdyear_mean": 0.4144730996374327,
+          "equal_birdyear_median": 0.38032498306709756
+        },
+        "ipf_all_converged": true,
+        "ipf_max_marginal_error": 0.0009292785808677206,
+        "mean_pairs_per_birdyear": 54.42857142857143,
+        "observed_retention": {
+          "equal_birdyear_mean": 0.48000240920735987,
+          "equal_birdyear_median": 0.46960072595281305
+        },
+        "total_pairs": 762
+      },
+      "sensitivities": {
+        "min_60_exact_hour_pairs": {
+          "birdyears": 5,
+          "delta_availability": {
+            "equal_birdyear_mean": 0.13975375213682567,
+            "equal_birdyear_median": 0.11469868421052626,
+            "positive_birdyears": 5
+          },
+          "delta_preference": {
+            "equal_birdyear_mean": 0.07270226241035242,
+            "equal_birdyear_median": 0.08173289976628362,
+            "positive_birdyears": 4
+          },
+          "expected_raw_availability": {
+            "equal_birdyear_mean": 0.36770070839926206,
+            "equal_birdyear_median": 0.36102089552238803
+          },
+          "expected_static_preference": {
+            "equal_birdyear_mean": 0.4347521981257353,
+            "equal_birdyear_median": 0.37331945218594575
+          },
+          "ipf_all_converged": true,
+          "ipf_max_marginal_error": 0.0008016103705297262,
+          "mean_pairs_per_birdyear": 77.2,
+          "observed_retention": {
+            "equal_birdyear_mean": 0.5074544605360878,
+            "equal_birdyear_median": 0.47368421052631576
+          },
+          "total_pairs": 386
+        },
+        "random_total_ge50": {
+          "birdyears": 14,
+          "delta_availability": {
+            "equal_birdyear_mean": 0.1410113362926629,
+            "equal_birdyear_median": 0.12815080818965513,
+            "positive_birdyears": 14
+          },
+          "delta_preference": {
+            "equal_birdyear_mean": 0.06552930956992722,
+            "equal_birdyear_median": 0.07202151178895155,
+            "positive_birdyears": 11
+          },
+          "expected_raw_availability": {
+            "equal_birdyear_mean": 0.338991072914697,
+            "equal_birdyear_median": 0.337142088607595
+          },
+          "expected_static_preference": {
+            "equal_birdyear_mean": 0.4144730996374327,
+            "equal_birdyear_median": 0.38032498306709756
+          },
+          "ipf_all_converged": true,
+          "ipf_max_marginal_error": 0.0009292785808677206,
+          "mean_pairs_per_birdyear": 54.42857142857143,
+          "observed_retention": {
+            "equal_birdyear_mean": 0.48000240920735987,
+            "equal_birdyear_median": 0.46960072595281305
+          },
+          "total_pairs": 762
+        }
+      }
+    },
+    "NOPI": {
+      "passes_exploratory_species_gate": true,
+      "primary": {
+        "birdyears": 61,
+        "delta_availability": {
+          "ci95_cluster_bootstrap_mean": [
+            0.2596179542287462,
+            0.2993013977283088
+          ],
+          "equal_birdyear_mean": 0.2793848798557723,
+          "equal_birdyear_median": 0.269669696969697,
+          "positive_birdyears": 61
+        },
+        "delta_preference": {
+          "ci95_cluster_bootstrap_mean": [
+            0.1014288209250668,
+            0.13641996793522862
+          ],
+          "equal_birdyear_mean": 0.1188316909614022,
+          "equal_birdyear_median": 0.10626219178359719,
+          "positive_birdyears": 57
+        },
+        "expected_raw_availability": {
+          "equal_birdyear_mean": 0.33247545466552986,
+          "equal_birdyear_median": 0.3298595744680851
+        },
+        "expected_static_preference": {
+          "equal_birdyear_mean": 0.49302864355990006,
+          "equal_birdyear_median": 0.47368501738116536
+        },
+        "ipf_all_converged": true,
+        "ipf_max_marginal_error": 0.0009907239524410416,
+        "mean_pairs_per_birdyear": 80.72131147540983,
+        "observed_retention": {
+          "equal_birdyear_mean": 0.6118603345213023,
+          "equal_birdyear_median": 0.6078431372549019
+        },
+        "total_pairs": 4924
+      },
+      "sensitivities": {
+        "min_60_exact_hour_pairs": {
+          "birdyears": 38,
+          "delta_availability": {
+            "equal_birdyear_mean": 0.2756338740728106,
+            "equal_birdyear_median": 0.2630498196948682,
+            "positive_birdyears": 38
+          },
+          "delta_preference": {
+            "equal_birdyear_mean": 0.10728243970863842,
+            "equal_birdyear_median": 0.10135014903671968,
+            "positive_birdyears": 35
+          },
+          "expected_raw_availability": {
+            "equal_birdyear_mean": 0.3351530586039872,
+            "equal_birdyear_median": 0.3305938004163414
+          },
+          "expected_static_preference": {
+            "equal_birdyear_mean": 0.5035044929681594,
+            "equal_birdyear_median": 0.496926185929527
+          },
+          "ipf_all_converged": true,
+          "ipf_max_marginal_error": 0.0009907239524410416,
+          "mean_pairs_per_birdyear": 104.71052631578948,
+          "observed_retention": {
+            "equal_birdyear_mean": 0.6107869326767977,
+            "equal_birdyear_median": 0.6009708737864077
+          },
+          "total_pairs": 3979
+        },
+        "random_total_ge50": {
+          "birdyears": 61,
+          "delta_availability": {
+            "equal_birdyear_mean": 0.2793848798557723,
+            "equal_birdyear_median": 0.269669696969697,
+            "positive_birdyears": 61
+          },
+          "delta_preference": {
+            "equal_birdyear_mean": 0.1188316909614022,
+            "equal_birdyear_median": 0.10626219178359719,
+            "positive_birdyears": 57
+          },
+          "expected_raw_availability": {
+            "equal_birdyear_mean": 0.33247545466552986,
+            "equal_birdyear_median": 0.3298595744680851
+          },
+          "expected_static_preference": {
+            "equal_birdyear_mean": 0.49302864355990006,
+            "equal_birdyear_median": 0.47368501738116536
+          },
+          "ipf_all_converged": true,
+          "ipf_max_marginal_error": 0.0009907239524410416,
+          "mean_pairs_per_birdyear": 80.72131147540983,
+          "observed_retention": {
+            "equal_birdyear_mean": 0.6118603345213023,
+            "equal_birdyear_median": 0.6078431372549019
+          },
+          "total_pairs": 4924
+        }
+      }
+    }
+  },
+  "target_type": "temporal endpoint-state continuity, NOT movement origin-to-destination state retention"
+}
