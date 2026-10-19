@@ -1,11 +1,11 @@
-name: California endpoint-state source gate
+name: California seven-state source gate
 
 on:
   push:
     paths:
-      - "analysis/contracts/california_temporal_state_fidelity_v1.json"
-      - "analysis/60_california_used_state_preflight.py"
-      - "analysis/tests/test_california_used_state_preflight.py"
+      - "analysis/contracts/california_temporal_state_fidelity_v2.json"
+      - "analysis/61_california_used_state_preflight_v2.py"
+      - "analysis/tests/test_california_used_state_preflight_v2.py"
       - ".github/workflows/california-used-state-preflight.yml"
   workflow_dispatch:
 
@@ -31,7 +31,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: louis-california-source-preflight
+          name: louis-california-seven-state-source-gate
           retention-days: 90
           if-no-files-found: warn
-          path: analysis/results/california_used_state_preflight_v1.json
+          path: analysis/results/california_used_state_preflight_v2.json
