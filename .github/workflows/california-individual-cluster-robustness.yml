@@ -5,6 +5,8 @@ on:
     paths:
       - "analysis/64_california_individual_cluster_robustness.py"
       - "analysis/tests/test_california_individual_cluster_robustness.py"
+      - "validation/verify_california_state_figure.py"
+      - "manuscript/waterfowl_extension/Figure1_individual_continuity.svg"
       - "analysis/results/california_temporal_state_fidelity_v2.json"
       - ".github/workflows/california-individual-cluster-robustness.yml"
   workflow_dispatch:
@@ -29,6 +31,8 @@ jobs:
           python analysis/tests/test_california_individual_cluster_robustness.py
       - name: Recompute uncertainty grouping repeated agricultural years under one tag
         run: python analysis/64_california_individual_cluster_robustness.py
+      - name: Verify forest figure and causal-scope annotations
+        run: python validation/verify_california_state_figure.py
       - name: Upload anonymized cluster-robustness evidence
         if: always()
         uses: actions/upload-artifact@v4
