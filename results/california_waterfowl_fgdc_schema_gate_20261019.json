@@ -1,0 +1,89 @@
+{
+  "schema": "louis.california_waterfowl_fgdc_schema_gate.v1",
+  "evidence_class": "response_independent_source_metadata_only",
+  "verified_date": "2026-10-19",
+  "source": {
+    "doi": "10.5066/P9ELSUHN",
+    "catalog_item_id": "652edfe8d34edd15305a9ab0",
+    "csv_name": "Data Release P9ELSUHN.csv",
+    "csv_size_bytes": 27997528,
+    "csv_md5_from_metadata": "78eb6064eca992225d6907d6e46f5bef",
+    "fgdc_metadata_url": "https://www.sciencebase.gov/catalog/file/get/652edfe8d34edd15305a9ab0?f=__disk__16%2F06%2F16%2F160616dd4f45f305e34bfd566fc38179e1c0a4cb&transform=1"
+  },
+  "documented_columns": [
+    {
+      "name": "birdyear",
+      "definition": "individual marked bird and agricultural year (May-April) of location group identifier"
+    },
+    {
+      "name": "timestamp",
+      "definition": "Datetime"
+    },
+    {
+      "name": "species",
+      "definition": "Taxa of markedindividual"
+    },
+    {
+      "name": "case",
+      "definition": "Observed (TRUE) or Random replicate location (FALSE)"
+    },
+    {
+      "name": "season",
+      "definition": "Time period of location/replicate"
+    },
+    {
+      "name": "photoperiod",
+      "definition": "Day or Night calculated based on location and timestamp"
+    },
+    {
+      "name": "Corn",
+      "definition": "Number of 100 random movements or the occurance of observed movement in corn crops (NASS-CDL code 1)"
+    },
+    {
+      "name": "Field",
+      "definition": "Number of 100 random movements or the occurance of observed movement in field crops (NASS-CDL codes 36,37,61,176)"
+    },
+    {
+      "name": "Other",
+      "definition": "Number of 100 random movements or the occurance of observed movement in all other NASS-CDL classes"
+    },
+    {
+      "name": "Protected",
+      "definition": "Number of 100 random movements or the occurance of observed movement in protected lands"
+    },
+    {
+      "name": "Rice",
+      "definition": "Number of 100 random movements or the occurance of observed movement in rice (NASS-CDL code 3)"
+    },
+    {
+      "name": "Urban",
+      "definition": "Number of 100 random movements or the occurance of observed movement in urbanized lands (NASS-CDL codes 82,121,122,123,124)"
+    },
+    {
+      "name": "Wetland",
+      "definition": "Number of 100 random movements or the occurance of observed movement in wetlands lands (NASS-CDL codes 190,195)"
+    }
+  ],
+  "metadata_schema": {
+    "n_documented_columns": 13,
+    "contains_individual_id": true,
+    "contains_time": true,
+    "contains_species": true,
+    "contains_observed_random_flag": true,
+    "contains_seven_habitat_count_columns": true,
+    "contains_explicit_origin_habitat": false,
+    "contains_explicit_origin_coordinates": false,
+    "contains_explicit_destination_coordinates": false,
+    "contains_explicit_step_stratum_id": false,
+    "seven_habitat_fields_proven_mutually_exclusive": false
+  },
+  "gate_status": "STOP_ORIGIN_STATE_NOT_IDENTIFIABLE_FROM_SOURCE_METADATA",
+  "limits": [
+    "Only source FGDC entity/attribute descriptions and ScienceBase file inventory were examined; no raw CSV rows or ecological movement outcomes were accessed.",
+    "Source metadata documents per-step observed/random and aggregated habitat counts, but not a directly identified origin-state to each observed/random destination pairing.",
+    "Metadata silence does not prove the raw CSV lacks undeclared columns or that a source-defined reconstruction is impossible. The current source-backed gate cannot pass without independent documentation/verification.",
+    "Protected is defined as land protection status; metadata does not establish mutually exclusive values for the seven land-cover / protection categories.",
+    "Do not calculate individual habitat-state retention or claim an external confirmation from the released selection proportions."
+  ],
+  "reopen_condition": "Verify from original records or source-documented join that each moving step has an exact origin habitat and source-defined observed/random paired destination states without order-based repair."
+}
