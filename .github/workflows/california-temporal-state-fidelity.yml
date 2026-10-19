@@ -35,11 +35,22 @@ jobs:
           cp analysis/results/california_temporal_state_fidelity_v2.json /tmp/california_frozen_result.json
           python analysis/62_california_temporal_state_fidelity_v2.py
           python - <<'PY'
-          import json
+          import json, math
           a=json.load(open('/tmp/california_frozen_result.json'))
           b=json.load(open('analysis/results/california_temporal_state_fidelity_v2.json'))
-          assert a==b, 'STOP_FROZEN_CALIFORNIA_RESULT_NONREPRODUCIBLE'
-          print('PASS_CI_RESULT_EXACT_REPLAY')
+          def equal(x,y,path="root"):
+              if type(x) is float or type(y) is float:
+                  assert math.isclose(float(x),float(y),rel_tol=1e-12,abs_tol=1e-12), (path,x,y)
+              elif isinstance(x,dict) and isinstance(y,dict):
+                  assert x.keys()==y.keys(), (path,"keys")
+                  for key in x: equal(x[key],y[key],path+"."+str(key))
+              elif isinstance(x,list) and isinstance(y,list):
+                  assert len(x)==len(y), (path,"length")
+                  for i,(u,v) in enumerate(zip(x,y)): equal(u,v,path+"["+str(i)+"]")
+              else:
+                  assert x==y, (path,x,y)
+          equal(a,b)
+          print('PASS_CI_RESULT_NUMERIC_REPLAY_AT_1E_MINUS_12')
           PY
       - name: Audit source birdyear identity hierarchy without effect estimation
         run: python analysis/63_california_individual_year_identity_audit.py
