@@ -177,7 +177,7 @@ Implemented / frozen external routes:
 - [published Godwit habitat-replacement boundary](docs/godwit_published_generality_boundary.md)
 - [California four-species hourly step-state preflight](docs/california_waterfowl_step_state_preflight.md)
 
-The Godwit individual permutation analysis remains unavailable through the current anonymous Dryad download route; no result is inferred from inaccessible raw files. The California USGS route is now the cleaner open candidate because each observed moving step already has 100 movement-matched random alternatives.
+The Godwit individual permutation analysis remains unavailable through the current anonymous Dryad download route; no result is inferred from inaccessible raw files. The California USGS source was taken to an official FGDC metadata gate on 2026-10-19: 13 columns are documented (`birdyear`, `timestamp`, `species`, `case`, `season`, `photoperiod`, and seven habitat-count fields), but **no explicit step-origin habitat, origin coordinates or step identifier** is documented. It therefore remains `STOP_ORIGIN_STATE_NOT_IDENTIFIABLE_FROM_SOURCE_METADATA` for the exact origin-to-destination retention test; 100 random alternatives in the source design alone do not validate this endpoint. See [metadata audit](results/california_waterfowl_fgdc_schema_gate_20261019.json).
 
 ## Evidence boundary
 
