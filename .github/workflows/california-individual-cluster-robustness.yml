@@ -1,0 +1,39 @@
+name: California individual-ID cluster robustness
+
+on:
+  push:
+    paths:
+      - "analysis/64_california_individual_cluster_robustness.py"
+      - "analysis/tests/test_california_individual_cluster_robustness.py"
+      - "analysis/results/california_temporal_state_fidelity_v2.json"
+      - ".github/workflows/california-individual-cluster-robustness.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  identity-bootstrap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install frozen package version
+        run: python -m pip install numpy==2.2.6
+      - name: Test biological-individual clustering before source outcomes
+        run: |
+          python -m py_compile analysis/64_california_individual_cluster_robustness.py
+          python analysis/tests/test_california_individual_cluster_robustness.py
+      - name: Recompute uncertainty grouping repeated agricultural years under one tag
+        run: python analysis/64_california_individual_cluster_robustness.py
+      - name: Upload anonymized cluster-robustness evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: louis-california-independent-individual-bootstrap
+          retention-days: 90
+          if-no-files-found: warn
+          path: analysis/results/california_individual_cluster_robustness_v1.json
