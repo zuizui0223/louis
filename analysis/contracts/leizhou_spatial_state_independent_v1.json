@@ -1,0 +1,58 @@
+{
+  "schema": "louis.leizhou_spatial_state_independent_v1.preoutcome_protocol",
+  "registered": "2026-10-21",
+  "source": {
+    "authors": "Zhang & Choi",
+    "doi": "10.5061/dryad.51c59zwm3",
+    "journal": "Biological Conservation (2025), DOI 10.1016/j.biocon.2025.111256",
+    "version_date": "2026-06-04",
+    "published_archive": "Raw_data.zip (approximately 1.30 MB), README.md",
+    "source_map": "Habitat map.tif, derived from single Sentinel-2 scene 2020-12-08, EPSG:4326",
+    "focal_ids_by_prefix": {
+      "CORE": 9,
+      "GRPL": 3,
+      "GSPL": 2,
+      "REKN": 2
+    },
+    "note": "One site/study with four species; not four independent studies."
+  },
+  "high_level_question": "Does recorded geographic movement between different coordinates maintain the same mapped habitat class more often than source-distance- and route-geometry-matched feasible candidate endpoints? Can a spatially explicit contrast distinguish categorical state fidelity from place fidelity?",
+  "source_risk_boundaries": [
+    "Habitat map is a single date; cannot test buffering of temporally changing water depth, temperature, or dynamic habitat availability.",
+    "Tracking data contains true GPS coordinates and dates, not source-provided movement-step availability. Nulls are analyst-generated, not independent survey availability.",
+    "The published article already describes species- and photoperiod-specific roost preferences; merely reproducing day/night categorical preference is not novel.",
+    "This post-hoc source chosen after a positive California continuity result; any result is developmental, not untouched confirmation.",
+    "A mapped habitat class is a coarse structural proxy for experienced habitat; radar/satellite epoch can mismatch tracking days.",
+    "The source map may include inaccessible/land categories; validity gates must precede any positive claim."
+  ],
+  "preflight": {
+    "source_version": "Use Dryad version/API discovery; no guessed file IDs or undocumented source joins.",
+    "require": [
+      "Raw_data.zip archive available with CSV GPS tracking data, habitat map raster, source serial-number to individual crosswalk and mapping scheme."
+    ],
+    "gps_header": [
+      "S/N",
+      "Collecting time",
+      "Longitude",
+      "Latitude",
+      "HorAccuracy"
+    ],
+    "groups": "The 16 expected focal individuals must use source SN→individual ID crosswalk; no individual inferred from spatial pattern.",
+    "min_source_complete_fix_count": 500,
+    "minimum_individuals_with_20_time_qualified_steps": 6,
+    "min_species_represented": 2,
+    "geometry": "Habitat raster georeferenced with a declared CRS and valid-nodata rules; only reported source class codes are allowed.",
+    "source_resolution": "Do not inspect any used endpoint class vs origin class until this schema and sample eligibility gate succeeds."
+  },
+  "primary_design_frozen_before_source_access": {
+    "analytic_universe": "Consecutive GPS collection timestamps within each source-identified individual; drop duplicate same-individual same-time positions rather than selecting one by outcome, and require positive time difference between 5 and 120 min and geodesic movement between 200 and 10000 metres. Exclude GPS with malformed timestamps, invalid WGS84, or source HorAccuracy > 100 m. Count all exclusions.",
+    "response": "Among steps whose mapped origin and actual mapped endpoint both carry one of the source-defined focal habitat class codes, indicator of unchanged origin→destination categorical class.",
+    "reference_A": "72 equally spaced bearings (5-degree increments) from exact observed origin, each at the exact observed geodesic step length. Include only candidate endpoints within the raster footprint with source-defined valid mapped codes; need >=30 of 72 valid alternatives. Calculate expected same-as-origin probability from these valid alternatives.",
+    "reference_B": "Turning-constrained alternative: use real preceding movement heading when preceding segment satisfies the identical time and position accuracy rules. Generate 72 turn deviations sampled deterministically (fixed seed 20261021 per individual) from the observed turning-angle pool from all other eligible steps of that individual, excluding the focal step. Use the identical actual observed step length and raster-validity gate; require >=30 valid alternatives. Keep heading reference and null use separate from source post-hoc class outcomes.",
+    "effect": "Individual-level mean[actual same-class - matched expectation] separately under reference A and B; positive effect beyond both references for majority of eligible independent birds with individual bootstrap 95% CI >0 is spatial state-retention compatibility. No species pooled inference with only two birds for some taxa.",
+    "uncertainty": "Biological individual as independent replicate; 10000 bootstrap resamples of birds, not fixes, pairs or raster pixels. Report all species descriptive; report source-date-near ±60-day sensitivity as explicitly secondary.",
+    "falsification": "No support if positive mean/CI fails or if only Reference A succeeds and turning-constrained Reference B fails. An inconclusive map/gps join is STOP, never zero effect.",
+    "hard_limit": "Even success would show spatially constrained mapped-class retention during realized moves, NOT causal adaptive tracking of environmental change."
+  },
+  "no_change_after_outcomes": true
+}
