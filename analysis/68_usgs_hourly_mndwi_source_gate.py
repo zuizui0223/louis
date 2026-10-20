@@ -95,7 +95,7 @@ def main():
     joined=" ".join(allcols).lower()
     output["files_total"]=len(files)
     output["candidate_csv_file_count"]=sum((f.get("name") or "").lower().endswith((".csv",".zip",".txt")) for f in files)
-    output["metadata_contains_MNDWI_attribute"]=any("mndwi" in x for x in allcols)
+    output["metadata_contains_MNDWI_attribute"]=any("mndwi" in x.lower() for x in allcols)
     output["metadata_contains_location_attribute"]=any("lat" in x.lower() or "long" in x.lower() for x in allcols)
     output["status"]="PASS_SOURCE_INVENTORY_METADATA_ONLY" if (
         "landing" in retrieved and output.get("files_total",0)>0 and
