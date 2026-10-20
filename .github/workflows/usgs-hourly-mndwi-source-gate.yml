@@ -5,6 +5,7 @@ on:
     paths:
       - "analysis/contracts/usgs_hourly_mndwi_source_gate_v1.json"
       - "analysis/68_usgs_hourly_mndwi_source_gate.py"
+      - "analysis/69_usgs_hourly_mndwi_structural_gate.py"
       - ".github/workflows/usgs-hourly-mndwi-source-gate.yml"
   workflow_dispatch:
 
@@ -24,6 +25,10 @@ jobs:
         run: python -m py_compile analysis/68_usgs_hourly_mndwi_source_gate.py
       - name: Open metadata and authoritative file inventory only
         run: python analysis/68_usgs_hourly_mndwi_source_gate.py
+      - name: Verify the original USGS CSV and repeated location/time structure without environmental effects
+        run: |
+          python -m py_compile analysis/69_usgs_hourly_mndwi_structural_gate.py
+          python analysis/69_usgs_hourly_mndwi_structural_gate.py
       - name: Retain only metadata-gate output
         if: always()
         uses: actions/upload-artifact@v4
@@ -31,4 +36,6 @@ jobs:
           name: louis-usgs-hourly-mndwi-schema-gate
           retention-days: 90
           if-no-files-found: warn
-          path: analysis/results/usgs_hourly_mndwi_source_gate_v1.json
+          path: |
+            analysis/results/usgs_hourly_mndwi_source_gate_v1.json
+            analysis/results/usgs_hourly_mndwi_structural_gate_v1.json
