@@ -1,0 +1,52 @@
+{
+  "GPS_geometric_QC": {
+    "conflicting_tagtime_removed_entirely": 13,
+    "exact_repeated_rows_collapsed": 85,
+    "independent_source_tag_ids": 88,
+    "unique_local_tagtime_records": 103543
+  },
+  "consecutive_calendar_month_core_pairs": 193,
+  "displacement_class_counts": {
+    "500m_to20km": 94,
+    "gt20km": 61,
+    "lt500m": 38
+  },
+  "ecological_effect_estimated": false,
+  "mndwi_numeric_state_effects_computed": false,
+  "preoutcome_primary_100m_valid": false,
+  "schema": "louis.usgs_monthly_core_geometry_gate_v1",
+  "source_MD5": "3e5a91b2d5176cce43101ffcb6a60f25",
+  "source_data_identity": "MD5_MATCH_PINNED",
+  "source_doi": "10.5066/P9XBZKZ8",
+  "source_mndwi_values_exported": false,
+  "source_months_with_at_least_5_local_fixes_in_modal_250m_cell": 351,
+  "source_tags_with_at_least_one_monthly_core": 88,
+  "status": "STOP_STATIC_WITNESS_GEOMETRIC_NONIDENTIFIABILITY",
+  "witness_summary_by_radius_m": {
+    "50": {
+      "distinct_moving_source_tags": 4,
+      "matched_month_events": 4,
+      "total_other_bird_fixes": 229,
+      "unmatched_geometric_candidates": {
+        "insufficient_witness": 90
+      }
+    },
+    "100": {
+      "distinct_moving_source_tags": 4,
+      "matched_month_events": 4,
+      "total_other_bird_fixes": 415,
+      "unmatched_geometric_candidates": {
+        "insufficient_witness": 90
+      }
+    },
+    "200": {
+      "distinct_moving_source_tags": 7,
+      "matched_month_events": 7,
+      "total_other_bird_fixes": 587,
+      "unmatched_geometric_candidates": {
+        "insufficient_witness": 87
+      }
+    }
+  },
+  "recorded_from_github_actions_run": 39452443095
+}
