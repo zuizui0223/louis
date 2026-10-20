@@ -1,0 +1,46 @@
+{
+  "schema": "louis.usgs_hourly_mndwi_v1.source_provenance_preoutcome",
+  "created": "2026-10-21",
+  "source": {
+    "doi": "10.5066/P9XBZKZ8",
+    "sciencebase_item": "62ffeecfd34ed6dc55925915",
+    "authors": "Overton, Casazza, Bretz",
+    "publisher": "USGS 2022",
+    "study": "Machine learned daily life history classification using low frequency tracking data and automated modelling pipelines: application to North American waterfowl",
+    "article_doi": "10.1186/s40462-022-00324-7",
+    "narrative_from_source": "Daily trajectory data from 131 tracked waterfowl across five species, with hourly GPS and same-month composited Landsat-8/Sentinel-2 MNDWI habitat covariates. 9334 augmented daily records used in the paper; the data release may have a different grain.",
+    "important_limit": "Species identity intentionally withheld from publicly released modeling dataset; do not infer five species effects from individual identifiers or location."
+  },
+  "scientific_question": "Can the temporal water state experienced by a tracked animal be examined jointly with geographic displacement across consecutive dated GPS observations, and can static-site persistence be distinguished from state maintenance using a source-defined environmental reference?",
+  "data_gateway": {
+    "stage": "metadata, schema, filesize, source identity before ecological effects",
+    "field_required": [
+      "source-native unique individual ID",
+      "source-native GPS time or fixed-date+hour",
+      "spatial location lat/lon",
+      "contemporaneous habitat MNDWI at each location"
+    ],
+    "source_quality_requirements": [
+      ">=10 independently tagged bird identifiers",
+      "time-sorted repeated observations with unambiguous datetime, no row-order reconstructed identifiers",
+      "source MNDWI variable keyed to same acquired time or source-defined monthly window",
+      "sampled points are genuine GPS observations rather than just aggregated daily features"
+    ],
+    "stop_if": [
+      "No native GPS/individual/time join",
+      "MNDWI is a single dated static raster instead of source temporally linked to the fixes",
+      "Source download or metadata permission not available",
+      "Only daily mean/SD aggregate MNDWI without location-level join"
+    ],
+    "no_outcome_until_fields_verified": true
+  },
+  "outcome_restrictions": {
+    "predeclare_only_after_source_schema": "If point-level water-index and time/location are verified, freeze a distinct test of geographic displacement versus experienced water-index differences and at least one counterfactual comparison before computing effects.",
+    "blocked_claims": [
+      "Site movement causally buffers experienced water state without a place-stationary environmental trajectory or accessibility-matched alternative",
+      "Artificially segmented hourly fixes are independent birds",
+      "Species-level phylogenetic generality from a dataset without species identifiers",
+      "New ecology from a supervised model's original feature engineering itself"
+    ]
+  }
+}
