@@ -1,0 +1,39 @@
+name: USGS open Landsat old/new location scene coverage
+
+on:
+  push:
+    paths:
+      - "analysis/contracts/usgs_planetary_landsat_stac_pilot_v1.json"
+      - "analysis/71_usgs_planetary_landsat_stac_pilot.py"
+      - "analysis/tests/test_usgs_planetary_landsat_stac_pilot.py"
+      - ".github/workflows/usgs-planetary-l8-stac-pilot.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pinned array, tree geometry and polygon packages
+        run: python -m pip install numpy==2.2.6 scipy==1.15.3 shapely==2.0.7
+      - name: Verify synthetic Landsat 8 source geometry
+        run: |
+          python -m py_compile analysis/71_usgs_planetary_landsat_stac_pilot.py
+          python analysis/tests/test_usgs_planetary_landsat_stac_pilot.py
+      - name: Verify USGS source identity and public satellite acquisition coverage
+        run: python analysis/71_usgs_planetary_landsat_stac_pilot.py
+      - name: Retain satellite scene metadata without source bird coordinates
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: louis-USGS-Landsat8-pilot-scene-coverage
+          retention-days: 90
+          if-no-files-found: warn
+          path: analysis/results/usgs_planetary_landsat_stac_pilot_v1.json
