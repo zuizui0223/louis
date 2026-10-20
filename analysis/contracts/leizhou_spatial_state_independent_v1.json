@@ -14,7 +14,26 @@
       "GSPL": 2,
       "REKN": 2
     },
-    "note": "One site/study with four species; not four independent studies."
+    "note": "One site/study with four species; not four independent studies.",
+    "focal_SN_to_ID": {
+      "1618": "CORE_18",
+      "1619": "CORE_00",
+      "5190": "GRPL_23",
+      "5192": "GRPL_DA",
+      "6702": "REKN_65",
+      "6703": "CORE_35",
+      "6704": "GRPL_01",
+      "6708": "GSPL_00",
+      "6709": "REKN_40",
+      "6710": "CORE_01",
+      "6713": "CORE_69",
+      "6715": "GSPL_01",
+      "6717": "CORE_03",
+      "6719": "CORE_04",
+      "6722": "CORE_02",
+      "6723": "CORE_22"
+    },
+    "extra_tag_excluded_by_source": "6721 SAGU_23 not one of four focal species"
   },
   "high_level_question": "Does recorded geographic movement between different coordinates maintain the same mapped habitat class more often than source-distance- and route-geometry-matched feasible candidate endpoints? Can a spatially explicit contrast distinguish categorical state fidelity from place fidelity?",
   "source_risk_boundaries": [
