@@ -1,0 +1,47 @@
+{
+  "schema": "louis.usgs_monthly_water_state_counterfactual_v1.frozen_before_mndwi_effects",
+  "registered_on": "2026-10-21",
+  "source": {
+    "doi": "10.5066/P9XBZKZ8",
+    "sha_md5": "3e5a91b2d5176cce43101ffcb6a60f25",
+    "source_file": "Datarelease_data_FinalDate_and_Status_List_Full_Data_withfinalclass_MNDWI.csv",
+    "status": "MD5 and identity/timestamp/location/MNDWI presence schema verified in CI run 39451520389",
+    "n_raw_rows": 224888,
+    "n_tagged": 131,
+    "n_multimonth": 90
+  },
+  "question": "When a locally moving tagged waterfowl individual relocates its most frequently used within-month GPS patch, is its experienced satellite water-index state closer to the previous month's value than the state at the former patch during the same destination month?",
+  "evidence_status": "Pre-outcome observational design; this is not a preregistered experimental manipulation or species-level analysis.",
+  "primary": {
+    "activity": "Only source Status=='Local' fixes with original non-missing same-month MNDWI. Exclude Dead, regional relocation, migration, nesting, molting and molt-like from this primary resident-like behavior contrast. Do not reclassify source labels after effects.",
+    "identity": "Native Xdeployment ID and UTC timestamp; for same-tag same-time duplicates collapse exact tuples only; drop the entire conflicting tag+time group including any MNDWI disagreement. No first/last row selection.",
+    "month": "Calendar month in source UTC Timestamp. A source MNDWI value is computed from the same calendar month's Landsat/Sentinel composite, not an instantaneous water-depth observation.",
+    "core_patch": "For each individual, fix a local equirectangular metric grid using median latitude of its eligible local fixes. Assign each observation to a 250-m square cell, choose each month's most frequently occupied cell (ties sorted by numeric cell index), and use median coordinates/MNDWI among fixes in that cell. Require at least 5 eligible fixes in each compared month.",
+    "transitions": "Only adjacent calendar months, one month apart exactly, for the same individual. Compare old vs new monthly modal core patch; relocation length 500 m to 20000 m. No interpolated visits.",
+    "static_witness": "At the old month's core-patch median coordinates, obtain proxy MNDWI for destination month from source GPS fixes of at least one distinct other tagged bird within 100 m, same UTC calendar month, Status Local, with at least 3 valid fixes. Use median source MNDWI from all such independently tagged bird observations; all class/space choices fixed before MNDWI values are opened.",
+    "outcome": "Let W0=original bird's previous-month modal-patch MNDWI; Wmove=same bird's next-month modal-patch MNDWI; Wstay=independent tagged waterfowl observation-derived proxy of the former patch's next-month MNDWI. Benefit B=abs(Wstay-W0)-abs(Wmove-W0). Positive B means observed relocation preserved previous satellite water-index value better than the locally observed fixed-patch counterfactual.",
+    "independent_unit": "Bird/unique Xdeployment ID. For each bird, average its eligible B over month transitions; report equal-bird mean/median and fraction positive, 10000 bird-cluster bootstrap interval. Never treat fixes, months or witnesses as independent tags.",
+    "support": "Only report group-level positive support if >=10 distinct focal tagged birds have matched comparisons, primary equal-bird B>0, and percentile 95% bird-bootstrap lower bound >0. Regardless of result, report all matched sample sizes and exclusions.",
+    "condition": "An a priori descriptive drying-old-patch subgroup consists of Wstay-W0 <= -0.10 MNDWI. Analyze if >=8 birds; else report NOT_ESTIMABLE_DRYING_STRATUM. No post-hoc threshold rescue."
+  },
+  "negative_and_sensitivity": {
+    "a": "Alternative static witness radius 50 m, same >=3 fixes, no changing 100m primary.",
+    "b": "Alternative witness radius 200 m, same >=3 fixes, quantified spatial representativeness caveat.",
+    "c": "Allow relocation 500m–50000m instead of 500m–20000m (cannot override primary).",
+    "d": "Source m-month median at *all* Local GPS observations rather than core patch is a secondary response with different ecological interpretation; never substitute for primary.",
+    "required": "Report whether relocation->water-state benefit persists against STATIC old-site counterfactual; if no matched witness cohort, STOP_MISSING_COUNTERFACTUAL_NOT_NEGATIVE_BIOLOGY."
+  },
+  "fundamental_limits": [
+    "Other-bird visits at the former patch are not randomized or guaranteed feasible counterfactuals; failure of independent witness overlap cannot reject buffering.",
+    "Comparison may be selection-biased because old sites abandoned by all birds are not observed in the destination month.",
+    "Source monthly MNDWI cannot identify instantaneous tidal flooding, physiological water stress or individual motivation.",
+    "Species names are absent from public release; do not partition 'five species' or infer taxonomic universality.",
+    "Source Status Local is a behavioral label, not proof of residency, and study may contain many habitat systems rather than marsh specialists.",
+    "Even a positive B cannot establish causation without randomized accessibility or comprehensive remote-sensing surface at old/new locations."
+  ],
+  "preoutcome_geometry_gate": {
+    "method": "Reconstruct monthly core patches from tag/time/locations/Status only (no MNDWI values), count source months, adjacent months, actual relocation events and independent prior-patch witnesses at 50/100/200m. Report by threshold without opening outcomes.",
+    "required": "At least 10 distinct tags in primary geometric/witness cohort; otherwise stop ecological effect analysis and document why.",
+    "versioning": "No relaxed radius, shift threshold, or ecological marker may replace primary after water effects are observed."
+  }
+}
