@@ -1,0 +1,104 @@
+{
+  "schema": "louis.usgs_hourly_mndwi_source_gate_v1",
+  "source_doi": "10.5066/P9XBZKZ8",
+  "source_item": "62ffeecfd34ed6dc55925915",
+  "source_urls": {
+    "landing": "https://www.sciencebase.gov/catalog/item/62ffeecfd34ed6dc55925915?format=json",
+    "children": "https://www.sciencebase.gov/catalog/items?filter=parentId%3D62ffeecfd34ed6dc55925915&format=json&max=100",
+    "fgdc": "https://data.usgs.gov/datacatalog/metadata/USGS.62ffeecfd34ed6dc55925915.xml"
+  },
+  "source_observations_opened": false,
+  "ecological_outcomes_computed": false,
+  "http_status_by_source": {
+    "landing": "PASS",
+    "children": "PASS",
+    "fgdc": "PASS"
+  },
+  "parent_item": {
+    "id": "62ffeecfd34ed6dc55925915",
+    "title": "Hourly GPS Locations, Associated Habitat Condition, and Annotated Life History State for Training Machine Learned Models of Waterfowl Daily Activity",
+    "parentId": "55b7a980e4b09a3b01b5fa6f",
+    "hasChildren": false,
+    "files": [
+      {
+        "name": "Hourly GPS locations, associated habitat condition, and annotated life history state for training machine learned models.xml",
+        "contentType": "application/fgdc+xml",
+        "size": 25129,
+        "checksum": {
+          "value": "735cd1291f70f47d03c43d4d40a0fac9",
+          "type": "MD5"
+        },
+        "downloadUri": "https://www.sciencebase.gov/catalog/file/get/62ffeecfd34ed6dc55925915?f=__disk__e5%2F74%2Fbd%2Fe574bda4ccdf9ae04789793d6f517a23291f47bf"
+      },
+      {
+        "name": "Datarelease_data_FinalDate_and_Status_List_Full_Data_withfinalclass_MNDWI.csv",
+        "contentType": "text/csv",
+        "size": 30403945,
+        "checksum": {
+          "value": "3e5a91b2d5176cce43101ffcb6a60f25",
+          "type": "MD5"
+        },
+        "downloadUri": "https://www.sciencebase.gov/catalog/file/get/62ffeecfd34ed6dc55925915?f=__disk__17%2F7f%2F41%2F177f41f5a0584d7688bb9fabaec9cec8b4860f51"
+      }
+    ]
+  },
+  "child_item_count": 0,
+  "child_items": [],
+  "fgdc_attributes": [
+    {
+      "name": "Xdeployment ID",
+      "description": "Unique Identifier for marked-individual"
+    },
+    {
+      "name": "Concat",
+      "description": "Concatenation of Individual ID (Xdeployment ID) and Timestamp"
+    },
+    {
+      "name": "Timestamp",
+      "description": "UTC time of location"
+    },
+    {
+      "name": "Location Order",
+      "description": "Sequential identifier of location ordered by Individual and Time"
+    },
+    {
+      "name": "Status",
+      "description": "Annotated Life History State or Movement Pattern reflected by daily set of locations"
+    },
+    {
+      "name": "birddate",
+      "description": "Concatenation of individual identifier and date of location (UTC time)"
+    },
+    {
+      "name": "ydate",
+      "description": "Day of Year"
+    },
+    {
+      "name": "year",
+      "description": "Year of location"
+    },
+    {
+      "name": "MNDWI",
+      "description": "Modified Normalized Differential Water Index at the coordinates of the record during the calendar month of the record calculated using Landsat 8 images and processed in Google Earth Engine"
+    },
+    {
+      "name": "wet_or_dry",
+      "description": "Indicator for habitat condition"
+    },
+    {
+      "name": "Location-Lat",
+      "description": "Latitude of location EPSG 4326"
+    },
+    {
+      "name": "Location-Long",
+      "description": "Longitude of location EPSG 4326"
+    }
+  ],
+  "fgdc_xml_bytes": 25183,
+  "files_total": 2,
+  "candidate_csv_file_count": 1,
+  "metadata_contains_MNDWI_attribute": true,
+  "metadata_contains_location_attribute": true,
+  "status": "PASS_SOURCE_INVENTORY_METADATA_ONLY",
+  "recorded_from_github_actions_run": 39452443095
+}
