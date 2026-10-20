@@ -1,0 +1,13 @@
+{
+  "schema": "louis.leizhou_spatial_state_source_gate_v1",
+  "status": "STOP_SOURCE_UNAVAILABLE_OR_SCHEMA_INVALID",
+  "error_type": "HTTPError",
+  "error_message": "HTTP Error 401: Unauthorized",
+  "source_habitat_values_sampled": false,
+  "ecological_effect_estimated": false,
+  "provenance": {
+    "run_id": 39449646232,
+    "observational_effect_status": "NOT_COMPUTED",
+    "recorded": "2026-10-21"
+  }
+}
