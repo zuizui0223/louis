@@ -1,0 +1,36 @@
+name: Leizhou independent habitat-map and GPS source gate
+
+on:
+  push:
+    paths:
+      - "analysis/contracts/leizhou_spatial_state_independent_v1.json"
+      - "analysis/67_leizhou_spatial_state_source_gate.py"
+      - ".github/workflows/leizhou-spatial-state-source-gate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install static TIFF header reader
+        run: python -m pip install rasterio==1.4.3
+      - name: Syntax check
+        run: python -m py_compile analysis/67_leizhou_spatial_state_source_gate.py
+      - name: Download pinned Dryad source and audit schema without ecological response
+        run: python analysis/67_leizhou_spatial_state_source_gate.py
+      - name: Preserve source metadata only, never raw GPS
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: louis-leizhou-source-schema-gate
+          if-no-files-found: warn
+          retention-days: 90
+          path: analysis/results/leizhou_spatial_source_gate_v1.json
