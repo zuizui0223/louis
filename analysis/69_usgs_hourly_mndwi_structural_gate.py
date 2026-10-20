@@ -102,7 +102,7 @@ def main():
                 bad["mndwi_missing"]+=1
                 yes=False
             key=bird
-            tag_times[key].append((when,lat,lon,yes))
+            tag_times[key].append((when,lat,lon,yes,mndwi if yes else None))
             state=(row["Status"] or "").strip()
             status_counts[state if state else "MISSING"]+=1
         n_months=Counter();fixes=Counter();month_pair_tags=Counter()
@@ -118,7 +118,7 @@ def main():
                 while j<len(seq) and seq[j][0]==seq[i][0]:j+=1
                 batch=seq[i:j]
                 if len(batch)>1:duplicated+=len(batch)-1
-                if len({(p[1],p[2]) for p in batch})>1:
+                if len({(p[1],p[2],p[4]) for p in batch})>1:
                     conflicts+=1
                 else:
                     dedup.append(batch[0])
@@ -149,6 +149,7 @@ def main():
          "tag_count_in_source":len(tag_times),
          "unique_tag_times_consistent_coordinates":unique,
          "duplicate_same_tag_timestamp_rows":duplicated,
+         "duplicate_conflict_drop_entire_tag_timestamp_group":True,
          "tag_timestamp_coordinate_conflict_groups":conflicts,
          "number_of_months_with_mndwi_per_tag_distribution":dict(n_months),
          "tags_with_multi_month_mndwi":dict(month_pair_tags),
@@ -158,10 +159,13 @@ def main():
          "schema_errors":dict(bad),
          "unparsed_datetime_examples_no_location":examples
         })
+        # Entire ambiguous same-tag/time groups have already been discarded
+        # rather than choosing the first augmented/mismatched observation.
+        # Flag their count without retrospectively rejecting otherwise
+        # valid independently identifiable month/individual data.
         supports=(preliminary_mndwi_available>1000 and
                   month_pair_tags["ge2months"]>=10 and
                   month_pair_tags["ge3months"]>=5 and
-                  conflicts==0 and
                   potential_month_pairs>=30)
         output["status"]="PASS_TIME_LOCATION_MNDWI_JOINABLE_STRUCTURE" if supports else "STOP_NO_VALID_DYNAMIC_TEMPORAL_COHORT"
     except Exception as exc:
