@@ -1,0 +1,41 @@
+name: USGS Landsat8 MNDWI source measurement calibration
+
+on:
+  push:
+    paths:
+      - "analysis/contracts/usgs_landsat8_source_mndwi_calibration_v1.json"
+      - "analysis/73_usgs_landsat8_source_mndwi_calibration.py"
+      - "analysis/tests/test_usgs_landsat8_source_mndwi_calibration.py"
+      - ".github/workflows/usgs-l8-source-mndwi-calibration.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-comparison:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pinned Landsat source and geospatial dependencies
+        run: |
+          python -m pip install numpy==2.2.6 scipy==1.15.3 shapely==2.0.7 \
+            rasterio==1.4.3 planetary-computer==1.0.0 pystac==1.13.0
+      - name: Validate Landsat Collection2 calibration against synthetic known truth
+        run: |
+          python -m py_compile analysis/73_usgs_landsat8_source_mndwi_calibration.py
+          python analysis/tests/test_usgs_landsat8_source_mndwi_calibration.py
+      - name: Calibrate observed modal-core water index only
+        run: python analysis/73_usgs_landsat8_source_mndwi_calibration.py
+      - name: Save anonymized calibration and fail-closed status
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: louis-Landsat8-vs-USGS-MNDWI-calibration
+          retention-days: 90
+          if-no-files-found: warn
+          path: analysis/results/usgs_landsat8_source_mndwi_calibration_v1.json
