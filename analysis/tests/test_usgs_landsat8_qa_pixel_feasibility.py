@@ -49,6 +49,7 @@ finally:
 # STAC says the scene is available, but QA/saturation must BOTH be valid.
 saved=m.quality_scene
 try:
+    pm.fetch_json=lambda _query:{"features":features}
     m.quality_scene=lambda item,a,b:item["id"]=="LC08_CLEAR"
     out=m.month_check(pm,(35.,-120.),(35.,-119.99),(2021,1))
     assert out["candidate_scene_count"]==1
@@ -56,5 +57,6 @@ try:
     assert out["scenes_inspected_before_stop"]==1
 finally:
     m.quality_scene=saved
+    pm.fetch_json=old
 
 print("PASS Landsat8 official QA bit decoding and paired old/new pixel selection")
