@@ -1,0 +1,33 @@
+{
+  "schema": "louis.usgs_landsat8_source_mndwi_calibration_v1",
+  "source_MD5": "3e5a91b2d5176cce43101ffcb6a60f25",
+  "source_doi": "10.5066/P9XBZKZ8",
+  "calibration_unit": "observed bird-month source modal core only",
+  "unobserved_old_patch_next_month_water_index_read": false,
+  "movement_benefit_computed": false,
+  "coordinates_and_bird_ids_not_exported": true,
+  "status": "STOP_LANDSAT_SOURCE_MNDWI_NOT_COMPARABLE_OR_TEMPORAL_SIGNAL_WEAK",
+  "independent_paired_tag_count": 11,
+  "source_and_reconstruction_observed_month_pairs": 22,
+  "tag_median_absolute_error": 0.17400149841168883,
+  "tag_cluster_bootstrap95_MAE": [
+    0.04197195682918785,
+    0.2444563973981193
+  ],
+  "observed_point_Pearson": 0.7086637405382323,
+  "tag_cluster_bootstrap95_Pearson": [
+    0.19190113734859754,
+    0.9324983803512584
+  ],
+  "tags_with_source_monthly_abs_difference_ge0_1": 8,
+  "among_informative_tags_same_direction_fraction": 0.625,
+  "fixed_source_tag_pilot_n": 16,
+  "source_satellite_scenes_aggregate": {
+    "scenes_available": 106,
+    "rejected_invalid_SR_or_denominator": 8,
+    "rejected_paired_QA": 29,
+    "valid_Landsat8_scenes_for_observed_site": 69,
+    "tag_missing_one_observed_month_satellite_SR": 5
+  },
+  "verified_actions_run_id": 39722796913
+}
