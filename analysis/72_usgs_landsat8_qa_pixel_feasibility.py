@@ -75,13 +75,13 @@ def scene_features(metadata_mod,old_pt,new_pt,month):
 
 def read_points(asset_href,old_pt,new_pt):
     import rasterio
+    import numpy as np
     from rasterio.warp import transform
     with rasterio.Env(
          GDAL_DISABLE_READDIR_ON_OPEN="EMPTY_DIR",
          GDAL_HTTP_MAX_RETRY="2",
          GDAL_HTTP_RETRY_DELAY="1",
-         GDAL_CACHEMAX="32",
-         CPL_VSIL_CURL_ALLOWED_EXTENSIONS=".TIF,.tif"):
+         GDAL_CACHEMAX="32"):
         with rasterio.open(asset_href) as ds:
             if ds.crs is None:
                 raise ValueError("STOP_QA_RASTER_NO_CRS")
@@ -93,7 +93,7 @@ def read_points(asset_href,old_pt,new_pt):
                         ds.bounds.bottom<y<=ds.bounds.top):
                     raise ValueError("STOP_QA_RASTER_LOCATION_OUTSIDE_BOUNDS")
                 point=list(ds.sample([(x,y)],indexes=[1],masked=True))[0]
-                if len(point)!=1 or bool(point.mask[0]):
+                if len(point)!=1 or bool(np.ma.getmaskarray(point)[0]):
                     points.append(None)
                 else:points.append(int(point[0]))
             return points
@@ -147,8 +147,6 @@ def main():
         if n!=94 or len(out)!=47:
             raise ValueError("STOP_94_MOVES_47_TAGS_PARENT_CHANGED")
         tags=sorted(out)[:16]
-        if len(tags)!=frozen["parent"]["metadata_result"] and False:
-            raise ValueError("STOP_IMPOSSIBLE_CONTRACT_CHECK")
         if len(tags)!=16:raise ValueError("STOP_SOURCE_16_PILOT_TAGS_CHANGED")
         detail=[]
         for tag in tags:
