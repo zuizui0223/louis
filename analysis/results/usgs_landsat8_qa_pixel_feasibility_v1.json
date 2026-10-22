@@ -1,0 +1,240 @@
+{
+  "schema": "louis.usgs_landsat8_qa_pixel_feasibility_v1",
+  "source_doi": "10.5066/P9XBZKZ8",
+  "original_source_MD5": "3e5a91b2d5176cce43101ffcb6a60f25",
+  "parent_metadata_pilot_run": 39454129338,
+  "quality_mask_bits": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "saturation_mask_bits": [
+    2,
+    5,
+    11
+  ],
+  "source_water_index_values_read": false,
+  "satellite_green_or_swir16_values_read": false,
+  "water_state_effects_computed": false,
+  "bird_identifiers_or_gps_exported": false,
+  "source_relocation_candidates": 94,
+  "source_individuals_with_relocation": 47,
+  "fixed_pilot_tag_count": 16,
+  "two_months_four_points_qa_usable_tag_count": 15,
+  "two_months_cloud_free_qasat_detail_anonymous": [
+    {
+      "previous": {
+        "candidate_scene_count": 2,
+        "scenes_inspected_before_stop": 1,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "destination": {
+        "candidate_scene_count": 2,
+        "scenes_inspected_before_stop": 1,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "tag_both_months_usable": true
+    },
+    {
+      "previous": {
+        "candidate_scene_count": 4,
+        "scenes_inspected_before_stop": 1,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "destination": {
+        "candidate_scene_count": 4,
+        "scenes_inspected_before_stop": 1,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "tag_both_months_usable": true
+    },
+    {
+      "previous": {
+        "candidate_scene_count": 2,
+        "scenes_inspected_before_stop": 1,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "destination": {
+        "candidate_scene_count": 3,
+        "scenes_inspected_before_stop": 1,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "tag_both_months_usable": true
+    },
+    {
+      "previous": {
+        "candidate_scene_count": 2,
+        "scenes_inspected_before_stop": 1,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "destination": {
+        "candidate_scene_count": 3,
+        "scenes_inspected_before_stop": 1,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "tag_both_months_usable": true
+    },
+    {
+      "previous": {
+        "candidate_scene_count": 4,
+        "scenes_inspected_before_stop": 3,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "destination": {
+        "candidate_scene_count": 4,
+        "scenes_inspected_before_stop": 1,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "tag_both_months_usable": true
+    },
+    {
+      "previous": {
+        "candidate_scene_count": 3,
+        "scenes_inspected_before_stop": 3,
+        "both_sites_valid_qa_and_saturation": false
+      },
+      "destination": {
+        "candidate_scene_count": 3,
+        "scenes_inspected_before_stop": 1,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "tag_both_months_usable": false
+    },
+    {
+      "previous": {
+        "candidate_scene_count": 3,
+        "scenes_inspected_before_stop": 3,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "destination": {
+        "candidate_scene_count": 4,
+        "scenes_inspected_before_stop": 2,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "tag_both_months_usable": true
+    },
+    {
+      "previous": {
+        "candidate_scene_count": 2,
+        "scenes_inspected_before_stop": 1,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "destination": {
+        "candidate_scene_count": 2,
+        "scenes_inspected_before_stop": 1,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "tag_both_months_usable": true
+    },
+    {
+      "previous": {
+        "candidate_scene_count": 2,
+        "scenes_inspected_before_stop": 1,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "destination": {
+        "candidate_scene_count": 4,
+        "scenes_inspected_before_stop": 1,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "tag_both_months_usable": true
+    },
+    {
+      "previous": {
+        "candidate_scene_count": 4,
+        "scenes_inspected_before_stop": 1,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "destination": {
+        "candidate_scene_count": 2,
+        "scenes_inspected_before_stop": 1,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "tag_both_months_usable": true
+    },
+    {
+      "previous": {
+        "candidate_scene_count": 3,
+        "scenes_inspected_before_stop": 1,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "destination": {
+        "candidate_scene_count": 4,
+        "scenes_inspected_before_stop": 1,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "tag_both_months_usable": true
+    },
+    {
+      "previous": {
+        "candidate_scene_count": 4,
+        "scenes_inspected_before_stop": 1,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "destination": {
+        "candidate_scene_count": 4,
+        "scenes_inspected_before_stop": 1,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "tag_both_months_usable": true
+    },
+    {
+      "previous": {
+        "candidate_scene_count": 4,
+        "scenes_inspected_before_stop": 1,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "destination": {
+        "candidate_scene_count": 4,
+        "scenes_inspected_before_stop": 1,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "tag_both_months_usable": true
+    },
+    {
+      "previous": {
+        "candidate_scene_count": 4,
+        "scenes_inspected_before_stop": 4,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "destination": {
+        "candidate_scene_count": 5,
+        "scenes_inspected_before_stop": 3,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "tag_both_months_usable": true
+    },
+    {
+      "previous": {
+        "candidate_scene_count": 6,
+        "scenes_inspected_before_stop": 1,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "destination": {
+        "candidate_scene_count": 6,
+        "scenes_inspected_before_stop": 1,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "tag_both_months_usable": true
+    },
+    {
+      "previous": {
+        "candidate_scene_count": 1,
+        "scenes_inspected_before_stop": 1,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "destination": {
+        "candidate_scene_count": 2,
+        "scenes_inspected_before_stop": 2,
+        "both_sites_valid_qa_and_saturation": true
+      },
+      "tag_both_months_usable": true
+    }
+  ],
+  "minimum_pilot_usable_tag_requirement": 8,
+  "status": "PASS_QA_ONLY_OLD_AND_NEW_CORE_FEASIBILITY",
+  "verified_actions_run_id": 39722027181
+}

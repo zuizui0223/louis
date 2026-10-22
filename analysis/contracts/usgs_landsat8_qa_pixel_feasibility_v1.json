@@ -1,0 +1,36 @@
+{
+  "schema": "louis.usgs_landsat8_qa_pixel_feasibility_v1.preoutcome",
+  "registered": "2026-10-22",
+  "parent": {
+    "source": "10.5066/P9XBZKZ8",
+    "md5": "3e5a91b2d5176cce43101ffcb6a60f25",
+    "metadata_result": "analysis/results/usgs_planetary_landsat_stac_pilot_v1.json",
+    "scene_ci": "https://github.com/zuizui0223/louis/actions/runs/39454129338",
+    "pilot": "same first 16 lexical tagged birds, their first 500m–20km adjacent-month modal 250-m core relocation; both previous and next calendar months",
+    "metadata_pass": "16/16 source IDs with >=1 L8 scene footprint covering both points per month and whole-scene cloud <=80%"
+  },
+  "question": "Do both prior and relocated core locations have radiometrically usable, cloud/shadow/snow-free per-pixel Landsat 8 Collection 2 Level-2 observations during each of the two source calendar months?",
+  "source_and_pixel_rules": {
+    "scene_source": "Microsoft Planetary Computer STAC GET collection landsat-c2-l2; only LC08 L2 scene IDs, complete scene polygon covering both WGS84 old and new core centers, EO scene cloud <=80, sorted by acquisition date then ID.",
+    "exact_sampling": "same input tag cohort and month windows from parent metadata, no GPS data or MNDWI-outcome-based inclusion changes",
+    "QA_asset": "qa_pixel at exact WGS84 point reprojected to scene raster CRS with rasterio (nearest source pixel); signed Planetary Computer links, no reflectance values accessed",
+    "QA_mask": "L8-9 QA_PIXEL flags: require all bits 0,1,2,3,4,5 unset (fill, dilated cloud, high cirrus, cloud, cloud shadow, snow/ice). Do not require water flag bit7 or alone rely on clear bit6.",
+    "QA_saturation": "qa_radsat: require green band B3 (bit 2) and SWIR1 B6 (bit 5) unsaturated, plus no terrain-occlusion bit 11. No band reflectance read.",
+    "scene_success": "both old and new pixels pass pixel QA and saturation within the SAME source scene, in each source calendar month (may be different scene between months). All filtered scenes recorded as counts, never returned as images/coordinates.",
+    "tag_success": "at least 1 valid jointly observed scene in each month",
+    "minimum": "at least 8 of unchanged 16 metadata-qualified tags",
+    "provider_fail": "If asset absent, invalid CRS, signed URL inaccessible, or even one metadata query fails, fail closed with coded error rather than call it a negative biological outcome.",
+    "raster_io": "only nearest single pixel of QA_PIXEL and QA_RADSAT at each core location; no vegetation/water class or reflectance computed"
+  },
+  "next_if_pass": {
+    "required": "Separate, frozen Landsat SR calibration/method comparison before any old-site MNDWI effect. QA success alone is insufficient.",
+    "source_comparability": "USGS's same-month MNDWI uses Landsat8 and Sentinel2 plus GEE processing, not identical to Landsat-only QA scenes. Must quantify source–new-pixel index measurement agreement at independent source locations before water buffering test."
+  },
+  "limitations": [
+    "Clear Landsat pixels in both months do not automatically imply usable monthly remote sensing composite or direct measurement of tide/water depth.",
+    "Pixel QA is a methodological coverage gate, not a biological association.",
+    "Old independent-bird-witness study still STOP: 4/94 and must never be silently replaced.",
+    "This is source outcome-independent and no water index numerical pixel data may be viewed."
+  ],
+  "official_QA_source": "https://www.usgs.gov/landsat-missions/landsat-collection-2-quality-assessment-bands"
+}

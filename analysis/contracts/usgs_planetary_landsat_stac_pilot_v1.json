@@ -1,0 +1,36 @@
+{
+  "schema": "louis.usgs_planetary_landsat_stac_pilot_v1.frozen_geometry_only",
+  "registered_on": "2026-10-21",
+  "provenance": {
+    "source": "USGS 10.5066/P9XBZKZ8",
+    "source_md5": "3e5a91b2d5176cce43101ffcb6a60f25",
+    "parent_counterfactual_geometry": "analysis/results/usgs_monthly_core_geometry_gate_v1.json",
+    "parent_hard_stop": "Only 4 of 94 relocation transitions with independently witnessed old-site month states; original analysis status STOP, not overridden.",
+    "new_external_provider": "Microsoft Planetary Computer public STAC https://planetarycomputer.microsoft.com/api/stac/v1/search, Landsat Collection 2 Level-2 landsat-c2-l2"
+  },
+  "question": "Before opening any new water index outcomes, are there public satellite scenes that cover BOTH prior-month modal GPS core and next-month modal core, in each of two adjacent months, for independently identified relocation tags?",
+  "sampling": {
+    "input": "exact same source md5, Status Local, 250m monthly modal core, >=5 fixes/core, one calendar month apart, 500m-20km relocation, source geometry no static-witness requirement",
+    "eligible_relocations_expected": 94,
+    "selection": "For each unique tagged bird with >=1 eligible relocation, choose its chronologically first eligible pair. Sort tags lexicographically and retain first 16 distinct tags; if fewer than 16, include all. No selection on water MNDWI values, wet_or_dry, relocation benefit or satellite imagery/cloud metadata.",
+    "n_pilot_tag_cap": 16,
+    "require_per_month": "At least one source Landsat-8 Collection 2 Level-2 STAC scene with footprint containing both old/new coordinates and metadata scene-level eo:cloud_cover <= 80%, separately for the old and new calendar months; this is NOT proof of cloud-free pixels.",
+    "min_pilot_success": 8,
+    "max_api_requests": 32,
+    "response_fields": "only total scenes and matched footprint/cloud metadata counts by month, no raw bird coordinates, identifiers, MNDWI pixel values or source bird water observations",
+    "failure_codes": [
+      "STOP_STAC_ACCESS",
+      "STOP_METADATA_COVERAGE",
+      "STOP_PROVIDER_SCHEMA"
+    ],
+    "extra_validation": "When scene count passes, a separately frozen pixel-quality/QA and source-comparable Landsat MNDWI calibration gate is mandatory BEFORE old-site ecological benefit."
+  },
+  "limits": [
+    "Scene-level footprint/cloud-cover is a feasibility screen, not a per-pixel quality validation.",
+    "Historic Landsat C2 L2 has surface reflectance bands green/swirl16 plus qa_pixel; reflectance scaling, cloud QA and spatial pixel footprint must be locked separately.",
+    "Source MNDWI uses both Landsat8 and Sentinel-2 monthly processing via Google Earth Engine; a Landsat-only recomputation is a different measurement and requires calibration against source-provided coincident MNDWI.",
+    "No outcome-level return-to-old-site counterfactual is calculated or implied at this metadata step.",
+    "Pixel-level censorship and monthly missingness may be informative; do not tune thresholds after effect inspection.",
+    "Original independent other-bird witness STOP result remains authoritative regardless of satellite coverage."
+  ]
+}

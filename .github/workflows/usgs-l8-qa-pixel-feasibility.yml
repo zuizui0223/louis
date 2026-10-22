@@ -1,0 +1,41 @@
+name: USGS old/new month Landsat8 cloud-pixel QA gate
+
+on:
+  push:
+    paths:
+      - "analysis/contracts/usgs_landsat8_qa_pixel_feasibility_v1.json"
+      - "analysis/72_usgs_landsat8_qa_pixel_feasibility.py"
+      - "analysis/tests/test_usgs_landsat8_qa_pixel_feasibility.py"
+      - ".github/workflows/usgs-l8-qa-pixel-feasibility.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  cloud-pixel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pinned geospatial and Planetary Computer client dependencies
+        run: |
+          python -m pip install numpy==2.2.6 scipy==1.15.3 shapely==2.0.7 \
+             rasterio==1.4.3 planetary-computer==1.0.0 pystac==1.13.0
+      - name: Test Landsat QA and raster source logic without MNDWI outcomes
+        run: |
+          python -m py_compile analysis/72_usgs_landsat8_qa_pixel_feasibility.py
+          python analysis/tests/test_usgs_landsat8_qa_pixel_feasibility.py
+      - name: Verify source-selected old/new monthly raster QA pixels
+        run: python analysis/72_usgs_landsat8_qa_pixel_feasibility.py
+      - name: Upload anonymous QA observations and hard-stop decision
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: louis-usgs-L8-qa-pixel-gate
+          retention-days: 90
+          if-no-files-found: warn
+          path: analysis/results/usgs_landsat8_qa_pixel_feasibility_v1.json
