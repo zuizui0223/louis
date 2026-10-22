@@ -81,7 +81,7 @@ def read_points(asset_href,old_pt,new_pt):
          GDAL_DISABLE_READDIR_ON_OPEN="EMPTY_DIR",
          GDAL_HTTP_MAX_RETRY="2",
          GDAL_HTTP_RETRY_DELAY="1",
-         GDAL_CACHEMAX="32"):
+         GDAL_CACHEMAX=32):
         with rasterio.open(asset_href) as ds:
             if ds.crs is None:
                 raise ValueError("STOP_QA_RASTER_NO_CRS")
