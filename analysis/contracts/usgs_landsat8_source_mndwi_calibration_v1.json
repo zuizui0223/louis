@@ -1,0 +1,45 @@
+{
+  "schema": "louis.usgs_landsat8_source_mndwi_calibration_v1.pre_effect",
+  "registered": "2026-10-22",
+  "source": {
+    "doi": "10.5066/P9XBZKZ8",
+    "MD5": "3e5a91b2d5176cce43101ffcb6a60f25",
+    "prior_quality": "analysis/results/usgs_landsat8_qa_pixel_feasibility_v1.json",
+    "prior_run": "https://github.com/zuizui0223/louis/actions/runs/39722027181",
+    "qc_summary": "15/16 source-selected tagged birds passed per-pixel QA at BOTH old and new coordinates in BOTH adjacent calendar months, with at least one cloud/saturation-free common scene per month."
+  },
+  "calibrate": "Before any moving-versus-stationary ecological benefit, quantify agreement between the published USGS MNDWI and independently reconstructed Landsat8 C2L2 MNDWI at observed bird-month modal-core positions.",
+  "fixed_sample": {
+    "cohort": "first 16 lexical source tag IDs with first 500–20,000m adjacent-month relocation, matching source 250m monthly modal core geometry and >=5 Local fixes. Keep all 16 in denominator; only QA-passed tags can enter paired measurement.",
+    "matched_pairs": "For each QA-passed tag, exactly TWO observed locations: previous-month modal old core at previous month and next-month modal new core at next month. The unobserved counterfactual old site next month is NOT read or used at this calibration stage.",
+    "source_reference": "Median original MNDWI across all eligible Local GPS observations in that bird × calendar-month × frozen modal 250m cell, dropping entire conflicting tag+UTC timestamp sets. >=5 point observations.",
+    "satellite": "For that observed modal-core center and month, take median Landsat8 MNDWI across ALL same-month scenes with footprint old+new, scene cloud <=80%, QA_PIXEL bits 0–5 clear and QA_RADSAT bits 2,5,11 unset AT BOTH old and new source-defined core positions.",
+    "bands": "Landsat-8 green/B3 and SWIR1/B6 Level-2 Collection 2 surface reflectance (STAC green, swir16); apply SR = DN × 0.0000275 − 0.2. Raw DN valid range 7273–43636 inclusive, fill=0.",
+    "formula": "MNDWI=(green_reflectance−swir1_reflectance)/(green_reflectance+swir1_reflectance); if denominator <=0.05, nonfinite or result outside [−1,1], mark scene not valid. No clipping to rescue.",
+    "sample_grain": "One source MNDWI median and one reconstructed Landsat8 monthly median per tagged bird × calendar month × observed modal core; 2 tagged-month observations per complete tagged bird.",
+    "no_outcomes": "Do not compute or expose the unobserved abandoned old site in the destination month or any move-vs-stay benefit."
+  },
+  "acceptance": {
+    "min_independent_tag_pairs": 10,
+    "measures": [
+      "median absolute error of each tag's two observed-site monthly indices",
+      "cross-tag Pearson correlation of 2N paired observed monthly index values",
+      "sign agreement of within-tag source/new monthly differences for birds with |source monthly difference| >=0.10"
+    ],
+    "threshold": "At least 10 independent tagged birds with BOTH observed-month Landsat/source index pairs, median per-tag MAE <=0.20, pooled Pearson r >=0.60, and >=65% sign agreement among tags whose source between-month |delta| >=0.10 if at least 8 such tags exist; if fewer than 8, calibration status INSUFFICIENT_TEMPORAL_SIGNAL rather than PASS.",
+    "bootstrap": "10000 tag-level bootstrap replicates for MAE and correlation descriptive intervals; optional if source signatures pass; no hypothesis p-values.",
+    "reject_on_fail": "STOP_LANDSAT_SOURCE_MEASUREMENT_NOT_COMPARABLE; no old-vs-new habitat-state benefit is calculated or publicized even when source scene metadata and QA pass."
+  },
+  "validity": {
+    "bias": "Same GPS observations partly define core patch; calibration at core center may be noisy across a 250m patch and one satellite pixel.",
+    "temporal": "Published USGS index is a same-month GEE Landsat8/Sentinel2 composite; independent Landsat-only monthly median is NOT an identical product.",
+    "scene_selection": "All QA-valid scenes within month rather than picking best fit to source. Scene quality and DN rules fixed independently of source MNDWI values.",
+    "source_confidentiality": "Do not commit per-bird IDs, GPS coordinates, per-point MNDWI or signed SAS URLs; aggregate species not available.",
+    "hard_boundary": "Even PASS allows only measurement comparability. Geographic movement causing adaptive water-environment regulation remains unproven."
+  },
+  "official_sources": {
+    "qa": "https://www.usgs.gov/landsat-missions/landsat-collection-2-quality-assessment-bands",
+    "scaling": "https://www.usgs.gov/faqs/how-do-i-use-scale-factor-landsat-level-2-science-products",
+    "formula": "https://science.data.nasa.gov/disasters/data-gallery/landsat-mndwi"
+  }
+}
