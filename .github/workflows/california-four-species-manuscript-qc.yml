@@ -1,0 +1,38 @@
+name: California four-species ecology manuscript source integrity
+
+on:
+  push:
+    paths:
+      - "manuscript/waterfowl_extension/CALIFORNIA_FOUR_SPECIES_ECOLOGY_MANUSCRIPT_V1.md"
+      - "validation/verify_california_four_species_manuscript_v1.py"
+      - "manuscript/waterfowl_extension/Figure1_individual_continuity.svg"
+      - "manuscript/waterfowl_extension/Figure2_opportunity_switch.svg"
+      - ".github/workflows/california-four-species-manuscript-qc.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scientific:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Source-figure numeric and claim integrity
+        run: |
+          python validation/verify_california_state_figure.py
+          python validation/verify_california_mismatch_switch_figure.py
+      - name: Four-species manuscript ecological evidence integrity
+        run: python validation/verify_california_four_species_manuscript_v1.py
+      - name: Preserve author-review QC result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: louis-california-four-species-manuscript-qc
+          retention-days: 90
+          if-no-files-found: warn
+          path: manuscript/waterfowl_extension/CALIFORNIA_V1_SCIENCE_QC.json
