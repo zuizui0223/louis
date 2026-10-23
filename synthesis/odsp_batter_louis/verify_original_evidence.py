@@ -48,8 +48,8 @@ def validate(src):
     if tim["admitted_species_count"]!=17 or not all(x>0 for x in tim["heldout_site_fold_gains"]) or len(tim["heldout_site_fold_gains"])!=3:
         raise ValueError("STOP_ODSP_SERENGETI_HOLDOUT_BOUNDARY")
     if not all(x in tag for x in
-       ("**5/6 panels PASS**","0.5121","2/2 structurally eligible panels",
-        "does not demonstrate tag bias","session-median centering")):
+       ("**5/6 PASS**","0.5121","2/2 structurally eligible panels",
+        "does not demonstrate tag bias","zero median before vertical binning")):
         raise ValueError("STOP_BATTER_CENTERING_SOURCE_BOUNDARY")
     if rail["qc"]["birds"]!=10 or rail["primary_sri"]["positive_birds"]!="10/10" or rail["temporal_state_retention"]["positive_birds"]!="10/10":
         raise ValueError("STOP_KING_RAIL_INDIVIDUAL_REPLICATION")
