@@ -5,7 +5,7 @@ Does not certify active movement or a physiologically defined preferred depth.
 This verifier is added after opening new outcomes, as an audit not preregistration.
 """
 from pathlib import Path
-import json,math,sys
+import argparse,json,math,sys
 ROOT=Path(__file__).resolve().parents[2]
 BASE=ROOT/"synthesis/odsp_batter_louis"
 C=json.loads((BASE/"KING_RAIL_K_VS_H_EMPIRICAL_CONTRACT_V1.json").read_text())
@@ -45,6 +45,23 @@ q["science_claim_firewall"]=all(
   term in " ".join(A["limits"]).lower() for term in
   ("only a two-plot proxy","not a physiological target","do not verify active movement"))
 q["exact_contract_source"]=C["schema"]=="louis.king_rail_K_vs_H_holdout_v1"
+parser=argparse.ArgumentParser()
+parser.add_argument("--reference",default=None)
+args=parser.parse_args()
+if args.reference:
+    original=json.loads(Path(args.reference).read_text(encoding="utf-8"))
+    current=json.loads((BASE/"KING_RAIL_K_VS_H_EMPIRICAL_RESULT_V1.json").read_text(encoding="utf-8"))
+    original.pop("verified_github_actions_run",None)
+    current.pop("verified_github_actions_run",None)
+    def equivalent(left,right):
+        if isinstance(left,dict) and isinstance(right,dict):
+            return left.keys()==right.keys() and all(equivalent(left[k],right[k]) for k in left)
+        if isinstance(left,list) and isinstance(right,list):
+            return len(left)==len(right) and all(equivalent(x,y) for x,y in zip(left,right))
+        if isinstance(left,(float,int)) and isinstance(right,(float,int)) and type(left) is not bool and type(right) is not bool:
+            return close(left,right)
+        return left==right
+    q["replay_matches_first_CI_archived_result"]=equivalent(original,current)
 failed=[name for name,pass_ in q.items() if not pass_]
 print(json.dumps({
  "schema":"louis.king_rail_K_vs_H_archived_science_qc_v1",
