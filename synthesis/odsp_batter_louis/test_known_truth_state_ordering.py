@@ -43,7 +43,9 @@ assert out["status"].startswith("PASS_")
 n=out["exhaustive_fixed_margins_ordering_enumeration"]
 assert n["fixed_6_2_count_sequence_combinations"]==28
 assert n["n_orderings_above_finite_permutation_reference"]==8
-assert n["n_orderings_below_finite_permutation_reference"]==20
+assert n["n_orderings_below_finite_permutation_reference"]==10
+assert n["n_orderings_equal_finite_permutation_reference"]==10
+assert n["n_orderings_below_independent_reference"]==20
 assert n["min_same_state_rate"]==3/7
 assert n["max_same_state_rate"]==6/7
 print("PASS exact independent and permutation references, 28 possible orderings, ecological reachability counterexamples")
