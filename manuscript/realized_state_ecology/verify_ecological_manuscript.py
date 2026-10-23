@@ -46,7 +46,7 @@ def check():
         "### Habitat overlap conceals different ecological histories"))
     q["real_biological_sources_not_math_model"]=all(s in t for s in
        ("Serengeti","*Eidolon helvum*","King Rails","California waterfowl",
-        "same sites","wetland","habitat-state"))
+        "shared sites","wetland","habitat-state"))
     # Pooled effects are meaningless: document explicit science firewall.
     q["nonpooled_scales"]=all(s in t for s in
        ("cannot be treated as repeated measurements of one common biological effect",
@@ -84,7 +84,8 @@ def check():
        f'{rail["temporal_retention_median"]:.3f}' in t and
        f'{100*rail["coupling_reduction_fraction"]:.1f}%' in t)
     q["king_rail_heterogeneity_alternative"]=(
-       f'{rail["local_heterogeneity_beta_observed"]:.3f}' in t and
+       f'−{abs(rail["local_heterogeneity_beta_observed"]):.3f}' in t and
+       rail["local_heterogeneity_beta_observed"]<0 and
        f'{rail["local_heterogeneity_beta_pseudonull"]:.3f}' in t and
        rail["local_heterogeneity_interaction_supported"] is False)
     hold=d["king_rail_separate_holdout"]
