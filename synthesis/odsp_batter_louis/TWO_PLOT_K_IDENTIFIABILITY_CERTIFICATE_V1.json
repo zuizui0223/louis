@@ -1,0 +1,53 @@
+{
+  "assumptions_and_limits": [
+    "The two reference plots are assumed IID Bernoulli target state conditional on an event-specific K. The actual random microplots may be spatially correlated, making this an idealized best-case demonstration.",
+    "Observed 61/23/6 are finite-sample frequencies. Matching these to probabilities is constructive observational equivalence at the empirical moments, not a fitted true environment-distribution estimate.",
+    "True spatial reachability also requires movement constraints absent from the source: even a full distribution of local depths would not suffice.",
+    "This certificate is mathematical; does not prove natural habitat availability, physiological preference, or movement-mediated state maintenance."
+  ],
+  "conclusion": "The identical observed 0/1/2 reference-plot proportions are consistent in expectation with no exactly absent target state OR nearly 29.4% truly absent events under distinct mathematically possible mixtures. They do not estimate the actual fraction of inaccessible wetland states.",
+  "constructive_model_A": {
+    "alpha": 0.86096256684492,
+    "beta": 3.566844919786097,
+    "implied_two_plot_sampling_proportions": [
+      0.6777777777777778,
+      0.25555555555555554,
+      0.06666666666666667
+    ],
+    "proportion_of_events_with_exact_K_zero": 0,
+    "true_accessibility_distribution": "continuous Beta(alpha,beta) on (0,1)"
+  },
+  "constructive_model_B": {
+    "K025_weight": 0.6814814814814815,
+    "K0_weight": 0.29444444444444445,
+    "K1_weight": 0.02407407407407408,
+    "implied_two_plot_sampling_proportions": [
+      0.6777777777777778,
+      0.25555555555555554,
+      0.06666666666666668
+    ],
+    "proportion_of_events_with_exact_K_zero": 0.29444444444444445,
+    "true_accessibility_distribution": "discrete mixture on {0,0.25,1}"
+  },
+  "empirical_first_two_availability_moment_estimates": {
+    "E_K": 0.19444444444444445,
+    "E_K_squared": 0.06666666666666667,
+    "Var_K": 0.028858024691358022
+  },
+  "evidence_class": "algebraic_nonidentifiability_using_source_frequency_estimates",
+  "sampled_source_test_events": 90,
+  "schema": "louis.king_rail_two_plot_K_identifiability_certificate_v1",
+  "source": "KING_RAIL_K_VS_H_EMPIRICAL_RESULT_V1.json",
+  "source_two_plot_proportions": [
+    0.6777777777777778,
+    0.25555555555555554,
+    0.06666666666666667
+  ],
+  "source_two_plot_target_success_counts": {
+    "both": 6,
+    "neither": 61,
+    "one": 23
+  },
+  "status": "PASS_TWO_PLOT_SAMPLED_ZERO_DOES_NOT_IDENTIFY_TRUE_ZERO_MASS",
+  "github_actions_run": 39928418853
+}
