@@ -126,13 +126,22 @@ def main():
       "max_same_state_rate":max(z["observed_same_state_probability"] for z in exhaustive),
       "finite_permutation_reference":finite_cut,
       "n_orderings_above_finite_permutation_reference":
-           sum(z["observed_same_state_probability"]>finite_cut for z in exhaustive),
+           sum(z["observed_same_state_probability"]>finite_cut+1e-12 for z in exhaustive),
       "n_orderings_below_finite_permutation_reference":
-           sum(z["observed_same_state_probability"]<finite_cut for z in exhaustive)
+           sum(z["observed_same_state_probability"]<finite_cut-1e-12 for z in exhaustive),
+      "n_orderings_equal_finite_permutation_reference":
+           sum(abs(z["observed_same_state_probability"]-finite_cut)<=1e-12 for z in exhaustive),
+      "n_orderings_above_independent_reference":
+           sum(z["observed_same_state_probability"]>a["independent_individual_static_preference_reference"] for z in exhaustive),
+      "n_orderings_below_independent_reference":
+           sum(z["observed_same_state_probability"]<a["independent_individual_static_preference_reference"] for z in exhaustive)
     }
     if (exhaust_summary["fixed_6_2_count_sequence_combinations"]!=28
         or exhaust_summary["n_orderings_above_finite_permutation_reference"]!=8
-        or exhaust_summary["n_orderings_below_finite_permutation_reference"]!=20):
+        or exhaust_summary["n_orderings_below_finite_permutation_reference"]!=10
+        or exhaust_summary["n_orderings_equal_finite_permutation_reference"]!=10
+        or exhaust_summary["n_orderings_above_independent_reference"]!=8
+        or exhaust_summary["n_orderings_below_independent_reference"]!=20):
         raise ValueError("STOP_EXHAUSTIVE_ORDERING_COUNT_FAILED")
     # A separate case demonstrates: between-individual identity differentiation
     # is not necessary for high absolute temporal persistence / low variance.
