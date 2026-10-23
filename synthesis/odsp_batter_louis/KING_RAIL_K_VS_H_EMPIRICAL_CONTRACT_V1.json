@@ -1,0 +1,34 @@
+{
+  "schema": "louis.king_rail_K_vs_H_holdout_v1",
+  "registered_on": "2026-10-23",
+  "evidence_class": "posthoc_same_source_empirical_extension_not_independent_confirmation",
+  "original_source": {
+    "doi": "10.5281/zenodo.6604660",
+    "filename": "CARTdataset_12.31.21_All_D.csv",
+    "source_rows": 607,
+    "exactly_two_random_events": 173,
+    "source_bird_years": 10,
+    "identity": "numeric tag plus year; original authors report no recapture or sighting of banded birds in other years"
+  },
+  "scientific_question": "Does the fraction of independently sampled local random depth plots close to an earlier learned bird-specific used-depth target predict later target matching better than absolute local depth heterogeneity, after adjusting mean-depth mismatch?",
+  "bird_target": "For each source bird-year, order strict source-matched events by source Year/Julian/event number. Use first floor(n/2) used depths to define median target mu. Remaining observations are the untouched chronological test. Require >=6 train and >=6 test. Primary target is inclusive mu plus/minus 6 cm; sensitivity plus/minus 10 cm, no rescue.",
+  "strict_source": "Missing Yes and malformed source IDs excluded, exactly one used water depth and two source random plot depths in a valid event. Do not infer XY or physical reachable sites from sampled randoms.",
+  "heldout_definitions": {
+    "K": "fraction of two contemporaneous random plot depths in trained target band; sampled availability proxy only (0, 0.5, 1)",
+    "H": "absolute difference of two random plot depths, cm",
+    "M": "absolute difference of their mean and trained target mu, cm",
+    "Y": "indicator actual test used water depth is in trained target band",
+    "delta": "Y-K, equal-bird-year mean and 10k bird bootstrap CI"
+  },
+  "primary_gate": "At least 8 of 10 original bird-years must have >=2 distinct K categories on test events; else STOP_K_SUPPORT and do not broaden target band.",
+  "frozen_models": "10 leave-one-bird-year-out logistic folds, L2=1 slopes-only. Compare M-only, M+H, M+K, M+H+K with numeric M,H divided by 10cm. Bird-equal log-loss and 10k bird-bootstrap intervals; primary added K contrast = logloss(M+H) minus logloss(M+H+K). Report even when negative.",
+  "sensitivity": "Use primary same estimates with target band +/-10 cm as separately labeled exploratory source-scoped sensitivity, not a replacement.",
+  "hard_boundaries": [
+    "All calculations from already-opened same King Rail source are exploratory and post-hoc.",
+    "Two local random depths are sparse availability samples, not independently measured reachable state mass K.",
+    "Y=1 when sampled K=0 means the two reference plots missed an observed suitable state, not biological movement overcoming absent physical capacity.",
+    "A trained-depth preference is descriptive, not independent physiological requirement or optimal fitness state.",
+    "Identity counted as original bird×year because the 2023 original paper states no cross-year recaptures.",
+    "Past event depth and GPS locations have no authoritative event-by-event linkage; no geographic cause or movement benefit inferred."
+  ]
+}

@@ -1,0 +1,42 @@
+name: ODSP batter Louisiana state-ordering evidence and known-truth audit
+
+on:
+  push:
+    paths:
+      - "synthesis/odsp_batter_louis/**"
+      - ".github/workflows/odsp-batter-louis-state-synthesis.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ecology-layers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile known-truth and pinned-source verifiers
+        run: |
+          python -m py_compile synthesis/odsp_batter_louis/known_truth_state_ordering.py
+          python -m py_compile synthesis/odsp_batter_louis/verify_original_evidence.py
+      - name: Prove static ecology states cannot determine time ordering or reachable suitability
+        run: python synthesis/odsp_batter_louis/test_known_truth_state_ordering.py
+      - name: Construct two opposite true-availability mixtures with identical 2-point data
+        run: python synthesis/odsp_batter_louis/two_plot_K_identifiability.py
+      - name: Re-read immutable original ecological source receipts without refitting
+        run: python synthesis/odsp_batter_louis/verify_original_evidence.py
+      - name: Preserve comparison only, no raw animal positions or ecological model outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: louis-odsp-batter-ecological-state-synthesis-v1
+          retention-days: 90
+          if-no-files-found: warn
+          path: |
+            synthesis/odsp_batter_louis/KNOWN_TRUTH_RESULTS_V1.json
+            synthesis/odsp_batter_louis/EMPIRICAL_SOURCE_RECEIPT_V1.json
+            synthesis/odsp_batter_louis/TWO_PLOT_K_IDENTIFIABILITY_CERTIFICATE_V1.json

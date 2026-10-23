@@ -1,0 +1,149 @@
+{
+  "schema": "louis.odsp_batter_cross_domain_synthesis_v1.frozen_scope",
+  "created": "2026-10-23",
+  "status": "separate_cross_repository_theory_and_evidence_translation_not_new_field_analysis",
+  "research_question": "When does multidimensional ecological state availability generate repeatable individual state allocation, and when does the resulting time order buffer or destabilize actual experienced environmental conditions?",
+  "hypothesis": "ACCESSIBLE TARGET-STATE PORTFOLIO, not Shannon thickness alone or pooled individual distributions, constrains potential compensation. Actual temporal organization and individual choice determine whether potential appears as buffered experienced state.",
+  "target_concepts": [
+    {
+      "key": "D",
+      "name": "state thickness",
+      "definition": "H(Z|X,Y) for source-consistent realized-use/support; an availability/capacity entropy is a different variable and must be measured separately.",
+      "source": "ODSP"
+    },
+    {
+      "key": "J",
+      "name": "repeatable individuality",
+      "definition": "Identity-conditioned out-of-session distribution-shape information after coarse horizontal and altitude-offset conditioning; not direct resource access or fitness.",
+      "source": "batter"
+    },
+    {
+      "key": "R",
+      "name": "temporal persistence beyond static preference",
+      "definition": "P(U_t=U_t-1) minus a time-matched, individual-marginal fitted independent-draw reference; separate from unconditional entropy and variance.",
+      "source": "Louisiana California waterfowl extension"
+    },
+    {
+      "key": "B",
+      "name": "experienced environmental buffering",
+      "definition": "Reduced experienced water-depth dispersion and coupling versus time-matched local available microhabitat, bird as sampling unit.",
+      "source": "Louisiana King Rail"
+    },
+    {
+      "key": "K",
+      "name": "reachable target-state availability",
+      "definition": "For individual i and time t, fraction of independent, physically reachable availability distribution in an independently defined acceptable state set: K_i(t)=sum_{a in Accept_i} A_i,t(a).",
+      "source": "theoretical candidate; not measured in all three source repositories"
+    },
+    {
+      "key": "C",
+      "name": "complete counterfactual movement benefit",
+      "definition": "Environmental mismatch at an otherwise unchanged old location versus mismatch at the observed destination in the same future time slice; requires old-site next-time environmental measurements.",
+      "source": "not yet identified in any three-source matched empirical program"
+    }
+  ],
+  "model_contract": {
+    "state_labels": [
+      0,
+      1
+    ],
+    "structural_availability_each_time": [
+      0.5,
+      0.5
+    ],
+    "individuals": 2,
+    "observations_per_individual": 8,
+    "known_truth_histories": {
+      "clustered": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "interleaved": [
+        [
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    "static_preference_reference": "Draw each next use independent of its previous use under the observed ID-specific marginal state probabilities; this same-data descriptive reference is NOT an independent validation.",
+    "variance_reference": "Variance of a Bernoulli(0.5) available-state draw, 0.25; this synthetic variance ratio is NOT the Louisiana event-matched SRI.",
+    "portfolio_contrast": {
+      "target_state": 0,
+      "all_states": [
+        0,
+        1,
+        2
+      ],
+      "equal_entropy_portfolios": {
+        "reachable_target": [
+          0.5,
+          0.5,
+          0
+        ],
+        "unreachable_target": [
+          0,
+          0.5,
+          0.5
+        ]
+      },
+      "illustrative_target_preference_weight": 5,
+      "illustrative_choice": "P(choose acceptable target)=w*K/(w*K + 1-K) when other choices have weight 1; not a fitted behavioral model."
+    }
+  },
+  "predeclared_known_truth_tests": [
+    "Same static structural state entropy, pooled use entropy, individual-state mutual information, per-ID variance, and synthetic SRI must hold exactly across two differently ordered time sequences.",
+    "Temporal same-state probability and static-preference-excess contrast must differ and have opposite signs despite matching all these static descriptors.",
+    "Equal environmental Shannon entropies can have K(target) of 0.5 versus 0, so total thickness alone cannot guarantee potential target-state matching.",
+    "High state persistence can occur with no identity specialization; individual identity is not necessary for state retention.",
+    "Finite preference weight never restores a target state if K=0, while K>0 permits but does not guarantee matching."
+  ],
+  "ecological_preconditions_for_future_joint_empirical_test": [
+    "Same individuals tracked in repeated distinct independent seasons/sessions with identity and time precision.",
+    "Source-native GPS x,y,water depth or AGL z and time; tag-altitude reference and habitat availability measured, not inferred from the used distribution.",
+    "Repeated local environmental state surface including unvisited old sites at t and t+1, independent of animal occupancy.",
+    "Feasible movement destinations and costs/accessibility measured before outcomes.",
+    "Acceptable target-state interval fitted from separate training period to avoid tautology.",
+    "Sealed future exposure/movement blocks and individual-level bootstrap; spatial/temporal block units separate from GPS fixes."
+  ],
+  "firewalls": [
+    "No direct likelihood-based aggregation of ODSP entropy, batter permutation-calibrated prediction and Louisiana water-depth regression.",
+    "No claim that bat elevation identity improves survival or King Rail source data prove coordinate-level adaptive tracking.",
+    "ODSP model-pool support is not physical structural environmental capacity and must not be substituted for K.",
+    "No retroactive ecological refit of frozen ODSP, batter or Louisiana original outcome analyses.",
+    "All conclusions from known-truth examples are analytic possibilities, not new animals, landscapes, or independent empirical replication."
+  ]
+}

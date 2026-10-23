@@ -1,0 +1,67 @@
+{
+  "schema": "louis.odsp_batter_louis_sources_v1",
+  "frozen": "2026-10-23",
+  "role": "Immutable original-Git-blob and original-commit reference map; no ecological reanalysis, pooling or refitting.",
+  "sources": [
+    {
+      "id": "ODSP_BAT",
+      "repo": "zuizui0223/odsp",
+      "commit": "ed1c500f67bcc4d6b7155041e6fa0dc94116f4ed",
+      "path": "N2_BAT_THICKNESS_TERMINAL_DECISION.json",
+      "git_blob_sha1": "74e2a4e7ac366a18ba636dd9f381493911a97919",
+      "kind": "json",
+      "evidence": "Vertically thick used/model-pool support (4.022 effective height-above-MSL bins) and negative transfer to both sealed individuals."
+    },
+    {
+      "id": "ODSP_SERENGETI",
+      "repo": "zuizui0223/odsp",
+      "commit": "ed1c500f67bcc4d6b7155041e6fa0dc94116f4ed",
+      "path": "N2_SERENGETI_TEMPORAL_TERMINAL_DECISION.json",
+      "git_blob_sha1": "8f34be2c0080e9c5c8c7cfd8d16f87e61e652d50",
+      "kind": "json",
+      "evidence": "Camera-detected temporal thickness and species/time partition with positive scores in three held-out site folds; camera detection and clock-time semantics only."
+    },
+    {
+      "id": "BATTER_CENTERED",
+      "repo": "zuizui0223/batter",
+      "commit": "776b96eb17114662db9a0686cb9cc461488db240",
+      "path": "TAG_ALTITUDE_BIAS_AUDIT_RESULT.md",
+      "git_blob_sha1": "ef4e5b834fc8110631f3afacabcd56ed492aef63",
+      "kind": "markdown",
+      "evidence": "Centered vertical-shape identity positive in five of six panels; motivating Tadarida is p=0.5121 failure, not a verified tag-offset cause."
+    },
+    {
+      "id": "LOUIS_KING_RAIL",
+      "repo": "zuizui0223/louis",
+      "commit": "f35123afc735876d4059769442d17a789aaf458f",
+      "path": "manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V2.json",
+      "git_blob_sha1": "2e681866cbfb9260459ab45a22126ceeaa7a0cf7",
+      "kind": "json",
+      "evidence": "Ten individually tagged King Rails: median SRI 0.8857, temporal state retention 0.6578, 83.8 percent coupling reduction relative to source pseudo-use."
+    },
+    {
+      "id": "LOUIS_CALIFORNIA_INDIVIDUAL",
+      "repo": "zuizui0223/louis",
+      "commit": "fb6b1bc2df8bdbb781b8f527f97143cb833ffda4",
+      "path": "analysis/results/california_individual_cluster_robustness_v1.json",
+      "git_blob_sha1": "05910e30811a967919a4c1d63e0a175c21fb8e60",
+      "kind": "json",
+      "evidence": "Separate developmental California extension; four species categorical destination-state temporal continuity above fitted static choice at candidate-tag bootstrap unit."
+    },
+    {
+      "id": "LOUIS_CALIFORNIA_PHOTOPERIOD",
+      "repo": "zuizui0223/louis",
+      "commit": "fb6b1bc2df8bdbb781b8f527f97143cb833ffda4",
+      "path": "analysis/results/california_photoperiod_mismatch_sensitivity_v1.json",
+      "git_blob_sha1": "8935d82dc1a966095ef2b2db4bf8da1851addf3d",
+      "kind": "json",
+      "evidence": "Post-result 46,947 within-season/day/night categorical opportunity-switch observations. Three of four species positive independent-ID CIs; Mallard uncertain."
+    }
+  ],
+  "firewall": [
+    "Do not translate fitted use entropy to independent environment capacity, a bat distribution-shape prediction score to a water-depth persistence coefficient, or King Rail event depth to causal geographic state tracking.",
+    "Original ODSP, batter and Louisiana source results stay frozen and are not modified or retuned.",
+    "These 6 source documents are not 6 independent experimental studies; ODSP bat and batter motivating Tadarida source overlap, Louisiana California results are derived from one distinct USGS panel.",
+    "Green evidence-blob CI means exact provenance and expected values, not statistical equivalence, mechanism identity, or submitted publication."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "louis.king_rail_original_source_execution_identity_addendum_v1",
+  "created": "2026-10-23",
+  "timing": "source byte identity added after first posthoc K-vs-H outcome completed; no thresholds, target bands, predictors, model fits, selection or inferential unit changed",
+  "source": {
+    "paper": "10.1002/ece3.10043",
+    "data": "10.5281/zenodo.6604660",
+    "file": "CARTdataset_12.31.21_All_D.csv",
+    "sha256": "de9e845da63bcb7451ebe8f8b9bd1b877bdbc997d9150db65161150fb7b82bda",
+    "rows": 607,
+    "strict_two_random_events": 173,
+    "bird_year_identities": 10,
+    "source_year_suffix_mismatch_rows": 1
+  },
+  "prior_successful_run": 39926833239,
+  "frozen_primary": {
+    "band_cm": 6,
+    "holdout_events": 90,
+    "bird_years": 10,
+    "delta_Y_minus_K": 0.3573502886002886,
+    "added_K_after_M_H_logloss_gain": -0.015518428148204044
+  },
+  "boundary": "This is a data-reproducibility guarantee and explicit original-source anomaly record, NOT a new registration of earlier posthoc empirical outcomes."
+}

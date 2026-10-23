@@ -1,0 +1,46 @@
+name: King Rail heldout K vs H source ecological test
+
+on:
+  push:
+    paths:
+      - "synthesis/odsp_batter_louis/KING_RAIL_K_VS_H_EMPIRICAL_CONTRACT_V1.json"
+      - "synthesis/odsp_batter_louis/king_rail_K_vs_H_empirical.py"
+      - "synthesis/odsp_batter_louis/test_king_rail_K_vs_H_empirical.py"
+      - "synthesis/odsp_batter_louis/verify_king_rail_K_vs_H_result.py"
+      - "synthesis/odsp_batter_louis/KING_RAIL_K_VS_H_EMPIRICAL_RESULT_V1.json"
+      - "synthesis/odsp_batter_louis/KING_RAIL_SOURCE_SHA_AND_EXECUTION_RECEIPT_V1.json"
+      - ".github/workflows/king-rail-heldout-K-vs-H.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  K-versus-H:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pinned numerical libraries
+        run: python -m pip install numpy==2.2.6 scipy==1.15.3
+      - name: Synthetic leak/proxy and optimizer tests
+        run: |
+          python -m py_compile synthesis/odsp_batter_louis/king_rail_K_vs_H_empirical.py
+          python synthesis/odsp_batter_louis/test_king_rail_K_vs_H_empirical.py
+      - name: Archived King Rail source and 10-bird heldout K vs H
+        run: |
+          cp synthesis/odsp_batter_louis/KING_RAIL_K_VS_H_EMPIRICAL_RESULT_V1.json /tmp/king_KH_first_verified_result.json
+          python synthesis/odsp_batter_louis/king_rail_K_vs_H_empirical.py
+      - name: Source hash and result exact-science replay with immutable failed-primary allowance
+        run: python synthesis/odsp_batter_louis/verify_king_rail_K_vs_H_result.py --reference /tmp/king_KH_first_verified_result.json
+      - name: Preserve decision, positive or negative or scientific STOP
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: louis-KingRail-KvsH-heldout-posthoc
+          retention-days: 90
+          if-no-files-found: warn
+          path: synthesis/odsp_batter_louis/KING_RAIL_K_VS_H_EMPIRICAL_RESULT_V1.json

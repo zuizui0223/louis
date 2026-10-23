@@ -1,0 +1,158 @@
+{
+  "evidence_class": "same_source_posthoc_temporal_half_holdout_and_bird_LOBO",
+  "limits": [
+    "Target μ is held-out chronologically but was derived from same original public study; not a physiological target.",
+    "Random locations were not proven visited or even exhaustive: K is only a two-plot proxy.",
+    "K may be zero while actual use is in target band: no inference of impossibility from only two samples.",
+    "These correlations do not verify active movement, geographic tracking, or accessible spatial capacity.",
+    "With ten bird-year units, cluster bootstrap uncertainty and reuse of source test data are material limitations."
+  ],
+  "original_id_unit": "10 bird-year source individuals; original paper reports no across-year recapture",
+  "primary_not_replaced_by_sensitivity": true,
+  "primary_plus_minus_6cm": {
+    "mean_actual_target_hit_rate": 0.5668831168831169,
+    "mean_two_plot_target_availability_K": 0.2095328282828283,
+    "models": {
+      "M_H": {
+        "equal_bird_logloss": 0.799059622581406
+      },
+      "M_H_K": {
+        "equal_bird_logloss": 0.8145780507296101
+      },
+      "M_K": {
+        "equal_bird_logloss": 0.7367502257888576
+      },
+      "M_only": {
+        "equal_bird_logloss": 0.7216417073844059
+      }
+    },
+    "no_raw_ids_or_water_depths_exported": true,
+    "predictive_contrasts": {
+      "M_plus_K_vs_M_plus_H": {
+        "bird_bootstrap_ci95": [
+          -0.030609110360717097,
+          0.16983190952005262
+        ],
+        "mean_logloss_gain_positive_means_K_better": 0.06230939679254842,
+        "positive_birds": 7
+      },
+      "added_K_on_M_and_H": {
+        "bird_bootstrap_ci95": [
+          -0.0521892096458997,
+          0.011884174957902338
+        ],
+        "mean_logloss_gain_positive_is_better": -0.015518428148204044,
+        "positive_birds": 7
+      }
+    },
+    "source_bird_years_eligible": 10,
+    "source_counts": {
+      "source_bird_years": 10,
+      "strict_events": 173,
+      "test_events": 90,
+      "train_events": 83
+    },
+    "status": "PASS_SAMPLE_SUPPORT_MODELS_REPORT_EVEN_IF_NEGATIVE",
+    "support": {
+      "K_is_only_two_plot_sampling_proxy": true,
+      "K_sample_counts": {
+        "0.0": 61,
+        "0.5": 23,
+        "1.0": 6
+      },
+      "birds_with_K_variation": 10,
+      "test_used_target_hits_when_both_random_outside": 30
+    },
+    "target_matching_beyond_two_point_random": {
+      "bird_bootstrap_ci95": [
+        0.21419552669552672,
+        0.49930555555555556
+      ],
+      "equal_bird_mean_Y_minus_K": 0.3573502886002886,
+      "positive_birds": 9
+    }
+  },
+  "schema": "louis.king_rail_K_vs_H_holdout_v1",
+  "sensitivity_plus_minus_10cm": {
+    "mean_actual_target_hit_rate": 0.686787518037518,
+    "mean_two_plot_target_availability_K": 0.41943091630591633,
+    "models": {
+      "M_H": {
+        "equal_bird_logloss": 0.7550353848049793
+      },
+      "M_H_K": {
+        "equal_bird_logloss": 0.7495005905754177
+      },
+      "M_K": {
+        "equal_bird_logloss": 0.6909555901177485
+      },
+      "M_only": {
+        "equal_bird_logloss": 0.6970730984633443
+      }
+    },
+    "no_raw_ids_or_water_depths_exported": true,
+    "predictive_contrasts": {
+      "M_plus_K_vs_M_plus_H": {
+        "bird_bootstrap_ci95": [
+          -0.0000948282081065177,
+          0.13907884421382805
+        ],
+        "mean_logloss_gain_positive_means_K_better": 0.0640797946872308,
+        "positive_birds": 6
+      },
+      "added_K_on_M_and_H": {
+        "bird_bootstrap_ci95": [
+          -0.016553635740440376,
+          0.02563270310119838
+        ],
+        "mean_logloss_gain_positive_is_better": 0.005534794229561662,
+        "positive_birds": 6
+      }
+    },
+    "source_bird_years_eligible": 10,
+    "source_counts": {
+      "source_bird_years": 10,
+      "strict_events": 173,
+      "test_events": 90,
+      "train_events": 83
+    },
+    "status": "PASS_SAMPLE_SUPPORT_MODELS_REPORT_EVEN_IF_NEGATIVE",
+    "support": {
+      "K_is_only_two_plot_sampling_proxy": true,
+      "K_sample_counts": {
+        "0.0": 36,
+        "0.5": 36,
+        "1.0": 18
+      },
+      "birds_with_K_variation": 10,
+      "test_used_target_hits_when_both_random_outside": 23
+    },
+    "target_matching_beyond_two_point_random": {
+      "bird_bootstrap_ci95": [
+        0.1,
+        0.44532828282828285
+      ],
+      "equal_bird_mean_Y_minus_K": 0.2673566017316017,
+      "positive_birds": 7
+    }
+  },
+  "source_checksum_sha256": "de9e845da63bcb7451ebe8f8b9bd1b877bdbc997d9150db65161150fb7b82bda",
+  "source_data_doi": "10.5281/zenodo.6604660",
+  "source_integrity": {
+    "bad_depth_excluded": 0,
+    "duplicate_numeric_tag_across_years": 1,
+    "excluded_event_reasons": {
+      "missing_or_multiple_used": 15,
+      "not_exactly_two_random": 22
+    },
+    "malformed_id_excluded": 2,
+    "missing_excluded": 17,
+    "reconstructed_candidate_events": 210,
+    "source_bird_years": 10,
+    "source_row_year_suffix_mismatches": 1,
+    "source_rows": 607,
+    "strict_two_random_events": 173
+  },
+  "status": "PASS_EXPLORATORY_K_TEST_NO_CAUSAL_INFERENCE",
+  "verified_github_actions_run": 39926833239
+}
