@@ -1,0 +1,113 @@
+{
+  "equal_entropy_state_portfolios": {
+    "reachable_target": {
+      "illustrative_target_selection_probability": 0.8333333333333334,
+      "portfolio_availability_entropy_nats": 0.6931471805599453,
+      "reachable_target_state_mass_K": 0.5,
+      "state_availability": [
+        0.5,
+        0.5,
+        0
+      ]
+    },
+    "unreachable_target": {
+      "illustrative_target_selection_probability": 0,
+      "portfolio_availability_entropy_nats": 0.6931471805599453,
+      "reachable_target_state_mass_K": 0,
+      "state_availability": [
+        0,
+        0.5,
+        0.5
+      ]
+    }
+  },
+  "evidence_class": "synthetic_known_truth_only_not_new_field_ecology",
+  "exhaustive_fixed_margins_ordering_enumeration": {
+    "finite_permutation_reference": 0.5714285714285714,
+    "fixed_6_2_count_sequence_combinations": 28,
+    "max_same_state_rate": 0.8571428571428571,
+    "min_same_state_rate": 0.42857142857142855,
+    "n_orderings_above_finite_permutation_reference": 8,
+    "n_orderings_above_independent_reference": 8,
+    "n_orderings_below_finite_permutation_reference": 10,
+    "n_orderings_below_independent_reference": 20,
+    "n_orderings_equal_finite_permutation_reference": 10
+  },
+  "fixed_state_labels": [
+    0,
+    1
+  ],
+  "opposite_direction_of_temporal_retention_beyond_static_reference": true,
+  "same_individual_occupancy_vectors_for_both_orderings": true,
+  "same_information_no_individuality_can_be_stable": {
+    "individual_state_variance": 0,
+    "mutual_information": 0,
+    "static_model_excess": 0,
+    "temporal_same_state_rate": 1
+  },
+  "same_marginal_and_entropy_metrics_for_both_orderings": true,
+  "sample_units": "two hypothetical individuals, eight synthetic time points each",
+  "schema": "louis.odsp_batter_state_portfolio_known_truth_v1",
+  "scientific_boundaries": [
+    "ODSP empirical H(Z|XY) pertains to fitted USED vertical support rather than these constructed structural availability measures.",
+    "batter identity uses multi-bin within-session held-out vertical profile prediction, not these binary identity mutual-information values.",
+    "Louisiana's SRI is event-matched water depth with bird-level inference, not this variance-ratio thought experiment.",
+    "No source animal observations, external field replication, fitness or causal movement effect were newly calculated."
+  ],
+  "static_occurrence_and_temporal_reordering_scenarios": {
+    "clustered": {
+      "availability_entropy_nats": 0.6931471805599453,
+      "fixed_margins_permutation_expected_same_state": 0.5714285714285714,
+      "independent_individual_static_preference_reference": 0.625,
+      "individual_use_marginals": [
+        [
+          0.75,
+          0.25
+        ],
+        [
+          0.25,
+          0.75
+        ]
+      ],
+      "mean_individual_state_variance": 0.1875,
+      "mutual_information_identity_use_nats": 0.130812035941137,
+      "observed_same_state_probability": 0.8571428571428571,
+      "pooled_use_entropy_nats": 0.6931471805599453,
+      "same_state_excess_over_fixed_margins_permutation": 0.2857142857142857,
+      "same_state_excess_over_independent_preference": 0.2321428571428571,
+      "source_outcome_observed": false,
+      "synthetic_variance_ratio_reduction_not_king_rail_SRI": 0.25
+    },
+    "interleaved": {
+      "availability_entropy_nats": 0.6931471805599453,
+      "fixed_margins_permutation_expected_same_state": 0.5714285714285714,
+      "independent_individual_static_preference_reference": 0.625,
+      "individual_use_marginals": [
+        [
+          0.75,
+          0.25
+        ],
+        [
+          0.25,
+          0.75
+        ]
+      ],
+      "mean_individual_state_variance": 0.1875,
+      "mutual_information_identity_use_nats": 0.130812035941137,
+      "observed_same_state_probability": 0.42857142857142855,
+      "pooled_use_entropy_nats": 0.6931471805599453,
+      "same_state_excess_over_fixed_margins_permutation": -0.14285714285714285,
+      "same_state_excess_over_independent_preference": -0.19642857142857145,
+      "source_outcome_observed": false,
+      "synthetic_variance_ratio_reduction_not_king_rail_SRI": 0.25
+    }
+  },
+  "status": "PASS_KNOWN_TRUTH_THREE_PROPERTIES_LOGICALLY_NON_EQUIVALENT",
+  "theoretical_consequences": [
+    "Static state geometry and individual niche organization do not determine temporal persistence; this holds relative to both the with-replacement independent reference and the exactly finite-margin 28-sequence permutation reference.",
+    "Temporal state retention can be high even without between-individual niche differentiation.",
+    "Equal structural availability entropy can hide presence versus complete absence of a chosen individual's acceptable state. Total thickness is not an upper bound on successful local compensation without target-state reachability.",
+    "K>0 indicates possible rather than realized state matching; choice rules, switching costs and environmental dynamics are not identified by availability entropy."
+  ],
+  "verified_github_actions_run": 39919961086
+}
