@@ -1,0 +1,34 @@
+name: King Rail V2 paper source and figure integrity
+
+on:
+  push:
+    paths:
+      - "manuscript/LOUIS_KING_RAIL_MAIN_V2_AUTHOR_REVIEW.md"
+      - "validation/verify_king_rail_v2_editorial_source.py"
+      - ".github/workflows/king-rail-v2-source-qc.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scientific-edit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Rerun original King Rail numeric/ecological text guard
+        run: python validation/validate_manuscript_v1.py
+      - name: Verify V2 is exact declared edit from original V1
+        run: python validation/verify_king_rail_v2_editorial_source.py
+      - name: Retain King Rail editorial source certificate
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: louis-king-rail-v2-editorial-qc
+          retention-days: 90
+          if-no-files-found: warn
+          path: manuscript/KING_RAIL_V2_EDIT_SOURCE_QC.json
