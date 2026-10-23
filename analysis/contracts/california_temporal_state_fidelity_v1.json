@@ -1,0 +1,77 @@
+{
+  "schema": "louis.california_temporal_state_fidelity_v1.frozen_protocol",
+  "registered_on": "2026-10-19",
+  "status": "RESPONSE_BLIND_PRECONDITIONING",
+  "scientific_question": "Across four wintering waterfowl species, does the habitat category at successive used moving-step endpoints remain more stable than independently sampled destinations from source-matched available habitat, and does the contrast survive a bird-year fixed marginal habitat-preference null?",
+  "relation_to_original_protocol": "New explicitly distinct endpoint-only temporal-state program. Does not replace or retroactively pass the previous origin-to-destination retention gate. Neither source habitat category continuity nor static selection is proof of active niche-tracking.",
+  "source": {
+    "doi": "10.5066/P9ELSUHN",
+    "sciencebase_item": "652edfe8d34edd15305a9ab0",
+    "filename": "Data Release P9ELSUHN.csv",
+    "bytes": 27997528,
+    "md5": "78eb6064eca992225d6907d6e46f5bef"
+  },
+  "schema_required": [
+    "birdyear",
+    "timestamp",
+    "species",
+    "case",
+    "season",
+    "photoperiod",
+    "Corn",
+    "Field",
+    "Other",
+    "Protected",
+    "Rice",
+    "Urban",
+    "Wetland"
+  ],
+  "habitat_states": [
+    "Corn",
+    "Field",
+    "Other",
+    "Rice",
+    "Urban",
+    "Wetland"
+  ],
+  "exclude_orthogonal_overlay": "Protected is a separate land protection overlay, not a mutually exclusive habitat state.",
+  "species_in_scope": [
+    "GWFG",
+    "LSGO",
+    "MALL",
+    "NOPI"
+  ],
+  "event_key": [
+    "birdyear",
+    "species",
+    "timestamp"
+  ],
+  "fixed_case_rules": "One source case=TRUE observed endpoint and >=1 case=FALSE random/availability row at each event key. Used row must have exactly one positive exclusive class with total 1; the summed six-class counts in all matched random rows must lie between 20 and 100. An event is excluded from both arms if either half fails. No generated rows, guessed origin, or row-order join.",
+  "primary_temporal_pair": "Within one birdyear, successive qualified moving-step event timestamps must differ by 55 to 65 minutes. No links over longer gaps; no invented origin coordinates. Each pair contributes the indicator that its two observed endpoint habitat categories are the same.",
+  "individual_eligibility": "At least 30 qualified exact-hour pairs per birdyear, and at least 31 paired source events. No filtering by direction or habitat class.",
+  "random_availability_reference": "For each adjacent pair, expected same-state probability = sum over six classes of q_previous,c * q_current,c, where q are source-matched random destination category counts divided by their actual total. Individual-level contrast equals mean observed same-state minus mean expected same-state.",
+  "preference_control": "Second, within each birdyear, construct a fixed categorical preference vector fitted exclusively to the individual's overall observed marginal endpoint-state frequencies. Draw one category per event from q_event,c multiplied by static category weights with a preregistered Dirichlet 0.5 pseudocount per state (both numerator target and event availability); solve six moment-matching equations by iterative proportional fitting until max absolute target-share error <0.001. The expected same-state probability is computed analytically for each adjacent pair from those fitted probabilities. This null removes fixed individual marginal habitat preference but not spatial or temporal autocorrelation.",
+  "primary_evidence_gate": "A general temporal environmental-state stability claim requires a positive effect relative to BOTH raw availability and preference-controlled references, and birdyear-cluster bootstrapped 95% CI for mean preference-controlled residual above zero in at least two of four species; report all four species even if not supportive. This is developmental natural-data evidence, not independently preregistered experimental confirmation.",
+  "uncertainty": "Within each species, birdyear is the replication unit. Report number of birdyears and step-pairs, equal-birdyear mean and median, 10,000 seeded birdyear-cluster bootstrap confidence intervals for both contrasts, plus directional sign counts. Do not treat steps or 100 random alternatives as independent animals. Report effect sizes even when CI overlaps zero.",
+  "sensitivity": [
+    "Stricter paired random total >=50",
+    "Minimum 60 exact-hour pairs per birdyear"
+  ],
+  "must_not_claim": [
+    "Movement caused environmental buffering",
+    "Static habitat selection has been fully eliminated as a mechanism",
+    "Four species are equivalent evidence of one universal sign",
+    "Direct replication of continuous King Rail water-depth SRI",
+    "Unvisited origin habitat class was observed",
+    "Protected land class is disjoint from landcover",
+    "Missing or inaccessible source outcome is negative ecological evidence"
+  ],
+  "stop_conditions": [
+    "Published MD5 or byte size mismatch",
+    "Official expected attributes absent",
+    "Observed/random event-level association cannot be demonstrated",
+    "Too few eligible birdyears for uncertainty",
+    "Habitat counts not interpretable as exclusive classes without a source-definition reconciliation fixed before ecological outcomes"
+  ],
+  "analysis_priority": "First run source-integrity and event-pairing preflight without ecological effect signs; only if source-compatible, run the frozen primary and report negative or mixed results without endpoint reinterpretation."
+}

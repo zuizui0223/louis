@@ -1,0 +1,39 @@
+name: California daylight-confound switch sensitivity
+
+on:
+  push:
+    paths:
+      - "analysis/contracts/california_photoperiod_mismatch_sensitivity_v1.json"
+      - "analysis/66_california_photoperiod_mismatch_sensitivity.py"
+      - "analysis/tests/test_california_photoperiod_mismatch_sensitivity.py"
+      - ".github/workflows/california-photoperiod-mismatch-sensitivity.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  photoperiod:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pinned analysis dependency
+        run: python -m pip install numpy==2.2.6
+      - name: Validate source labels and photoperiod boundary logic
+        run: |
+          python -m py_compile analysis/66_california_photoperiod_mismatch_sensitivity.py
+          python analysis/tests/test_california_photoperiod_mismatch_sensitivity.py
+      - name: Recompute without changing the original opportunity-switch analysis
+        run: python analysis/66_california_photoperiod_mismatch_sensitivity.py
+      - name: Retain only aggregate source-backed photoperiod audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: louis-california-mismatch-daynight-sensitivity
+          retention-days: 90
+          if-no-files-found: warn
+          path: analysis/results/california_photoperiod_mismatch_sensitivity_v1.json

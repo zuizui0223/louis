@@ -1,0 +1,37 @@
+name: California seven-state source gate
+
+on:
+  push:
+    paths:
+      - "analysis/contracts/california_temporal_state_fidelity_v2.json"
+      - "analysis/61_california_used_state_preflight_v2.py"
+      - "analysis/tests/test_california_used_state_preflight_v2.py"
+      - ".github/workflows/california-used-state-preflight.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate source gate implementation
+        run: |
+          python -m py_compile analysis/61_california_used_state_preflight_v2.py
+          python analysis/tests/test_california_used_state_preflight_v2.py
+      - name: Verify pinned USGS CSV and exact-hour event pairing
+        run: python analysis/61_california_used_state_preflight_v2.py
+      - name: Upload pre-effect pairing audit (no raw CSV)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: louis-california-seven-state-source-gate
+          retention-days: 90
+          if-no-files-found: warn
+          path: analysis/results/california_used_state_preflight_v2.json

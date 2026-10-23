@@ -1,0 +1,254 @@
+{
+  "additional_day_night_boundary_pairs_excluded": 9586,
+  "aligned_exceeds_four_photo_preserving_shifts_species": 3,
+  "boundaries": [
+    "This sensitivity was frozen after the original opportunity-switch outcomes were inspected.",
+    "Hour-pairs crossing real source day/night transitions are excluded rather than silently shifted.",
+    "Day/night controls do not reconstruct movement origins or remove time-varying spatial patch geometry.",
+    "The within-season and within-photoperiod time shifts are descriptive, not an exchangeable null or formal p-value.",
+    "No causal energetic regulation, active niche-tracking or conservation intervention benefit is established."
+  ],
+  "diurnally_matched_shift_comparison": "OBSERVED_EXCEEDS_ALL_FOUR_IN_AT_LEAST_TWO_SPECIES",
+  "evidence_class": "post_result_diurnal_confounding_audit",
+  "frozen_post_result_protocol": "analysis/contracts/california_photoperiod_mismatch_sensitivity_v1.json",
+  "original_birdyears": 329,
+  "original_hourly_pairs": 56591,
+  "photoperiod_conditioned_robustness": "SUPPORTED_IN_AT_LEAST_TWO_SPECIES",
+  "positive_species_95ci": 3,
+  "primary_comparator": "analysis/results/california_mismatch_switch_falsification_v1.json",
+  "schema": "louis.california_photoperiod_mismatch_sensitivity_v1",
+  "season_boundary_pairs_excluded": 58,
+  "source_doi": "10.5066/P9ELSUHN",
+  "source_md5": "78eb6064eca992225d6907d6e46f5bef",
+  "species": {
+    "GWFG": {
+      "cross_season_pairs_excluded": 15,
+      "n_candidate_tags": 67,
+      "n_estimable_tags": 67,
+      "n_positive_tag_slopes": 60,
+      "pairs_used_within_season_and_photoperiod": 11628,
+      "parent_eligible_birdyears": 99,
+      "parent_hourly_pairs": 14394,
+      "primary": {
+        "beta_switch_per_unit_mismatch": 0.5289876950151515,
+        "candidate_tag_cluster_bootstrap_ci95": [
+          0.4049342125514462,
+          0.6596694684237332
+        ],
+        "ci_lower_above_zero": true,
+        "median_tag_beta": 0.4701472126555245,
+        "percent_point_switch_change_per_0_1_mismatch": 5.289876950151515
+      },
+      "same_season_cross_photoperiod_pairs_excluded": 2751,
+      "sensitivities": {
+        "both_available_counts_ge50": {
+          "equal_tag_mean_beta": 0.5289876950151515,
+          "n_tags": 67
+        },
+        "min60_original_pairs": {
+          "equal_tag_mean_beta": 0.5711522354066987,
+          "n_tags": 60
+        },
+        "without_season_FE": {
+          "equal_tag_mean_beta": 0.5936109666206758,
+          "n_tags": 67
+        }
+      },
+      "shift_controls": {
+        "aligned_exceeds_all_four": true,
+        "n_matched_tags": 67,
+        "shifted_slopes": {
+          "+half": {
+            "equal_tag_mean": -0.09778013908019655,
+            "time_aligned_minus_shifted_mean": 0.6267678340953481
+          },
+          "+quarter": {
+            "equal_tag_mean": 0.002773930266998396,
+            "time_aligned_minus_shifted_mean": 0.5262137647481532
+          },
+          "-half": {
+            "equal_tag_mean": -0.1147278295450736,
+            "time_aligned_minus_shifted_mean": 0.6437155245602251
+          },
+          "-quarter": {
+            "equal_tag_mean": -0.01199470091252743,
+            "time_aligned_minus_shifted_mean": 0.5409823959276789
+          }
+        },
+        "time_aligned_mean_on_matched_tags": 0.5289876950151515
+      }
+    },
+    "LSGO": {
+      "cross_season_pairs_excluded": 39,
+      "n_candidate_tags": 112,
+      "n_estimable_tags": 112,
+      "n_positive_tag_slopes": 101,
+      "pairs_used_within_season_and_photoperiod": 30971,
+      "parent_eligible_birdyears": 155,
+      "parent_hourly_pairs": 36511,
+      "primary": {
+        "beta_switch_per_unit_mismatch": 0.5010607193253568,
+        "candidate_tag_cluster_bootstrap_ci95": [
+          0.40983531175307214,
+          0.5929952481212044
+        ],
+        "ci_lower_above_zero": true,
+        "median_tag_beta": 0.4593528465369758,
+        "percent_point_switch_change_per_0_1_mismatch": 5.010607193253568
+      },
+      "same_season_cross_photoperiod_pairs_excluded": 5501,
+      "sensitivities": {
+        "both_available_counts_ge50": {
+          "equal_tag_mean_beta": 0.5010607193253568,
+          "n_tags": 112
+        },
+        "min60_original_pairs": {
+          "equal_tag_mean_beta": 0.4999700476248596,
+          "n_tags": 96
+        },
+        "without_season_FE": {
+          "equal_tag_mean_beta": 0.5303644274844215,
+          "n_tags": 112
+        }
+      },
+      "shift_controls": {
+        "aligned_exceeds_all_four": true,
+        "n_matched_tags": 112,
+        "shifted_slopes": {
+          "+half": {
+            "equal_tag_mean": -0.06386790041015349,
+            "time_aligned_minus_shifted_mean": 0.5649286197355102
+          },
+          "+quarter": {
+            "equal_tag_mean": -0.040301144741371565,
+            "time_aligned_minus_shifted_mean": 0.5413618640667284
+          },
+          "-half": {
+            "equal_tag_mean": -0.05460140779969113,
+            "time_aligned_minus_shifted_mean": 0.5556621271250479
+          },
+          "-quarter": {
+            "equal_tag_mean": -0.02856652394693996,
+            "time_aligned_minus_shifted_mean": 0.5296272432722967
+          }
+        },
+        "time_aligned_mean_on_matched_tags": 0.5010607193253568
+      }
+    },
+    "MALL": {
+      "cross_season_pairs_excluded": 1,
+      "n_candidate_tags": 14,
+      "n_estimable_tags": 11,
+      "n_positive_tag_slopes": 7,
+      "pairs_used_within_season_and_photoperiod": 575,
+      "parent_eligible_birdyears": 14,
+      "parent_hourly_pairs": 762,
+      "primary": {
+        "beta_switch_per_unit_mismatch": 0.06082622804574925,
+        "candidate_tag_cluster_bootstrap_ci95": [
+          -0.42024727931196093,
+          0.4140085945920229
+        ],
+        "ci_lower_above_zero": false,
+        "median_tag_beta": 0.12059803098355032,
+        "percent_point_switch_change_per_0_1_mismatch": 0.6082622804574924
+      },
+      "same_season_cross_photoperiod_pairs_excluded": 186,
+      "sensitivities": {
+        "both_available_counts_ge50": {
+          "equal_tag_mean_beta": 0.06082622804574925,
+          "n_tags": 11
+        },
+        "min60_original_pairs": {
+          "equal_tag_mean_beta": 0.1342560172652308,
+          "n_tags": 5
+        },
+        "without_season_FE": {
+          "equal_tag_mean_beta": 0.34218846387335206,
+          "n_tags": 14
+        }
+      },
+      "shift_controls": {
+        "aligned_exceeds_all_four": false,
+        "n_matched_tags": 10,
+        "shifted_slopes": {
+          "+half": {
+            "equal_tag_mean": -0.024555288701395766,
+            "time_aligned_minus_shifted_mean": 0.009536428708346456
+          },
+          "+quarter": {
+            "equal_tag_mean": -0.05913408565106974,
+            "time_aligned_minus_shifted_mean": 0.04411522565802043
+          },
+          "-half": {
+            "equal_tag_mean": 0.21849653926669918,
+            "time_aligned_minus_shifted_mean": -0.23351539925974849
+          },
+          "-quarter": {
+            "equal_tag_mean": 0.3115212773395978,
+            "time_aligned_minus_shifted_mean": -0.3265401373326471
+          }
+        },
+        "time_aligned_mean_on_matched_tags": -0.01501885999304931
+      }
+    },
+    "NOPI": {
+      "cross_season_pairs_excluded": 3,
+      "n_candidate_tags": 61,
+      "n_estimable_tags": 59,
+      "n_positive_tag_slopes": 52,
+      "pairs_used_within_season_and_photoperiod": 3773,
+      "parent_eligible_birdyears": 61,
+      "parent_hourly_pairs": 4924,
+      "primary": {
+        "beta_switch_per_unit_mismatch": 0.5055983434667131,
+        "candidate_tag_cluster_bootstrap_ci95": [
+          0.35452752897337036,
+          0.647295083630385
+        ],
+        "ci_lower_above_zero": true,
+        "median_tag_beta": 0.5368802939662587,
+        "percent_point_switch_change_per_0_1_mismatch": 5.05598343466713
+      },
+      "same_season_cross_photoperiod_pairs_excluded": 1148,
+      "sensitivities": {
+        "both_available_counts_ge50": {
+          "equal_tag_mean_beta": 0.5055983434667131,
+          "n_tags": 59
+        },
+        "min60_original_pairs": {
+          "equal_tag_mean_beta": 0.5165957430674332,
+          "n_tags": 38
+        },
+        "without_season_FE": {
+          "equal_tag_mean_beta": 0.5673880611869724,
+          "n_tags": 60
+        }
+      },
+      "shift_controls": {
+        "aligned_exceeds_all_four": true,
+        "n_matched_tags": 57,
+        "shifted_slopes": {
+          "+half": {
+            "equal_tag_mean": -0.09621909128126244,
+            "time_aligned_minus_shifted_mean": 0.6036798906309517
+          },
+          "+quarter": {
+            "equal_tag_mean": 0.012130790964503547,
+            "time_aligned_minus_shifted_mean": 0.4953300083851858
+          },
+          "-half": {
+            "equal_tag_mean": -0.10761154081077914,
+            "time_aligned_minus_shifted_mean": 0.6150723401604685
+          },
+          "-quarter": {
+            "equal_tag_mean": -0.1268568694371483,
+            "time_aligned_minus_shifted_mean": 0.6343176687868377
+          }
+        },
+        "time_aligned_mean_on_matched_tags": 0.5074607993496894
+      }
+    }
+  },
+  "within_season_and_photoperiod_pairs": 46947
+}

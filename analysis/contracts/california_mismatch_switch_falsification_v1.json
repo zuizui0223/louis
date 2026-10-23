@@ -1,0 +1,48 @@
+{
+  "schema": "louis.california_mismatch_switch_falsification.v1",
+  "created": "2026-10-19",
+  "evidence_class": "explicitly_posthoc_falsification_after_positive_four_species_continuity_result",
+  "frozen_parent": {
+    "protocol": "analysis/contracts/california_temporal_state_fidelity_v2.json",
+    "result": "analysis/results/california_temporal_state_fidelity_v2.json",
+    "identity_result": "analysis/results/california_individual_cluster_robustness_v1.json",
+    "source_doi": "10.5066/P9ELSUHN",
+    "md5": "78eb6064eca992225d6907d6e46f5bef"
+  },
+  "question": "Given an individual bird's immediately previously used habitat class and winter-season context, does decreased current local accessibility of that same habitat class predict an actual switch to a different class?",
+  "hypothesis": "A greater mismatch between the previous class and the source-generated available destination classes is associated with a higher probability of switching; zero or negative association would weaken the idea that local changing availability gates habitat-state continuity.",
+  "primary": {
+    "eligibility": "Exactly the prior frozen 329 eligible source bird-years, >=31 case-paired qualified events and >=30 consecutive 55–65 minute source events, based on the original seven mutually exclusive habitat states and source-date parser. For this test, transitions crossing source-recorded season categories are not linked; report all exclusions. Never add years/species/individuals to rescue results.",
+    "x": "1 - available_t[used_{t-1}] where available_t is source 7-category random-destination count vector divided by its true total for current event t.",
+    "y": "1[used_t != used_{t-1}] for consecutive qualifying exact-hour events.",
+    "group_fixed_effect": "demean x and y within each source birdyear × previous observed habitat class × source recorded season group; groups with fewer than 2 transitions or zero x variance contribute no numerator or denominator.",
+    "candidate_stable_ID": "Within species, strip the authenticated format-supported terminal _YYYY agricultural-year suffix from birdyear; this is source-defined candidate tag identity, not extra biological tagging validation.",
+    "individual_estimate": "For each candidate stable tag, pool centered within-group cross-products from its eligible birdyears, beta_tag=sum[(x-mean_g x)(y-mean_g y)]/sum[(x-mean_g x)^2]. Require >=20 finite group-informative transitions per tag and positive denominator >1e-9; report how many tags fail.",
+    "species_estimate": "Unweighted mean and median beta_tag across eligible independent candidate tags; do not pool steps or 329 birdyears as independent animals. A +0.1 increase in mismatch has estimated beta/10 change in switch probability.",
+    "uncertainty": "10,000 seeded candidate-ID bootstrap replicates of the mean beta per species, percentile 2.5–97.5%. Report both signs and exact counts; no pair-level significance claim.",
+    "interpretation": "This is an observational association with dynamic opportunity under a fixed previous-state and season comparison. Positive beta is not proof of adaptive regulation or that movement caused buffering."
+  },
+  "negative_control": {
+    "intent": "Does contemporaneous available habitat explain actual switching more closely than deliberately time-misaligned habitat opportunities that retain their categorical composition and within-season serial structure?",
+    "construction": "Within each birdyear and source season, rotate entire vectors of source-matched available destination fractions through exactly +quarter, -quarter, +half, -half of the time-ordered events in that season; quarter=max(1,round(n_events/4)), half=max(1,round(n_events/2)), using modulo season size. Apply same original adjacent transitions, y, previous used state, group identities and tag eligibility; compute x_null=1-rotated_available_t[used_{t-1}].",
+    "status": "Descriptive negative controls, not an exchangeable null distribution or independent confirmatory p-value; boundary wraparound and habitat spatial autocorrelation remain.",
+    "report": "Four species-specific mean tag slopes for the four rotations and their difference from observed time-aligned beta; do not cherry-pick lags or select only favorable shifts."
+  },
+  "sensitivities": [
+    "Require >=60 original eligible adjacent pairs for tag birdyears and recompute with same source FE and individual bootstrap descriptive direction (not replacement primary).",
+    "Drop recorded-season fixed-effect grouping while retaining birdyear × previous-category grouping; report numeric sensitivity.",
+    "Use all original source available-count events with >=50 counts (already likely saturated) and report any losses, not a selective rescue."
+  ],
+  "falsification": {
+    "primary_support": "species beta mean positive and candidate-tag 95% bootstrap lower bound >0; count all four species and require >=2 of 4 for a multi-species descriptive tendency.",
+    "dynamic_alignment": "A contemporaneous-time claim is strengthened only if observed beta exceeds all four fixed shifted-reference betas in >=2 species; otherwise no strong time-specific tracking claim. This alignment comparison is a descriptive audit, not formal experimental confirmation.",
+    "bad_outcomes": "If observed mismatch slope is null or shift references equal/exceed observed, narrow the Louisiana paper to passive categorical persistence under static preference, and do not claim active environmental tracking.",
+    "no_go": "Do not adjust temporal offsets, inference unit, habitat categories or filter thresholds after observing results."
+  },
+  "locked_caveats": [
+    "Source random movement opportunities are conditioned on where each bird started a movement step; origin habitat and coordinates are NOT provided as an ecological treatment variable.",
+    "Movement constraints, repeated access to the same habitat patch and spatial/temporal habitat autocorrelation can drive associations without active niche tracking.",
+    "One California study gives four taxonomic species, not four independent empirical studies; the King Rail continuous hydrology estimand is not the same.",
+    "This is a post hoc exploratory discriminating analysis after the positive original result; it must not be labeled prospective replication or new causal validation."
+  ]
+}
