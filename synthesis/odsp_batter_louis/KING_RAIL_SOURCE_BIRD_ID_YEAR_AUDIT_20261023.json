@@ -1,0 +1,31 @@
+{
+  "schema": "louis.king_rail_source_identity_20261023",
+  "purpose": "Resolve apparent shared numeric token 332 across study years before changing the King Rail biological replication unit.",
+  "original_article": {
+    "doi": "10.1002/ece3.10043",
+    "publication_year": 2023,
+    "tracking_years": [
+      2019,
+      2020,
+      2021
+    ],
+    "evidence": "Brewer et al. report 14 captures (1 in 2019, 5 in 2020, 8 in 2021) with 10 stabilized home ranges; the authors explicitly state no banded birds were recaptured or observed across years.",
+    "reported_birds_with_stabilized_home_ranges": 10,
+    "independently_marked_reuse_across_years_reported": false,
+    "doi_url": "https://doi.org/10.1002/ece3.10043"
+  },
+  "parsed_ids": {
+    "source_raw_id_pattern": "^(digits).(numeric tag)(H|R)(event)(optional random rep)_(two-digit year)$",
+    "group_unit": "source numeric tag token PLUS year",
+    "repeated_tag_token_different_years": [
+      "332_20",
+      "332_21"
+    ],
+    "interpretation": "The tag token 332 occurs in two bird-year keys, but no source-documented marked bird persisted across years. Removing '_20' or '_21' would fabricate a biological-individual join and contradict the original article's capture/recapture statement.",
+    "correct_reporting_unit": "10 distinct source bird×year identities consistent with 10 independently marked birds reported by Brewer et al.",
+    "observed_rows": "607 source table records; 190 matched used/random events, 10 original source bird×year IDs.",
+    "mandatory_boundary": "Treating shared numeric token alone as demonstrated repeated animal identity is invalid. If a source-specific crosswalk later establishes physical ID reuse, then update only after that independent attestation."
+  },
+  "contrast_with_california": "The California waterfowl P9ELSUHN source defines birdyear as tagged individual plus agricultural year and documented repeated individual prefixes: its identity hierarchy must NOT be transferred to this independent King Rail archive.",
+  "status": "PROVENANCE_RESOLVED_WITH_ORIGINAL_SOURCE_ARTICLE"
+}
