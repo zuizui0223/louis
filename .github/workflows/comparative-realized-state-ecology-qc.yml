@@ -21,6 +21,8 @@ jobs:
           python-version: "3.12"
       - name: Check biological effect values, confidence intervals, and distinct outcomes
         run: python manuscript/realized_state_ecology/verify_ecological_manuscript.py
+      - name: Verify original nonpooled ecological source bytes by pinned Git commit
+        run: python manuscript/realized_state_ecology/verify_pinned_ecological_sources.py
       - name: Upload author-review ecological source receipt
         if: always()
         uses: actions/upload-artifact@v4
@@ -28,4 +30,6 @@ jobs:
           name: shared-space-different-states-ecology-manuscript-qc
           retention-days: 90
           if-no-files-found: warn
-          path: manuscript/realized_state_ecology/SCIENTIFIC_ECOLOGY_MANUSCRIPT_QC_V1.json
+          path: |
+            manuscript/realized_state_ecology/SCIENTIFIC_ECOLOGY_MANUSCRIPT_QC_V1.json
+            manuscript/realized_state_ecology/ORIGINAL_ECOLOGICAL_SOURCE_QC_V1.json
