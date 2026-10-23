@@ -17,6 +17,7 @@ ROOT=Path(__file__).resolve().parents[2]
 CONTRACT=ROOT/"synthesis/odsp_batter_louis/KING_RAIL_K_VS_H_EMPIRICAL_CONTRACT_V1.json"
 OUT=ROOT/"synthesis/odsp_batter_louis/KING_RAIL_K_VS_H_EMPIRICAL_RESULT_V1.json"
 SOURCE_URL="https://zenodo.org/records/6604660/files/CARTdataset_12.31.21_All_D.csv?download=1"
+EXPECTED_SOURCE_SHA256="de9e845da63bcb7451ebe8f8b9bd1b877bdbc997d9150db65161150fb7b82bda"
 ID_RE=re.compile(r"^(\d+)\.(\d+)(H|R)(\d+)(?:_(\d+))?_(\d{2})$")
 BOOT=10000
 SEED=20261023
@@ -32,6 +33,8 @@ def get_bytes():
     with urllib.request.urlopen(req,timeout=90) as resp:
         data=resp.read(5_000_000)
     if len(data)>=5_000_000:raise ValueError("STOP_SOURCE_BYTES_UNBOUNDED")
+    if hashlib.sha256(data).hexdigest()!=EXPECTED_SOURCE_SHA256:
+        raise ValueError("STOP_PUBLIC_SOURCE_SHA256_CHANGED")
     return data
 
 def source_events(rows):
