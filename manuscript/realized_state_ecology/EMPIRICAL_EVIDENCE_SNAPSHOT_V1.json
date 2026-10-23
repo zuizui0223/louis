@@ -1,0 +1,261 @@
+{
+  "schema": "louis.comparative_realized_state_ecology_evidence_snapshot.v1",
+  "created": "2026-10-24",
+  "science_type": "comparative_secondary_ecological_synthesis_of_preexisting_public_analyses_not_new_joint_model",
+  "provenance": [
+    {
+      "tag": "serengeti",
+      "repository": "zuizui0223/odsp",
+      "reference": "main",
+      "path": "N2_SERENGETI_TEMPORAL_TERMINAL_DECISION.json",
+      "verified_blob_sha": "8f34be2c0080e9c5c8c7cfd8d16f87e61e652d50"
+    },
+    {
+      "tag": "odspbat",
+      "repository": "zuizui0223/odsp",
+      "reference": "main",
+      "path": "N2_BAT_THICKNESS_TERMINAL_DECISION.json",
+      "verified_blob_sha": "74e2a4e7ac366a18ba636dd9f381493911a97919"
+    },
+    {
+      "tag": "batshape",
+      "repository": "zuizui0223/batter",
+      "reference": "main",
+      "path": "TAG_ALTITUDE_BIAS_AUDIT_RESULT.md",
+      "verified_blob_sha": "ef4e5b834fc8110631f3afacabcd56ed492aef63"
+    },
+    {
+      "tag": "rail",
+      "repository": "zuizui0223/louis",
+      "reference": "main",
+      "path": "manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V2.json",
+      "verified_blob_sha": "2e681866cbfb9260459ab45a22126ceeaa7a0cf7"
+    },
+    {
+      "tag": "cali",
+      "repository": "zuizui0223/louis",
+      "reference": "analysis/california-used-state-persistence-20261019",
+      "path": "analysis/results/california_individual_cluster_robustness_v1.json",
+      "verified_blob_sha": "05910e30811a967919a4c1d63e0a175c21fb8e60"
+    },
+    {
+      "tag": "switch",
+      "repository": "zuizui0223/louis",
+      "reference": "analysis/california-used-state-persistence-20261019",
+      "path": "analysis/results/california_photoperiod_mismatch_sensitivity_v1.json",
+      "verified_blob_sha": "8935d82dc1a966095ef2b2db4bf8da1851addf3d"
+    },
+    {
+      "tag": "railhold",
+      "repository": "zuizui0223/louis",
+      "reference": "synthesis/odsp-batter-louis-state-ordering-20261023",
+      "path": "synthesis/odsp_batter_louis/KING_RAIL_K_VS_H_EMPIRICAL_RESULT_V1.json",
+      "verified_blob_sha": "a2c708a49692d6b786537d664f18ed4930710cd9"
+    }
+  ],
+  "empirical": {
+    "serengeti": {
+      "species": 17,
+      "temporal_information_nats": 1.6396235816361795,
+      "species_time_information_nats": 0.22427598739601606,
+      "source_permutation_p": 0.005,
+      "heldout_site_fold_gains": [
+        0.0572411993741857,
+        0.045158861333215006,
+        0.04514355468571751
+      ],
+      "scope": "species-specific camera detection time at the same camera site; not proven competition or true activity"
+    },
+    "odsp_bat": {
+      "taxon": "Tadarida teniotis",
+      "effective_used_vertical_states": 4.022333876564191,
+      "source_N_xy_cells": 18,
+      "independent_individual_heldout_gain": [
+        -0.43541033813280833,
+        -0.021938657402345435
+      ],
+      "scope": "population fitted vertical-use support is not a measured structural environmental capacity"
+    },
+    "bats": {
+      "n_panels": 6,
+      "centered_shape_supported": 5,
+      "panels": [
+        {
+          "panel": "Tadarida teniotis",
+          "n": 6,
+          "observed": -0.2629,
+          "null_mean": -0.2408,
+          "calibrated_excess": -0.0222,
+          "p_upper": 0.5121,
+          "verdict": "FAIL"
+        },
+        {
+          "panel": "Eidolon helvum",
+          "n": 20,
+          "observed": 0.3719,
+          "null_mean": -0.071,
+          "calibrated_excess": 0.4429,
+          "p_upper": 0.0002,
+          "verdict": "PASS"
+        },
+        {
+          "panel": "Hypsignathus monstrosus",
+          "n": 24,
+          "observed": 0.0736,
+          "null_mean": -0.1032,
+          "calibrated_excess": 0.1768,
+          "p_upper": 0.0002,
+          "verdict": "PASS"
+        },
+        {
+          "panel": "Phyllostomus hastatus 2022",
+          "n": 33,
+          "observed": -0.0394,
+          "null_mean": -0.1508,
+          "calibrated_excess": 0.1114,
+          "p_upper": 0.0002,
+          "verdict": "PASS"
+        },
+        {
+          "panel": "P. hastatus 2023",
+          "n": 16,
+          "observed": 0.0454,
+          "null_mean": -0.0726,
+          "calibrated_excess": 0.1181,
+          "p_upper": 0.0002,
+          "verdict": "PASS"
+        },
+        {
+          "panel": "P. hastatus 2016",
+          "n": 10,
+          "observed": -0.0084,
+          "null_mean": -0.5824,
+          "calibrated_excess": 0.574,
+          "p_upper": 0.0076,
+          "verdict": "PASS"
+        }
+      ],
+      "scope": "repeatable individual vertical distribution shape after session median centering, not energy or fitness; focal Tadarida fails"
+    },
+    "king_rail": {
+      "n_birds": 10,
+      "matched_events": 190,
+      "state_retention_median": 0.8857070432632621,
+      "state_retention_positive_birds": "10/10",
+      "temporal_retention_median": 0.6577749876440898,
+      "temporal_retention_positive_birds": "10/10",
+      "coupling_reduction_fraction": 0.8380794313576199,
+      "used_vs_random_coupling_slopes": [
+        0.161897834676697,
+        0.9998595980370271
+      ],
+      "local_heterogeneity_beta_observed": -0.04309790738832315,
+      "local_heterogeneity_beta_pseudonull": 0.26172337863130785,
+      "local_heterogeneity_test_p": 0.00001999960000799984,
+      "local_heterogeneity_interaction_supported": false,
+      "scope": "time-matched used and local available water depth, no measured coordinate-mediated movement mechanism"
+    },
+    "california": {
+      "one_source_study": true,
+      "candidate_individuals": 254,
+      "birdyears": 329,
+      "within_season_daynight_pairs": 46947,
+      "habitat_continuity_positive_species": 4,
+      "daynight_switch_positive_species": 3,
+      "species": [
+        {
+          "code": "GWFG",
+          "independent_tag_id_candidates": 67,
+          "birdyears": 99,
+          "delta_continuity": 0.1394649802905778,
+          "delta_continuity_ci95": [
+            0.12524433219583547,
+            0.15400850341168743
+          ],
+          "switch_eligible_ids": 67,
+          "switch_effect_pp_per_10pp_mismatch": 5.289876950151515,
+          "switch_effect_ci95_pp": [
+            4.049342125514462,
+            6.596694684237332
+          ],
+          "switch_ci_lower_positive": true
+        },
+        {
+          "code": "LSGO",
+          "independent_tag_id_candidates": 112,
+          "birdyears": 155,
+          "delta_continuity": 0.15866749585746254,
+          "delta_continuity_ci95": [
+            0.14879157920042607,
+            0.16869375957257296
+          ],
+          "switch_eligible_ids": 112,
+          "switch_effect_pp_per_10pp_mismatch": 5.010607193253568,
+          "switch_effect_ci95_pp": [
+            4.0983531175307215,
+            5.9299524812120445
+          ],
+          "switch_ci_lower_positive": true
+        },
+        {
+          "code": "MALL",
+          "independent_tag_id_candidates": 14,
+          "birdyears": 14,
+          "delta_continuity": 0.06552930956992722,
+          "delta_continuity_ci95": [
+            0.022221478646953296,
+            0.10660947050408716
+          ],
+          "switch_eligible_ids": 11,
+          "switch_effect_pp_per_10pp_mismatch": 0.6082622804574924,
+          "switch_effect_ci95_pp": [
+            -4.202472793119609,
+            4.140085945920228
+          ],
+          "switch_ci_lower_positive": false
+        },
+        {
+          "code": "NOPI",
+          "independent_tag_id_candidates": 61,
+          "birdyears": 61,
+          "delta_continuity": 0.1188316909614022,
+          "delta_continuity_ci95": [
+            0.10174757868626566,
+            0.13641749298169611
+          ],
+          "switch_eligible_ids": 59,
+          "switch_effect_pp_per_10pp_mismatch": 5.05598343466713,
+          "switch_effect_ci95_pp": [
+            3.545275289733704,
+            6.47295083630385
+          ],
+          "switch_ci_lower_positive": true
+        }
+      ],
+      "scope": "categorical movement endpoint continuity from one California monitoring program, not continuous water-depth buffering or fully controlled movement null"
+    },
+    "king_rail_separate_holdout": {
+      "n_test_events": 90,
+      "n_train_events": 83,
+      "n_birds": 10,
+      "heldout_used_target_fraction": 0.5668831168831169,
+      "matched_random_two_plot_target_fraction": 0.2095328282828283,
+      "delta_used_minus_sampled": 0.3573502886002886,
+      "delta_ci95": [
+        0.21419552669552672,
+        0.49930555555555556
+      ],
+      "added_sparse_K_logloss_gain": -0.015518428148204044,
+      "scope": "posthoc within same King Rail dataset; sparse two-point K not actual reachability; stronger forecast benefit not supported"
+    }
+  },
+  "firewalls": [
+    "No formal pooled cross-study effect: outcomes differ (camera time, bat altitude profiles, used water depth, categorical habitat endpoints).",
+    "The ODSP Tadarida and batter focal Tadarida observations partly overlap; not independent validations.",
+    "The California 4 taxa are all from one study, not four independently collected datasets.",
+    "No direct geographic movement benefit or adaptive homeostasis proven by water-depth use and availability contrasts.",
+    "The King Rail learned target depth revisit is a same-dataset posthoc robustness pattern, not a new study or evidence of true K.",
+    "Study selection is exploratory and after outcomes; no generalization to all vertebrates.",
+    "Methods/measurement issues live in supplemental caveats, not the paper's biological conclusion."
+  ]
+}
