@@ -74,6 +74,15 @@ The separate California tracking analysis extended temporal continuity from meas
 
 This widespread continuation was not equivalent to unchanging habitat occupancy. In a distinct post-result analysis restricted to 46,947 within-season and within-photoperiod successive pairs, a 10-percentage-point reduction in the available share of the previously occupied habitat class corresponded to an approximately +5.29-point change in the probability of switching among greater white-fronted geese, +5.01 in lesser snow geese and +5.06 in northern pintails. Their individual-cluster intervals were positive. The mallard estimate was small and uncertain (+0.61 points, 95% interval −4.20 to +4.14). The actual time alignment exceeded four predetermined season- and photoperiod-preserving shifts in the first three species but not in mallards.
 
+**Table 1. Individual-tag-level habitat-state continuity and season/daylight-conditioned switching in the single California waterfowl programme.** Effects are percentage points; brackets are 95% cluster-bootstrap intervals for candidate biological IDs. The two sample sizes distinguish continuity from the stricter switching model. A positive continuation residual is not an estimate of physical environmental stabilization.
+
+| Species | Candidate IDs (continuity / switching) | Continuity above fitted static preference (pp) | Switch response for 10-point lower availability of prior class (pp) |
+|---|---:|---:|---:|
+| Greater white-fronted goose | 67 / 67 | +13.95 [12.52, 15.40] | +5.29 [4.05, 6.60] |
+| Lesser snow goose | 112 / 112 | +15.87 [14.88, 16.87] | +5.01 [4.10, 5.93] |
+| Mallard | 14 / 11 | +6.55 [2.22, 10.66] | +0.61 [-4.20, 4.14] |
+| Northern pintail | 61 / 59 | +11.88 [10.17, 13.64] | +5.06 [3.55, 6.47] |
+
 The joint ecological picture within this source is therefore **state persistence together with conditional replacement**: birds frequently returned to the same type of habitat, while the current composition of feasible destination types was associated with departures from that continuity in three of four species. The published source describes mallards as relatively generalist in habitat selection and geese and northern pintails as more similar for some resource-related responses (Overton and Casazza 2023). This offers a biologically plausible candidate explanation for differences in our temporal switching associations, but the limited number of mallard individuals and a single California study do not establish a general specialist–generalist law.
 
 ### Distinct ecological evidence across systems
@@ -126,6 +135,12 @@ Accordingly, this manuscript establishes **an ecological synthesis of supported 
 ## Conclusion
 
 The biological use of a shared place is not a single ecological state. Across these public observational sources, mammals visiting the same camera sites differed in detection timing, several bat populations contained individually repeatable shapes of vertical use, King Rails maintained comparatively stable experienced water depths, and wintering waterfowl displayed both categorical habitat persistence and opportunity-associated switching. The common ecological lesson is that **habitat use is organized by biological identity and by time**, so similar mapped occupancy need not mean similar environmental experience. Identifying when that organization becomes an adaptive buffer will require independent environmental measurements at used and unused locations, actual movement constraints, and fitness or demographic consequences. Until then, the positive biological patterns—and their species-specific exceptions—stand as the substantive ecological findings.
+
+## Figures
+
+**Figure 1. Ecological organization within shared geographical space across four separate empirical contrasts.** [Open the four-panel empirical summary](Figure1_four_ecological_patterns.svg). (A) Within-site species-specific temporal detection structure in Snapshot Serengeti, with three independently held-out site-fold gains. (B) Six bat tracking-panel outcomes for the session-centred individual vertical-distribution identity test; *Tadarida* is the explicit failed case. (C) King Rail water-depth fidelity compared with locally available depths. (D) Four California waterfowl species' excess continuation of habitat category above individually fitted fixed preference. Numerical axes and effect units differ, and none are pooled.
+
+**Figure 2. Species differences in availability-associated switching.** [Open the California waterfowl individual-cluster estimates](Figure2_waterfowl_opportunity_switch.svg). In a separate, post-result, season- and photoperiod-conditioned analysis, three species show positive habitat-category switching associations when the previously used category becomes less frequent in the currently available movement destinations. Mallard remains uncertain. The x-axis is observational probability-point association, not a causal intervention effect.
 
 ## Data and source evidence
 
