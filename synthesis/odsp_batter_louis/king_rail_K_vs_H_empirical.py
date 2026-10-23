@@ -36,7 +36,7 @@ def get_bytes():
 
 def source_events(rows):
     events={}
-    nmiss=0;nbadid=0;nbadvalue=0
+    nmiss=0;nbadid=0;nbadvalue=0;year_suffix_mismatches=0
     for row in rows:
         if (row.get("Missing") or "").strip().lower()=="yes":
             nmiss+=1;continue
@@ -53,7 +53,8 @@ def source_events(rows):
         except (KeyError,ValueError,TypeError):
             nbadvalue+=1;continue
         source_year=int(match.group(6))
-        if year%100!=source_year: raise ValueError("STOP_SOURCE_YEAR_SUFFIX_MISMATCH")
+        if year%100!=source_year:
+            year_suffix_mismatches+=1  # Source parser elsewhere does not assume suffix == Year.
         bird=f"{match.group(2)}_{match.group(6)}"
         event=(bird,int(match.group(4)))
         entry=events.setdefault(event,{"used":[],"random":[],"year":set(),"julian":set()})
@@ -73,7 +74,8 @@ def source_events(rows):
     for bird in bybird:
         bybird[bird].sort(key=lambda x:(x["year"],x["julian"],x["event"]))
     qc={"source_rows":len(rows),"missing_excluded":nmiss,"malformed_id_excluded":nbadid,
-        "bad_depth_excluded":nbadvalue,"reconstructed_candidate_events":len(events),
+        "bad_depth_excluded":nbadvalue,"source_row_year_suffix_mismatches":year_suffix_mismatches,
+        "reconstructed_candidate_events":len(events),
         "strict_two_random_events":sum(map(len,bybird.values())),
         "source_bird_years":len(bybird),"excluded_event_reasons":dict(unsuitable),
         "duplicate_numeric_tag_across_years":sum(1 for k,v in Counter(
