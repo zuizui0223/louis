@@ -1,0 +1,92 @@
+{
+  "all_source_blob_identities_valid": true,
+  "derived_animal_responses_estimated": false,
+  "ecology_existing_data": {
+    "ODSP_Serengeti": {
+      "inference": "camera-detected species timing partition transfers to three sealed site folds; detection/clock limits remain",
+      "site_fold_gains": [
+        0.0572411993741857,
+        0.045158861333215006,
+        0.04514355468571751
+      ],
+      "species": 17,
+      "within_site_temporal_partition_information_nats": 0.22427598739601606
+    },
+    "ODSP_bat": {
+      "effective_state_count": 4.022333876564191,
+      "inference": "fitted population support is thick, but two sealed individual-specific vertical predictions did not benefit",
+      "sealed_cross_individual_score_gains": [
+        -0.43541033813280833,
+        -0.021938657402345435
+      ]
+    },
+    "batter": {
+      "centered_altitude_identity_panels_positive": 5,
+      "centered_altitude_identity_panels_total": 6,
+      "inference": "five comparative datasets retain session-centered vertical distribution identity, not confirmed energetic functionality",
+      "motivation_Tadarida_source_result": "p=0.5121 (non-support)"
+    },
+    "louis_California": {
+      "daynight_adjusted_opportunity_switch_positive_species": 3,
+      "four_categorical_continuity_ID_bootstrap_positive": 4,
+      "inference": "one other USGS study with four species and complementary categorical rather than continuous-water-depth responses",
+      "mallard_opportunity_switch_uncertain": true,
+      "n_candidate_birds": 254,
+      "within_daynight_pairs": 46947
+    },
+    "louis_KingRail": {
+      "fractional_reduction_in_observed_vs_available_water_depth_coupling": 0.8380794313576199,
+      "inference": "experienced water depth is buffered relative to local availability; no coordinate-level causal mechanism",
+      "local_heterogeneity_beta": -0.04309790738832315,
+      "matched_events": 190,
+      "median_state_retention_index": 0.8857070432632621,
+      "median_temporal_state_retention": 0.6577749876440898,
+      "n_birds": 10,
+      "pseudo_null_heterogeneity_beta": 0.26172337863130785,
+      "stronger_mismatch_by_heterogeneity_interaction_supported": false
+    }
+  },
+  "schema": "louis.odsp_batter_louis_empirical_receipt_v1",
+  "science_boundary": "Three domains supply distinct empirical patterns. No novel biological mechanism, shared effect size, source new analysis, or independent cross-system causal chain inferred.",
+  "source_count": 6,
+  "sources": {
+    "BATTER_CENTERED": {
+      "commit": "776b96eb17114662db9a0686cb9cc461488db240",
+      "path": "TAG_ALTITUDE_BIAS_AUDIT_RESULT.md",
+      "repo": "zuizui0223/batter",
+      "verified_git_blob_sha1": "ef4e5b834fc8110631f3afacabcd56ed492aef63"
+    },
+    "LOUIS_CALIFORNIA_INDIVIDUAL": {
+      "commit": "fb6b1bc2df8bdbb781b8f527f97143cb833ffda4",
+      "path": "analysis/results/california_individual_cluster_robustness_v1.json",
+      "repo": "zuizui0223/louis",
+      "verified_git_blob_sha1": "05910e30811a967919a4c1d63e0a175c21fb8e60"
+    },
+    "LOUIS_CALIFORNIA_PHOTOPERIOD": {
+      "commit": "fb6b1bc2df8bdbb781b8f527f97143cb833ffda4",
+      "path": "analysis/results/california_photoperiod_mismatch_sensitivity_v1.json",
+      "repo": "zuizui0223/louis",
+      "verified_git_blob_sha1": "8935d82dc1a966095ef2b2db4bf8da1851addf3d"
+    },
+    "LOUIS_KING_RAIL": {
+      "commit": "f35123afc735876d4059769442d17a789aaf458f",
+      "path": "manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V2.json",
+      "repo": "zuizui0223/louis",
+      "verified_git_blob_sha1": "2e681866cbfb9260459ab45a22126ceeaa7a0cf7"
+    },
+    "ODSP_BAT": {
+      "commit": "ed1c500f67bcc4d6b7155041e6fa0dc94116f4ed",
+      "path": "N2_BAT_THICKNESS_TERMINAL_DECISION.json",
+      "repo": "zuizui0223/odsp",
+      "verified_git_blob_sha1": "74e2a4e7ac366a18ba636dd9f381493911a97919"
+    },
+    "ODSP_SERENGETI": {
+      "commit": "ed1c500f67bcc4d6b7155041e6fa0dc94116f4ed",
+      "path": "N2_SERENGETI_TEMPORAL_TERMINAL_DECISION.json",
+      "repo": "zuizui0223/odsp",
+      "verified_git_blob_sha1": "8f34be2c0080e9c5c8c7cfd8d16f87e61e652d50"
+    }
+  },
+  "status": "PASS_SOURCE_PINNED_AGGREGATE_CONTRAST_NOT_META_ANALYSIS",
+  "verified_github_actions_run": 39919961086
+}
