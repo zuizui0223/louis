@@ -1,0 +1,63 @@
+name: King Rail V2 Word and Figure Proof author review
+
+on:
+  push:
+    paths:
+      - "manuscript/export_king_rail_v2_review.py"
+      - ".github/workflows/king-rail-v2-word-pdf-export.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Word/PDF conversion and SVG source proof
+        run: |
+          python -m pip install pypandoc_binary python-docx pymupdf cairosvg
+          which libreoffice || (sudo apt-get -qq update && sudo apt-get -y install libreoffice-writer)
+      - name: Verify original King Rail scientific source, unchanged numeric and editorial text
+        run: |
+          python validation/validate_manuscript_v1.py
+          python validation/verify_king_rail_v2_editorial_source.py
+      - name: Create King Rail V2 Word, PDF, five source figure proofs and audit
+        run: python manuscript/export_king_rail_v2_review.py
+      - name: Check original study claim boundaries and author-review status
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          q=json.loads(Path("results/generated_king_rail_v2_review/SOURCE_AND_LAYOUT_QC.json").read_text())
+          assert q["status"]=="PASS_AUTHOR_REVIEW_DOCUMENT_EXPORT_NOT_SUBMITTED"
+          assert q["main"]["pages"]>=8
+          assert q["figure_book"]["source_figures_or_images"]>=5
+          assert q["existing_figures"]==5
+          p=Path("results/LOUIS_KING_RAIL_V2_AUTHOR_REVIEW_PACKAGE.zip")
+          assert p.exists() and p.stat().st_size>25000
+          print("PASS King Rail authored-document archive, figure geometry, science source boundaries")
+          PY
+      - name: Upload King Rail V2 non-final Word and figure proof ZIP
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: louis-king-rail-v2-author-review-word-figures
+          retention-days: 90
+          if-no-files-found: warn
+          path: results/LOUIS_KING_RAIL_V2_AUTHOR_REVIEW_PACKAGE.zip
+      - name: Upload source and page QA separately
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: louis-king-rail-v2-source-layout-QA
+          retention-days: 90
+          if-no-files-found: warn
+          path: |
+            results/generated_king_rail_v2_review/SOURCE_AND_LAYOUT_QC.json
+            results/generated_king_rail_v2_review/AUTHOR_REVIEW_CHECKLIST.md
