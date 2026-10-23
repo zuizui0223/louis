@@ -1,0 +1,31 @@
+name: Comparative empirical ecology paper source and figure integrity
+
+on:
+  push:
+    paths:
+      - "manuscript/realized_state_ecology/**"
+      - ".github/workflows/comparative-realized-state-ecology-qc.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ecological-claim-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check biological effect values, confidence intervals, and distinct outcomes
+        run: python manuscript/realized_state_ecology/verify_ecological_manuscript.py
+      - name: Upload author-review ecological source receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: shared-space-different-states-ecology-manuscript-qc
+          retention-days: 90
+          if-no-files-found: warn
+          path: manuscript/realized_state_ecology/SCIENTIFIC_ECOLOGY_MANUSCRIPT_QC_V1.json
