@@ -17,6 +17,7 @@ from __future__ import annotations
 import json
 import math
 from collections import Counter
+from itertools import combinations
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -47,6 +48,11 @@ def metrics(histories, labels, availability):
     p_same = sum(sum(a == b for a, b in zip(row, row[1:])) / (len(row)-1)
                  for row in histories) / n
     p_static = sum(sum(p * p for p in probs) for probs in marginals) / n
+    # Exact finite-permutation reference conditional on the eight recorded
+    # states rather than a with-replacement IID approximation.
+    p_permutation = sum(
+        sum(c * (c-1) for c in Counter(row).values()) / (len(row)*(len(row)-1))
+        for row in histories) / n
     mvar = sum(probs[1] * (1-probs[1]) for probs in marginals) / n
     available_bernoulli_variance = availability[1] * (1-availability[1])
     if available_bernoulli_variance <= 0:
@@ -61,7 +67,9 @@ def metrics(histories, labels, availability):
             1 - mvar / available_bernoulli_variance,
         "observed_same_state_probability": p_same,
         "independent_individual_static_preference_reference": p_static,
+        "fixed_margins_permutation_expected_same_state": p_permutation,
         "same_state_excess_over_independent_preference": p_same - p_static,
+        "same_state_excess_over_fixed_margins_permutation": p_same - p_permutation,
         "source_outcome_observed": False,
     }
 
@@ -86,15 +94,46 @@ def main():
         "mutual_information_identity_use_nats",
         "mean_individual_state_variance",
         "synthetic_variance_ratio_reduction_not_king_rail_SRI",
-        "independent_individual_static_preference_reference"
+        "independent_individual_static_preference_reference",
+        "fixed_margins_permutation_expected_same_state"
     )
     same_static = all(math.isclose(a[key], b[key], abs_tol=1e-12)
                       for key in static_keys)
     same_marginals = a["individual_use_marginals"] == b["individual_use_marginals"]
-    opposite_dynamic = (a["same_state_excess_over_independent_preference"] > 0
-                        and b["same_state_excess_over_independent_preference"] < 0)
+    opposite_dynamic = (
+        a["same_state_excess_over_independent_preference"] > 0
+        and b["same_state_excess_over_independent_preference"] < 0
+        and a["same_state_excess_over_fixed_margins_permutation"] > 0
+        and b["same_state_excess_over_fixed_margins_permutation"] < 0)
     if not (same_static and same_marginals and opposite_dynamic):
         raise ValueError("STOP_INVALID_ORDERING_COUNTEREXAMPLE")
+    # Exhaustively enumerate ALL 28 reorderings of a fixed 6:2 binary
+    # marginal for individual 1 and its exact complement for individual 2.
+    # Identical thickness/MI/variance are enforced for every candidate.
+    exhaustive=[]
+    for minority in combinations(range(8), 2):
+        seq=[1 if t in minority else 0 for t in range(8)]
+        complement=[1-v for v in seq]
+        z=metrics([seq,complement], labels, available)
+        if any(not math.isclose(z[key],a[key],abs_tol=1e-12)
+               for key in static_keys):
+            raise ValueError("STOP_EXHAUSTIVE_STATIC_INVARIANT_FAILED")
+        exhaustive.append(z)
+    finite_cut=a["fixed_margins_permutation_expected_same_state"]
+    exhaust_summary={
+      "fixed_6_2_count_sequence_combinations":len(exhaustive),
+      "min_same_state_rate":min(z["observed_same_state_probability"] for z in exhaustive),
+      "max_same_state_rate":max(z["observed_same_state_probability"] for z in exhaustive),
+      "finite_permutation_reference":finite_cut,
+      "n_orderings_above_finite_permutation_reference":
+           sum(z["observed_same_state_probability"]>finite_cut for z in exhaustive),
+      "n_orderings_below_finite_permutation_reference":
+           sum(z["observed_same_state_probability"]<finite_cut for z in exhaustive)
+    }
+    if (exhaust_summary["fixed_6_2_count_sequence_combinations"]!=28
+        or exhaust_summary["n_orderings_above_finite_permutation_reference"]!=8
+        or exhaust_summary["n_orderings_below_finite_permutation_reference"]!=20):
+        raise ValueError("STOP_EXHAUSTIVE_ORDERING_COUNT_FAILED")
     # A separate case demonstrates: between-individual identity differentiation
     # is not necessary for high absolute temporal persistence / low variance.
     no_individuality = metrics(
@@ -141,6 +180,7 @@ def main():
       "same_marginal_and_entropy_metrics_for_both_orderings": same_static,
       "same_individual_occupancy_vectors_for_both_orderings": same_marginals,
       "opposite_direction_of_temporal_retention_beyond_static_reference": opposite_dynamic,
+      "exhaustive_fixed_margins_ordering_enumeration": exhaust_summary,
       "same_information_no_individuality_can_be_stable": {
           "mutual_information":no_individuality["mutual_information_identity_use_nats"],
           "temporal_same_state_rate":no_individuality["observed_same_state_probability"],
@@ -148,7 +188,7 @@ def main():
           "static_model_excess":no_individuality["same_state_excess_over_independent_preference"]},
       "equal_entropy_state_portfolios": variants,
       "theoretical_consequences": [
-          "Static ecological state geometry and between-individual niche organization do not determine time-ordered state persistence or its excess over an independent static-preference reference.",
+          "Static state geometry and individual niche organization do not determine temporal persistence; this holds relative to both the with-replacement independent reference and the exactly finite-margin 28-sequence permutation reference.",
           "Temporal state retention can be high even without between-individual niche differentiation.",
           "Equal structural availability entropy can hide presence versus complete absence of a chosen individual's acceptable state. Total thickness is not an upper bound on successful local compensation without target-state reachability.",
           "K>0 indicates possible rather than realized state matching; choice rules, switching costs and environmental dynamics are not identified by availability entropy."
