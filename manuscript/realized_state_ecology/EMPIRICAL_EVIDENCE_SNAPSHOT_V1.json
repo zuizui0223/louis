@@ -8,49 +8,56 @@
       "repository": "zuizui0223/odsp",
       "reference": "main",
       "path": "N2_SERENGETI_TEMPORAL_TERMINAL_DECISION.json",
-      "verified_blob_sha": "8f34be2c0080e9c5c8c7cfd8d16f87e61e652d50"
+      "verified_blob_sha": "8f34be2c0080e9c5c8c7cfd8d16f87e61e652d50",
+      "pinned_commit": "ed1c500f67bcc4d6b7155041e6fa0dc94116f4ed"
     },
     {
       "tag": "odspbat",
       "repository": "zuizui0223/odsp",
       "reference": "main",
       "path": "N2_BAT_THICKNESS_TERMINAL_DECISION.json",
-      "verified_blob_sha": "74e2a4e7ac366a18ba636dd9f381493911a97919"
+      "verified_blob_sha": "74e2a4e7ac366a18ba636dd9f381493911a97919",
+      "pinned_commit": "ed1c500f67bcc4d6b7155041e6fa0dc94116f4ed"
     },
     {
       "tag": "batshape",
       "repository": "zuizui0223/batter",
       "reference": "main",
       "path": "TAG_ALTITUDE_BIAS_AUDIT_RESULT.md",
-      "verified_blob_sha": "ef4e5b834fc8110631f3afacabcd56ed492aef63"
+      "verified_blob_sha": "ef4e5b834fc8110631f3afacabcd56ed492aef63",
+      "pinned_commit": "776b96eb17114662db9a0686cb9cc461488db240"
     },
     {
       "tag": "rail",
       "repository": "zuizui0223/louis",
       "reference": "main",
       "path": "manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V2.json",
-      "verified_blob_sha": "2e681866cbfb9260459ab45a22126ceeaa7a0cf7"
+      "verified_blob_sha": "2e681866cbfb9260459ab45a22126ceeaa7a0cf7",
+      "pinned_commit": "f35123afc735876d4059769442d17a789aaf458f"
     },
     {
       "tag": "cali",
       "repository": "zuizui0223/louis",
       "reference": "analysis/california-used-state-persistence-20261019",
       "path": "analysis/results/california_individual_cluster_robustness_v1.json",
-      "verified_blob_sha": "05910e30811a967919a4c1d63e0a175c21fb8e60"
+      "verified_blob_sha": "05910e30811a967919a4c1d63e0a175c21fb8e60",
+      "pinned_commit": "fb6b1bc2df8bdbb781b8f527f97143cb833ffda4"
     },
     {
       "tag": "switch",
       "repository": "zuizui0223/louis",
       "reference": "analysis/california-used-state-persistence-20261019",
       "path": "analysis/results/california_photoperiod_mismatch_sensitivity_v1.json",
-      "verified_blob_sha": "8935d82dc1a966095ef2b2db4bf8da1851addf3d"
+      "verified_blob_sha": "8935d82dc1a966095ef2b2db4bf8da1851addf3d",
+      "pinned_commit": "fb6b1bc2df8bdbb781b8f527f97143cb833ffda4"
     },
     {
       "tag": "railhold",
       "repository": "zuizui0223/louis",
       "reference": "synthesis/odsp-batter-louis-state-ordering-20261023",
       "path": "synthesis/odsp_batter_louis/KING_RAIL_K_VS_H_EMPIRICAL_RESULT_V1.json",
-      "verified_blob_sha": "a2c708a49692d6b786537d664f18ed4930710cd9"
+      "verified_blob_sha": "a2c708a49692d6b786537d664f18ed4930710cd9",
+      "pinned_commit": "a7d7f4a3aae62a1b69cc756383666135638101ed"
     }
   ],
   "empirical": {
@@ -257,5 +264,6 @@
     "The King Rail learned target depth revisit is a same-dataset posthoc robustness pattern, not a new study or evidence of true K.",
     "Study selection is exploratory and after outcomes; no generalization to all vertebrates.",
     "Methods/measurement issues live in supplemental caveats, not the paper's biological conclusion."
-  ]
+  ],
+  "original_source_sha_validation": "PASS_ALL_SEVEN_ORIGINAL_GITHUB_BLOBS_MATCH_PINNED_COMMITS_20261024"
 }
