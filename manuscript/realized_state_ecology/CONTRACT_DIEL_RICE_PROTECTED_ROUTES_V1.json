@@ -1,0 +1,28 @@
+{
+  "schema": "louis.california_diel_rice_protected_route_decomposition_v1",
+  "created": "2026-10-25",
+  "evidence_class": "explicitly_post_result_descriptive_followup_selected_after_191_vs_53_snow_goose_routing_counts_observed",
+  "parent": "manuscript/realized_state_ecology/RESULT_DIEL_HABITAT_TRANSITIONS_V1.json",
+  "question": "Is the directional Protected-to-Rice switching probability greater on the source-recorded day-to-night boundary than the night-to-day boundary, after subtracting current seven-category availability weighted by fixed per-birdyear categorical preference? Is reverse Rice-to-Protected switching oppositely organized?",
+  "hypotheses": {
+    "primary": "For all four source species, Protected→Rice destination enrichment at day→night exceeds its enrichment at night→day among switches leaving Protected. Report both signs regardless of support; no species rescued by changing thresholds.",
+    "reciprocal": "Rice→Protected destination enrichment may be higher at night→day than day→night. Report both, including species with insufficient information."
+  },
+  "cohort": "Same 380578 source rows, 189851 qualified event keys, 329 source birdyears, 56591 original exact-hour pairs, 58 between seasons and 9586 day/night edge pairs. Exactly the 7 original exclusive categories with source Category 'Protected' treated as a management category not a directly observed daytime roost.",
+  "effect": {
+    "y": "For each boundary step from the named prior category, 1 if the next destination is the named opposite category (not conditional on whether it switched); expected probability is fitted whole-birdyear static seven-class choice p_t of the named destination under current source time-matched q_t, as in the original California V2 static preference null.",
+    "residual": "r=y-p_t(destination), examined as mean(r at day→night) minus mean(r at night→day), within each source birdyear × source season for prior category only.",
+    "unit": "For each distinct source tagged bird candidate ID, average equal-weight qualified birdyear×season contrasts over its tracking years, then equal-weight candidate IDs by species. Require >=2 prior-category observations in both boundary directions per birdyear×season stratum, >=1 such stratum per source individual and >=8 independent candidates per species for inferential interval.",
+    "boot": "10,000 seeded source candidate-tag bootstrap replicates, 95% percentile CI and count positive tags; no pooled across-species effect, no multiplicity-adjusted experiment claim.",
+    "descriptive": "Report real observed destination counts, source available-choice expected counts, eligible stratum counts, total boundary counts, n biological tags; never pool time endpoints as independent individuals.",
+    "status_if_low": "NOT_ESTIMABLE, no alternate threshold or source cohort.",
+    "biological_interpretation": "A positive dusk Protected→Rice source class routing excess is compatible with an diel agricultural/refuge habitat-use circuit, not proof feeding, roosting, hunting avoidance, competitive interaction, or active regulation. Arrival photoperiod is part of the ecological contrast; origin location and route still unobserved."
+  },
+  "limitations": [
+    "Second-stage test explicitly chosen after initial raw protected/rice directional counts, therefore exploratory and not independent confirmation.",
+    "Same public movement-endpoint source as already published Overton/Casazza day-night selection contrasts; compare novel cross-state transition predictions, do not claim original daytime use and habitat preference as new.",
+    "Reference availability is source-generated from actual geographical step origin; source lacks habitat at move origin, so p_t does not preserve state-specific spatial access.",
+    "Protected is a refuge-management category not uniquely interpreted as roost; rice is crop cover, not direct diet/feeding observation.",
+    "Day/night transitions may coincide with source sampling and movement-behaviour shifts; direction is not a randomized ecological cause."
+  ]
+}
