@@ -115,7 +115,7 @@ def verify():
                      and same(v.attrib["data-lo"],b["ci95_candidate_tag_cluster_pp"][0])
                      and same(v.attrib["data-hi"],b["ci95_candidate_tag_cluster_pp"][1]))))
     checks["source_ethics_and_causal_limit_not_hidden"]=all(s in main for s in (
-        "was not submitted","need final human verification",
+        "was not submitted","require final human verification",
         "does not include simultaneous feeding observations",
         "not a counterfactual causal manipulation" if False else
         "not treatment effects of light"))
