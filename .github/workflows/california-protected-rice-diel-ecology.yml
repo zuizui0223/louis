@@ -1,0 +1,39 @@
+name: California dusk-dawn Protected and Rice ecological routes
+
+on:
+  push:
+    paths:
+      - "manuscript/realized_state_ecology/CONTRACT_DIEL_RICE_PROTECTED_ROUTES_V1.json"
+      - "manuscript/realized_state_ecology/analyze_rice_protected_diel_routes_v1.py"
+      - "manuscript/realized_state_ecology/test_rice_protected_diel_routes_v1.py"
+      - ".github/workflows/california-protected-rice-diel-ecology.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  real-source-routes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pinned numerical library
+        run: python -m pip install numpy==2.2.6
+      - name: Synthetic positive, negative and sample-gate tests
+        run: |
+          python -m py_compile manuscript/realized_state_ecology/analyze_rice_protected_diel_routes_v1.py
+          python manuscript/realized_state_ecology/test_rice_protected_diel_routes_v1.py
+      - name: Source-verified ecological route direction beyond static habitat preference
+        run: python manuscript/realized_state_ecology/analyze_rice_protected_diel_routes_v1.py
+      - name: Retain all observations, including absent and negative contrasts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-protected-rice-diel-state-routes
+          retention-days: 90
+          if-no-files-found: warn
+          path: manuscript/realized_state_ecology/RESULT_DIEL_RICE_PROTECTED_ROUTES_V1.json
