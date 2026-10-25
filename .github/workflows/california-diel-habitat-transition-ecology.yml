@@ -1,0 +1,39 @@
+name: California waterfowl diel habitat transitions ecology
+
+on:
+  push:
+    paths:
+      - "manuscript/realized_state_ecology/CONTRACT_DIEL_HABITAT_TRANSITIONS_V1.json"
+      - "manuscript/realized_state_ecology/analyze_california_diel_transitions_v1.py"
+      - "manuscript/realized_state_ecology/test_california_diel_transitions_v1.py"
+      - ".github/workflows/california-diel-habitat-transition-ecology.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ecological-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pinned array library
+        run: python -m pip install numpy==2.2.6
+      - name: Verify known-truth biological state-transition estimator and negative control
+        run: |
+          python -m py_compile manuscript/realized_state_ecology/analyze_california_diel_transitions_v1.py
+          python manuscript/realized_state_ecology/test_california_diel_transitions_v1.py
+      - name: Source-authenticated moving-step category switches at day/night boundary
+        run: python manuscript/realized_state_ecology/analyze_california_diel_transitions_v1.py
+      - name: Archive every positive and negative species outcome, without bird IDs or source points
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: waterfowl-diel-state-transition-ecology
+          retention-days: 90
+          if-no-files-found: warn
+          path: manuscript/realized_state_ecology/RESULT_DIEL_HABITAT_TRANSITIONS_V1.json

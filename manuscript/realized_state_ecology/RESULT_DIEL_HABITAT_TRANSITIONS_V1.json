@@ -1,0 +1,245 @@
+{
+  "causal_boundaries": [
+    "Source data retain moving-step endpoints, not the full stationary process and not origin habitat at the actual step start.",
+    "Day-night boundary movement within 55–65 minutes is not independent of original movement activity or route geography, so observed change does not prove active habitat switching due to light.",
+    "A fitted static preference reference is an imperfect spatial/behavioral null, not a structural availability or randomized environmental-change test.",
+    "The original authors studied circadian movement and habitat selection; novelty depends on temporal transitions not those already known behaviors.",
+    "Conditioning on source season and arrival photoperiod does not control the exact time of day, individual local neighborhood, geographical route or shared patch inertia.",
+    "All hypotheses frozen after original source selection and aggregate outcome examination; any test is explicitly exploratory."
+  ],
+  "cohort_invariants": {
+    "candidate_individual_ids": 254,
+    "cross_day_night": 9586,
+    "cross_source_season": 58,
+    "original_hourly_pairs": 56591,
+    "qualified_source_birdyears": 329,
+    "qualified_species_birdyears": {
+      "GWFG": 99,
+      "LSGO": 155,
+      "MALL": 14,
+      "NOPI": 61
+    },
+    "same_photoperiod": 46947
+  },
+  "evidence_class": "posthoc_single_study_daynight_boundary_state_transitions",
+  "exclusions": {
+    "invalid_available_total": 110,
+    "not_onehot": 328
+  },
+  "original_event_keys": 190289,
+  "positive_result_not_assumed": true,
+  "primary_species_boundary_switch_effect": {
+    "GWFG": {
+      "boundary_pairs_in_eligible_strata": 1979,
+      "ci95_candidate_individual_bootstrap_pp": [
+        -3.2895104140822773,
+        4.262443959577185
+      ],
+      "equal_candidate_individual_mean_boundary_switch_residual_pp": 0.5519454764844447,
+      "estimable_strata": 437,
+      "estimable_tags": 44,
+      "independent_tag_candidates": 67,
+      "negative_interval": false,
+      "outcome": "ESTIMATED_NONCAUSAL_POSTRESULT",
+      "positive_candidate_tags": 21,
+      "positive_interval": false,
+      "source_daynight_boundary_pairs": 2751,
+      "total_pairs_same_season": 14379
+    },
+    "LSGO": {
+      "boundary_pairs_in_eligible_strata": 4422,
+      "ci95_candidate_individual_bootstrap_pp": [
+        5.722087691842469,
+        11.161908694811489
+      ],
+      "equal_candidate_individual_mean_boundary_switch_residual_pp": 8.472055802828896,
+      "estimable_strata": 742,
+      "estimable_tags": 69,
+      "independent_tag_candidates": 112,
+      "negative_interval": false,
+      "outcome": "ESTIMATED_NONCAUSAL_POSTRESULT",
+      "positive_candidate_tags": 54,
+      "positive_interval": true,
+      "source_daynight_boundary_pairs": 5501,
+      "total_pairs_same_season": 36472
+    },
+    "MALL": {
+      "boundary_pairs_in_eligible_strata": 64,
+      "ci95_candidate_individual_bootstrap_pp": [
+        -11.93621733220394,
+        18.216467305904544
+      ],
+      "equal_candidate_individual_mean_boundary_switch_residual_pp": 3.140124986850302,
+      "estimable_strata": 20,
+      "estimable_tags": 5,
+      "independent_tag_candidates": 14,
+      "negative_interval": false,
+      "outcome": "ESTIMATED_NONCAUSAL_POSTRESULT",
+      "positive_candidate_tags": 2,
+      "positive_interval": false,
+      "source_daynight_boundary_pairs": 186,
+      "total_pairs_same_season": 761
+    },
+    "NOPI": {
+      "boundary_pairs_in_eligible_strata": 581,
+      "ci95_candidate_individual_bootstrap_pp": [
+        -4.350308660847172,
+        7.409713776755941
+      ],
+      "equal_candidate_individual_mean_boundary_switch_residual_pp": 1.530872921324825,
+      "estimable_strata": 148,
+      "estimable_tags": 28,
+      "independent_tag_candidates": 61,
+      "negative_interval": false,
+      "outcome": "ESTIMATED_NONCAUSAL_POSTRESULT",
+      "positive_candidate_tags": 17,
+      "positive_interval": false,
+      "source_daynight_boundary_pairs": 1148,
+      "total_pairs_same_season": 4921
+    }
+  },
+  "published_prior_study_boundary": "Original Overton-Casazza 2023 already identified circadian movement and species-specific habitat selection; new comparison is sequential endpoint category replacement at source-defined day-night transitions, not a new activity phenotype.",
+  "schema": "louis.california_diel_category_switch_ecology_v1",
+  "secondary_category_transition_directions": {
+    "GWFG": {
+      "day->night": {
+        "Protected_to_Rice": 27,
+        "Protected_to_Rice_95ci": [
+          0.012328425734222836,
+          0.05884239217572551
+        ],
+        "Protected_to_Rice_candidate_tag_equal_mean_fraction_of_changes": 0.03157306327596183,
+        "Rice_to_Protected": 36,
+        "Rice_to_Protected_95ci": [
+          0.026334253508166552,
+          0.10857789170418569
+        ],
+        "Rice_to_Protected_candidate_tag_equal_mean_fraction_of_changes": 0.06254640708574456,
+        "changed_transition_events": 466,
+        "direction": "day->night",
+        "inference": "ESTIMATED_NONCAUSAL_DESCRIPTIVE",
+        "tags_with_observed_category_changes": 63
+      },
+      "night->day": {
+        "Protected_to_Rice": 26,
+        "Protected_to_Rice_95ci": [
+          0.019465705996466826,
+          0.07317987348716058
+        ],
+        "Protected_to_Rice_candidate_tag_equal_mean_fraction_of_changes": 0.04364383495949482,
+        "Rice_to_Protected": 22,
+        "Rice_to_Protected_95ci": [
+          0.016059852253882106,
+          0.06987955139842761
+        ],
+        "Rice_to_Protected_candidate_tag_equal_mean_fraction_of_changes": 0.04002861380696024,
+        "changed_transition_events": 474,
+        "direction": "night->day",
+        "inference": "ESTIMATED_NONCAUSAL_DESCRIPTIVE",
+        "tags_with_observed_category_changes": 67
+      }
+    },
+    "LSGO": {
+      "day->night": {
+        "Protected_to_Rice": 191,
+        "Protected_to_Rice_95ci": [
+          0.15104101037693307,
+          0.2643861999186235
+        ],
+        "Protected_to_Rice_candidate_tag_equal_mean_fraction_of_changes": 0.20500891695472975,
+        "Rice_to_Protected": 26,
+        "Rice_to_Protected_95ci": [
+          0.017063090418353577,
+          0.06570311231256429
+        ],
+        "Rice_to_Protected_candidate_tag_equal_mean_fraction_of_changes": 0.03845811681098983,
+        "changed_transition_events": 903,
+        "direction": "day->night",
+        "inference": "ESTIMATED_NONCAUSAL_DESCRIPTIVE",
+        "tags_with_observed_category_changes": 104
+      },
+      "night->day": {
+        "Protected_to_Rice": 53,
+        "Protected_to_Rice_95ci": [
+          0.042382130341314016,
+          0.09326996699445679
+        ],
+        "Protected_to_Rice_candidate_tag_equal_mean_fraction_of_changes": 0.06629303502952963,
+        "Rice_to_Protected": 39,
+        "Rice_to_Protected_95ci": [
+          0.04103167240922343,
+          0.11469607323448859
+        ],
+        "Rice_to_Protected_candidate_tag_equal_mean_fraction_of_changes": 0.07414147477172688,
+        "changed_transition_events": 676,
+        "direction": "night->day",
+        "inference": "ESTIMATED_NONCAUSAL_DESCRIPTIVE",
+        "tags_with_observed_category_changes": 98
+      }
+    },
+    "MALL": {
+      "day->night": {
+        "Protected_to_Rice": 4,
+        "Protected_to_Rice_candidate_tag_equal_mean_fraction_of_changes": 0.031127602556173983,
+        "Rice_to_Protected": 1,
+        "Rice_to_Protected_candidate_tag_equal_mean_fraction_of_changes": 0.011904761904761904,
+        "changed_transition_events": 86,
+        "direction": "day->night",
+        "inference": "ONLY_DESCRIPTIVE_NO_CONFIDENCE_GATE",
+        "tags_with_observed_category_changes": 14
+      },
+      "night->day": {
+        "Protected_to_Rice": 0,
+        "Protected_to_Rice_candidate_tag_equal_mean_fraction_of_changes": 0,
+        "Rice_to_Protected": 0,
+        "Rice_to_Protected_candidate_tag_equal_mean_fraction_of_changes": 0,
+        "changed_transition_events": 15,
+        "direction": "night->day",
+        "inference": "ONLY_DESCRIPTIVE_NO_CONFIDENCE_GATE",
+        "tags_with_observed_category_changes": 9
+      }
+    },
+    "NOPI": {
+      "day->night": {
+        "Protected_to_Rice": 49,
+        "Protected_to_Rice_95ci": [
+          0.08162972085385878,
+          0.17462867592177939
+        ],
+        "Protected_to_Rice_candidate_tag_equal_mean_fraction_of_changes": 0.12619980594118527,
+        "Rice_to_Protected": 12,
+        "Rice_to_Protected_95ci": [
+          0.01559934318555008,
+          0.07881773399014778
+        ],
+        "Rice_to_Protected_candidate_tag_equal_mean_fraction_of_changes": 0.04392446633825944,
+        "changed_transition_events": 295,
+        "direction": "day->night",
+        "inference": "ESTIMATED_NONCAUSAL_DESCRIPTIVE",
+        "tags_with_observed_category_changes": 58
+      },
+      "night->day": {
+        "Protected_to_Rice": 10,
+        "Protected_to_Rice_95ci": [
+          0.014506172839506172,
+          0.06234567901234568
+        ],
+        "Protected_to_Rice_candidate_tag_equal_mean_fraction_of_changes": 0.036287477954144616,
+        "Rice_to_Protected": 7,
+        "Rice_to_Protected_95ci": [
+          0.009876543209876543,
+          0.0664021164021164
+        ],
+        "Rice_to_Protected_candidate_tag_equal_mean_fraction_of_changes": 0.035361552028218696,
+        "changed_transition_events": 166,
+        "direction": "night->day",
+        "inference": "ESTIMATED_NONCAUSAL_DESCRIPTIVE",
+        "tags_with_observed_category_changes": 54
+      }
+    }
+  },
+  "source_doi": "10.5066/P9ELSUHN",
+  "source_md5": "78eb6064eca992225d6907d6e46f5bef",
+  "source_valid_event_keys": 189851,
+  "verified_github_actions_run_id": 40160915884
+}

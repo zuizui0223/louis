@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="635" viewBox="0 0 1120 635" role="img" aria-label="Four California waterfowl species opportunity-associated habitat category switching, with 95 percent candidate-individual cluster intervals.">
+<rect width="1120" height="635" fill="#FFFFFF"/>
+<text x="43" y="49" font-size="25" font-family="Arial,Helvetica,sans-serif" fill="#173542" font-weight="700">Habitat switching varies among co-occurring waterfowl</text>
+<text x="43" y="79" font-size="15" font-family="Arial,Helvetica,sans-serif" fill="#60727F">Switch probability change per 10-percentage-point decline in previously used habitat availability</text>
+<text x="43" y="107" font-size="13" font-family="Arial,Helvetica,sans-serif" fill="#768791">Same season, same photoperiod, same bird-year and previous habitat-class comparisons</text>
+<line x1="43" y1="128" x2="1080" y2="128" stroke="#CDD8DD"/>
+<line x1="309.83" x2="309.83" y1="139" y2="512" stroke="#E1E8EB" stroke-width="1" stroke-dasharray="2 5"/><text x="309.83" y="540" font-family="Arial,Helvetica,sans-serif" font-size="13" text-anchor="middle" fill="#596E76">-5</text><line x1="558.10" x2="558.10" y1="139" y2="512" stroke="#718C99" stroke-width="2" stroke-dasharray="5 5"/><text x="558.10" y="540" font-family="Arial,Helvetica,sans-serif" font-size="13" text-anchor="middle" fill="#596E76">0</text><line x1="707.07" x2="707.07" y1="139" y2="512" stroke="#E1E8EB" stroke-width="1" stroke-dasharray="2 5"/><text x="707.07" y="540" font-family="Arial,Helvetica,sans-serif" font-size="13" text-anchor="middle" fill="#596E76">+3</text><line x1="856.03" x2="856.03" y1="139" y2="512" stroke="#E1E8EB" stroke-width="1" stroke-dasharray="2 5"/><text x="856.03" y="540" font-family="Arial,Helvetica,sans-serif" font-size="13" text-anchor="middle" fill="#596E76">+6</text><line x1="1005.00" x2="1005.00" y1="139" y2="512" stroke="#E1E8EB" stroke-width="1" stroke-dasharray="2 5"/><text x="1005.00" y="540" font-family="Arial,Helvetica,sans-serif" font-size="13" text-anchor="middle" fill="#596E76">+9</text><g data-species="GWFG" data-mean="5.289876950151515" data-low="4.049342125514462" data-high="6.596694684237332" data-n="67">
+<rect x="40" y="132" width="1039" height="74" rx="10" fill="#F2F8F9"/>
+<text x="53" y="163" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="#27414C">Greater white-fronted goose</text>
+<text x="53" y="188" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#657884">67 candidate independent tags</text>
+<line x1="759.17" x2="885.66" y1="168" y2="168" stroke="#2F7182" stroke-width="4" stroke-linecap="round"/>
+<line x1="759.17" x2="759.17" y1="160" y2="176" stroke="#2F7182" stroke-width="3"/>
+<line x1="885.66" x2="885.66" y1="160" y2="176" stroke="#2F7182" stroke-width="3"/>
+<circle cx="820.77" cy="168" r="8" fill="#2F7182" stroke="#FFFFFF" stroke-width="2"/>
+<text x="858" y="163" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#2F7182">+5.29 pp</text>
+<text x="858" y="188" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#566E79">[4.05, 6.60] 95% CI</text>
+</g><g data-species="LSGO" data-mean="5.010607193253568" data-low="4.0983531175307215" data-high="5.9299524812120445" data-n="112">
+<rect x="40" y="228" width="1039" height="74" rx="10" fill="#F2F8F9"/>
+<text x="53" y="259" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="#27414C">Lesser snow goose</text>
+<text x="53" y="284" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#657884">112 candidate independent tags</text>
+<line x1="761.61" x2="852.56" y1="264" y2="264" stroke="#2F7182" stroke-width="4" stroke-linecap="round"/>
+<line x1="761.61" x2="761.61" y1="256" y2="272" stroke="#2F7182" stroke-width="3"/>
+<line x1="852.56" x2="852.56" y1="256" y2="272" stroke="#2F7182" stroke-width="3"/>
+<circle cx="806.91" cy="264" r="8" fill="#2F7182" stroke="#FFFFFF" stroke-width="2"/>
+<text x="858" y="259" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#2F7182">+5.01 pp</text>
+<text x="858" y="284" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#566E79">[4.10, 5.93] 95% CI</text>
+</g><g data-species="MALL" data-mean="0.6082622804574924" data-low="-4.202472793119609" data-high="4.140085945920228" data-n="11">
+<rect x="40" y="324" width="1039" height="74" rx="10" fill="#FCF8F0"/>
+<text x="53" y="355" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="#27414C">Mallard</text>
+<text x="53" y="380" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#657884">11 candidate independent tags</text>
+<line x1="349.43" x2="763.68" y1="360" y2="360" stroke="#B37B41" stroke-width="4" stroke-linecap="round"/>
+<line x1="349.43" x2="349.43" y1="352" y2="368" stroke="#B37B41" stroke-width="3"/>
+<line x1="763.68" x2="763.68" y1="352" y2="368" stroke="#B37B41" stroke-width="3"/>
+<circle cx="588.31" cy="360" r="8" fill="#B37B41" stroke="#FFFFFF" stroke-width="2"/>
+<text x="858" y="355" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#B37B41">+0.61 pp</text>
+<text x="858" y="380" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#566E79">[-4.20, 4.14] 95% CI</text>
+</g><g data-species="NOPI" data-mean="5.05598343466713" data-low="3.545275289733704" data-high="6.47295083630385" data-n="59">
+<rect x="40" y="420" width="1039" height="74" rx="10" fill="#F2F8F9"/>
+<text x="53" y="451" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="#27414C">Northern pintail</text>
+<text x="53" y="476" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#657884">59 candidate independent tags</text>
+<line x1="734.14" x2="879.52" y1="456" y2="456" stroke="#2F7182" stroke-width="4" stroke-linecap="round"/>
+<line x1="734.14" x2="734.14" y1="448" y2="464" stroke="#2F7182" stroke-width="3"/>
+<line x1="879.52" x2="879.52" y1="448" y2="464" stroke="#2F7182" stroke-width="3"/>
+<circle cx="809.16" cy="456" r="8" fill="#2F7182" stroke="#FFFFFF" stroke-width="2"/>
+<text x="858" y="451" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#2F7182">+5.06 pp</text>
+<text x="858" y="476" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#566E79">[3.55, 6.47] 95% CI</text>
+</g><text x="645" y="568" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#4E6771">Observational probability-point association; zero means no within-stratum linear slope</text>
+<text x="44" y="599" font-family="Arial,Helvetica,sans-serif" font-size="12" fill="#607781">The mallard estimate is uncertain. Source available destinations depend on movement origin and spatial constraints.</text>
+<text x="44" y="618" font-family="Arial,Helvetica,sans-serif" font-size="11" fill="#607781">Source: USGS 10.5066/P9ELSUHN; post-hoc photoperiod-adjusted Louisiana analysis, 46,947 successive within-period pairs.</text>
+</svg>

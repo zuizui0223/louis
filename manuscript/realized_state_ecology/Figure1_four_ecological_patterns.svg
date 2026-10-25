@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="925" viewBox="0 0 1280 925" role="img" aria-label="Four non-pooled empirical ecological contrasts from Serengeti mammals, tracking bats, King Rails and California waterfowl.">
+<rect width="1280" height="925" fill="#ffffff"/>
+<text x="42" y="52" font-size="31" font-weight="700" font-family="Arial,Helvetica,sans-serif" fill="#173541">Shared space conceals different ecological states</text>
+<text x="43" y="82" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#516975">Evidence in separate ecological responses; panel scales and biological units are deliberately not shared</text>
+<rect x="40" y="111" width="585" height="376" rx="13" fill="#F7F9FA" stroke="#CFD9DD" stroke-width="1.1"/><rect x="40" y="111" width="585" height="8" rx="4" fill="#427772"/><text x="61" y="154" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="16" fill="#253F4B">A   SERENGETI — SPECIES AND TIME</text><rect x="650" y="111" width="585" height="376" rx="13" fill="#F7F9FA" stroke="#CFD9DD" stroke-width="1.1"/><rect x="650" y="111" width="585" height="8" rx="4" fill="#4F6393"/><text x="671" y="154" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="16" fill="#253F4B">B   BATS — INDIVIDUAL VERTICAL USE</text><rect x="40" y="507" width="585" height="376" rx="13" fill="#F7F9FA" stroke="#CFD9DD" stroke-width="1.1"/><rect x="40" y="507" width="585" height="8" rx="4" fill="#3F777E"/><text x="61" y="550" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="16" fill="#253F4B">C   KING RAIL — EXPERIENCED WATER DEPTH</text><rect x="650" y="507" width="585" height="376" rx="13" fill="#F7F9FA" stroke="#CFD9DD" stroke-width="1.1"/><rect x="650" y="507" width="585" height="8" rx="4" fill="#AA7047"/><text x="671" y="550" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="16" fill="#253F4B">D   WATERFOWL — HABITAT-STATE TRAJECTORIES</text><g data-case="serengeti" data-n-species="17" data-info="0.22427598739601606" data-p="0.005">
+<text x="64" y="229" font-family="Arial,Helvetica,sans-serif" font-size="53" font-weight="700" fill="#427772">17</text>
+<text x="162" y="214" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#445F6A">species detected at shared sites</text>
+<text x="162" y="241" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#445F6A">I(species; time | site) = 0.224 nats</text>
+<text x="64" y="296" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="15" fill="#2B4856">Held-out site-fold gains (all positive)</text><g data-site-fold="0" data-gain="0.0572411993741857"><text x="66" y="338" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#445F69">Site 1</text><rect x="150" y="321" width="290.61" height="19" rx="4" fill="#427772"/><text x="496" y="338" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#334F59">0.057</text></g><g data-site-fold="1" data-gain="0.045158861333215006"><text x="66" y="375" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#445F69">Site 2</text><rect x="150" y="358" width="229.27" height="19" rx="4" fill="#427772"/><text x="496" y="375" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#334F59">0.045</text></g><g data-site-fold="2" data-gain="0.04514355468571751"><text x="66" y="412" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#445F69">Site 3</text><rect x="150" y="395" width="229.19" height="19" rx="4" fill="#427772"/><text x="496" y="412" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#334F59">0.045</text></g><text x="63" y="465" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#60747D">Camera detection timing, not proven competition</text></g><g data-case="bats" data-panel-count="6" data-positive="5">
+<text x="675" y="216" font-family="Arial,Helvetica,sans-serif" font-size="49" font-weight="700" fill="#4F6393">5 / 6</text>
+<text x="824" y="206" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#475C70">panels with repeatable centered</text>
+<text x="824" y="231" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#475C70">individual vertical-profile shape</text><g data-bat-panel="0" data-score="-0.0222" data-p="0.5121" data-verdict="FAIL">
+ <text x="675" y="278" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#485F69">T. teniotis</text>
+ <line x1="1001" y1="274" x2="1202" y2="274" stroke="#D6E0E5" stroke-width="1"/>
+ <circle cx="1003.56" cy="274" r="6.5" fill="#C18B5F" stroke="#fff" stroke-width="1.5"/>
+ <text x="1205" y="278" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#536A74">-0.022</text></g><g data-bat-panel="1" data-score="0.4429" data-p="0.0002" data-verdict="PASS">
+ <text x="675" y="309" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#485F69">E. helvum</text>
+ <line x1="1001" y1="305" x2="1202" y2="305" stroke="#D6E0E5" stroke-width="1"/>
+ <circle cx="1138.44" cy="305" r="6.5" fill="#4F6393" stroke="#fff" stroke-width="1.5"/>
+ <text x="1205" y="309" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#536A74">+0.443</text></g><g data-bat-panel="2" data-score="0.1768" data-p="0.0002" data-verdict="PASS">
+ <text x="675" y="340" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#485F69">H. monstrosus</text>
+ <line x1="1001" y1="336" x2="1202" y2="336" stroke="#D6E0E5" stroke-width="1"/>
+ <circle cx="1061.27" cy="336" r="6.5" fill="#4F6393" stroke="#fff" stroke-width="1.5"/>
+ <text x="1205" y="340" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#536A74">+0.177</text></g><g data-bat-panel="3" data-score="0.1114" data-p="0.0002" data-verdict="PASS">
+ <text x="675" y="371" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#485F69">P. hastatus 2022</text>
+ <line x1="1001" y1="367" x2="1202" y2="367" stroke="#D6E0E5" stroke-width="1"/>
+ <circle cx="1042.31" cy="367" r="6.5" fill="#4F6393" stroke="#fff" stroke-width="1.5"/>
+ <text x="1205" y="371" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#536A74">+0.111</text></g><g data-bat-panel="4" data-score="0.1181" data-p="0.0002" data-verdict="PASS">
+ <text x="675" y="402" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#485F69">P. hastatus 2023</text>
+ <line x1="1001" y1="398" x2="1202" y2="398" stroke="#D6E0E5" stroke-width="1"/>
+ <circle cx="1044.25" cy="398" r="6.5" fill="#4F6393" stroke="#fff" stroke-width="1.5"/>
+ <text x="1205" y="402" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#536A74">+0.118</text></g><g data-bat-panel="5" data-score="0.574" data-p="0.0076" data-verdict="PASS">
+ <text x="675" y="433" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#485F69">P. hastatus 2016</text>
+ <line x1="1001" y1="429" x2="1202" y2="429" stroke="#D6E0E5" stroke-width="1"/>
+ <circle cx="1176.46" cy="429" r="6.5" fill="#4F6393" stroke="#fff" stroke-width="1.5"/>
+ <text x="1205" y="433" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#536A74">+0.574</text></g><text x="672" y="465" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#647781">Focal Tadarida exception; no fitness measurement</text></g><g data-case="king-rail" data-birds="10" data-median-sri="0.8857070432632621" data-coupling-reduction="0.8380794313576199">
+<text x="63" y="632" font-family="Arial,Helvetica,sans-serif" font-size="67" font-weight="700" fill="#3F777E">10/10</text>
+<text x="252" y="610" font-family="Arial,Helvetica,sans-serif" font-size="19" fill="#455D66">birds used more stable</text>
+<text x="252" y="635" font-family="Arial,Helvetica,sans-serif" font-size="19" fill="#455D66">depths than local pseudo-use</text>
+<line x1="60" y1="662" x2="600" y2="662" stroke="#DCE4E6"/>
+<text x="65" y="725" font-family="Arial,Helvetica,sans-serif" font-size="37" font-weight="700" fill="#3F777E">0.886</text>
+<text x="240" y="718" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#4A626C">median individual state-retention index</text>
+<text x="65" y="799" font-family="Arial,Helvetica,sans-serif" font-size="37" font-weight="700" fill="#3F777E">83.8%</text>
+<text x="240" y="791" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#4A626C">weaker coupling of used water</text>
+<text x="240" y="814" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#4A626C">depth to local available depth</text>
+<text x="63" y="861" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#647780">190 used/available events; movement mechanism unmeasured</text></g><g data-case="california" data-species="4" data-ids="254" data-switch-positive="3">
+<text x="672" y="603" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#AA7047">4/4</text>
+<text x="753" y="602" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#4A6571">species: category continuity above fixed preference</text>
+<text x="673" y="648" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="#3D5761">Extra same-category transitions (percentage points)</text><g data-wf-species="GWFG" data-excess="0.1394649802905778" data-switch-effect="5.289876950151515">
+<text x="674" y="688" font-size="14" font-family="Arial,Helvetica,sans-serif" fill="#4B626F">White-fronted goose</text>
+<rect x="852" y="671" width="198.19" height="20" rx="4" fill="#AA7047"/>
+<text x="1160" y="688" text-anchor="end" font-size="15" font-family="Arial,Helvetica,sans-serif" fill="#405D68">+13.95</text></g><g data-wf-species="LSGO" data-excess="0.15866749585746254" data-switch-effect="5.010607193253568">
+<text x="674" y="727" font-size="14" font-family="Arial,Helvetica,sans-serif" fill="#4B626F">Snow goose</text>
+<rect x="852" y="710" width="225.47" height="20" rx="4" fill="#AA7047"/>
+<text x="1160" y="727" text-anchor="end" font-size="15" font-family="Arial,Helvetica,sans-serif" fill="#405D68">+15.87</text></g><g data-wf-species="MALL" data-excess="0.06552930956992722" data-switch-effect="0.6082622804574924">
+<text x="674" y="766" font-size="14" font-family="Arial,Helvetica,sans-serif" fill="#4B626F">Mallard</text>
+<rect x="852" y="749" width="93.12" height="20" rx="4" fill="#AA7047"/>
+<text x="1160" y="766" text-anchor="end" font-size="15" font-family="Arial,Helvetica,sans-serif" fill="#405D68">+6.55</text></g><g data-wf-species="NOPI" data-excess="0.1188316909614022" data-switch-effect="5.05598343466713">
+<text x="674" y="805" font-size="14" font-family="Arial,Helvetica,sans-serif" fill="#4B626F">Northern pintail</text>
+<rect x="852" y="788" width="168.87" height="20" rx="4" fill="#AA7047"/>
+<text x="1160" y="805" text-anchor="end" font-size="15" font-family="Arial,Helvetica,sans-serif" fill="#405D68">+11.88</text></g><text x="673" y="861" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#647780">3/4 species: availability-associated switching; Mallard uncertain</text></g><text x="44" y="911" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#6D818A">Figure 1. Distinct axes and source programmes; numerical scales are NOT interchangeable or pooled. Source: empirical evidence snapshot V1.</text></svg>
