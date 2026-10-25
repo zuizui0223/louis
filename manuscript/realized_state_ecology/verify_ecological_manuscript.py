@@ -16,6 +16,10 @@ MAN=P/"SHARED_PLACES_DIFFERENT_STATES_ECOLOGY_MANUSCRIPT_V1.md"
 DATA=P/"EMPIRICAL_EVIDENCE_SNAPSHOT_V1.json"
 F1=P/"Figure1_four_ecological_patterns.svg"
 F2=P/"Figure2_waterfowl_opportunity_switch.svg"
+F3=P/"Figure3_species_diel_habitat_switching.svg"
+F4=P/"Figure4_diel_protected_rice_sequences.svg"
+DIEL=P/"RESULT_DIEL_HABITAT_TRANSITIONS_V1.json"
+ROUTE=P/"RESULT_DIEL_RICE_PROTECTED_ROUTES_V1.json"
 OUT=P/"SCIENTIFIC_ECOLOGY_MANUSCRIPT_QC_V1.json"
 NS="{http://www.w3.org/2000/svg}"
 LABELS={"GWFG":"Greater white-fronted goose","LSGO":"Lesser snow goose",
@@ -34,11 +38,16 @@ def check():
     t=MAN.read_text(encoding="utf-8")
     data=json.loads(DATA.read_text(encoding="utf-8"))
     d=data["empirical"]
+    diel=json.loads(DIEL.read_text(encoding="utf-8"))
+    routing=json.loads(ROUTE.read_text(encoding="utf-8"))
     rows1=exact_rows(F1,"data-case")
     rows2=exact_rows(F2,"data-species")
+    rows3=exact_rows(F3,"data-species")
+    panels4=exact_rows(F4,"data-direction")
+    rows4=exact_rows(F4,"data-species")
     q={}
     words=len(re.findall(r"\b[\w'-]+\b",t))
-    q["main_article_length"]=2600<=words<=5600
+    q["main_article_length"]=2600<=words<=7200
     q["ecological_core_and_sections"]=all(s in t for s in
        ("## Abstract","## Introduction","## Materials and methods",
         "## Results","## Discussion","## Conclusion","## Figures",
@@ -158,6 +167,73 @@ def check():
             and close(group.get("data-low"),z["switch_effect_ci95_pp"][0])
             and close(group.get("data-high"),z["switch_effect_ci95_pp"][1])
             and int(group.get("data-n"))==z["switch_eligible_ids"])
+    # Newly opened ecological outcome is the fate of consecutive habitat
+    # categories across source day/night boundaries, NOT original day/night
+    # movement incidence or actual geographic bird step origins.
+    q["diel_original_source_cohort"]=(diel["cohort_invariants"]["qualified_source_birdyears"]==329 and
+       diel["cohort_invariants"]["candidate_individual_ids"]==254 and
+       diel["cohort_invariants"]["cross_day_night"]==9586 and
+       diel["cohort_invariants"]["same_photoperiod"]==46947 and
+       all(x in t for x in ("9,586","46,947","source day/night","recorded moving-step")))
+    primary=diel["primary_species_boundary_switch_effect"]
+    q["snow_goose_specific_daynight"]=(
+        primary["LSGO"]["positive_interval"] is True and
+        all(primary[sp]["positive_interval"] is False for sp in ("GWFG","MALL","NOPI")) and
+        all(x in t for x in ("+8.47","+5.72","+11.16","69 estimable","54 with positive")))
+    q["nonsupporting_daynight_three_species"]=all(
+        f'{primary[sp]["equal_candidate_individual_mean_boundary_switch_residual_pp"]:+.2f}' in t
+        for sp in ("GWFG","MALL","NOPI"))
+    directions=routing["all_species_status"]
+    q["dusk_directional_pair_counts"]=all(
+        f'{directions[sp]["Protected_to_Rice"]["dusk_actual_target_moves"]}' in t and
+        f'{directions[sp]["Protected_to_Rice"]["dawn_actual_target_moves"]}' in t
+        for sp in ("LSGO","NOPI"))
+    q["two_species_positive_dusk_rice"]=all(
+        directions[sp]["Protected_to_Rice"]["ci95_above_zero"] is True and
+        f'{directions[sp]["Protected_to_Rice"]["mean_dusk_minus_dawn_destination_enrichment_pp"]:+.2f}' in t
+        for sp in ("LSGO","NOPI"))
+    q["other_dusk_rice_uncertain_or_not_estimable"]=(
+        directions["GWFG"]["Protected_to_Rice"]["ci95_above_zero"] is False and
+        directions["MALL"]["Protected_to_Rice"]["outcome"]=="NOT_ESTIMABLE" and
+        "mallards lacked the required independent sample" in t)
+    q["reciprocal_transition_not_promoted"]=all(
+        directions[sp]["Rice_to_Protected"]["ci95_above_zero"] is False
+        for sp in ("GWFG","LSGO","NOPI")) and
+        "reciprocal Rice-then-Protected succession showed no equally clear" in t
+    q["two_new_ecological_figures"]=(
+        len(rows3)==4 and len(panels4)==2 and len(rows4)==8 and
+        "Figure3_species_diel_habitat_switching.svg" in t and
+        "Figure4_diel_protected_rice_sequences.svg" in t)
+    for item in rows3:
+        sp=item.get("data-species")
+        if sp not in primary:
+            q["figure3_unknown_species"]=False;continue
+        ref=primary[sp]
+        q["figure3_"+sp]=(
+            close(item.get("data-mean"),ref["equal_candidate_individual_mean_boundary_switch_residual_pp"])
+            and close(item.get("data-lo"),ref["ci95_candidate_individual_bootstrap_pp"][0])
+            and close(item.get("data-hi"),ref["ci95_candidate_individual_bootstrap_pp"][1])
+            and int(item.get("data-tag-n"))==ref["estimable_tags"])
+    for item in rows4:
+        sp=item.get("data-species")
+        p=item.getparent() if hasattr(item,"getparent") else None
+        # ElementTree lacks parent pointers: a unique routing case is known
+        # from presence of source-valued numeric score or source sample gate.
+        candidate=[]
+        for direction in ("Protected_to_Rice","Rice_to_Protected"):
+            x=directions.get(sp,{}).get(direction)
+            if not x:continue
+            if int(item.get("data-eligible-tags"))!=x["candidate_tag_stratum_contrasts_eligible"]:
+                continue
+            if x["outcome"]=="NOT_ESTIMABLE" and item.get("data-value") is None:
+                candidate.append(direction)
+            elif x["outcome"]!="NOT_ESTIMABLE" and item.get("data-value") is not None and close(item.get("data-value"),x["mean_dusk_minus_dawn_destination_enrichment_pp"]):
+                candidate.append(direction)
+        if not candidate:q["figure4_unmatched_routing_row"]=False
+    q["diel_not_causal_or_physically_routed"]=(
+        "not verified continuous routes" in t
+        or ("not recorded feeding or roosting acts" in t and "not a randomized" not in t)
+    )
     q["journaling_and_author_approval_not_claimed"]=(
         "**Authors:** [To be confirmed from the actual research contributors]" in t
         and "not a preregistered pooled meta-analysis" in t
