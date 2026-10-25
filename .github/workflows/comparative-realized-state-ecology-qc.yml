@@ -21,6 +21,10 @@ jobs:
           python-version: "3.12"
       - name: Check biological effect values, confidence intervals, and distinct outcomes
         run: python manuscript/realized_state_ecology/verify_ecological_manuscript.py
+      - name: Validate standalone original diel ecological research paper and both species transition figures
+        run: |
+          python -m py_compile manuscript/realized_state_ecology/verify_california_diel_original_ecology_v1.py
+          python manuscript/realized_state_ecology/verify_california_diel_original_ecology_v1.py
       - name: Verify original nonpooled ecological source bytes by pinned Git commit
         run: python manuscript/realized_state_ecology/verify_pinned_ecological_sources.py
       - name: Upload author-review ecological source receipt
@@ -33,3 +37,4 @@ jobs:
           path: |
             manuscript/realized_state_ecology/SCIENTIFIC_ECOLOGY_MANUSCRIPT_QC_V1.json
             manuscript/realized_state_ecology/ORIGINAL_ECOLOGICAL_SOURCE_QC_V1.json
+            manuscript/realized_state_ecology/CALIFORNIA_DIEL_ORIGINAL_ECOLOGY_QC_V1.json
