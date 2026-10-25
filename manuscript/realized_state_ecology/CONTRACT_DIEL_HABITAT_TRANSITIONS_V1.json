@@ -1,0 +1,51 @@
+{
+  "schema": "louis.california_diel_category_switch_ecology_v1",
+  "registered": "2026-10-25",
+  "evidence_class": "exploratory_after_existing_four_species_results_and_after_original_source_publication",
+  "source": {
+    "study_doi": "10.5066/P9ELSUHN",
+    "publication_doi": "10.3389/fevo.2023.1232704",
+    "rows": 380578,
+    "qualified_events": 189851,
+    "qualified_birdyears": 329,
+    "qualified_hourly_pairs": 56591,
+    "within_season_and_daynight_pairs": 46947,
+    "season_crossing_pairs": 58,
+    "daynight_crossing_pairs": 9586,
+    "source_md5": "78eb6064eca992225d6907d6e46f5bef",
+    "filename": "Data Release P9ELSUHN.csv"
+  },
+  "ecological_question": "Does abrupt day-night turnover coincide with a distinct habitat-state transition propensity in co-occurring geese and ducks beyond the time-matched choice opportunity and a fitted time-invariant within-birdyear habitat preference?",
+  "original_article_novelty": "Original paper already establishes circadian movement patterns and species-specific habitat functional responses; new endpoint is successive within-bird, across-photoperiod habitat-category transitions relative to independent-source availability baseline, NOT movement incidence or habitat preference.",
+  "hypotheses": {
+    "primary": "Within the same original bird-year, source season, prior habitat class, and arriving day/night photoperiod, observed habitat-category change residual beyond fitted static-preference opportunity is higher for an hourly transition crossing day/night than within the same photoperiod. Report all species, including negative or uncertain.",
+    "secondary": "Direction of origin-category-to-destination-category moves between Rice and Protected may differ for night→day versus day→night, and may differ among species; no claim that the categories directly measure feeding/sanctuary use, and no multiple-testing rescue."
+  },
+  "cohort": {
+    "events": "One source one-hot observed destination and source generated available-destination 7-category count vector for each birdyear/species/timestamp, with total 20–100; exact same source exclusions as source-verified California V2.",
+    "transition": "Previous and next qualified events strictly 55–65 minutes apart, same source 'season' category. Crossing photoperiod defined only by source's day/night label. 9586 expected crossing transitions; no inferred sunrise or local clock.",
+    "individual": "Source birdyear suffix _YYYY split into candidate tag for repeated-year blocking, consistent with prior ID audit. 254 candidate tag IDs expected across 329 bird-years.",
+    "study": "One California telemetry study with four species, not four independent sample universes."
+  },
+  "models": {
+    "static_preference": "Same original bird-year seven-class Dirichlet(0.5) count smoothing, IPF preference fitted to marginal observed source used-category frequencies and seven-category time-varying matched available destination counts, match each birdyear's broad marginal used/available state. No outcome-based change after ecological results.",
+    "residual": "For a used previous category a and next category b, y=1[b!=a], expected switch probability 1-p_{t,a} from fitted independent static-preference time-matched choice, residual r = y - (1-p_t,a). No claim these independently chosen destinations preserve true space/route autocorrelation.",
+    "baseline": "Within each individual birdyear × source season × current photoperiod × immediately previous habitat category, compute the difference in mean residual for boundary vs nonboundary hours; require >=2 transitions of each type and positive within-category comparison. Per candidate tagged ID, pool eligible strata by their equal-stratum mean (all accepted strata equal within tag) and require >=4 valid strata total and >=4 source boundary transitions. A bird's repeated year measurements do not count as additional independent IDs.",
+    "group_summary": "One independent candidate tagged ID one vote, per-species mean primary boundary-excess-switch probability in percentage points, 10,000 seeded ID bootstrap 95% CI and count of IDs with positive contrasts. If fewer than 5 estimable individuals for a species report NOT_ESTIMABLE, do not borrow from other taxa.",
+    "noninference": "No pooled multi-species p-value or statement about individual daytime feeding; preliminary post-result comparison is observational and circadian source label is not the precise astronomical dawn."
+  },
+  "descriptive_secondary": {
+    "source_transition_table": "Counts and 10,000 tag-bootstrap CI for observed Rice→Protected and Protected→Rice as percentages of all category changes at day→night and night→day boundaries separately. Require >=15 independent IDs with at least one such source origin-state event to provide uncertainty intervals; else report counts with INSUFFICIENT_BRANCHES, no sign test or salvaged outcome.",
+    "no_cherry_pick": "Report all four species×two direction sets whether observed contrasts favor the candidate biological story or not.",
+    "avoid_overclaim": "Protected category is management status and Rice is crop land cover; neither directly certifies roost/feeding function or hunting refuge use at any source move."
+  },
+  "limits": [
+    "Source data retain moving-step endpoints, not the full stationary process and not origin habitat at the actual step start.",
+    "Day-night boundary movement within 55–65 minutes is not independent of original movement activity or route geography, so observed change does not prove active habitat switching due to light.",
+    "A fitted static preference reference is an imperfect spatial/behavioral null, not a structural availability or randomized environmental-change test.",
+    "The original authors studied circadian movement and habitat selection; novelty depends on temporal transitions not those already known behaviors.",
+    "Conditioning on source season and arrival photoperiod does not control the exact time of day, individual local neighborhood, geographical route or shared patch inertia.",
+    "All hypotheses frozen after original source selection and aggregate outcome examination; any test is explicitly exploratory."
+  ],
+  "positive_support_gate": "Only a 95% candidate-ID bootstrap lower bound >0 within each species supports that exploratory species-specific increased boundary switching. Negative intervals reduce the comparative paper's generality claim rather than altering analysis thresholds."
+}
