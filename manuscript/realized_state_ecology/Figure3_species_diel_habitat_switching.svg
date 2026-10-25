@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="745" viewBox="0 0 1120 745" role="img" aria-label="Day-night edge specific change in habitat category switching among California geese and ducks, controlling source time-matched availability and fixed habitat preference. Only lesser snow goose has a positive 95% individual interval.">
+<rect width="1120" height="745" fill="#FFFFFF"/>
+<text x="42" y="48" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700" fill="#173642">A distinct twilight habitat-switching response in snow geese</text>
+<text x="44" y="77" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#586F7A">Excess category replacement at day/night edge versus within-period hour, after time-matched habitat opportunities</text>
+<text x="44" y="102" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#71858B">Species effects are candidate-individual averages; 95% cluster bootstrap intervals</text>
+<line x1="45" y1="132" x2="1076" y2="132" stroke="#CAD6DA"/>
+<text x="47" y="160" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#4B646F">SPECIES</text>
+<text x="602" y="160" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#4B646F">EXCESS SWITCHING (PERCENTAGE POINTS)</text><line x1="396.76" y1="176" x2="396.76" y2="582" stroke="#E0E8EA" stroke-width="1" stroke-dasharray="2 5"/><text x="396.76" y="612" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#546C78">-15</text><line x1="455.54" y1="176" x2="455.54" y2="582" stroke="#E0E8EA" stroke-width="1" stroke-dasharray="2 5"/><text x="455.54" y="612" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#546C78">-10</text><line x1="514.32" y1="176" x2="514.32" y2="582" stroke="#E0E8EA" stroke-width="1" stroke-dasharray="2 5"/><text x="514.32" y="612" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#546C78">-5</text><line x1="573.11" y1="176" x2="573.11" y2="582" stroke="#6C8692" stroke-width="2" stroke-dasharray="5 4"/><text x="573.11" y="612" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#546C78">0</text><line x1="631.89" y1="176" x2="631.89" y2="582" stroke="#E0E8EA" stroke-width="1" stroke-dasharray="2 5"/><text x="631.89" y="612" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#546C78">+5</text><line x1="690.68" y1="176" x2="690.68" y2="582" stroke="#E0E8EA" stroke-width="1" stroke-dasharray="2 5"/><text x="690.68" y="612" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#546C78">+10</text><line x1="749.46" y1="176" x2="749.46" y2="582" stroke="#E0E8EA" stroke-width="1" stroke-dasharray="2 5"/><text x="749.46" y="612" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#546C78">+15</text><line x1="808.24" y1="176" x2="808.24" y2="582" stroke="#E0E8EA" stroke-width="1" stroke-dasharray="2 5"/><text x="808.24" y="612" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#546C78">+20</text><g data-species="GWFG" data-mean="0.5519454764844447" data-lo="-3.2895104140822773" data-hi="4.262443959577185" data-tag-n="44" data-positive="false">
+ <rect x="41" y="179" width="1036" height="90" rx="10" fill="#F8F7F4"/>
+ <text x="56" y="213" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#273E49">Greater white-fronted goose</text>
+ <text x="56" y="244" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#59717C">44 candidate marked-bird IDs</text>
+ <line x1="534.43" x2="623.22" y1="225" y2="225" stroke="#9C7C64" stroke-width="4" stroke-linecap="round"/>
+ <line x1="534.43" x2="534.43" y1="215" y2="235" stroke="#9C7C64" stroke-width="2.5"/>
+ <line x1="623.22" x2="623.22" y1="215" y2="235" stroke="#9C7C64" stroke-width="2.5"/>
+ <circle cx="579.60" cy="225" r="9" fill="#9C7C64" stroke="white" stroke-width="2"/>
+ <text x="850" y="214" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#9C7C64">+0.55 pp</text>
+ <text x="850" y="243" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#5F757F">[-3.29, 4.26] 95% CI</text></g><g data-species="LSGO" data-mean="8.472055802828896" data-lo="5.722087691842469" data-hi="11.161908694811489" data-tag-n="69" data-positive="true">
+ <rect x="41" y="279" width="1036" height="90" rx="10" fill="#EDF8F8"/>
+ <text x="56" y="313" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#273E49">Lesser snow goose</text>
+ <text x="56" y="344" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#59717C">69 candidate marked-bird IDs</text>
+ <line x1="640.38" x2="704.34" y1="325" y2="325" stroke="#1B7880" stroke-width="4" stroke-linecap="round"/>
+ <line x1="640.38" x2="640.38" y1="315" y2="335" stroke="#1B7880" stroke-width="2.5"/>
+ <line x1="704.34" x2="704.34" y1="315" y2="335" stroke="#1B7880" stroke-width="2.5"/>
+ <circle cx="672.71" cy="325" r="9" fill="#1B7880" stroke="white" stroke-width="2"/>
+ <text x="850" y="314" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#1B7880">+8.47 pp</text>
+ <text x="850" y="343" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#5F757F">[5.72, 11.16] 95% CI</text></g><g data-species="MALL" data-mean="3.140124986850302" data-lo="-11.93621733220394" data-hi="18.216467305904544" data-tag-n="5" data-positive="false">
+ <rect x="41" y="379" width="1036" height="90" rx="10" fill="#F8F7F4"/>
+ <text x="56" y="413" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#273E49">Mallard</text>
+ <text x="56" y="444" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#59717C">5 candidate marked-bird IDs</text>
+ <line x1="432.78" x2="787.27" y1="425" y2="425" stroke="#9C7C64" stroke-width="4" stroke-linecap="round"/>
+ <line x1="432.78" x2="432.78" y1="415" y2="435" stroke="#9C7C64" stroke-width="2.5"/>
+ <line x1="787.27" x2="787.27" y1="415" y2="435" stroke="#9C7C64" stroke-width="2.5"/>
+ <circle cx="610.03" cy="425" r="9" fill="#9C7C64" stroke="white" stroke-width="2"/>
+ <text x="850" y="414" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#9C7C64">+3.14 pp</text>
+ <text x="850" y="443" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#5F757F">[-11.94, 18.22] 95% CI</text></g><g data-species="NOPI" data-mean="1.530872921324825" data-lo="-4.350308660847172" data-hi="7.409713776755941" data-tag-n="28" data-positive="false">
+ <rect x="41" y="479" width="1036" height="90" rx="10" fill="#F8F7F4"/>
+ <text x="56" y="513" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#273E49">Northern pintail</text>
+ <text x="56" y="544" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#59717C">28 candidate marked-bird IDs</text>
+ <line x1="521.96" x2="660.22" y1="525" y2="525" stroke="#9C7C64" stroke-width="4" stroke-linecap="round"/>
+ <line x1="521.96" x2="521.96" y1="515" y2="535" stroke="#9C7C64" stroke-width="2.5"/>
+ <line x1="660.22" x2="660.22" y1="515" y2="535" stroke="#9C7C64" stroke-width="2.5"/>
+ <circle cx="591.11" cy="525" r="9" fill="#9C7C64" stroke="white" stroke-width="2"/>
+ <text x="850" y="514" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#9C7C64">+1.53 pp</text>
+ <text x="850" y="543" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#5F757F">[-4.35, 7.41] 95% CI</text></g><text x="594" y="650" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#516C77">Zero means no added boundary-associated transition beyond arrival photoperiod and same prior state</text>
+<text x="43" y="689" font-family="Arial,Helvetica,sans-serif" font-size="12" fill="#6C7E87">Post-result observational study. Source: USGS P9ELSUHN; 9,586 eligible hourly day/night boundary pairs in one California programme.</text>
+<text x="43" y="711" font-family="Arial,Helvetica,sans-serif" font-size="12" fill="#6C7E87">Does not identify the causal effects of twilight, bird feeding behavior or true origin/destination route geography.</text>
+</svg>
