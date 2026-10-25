@@ -1,0 +1,238 @@
+{
+  "all_species_status": {
+    "GWFG": {
+      "Protected_to_Rice": {
+        "candidate_tag_stratum_contrasts_eligible": 11,
+        "ci95_above_zero": false,
+        "ci95_below_zero": false,
+        "ci95_candidate_tag_cluster_pp": [
+          -1.4086238592982598,
+          21.260838255657745
+        ],
+        "contrast_definition": "mean(actual minus fitted static choice at day->night) minus same at night->day",
+        "dawn_actual_target_moves": 26,
+        "dawn_at_risk_in_paired_strata": 72,
+        "dawn_origin_at_risk_events": 200,
+        "dawn_static_choice_expected_target_moves": 17.70562815745648,
+        "dusk_actual_target_moves": 27,
+        "dusk_at_risk_in_paired_strata": 78,
+        "dusk_origin_at_risk_events": 126,
+        "dusk_static_choice_expected_target_moves": 9.796718583735197,
+        "eligible_tag_candidates_with_origin_at_boundaries": 41,
+        "mean_dusk_minus_dawn_destination_enrichment_pp": 9.702795261093392,
+        "outcome": "EXPLORATORY_POSTRESULT_ESTIMATE",
+        "paired_strata_total": 16,
+        "positive_individual_tag_contrasts": 9,
+        "source_destination_category": "Rice",
+        "source_origin_category": "Protected"
+      },
+      "Rice_to_Protected": {
+        "candidate_tag_stratum_contrasts_eligible": 45,
+        "ci95_above_zero": false,
+        "ci95_below_zero": false,
+        "ci95_candidate_tag_cluster_pp": [
+          -1.469147104178634,
+          9.072791512740356
+        ],
+        "contrast_definition": "mean(actual minus fitted static choice at day->night) minus same at night->day",
+        "dawn_actual_target_moves": 22,
+        "dawn_at_risk_in_paired_strata": 623,
+        "dawn_origin_at_risk_events": 715,
+        "dawn_static_choice_expected_target_moves": 18.04405222380743,
+        "dusk_actual_target_moves": 36,
+        "dusk_at_risk_in_paired_strata": 492,
+        "dusk_origin_at_risk_events": 555,
+        "dusk_static_choice_expected_target_moves": 19.168999911167017,
+        "eligible_tag_candidates_with_origin_at_boundaries": 65,
+        "mean_dusk_minus_dawn_destination_enrichment_pp": 3.0049802576743674,
+        "outcome": "EXPLORATORY_POSTRESULT_ESTIMATE",
+        "paired_strata_total": 95,
+        "positive_individual_tag_contrasts": 20,
+        "source_destination_category": "Protected",
+        "source_origin_category": "Rice"
+      }
+    },
+    "LSGO": {
+      "Protected_to_Rice": {
+        "candidate_tag_stratum_contrasts_eligible": 47,
+        "ci95_above_zero": true,
+        "ci95_below_zero": false,
+        "ci95_candidate_tag_cluster_pp": [
+          22.125355691075463,
+          43.326175261594976
+        ],
+        "contrast_definition": "mean(actual minus fitted static choice at day->night) minus same at night->day",
+        "dawn_actual_target_moves": 53,
+        "dawn_at_risk_in_paired_strata": 377,
+        "dawn_origin_at_risk_events": 497,
+        "dawn_static_choice_expected_target_moves": 35.77452827331499,
+        "dusk_actual_target_moves": 191,
+        "dusk_at_risk_in_paired_strata": 336,
+        "dusk_origin_at_risk_events": 520,
+        "dusk_static_choice_expected_target_moves": 40.5155873483277,
+        "eligible_tag_candidates_with_origin_at_boundaries": 100,
+        "mean_dusk_minus_dawn_destination_enrichment_pp": 32.36076185193158,
+        "outcome": "EXPLORATORY_POSTRESULT_ESTIMATE",
+        "paired_strata_total": 73,
+        "positive_individual_tag_contrasts": 43,
+        "source_destination_category": "Rice",
+        "source_origin_category": "Protected"
+      },
+      "Rice_to_Protected": {
+        "candidate_tag_stratum_contrasts_eligible": 72,
+        "ci95_above_zero": false,
+        "ci95_below_zero": false,
+        "ci95_candidate_tag_cluster_pp": [
+          -0.7505297097409337,
+          3.334376774230053
+        ],
+        "contrast_definition": "mean(actual minus fitted static choice at day->night) minus same at night->day",
+        "dawn_actual_target_moves": 39,
+        "dawn_at_risk_in_paired_strata": 1471,
+        "dawn_origin_at_risk_events": 1640,
+        "dawn_static_choice_expected_target_moves": 50.25520204358395,
+        "dusk_actual_target_moves": 26,
+        "dusk_at_risk_in_paired_strata": 1027,
+        "dusk_origin_at_risk_events": 1102,
+        "dusk_static_choice_expected_target_moves": 36.664213363426754,
+        "eligible_tag_candidates_with_origin_at_boundaries": 106,
+        "mean_dusk_minus_dawn_destination_enrichment_pp": 1.161150707440977,
+        "outcome": "EXPLORATORY_POSTRESULT_ESTIMATE",
+        "paired_strata_total": 151,
+        "positive_individual_tag_contrasts": 31,
+        "source_destination_category": "Protected",
+        "source_origin_category": "Rice"
+      }
+    },
+    "MALL": {
+      "Protected_to_Rice": {
+        "candidate_tag_stratum_contrasts_eligible": 5,
+        "contrast_definition": "mean(actual minus fitted static choice at day->night) minus same at night->day",
+        "dawn_actual_target_moves": 0,
+        "dawn_at_risk_in_paired_strata": 17,
+        "dawn_origin_at_risk_events": 24,
+        "dawn_static_choice_expected_target_moves": 0.8291213434833414,
+        "dusk_actual_target_moves": 4,
+        "dusk_at_risk_in_paired_strata": 21,
+        "dusk_origin_at_risk_events": 33,
+        "dusk_static_choice_expected_target_moves": 1.0219480238535543,
+        "eligible_tag_candidates_with_origin_at_boundaries": 12,
+        "outcome": "NOT_ESTIMABLE",
+        "paired_strata_total": 5,
+        "source_destination_category": "Rice",
+        "source_origin_category": "Protected"
+      },
+      "Rice_to_Protected": {
+        "candidate_tag_stratum_contrasts_eligible": 0,
+        "contrast_definition": "mean(actual minus fitted static choice at day->night) minus same at night->day",
+        "dawn_actual_target_moves": 0,
+        "dawn_at_risk_in_paired_strata": 0,
+        "dawn_origin_at_risk_events": 1,
+        "dawn_static_choice_expected_target_moves": 0.009714388090878642,
+        "dusk_actual_target_moves": 1,
+        "dusk_at_risk_in_paired_strata": 0,
+        "dusk_origin_at_risk_events": 20,
+        "dusk_static_choice_expected_target_moves": 2.4526423468624072,
+        "eligible_tag_candidates_with_origin_at_boundaries": 7,
+        "outcome": "NOT_ESTIMABLE",
+        "paired_strata_total": 0,
+        "source_destination_category": "Protected",
+        "source_origin_category": "Rice"
+      }
+    },
+    "NOPI": {
+      "Protected_to_Rice": {
+        "candidate_tag_stratum_contrasts_eligible": 18,
+        "ci95_above_zero": true,
+        "ci95_below_zero": false,
+        "ci95_candidate_tag_cluster_pp": [
+          37.534956403612604,
+          72.76718276525192
+        ],
+        "contrast_definition": "mean(actual minus fitted static choice at day->night) minus same at night->day",
+        "dawn_actual_target_moves": 10,
+        "dawn_at_risk_in_paired_strata": 66,
+        "dawn_origin_at_risk_events": 159,
+        "dawn_static_choice_expected_target_moves": 24.171489998330625,
+        "dusk_actual_target_moves": 49,
+        "dusk_at_risk_in_paired_strata": 53,
+        "dusk_origin_at_risk_events": 111,
+        "dusk_static_choice_expected_target_moves": 13.935987742947264,
+        "eligible_tag_candidates_with_origin_at_boundaries": 56,
+        "mean_dusk_minus_dawn_destination_enrichment_pp": 55.54433737752418,
+        "outcome": "EXPLORATORY_POSTRESULT_ESTIMATE",
+        "paired_strata_total": 18,
+        "positive_individual_tag_contrasts": 15,
+        "source_destination_category": "Rice",
+        "source_origin_category": "Protected"
+      },
+      "Rice_to_Protected": {
+        "candidate_tag_stratum_contrasts_eligible": 28,
+        "ci95_above_zero": false,
+        "ci95_below_zero": false,
+        "ci95_candidate_tag_cluster_pp": [
+          -7.701559177684645,
+          3.664792556112886
+        ],
+        "contrast_definition": "mean(actual minus fitted static choice at day->night) minus same at night->day",
+        "dawn_actual_target_moves": 7,
+        "dawn_at_risk_in_paired_strata": 148,
+        "dawn_origin_at_risk_events": 206,
+        "dawn_static_choice_expected_target_moves": 10.185756286040714,
+        "dusk_actual_target_moves": 12,
+        "dusk_at_risk_in_paired_strata": 169,
+        "dusk_origin_at_risk_events": 296,
+        "dusk_static_choice_expected_target_moves": 26.590065542032114,
+        "eligible_tag_candidates_with_origin_at_boundaries": 57,
+        "mean_dusk_minus_dawn_destination_enrichment_pp": -1.573835391763481,
+        "outcome": "EXPLORATORY_POSTRESULT_ESTIMATE",
+        "paired_strata_total": 33,
+        "positive_individual_tag_contrasts": 11,
+        "source_destination_category": "Protected",
+        "source_origin_category": "Rice"
+      }
+    }
+  },
+  "biological_interpretation_limits": [
+    "Second-stage test explicitly chosen after initial raw protected/rice directional counts, therefore exploratory and not independent confirmation.",
+    "Same public movement-endpoint source as already published Overton/Casazza day-night selection contrasts; compare novel cross-state transition predictions, do not claim original daytime use and habitat preference as new.",
+    "Reference availability is source-generated from actual geographical step origin; source lacks habitat at move origin, so p_t does not preserve state-specific spatial access.",
+    "Protected is a refuge-management category not uniquely interpreted as roost; rice is crop cover, not direct diet/feeding observation.",
+    "Day/night transitions may coincide with source sampling and movement-behaviour shifts; direction is not a randomized ecological cause."
+  ],
+  "evidence_class": "explicitly_post_result_diel_directional_class_routing_in_single_USGS_source",
+  "parent": "manuscript/realized_state_ecology/RESULT_DIEL_HABITAT_TRANSITIONS_V1.json",
+  "positive_species_not_assumed": true,
+  "schema": "louis.california_diel_rice_protected_route_decomposition_v1",
+  "source_doi": "10.5066/P9ELSUHN",
+  "source_habitat_categories": [
+    "Corn",
+    "Field",
+    "Other",
+    "Protected",
+    "Rice",
+    "Urban",
+    "Wetland"
+  ],
+  "source_qc": {
+    "cohort": {
+      "candidate_tags_by_species": {
+        "GWFG": 67,
+        "LSGO": 112,
+        "MALL": 14,
+        "NOPI": 61
+      },
+      "daynight_edge": 9586,
+      "distinct_candidate_tags": 254,
+      "eligible_birdyears": 329,
+      "eligible_hourly_pairs": 56591,
+      "season_edge": 58
+    },
+    "events_excluded": {
+      "invalid_available_total": 110,
+      "not_onehot": 328
+    },
+    "source_rows": 380578
+  },
+  "verified_github_actions_run_id": 40161218491
+}
