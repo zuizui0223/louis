@@ -196,10 +196,10 @@ def check():
         directions["GWFG"]["Protected_to_Rice"]["ci95_above_zero"] is False and
         directions["MALL"]["Protected_to_Rice"]["outcome"]=="NOT_ESTIMABLE" and
         "mallards lacked the required independent sample" in t)
-    q["reciprocal_transition_not_promoted"]=all(
-        directions[sp]["Rice_to_Protected"]["ci95_above_zero"] is False
-        for sp in ("GWFG","LSGO","NOPI")) and
-        "reciprocal Rice-then-Protected succession showed no equally clear" in t
+    q["reciprocal_transition_not_promoted"]=(
+        all(directions[sp]["Rice_to_Protected"]["ci95_above_zero"] is False
+            for sp in ("GWFG","LSGO","NOPI")) and
+        "reciprocal Rice-then-Protected succession showed no equally clear" in t)
     q["two_new_ecological_figures"]=(
         len(rows3)==4 and len(panels4)==2 and len(rows4)==8 and
         "Figure3_species_diel_habitat_switching.svg" in t and
